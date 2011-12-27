@@ -25,3 +25,7 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+
+#additional
+*.opensdf
+*.sdf

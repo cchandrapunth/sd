@@ -1,4 +1,19 @@
 ========================================================================
+							COMMIT DETAIL 
+========================================================================
+40% Demo
+	Ability to alter 3d surface by grab and release gesture.
+	- gesture.cpp: grab
+	- hand_history.cpp: list of handpoint 
+	- main.cpp: the rest
+	- model.cpp: load, draw, select, translate polygon
+	- render.cpp: only handle camera lookAt
+	- window.cpp: menu event (did not use)
+
+Dec 27: Commit to Github
+
+
+========================================================================
     CONSOLE APPLICATION : FingerTracking Project Overview
 ========================================================================
 
