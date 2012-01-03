@@ -3,7 +3,7 @@
 
 using namespace xn; 
 
-void debugGesture();
+void enableDebugGesture();
 
 //-----------------------------------------
 //			error checking
@@ -45,5 +45,10 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints);
 //helper
 bool isGrab();
 XnPoint3D getPalm();
-void switchHandMode();
-void estimateGrab(XnPoint3D* list, int n, XnPoint3D* highest, XnPoint3D* lowest, XnPoint3D* leftmost, XnPoint3D* rightmost);
+void switchShowHand();
+void estimateGrab(
+	XnPoint3D* list, 
+	int n, XnPoint3D* highest, 
+	XnPoint3D* lowest, 
+	XnPoint3D* leftmost, 
+	XnPoint3D* rightmost);

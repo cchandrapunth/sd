@@ -1,38 +1,46 @@
 
-//This component handle the color picking 
+/* Chantree Chandrapunth
+*  Senior Project: Virtual Sculpture 
+*
+*  Main loop controls the workflow while connecting 
+*  the gesture and the graphical component together. 
+*  Handle most of the rendering part
+*/
+
 #include "stdafx.h"
 #include <stdlib.h>
 #include <GL/glut.h>
 #include <XnCppWrapper.h>
 #include <XnVNite.h>
 
-#include "render.h"
+#include "picking.h"
 #include "gesture.h"
 #include "hand_history.h"
 #include "window.h"
 #include "model.h"
-
 #include "undo.h"
 
 
-// static //
-static camera cam;
-static int mainWindow;
-static int border =6, h=480, w= 800; 
+//----------------------------------------------------------------
+//							Variable
+//----------------------------------------------------------------
 
-// selection buffer //
-#define SelBuffSize 512 
-bool BACK_BUFF = false;
-
-// picking stuff //
-#define RENDER	1
-#define SELECT	2
+#define SelBuffSize 512		//selection buffer 
 #define BUFSIZE 1024 
 GLuint selectBuf[BUFSIZE];
-GLint hits; 
-int mode = RENDER; 
-int cursorX, cursorY; 
-int pickMe = 0;			//which one is picked
+
+//rendering mode
+#define RENDER	1	
+#define SELECT	2	
+
+
+// static //
+static int mainWindow;
+static int border =6, h=480, w= 800; 
+static int cursorX, cursorY; 
+static int mode = RENDER; 	
+static XnUInt16 g_nXRes, g_nYRes;
+static bool BACK_BUFF;	//show back buffer
 
 //gesture 
 #define GESTURE_TO_USE "Click" 
@@ -41,104 +49,42 @@ xn::DepthGenerator *ptr_DepthGen;
 xn::Context context;
 bool stateGrab = false; //0- not grab, 1 - already in grab
 
-//ortho
-XnUInt16 g_nXRes, g_nYRes;
 
-//model
-model_t sampleModel;
+//Model
+model_t sampleModel; 
 point_t samplePoint; 
 
-//---------------------------------
-//         Resizeing 
-//---------------------------------
 
-void reshape(int w1, int h1){
+//---------------------------------------------------------------
+//				Keyboard and mouse
+//----------------------------------------------------------------
 
-	float ratio; 
-	h = h1; 
-	w = w1; 
-	// prevent divide by zero 
-	if(h1 ==0) h=1; 
-	
 
-	glViewport(0, 0, w, h); 
+void mouse(int button, int state, int x, int y){
 
-	//PROJECTION: set window coordinate
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity(); 
+	if (button != GLUT_LEFT_BUTTON || state != GLUT_DOWN) return;
 
-	XnMapOutputMode mode;
-	(*ptr_DepthGen).GetMapOutputMode(mode);
-
-	g_nXRes = mode.nXRes;
-	g_nYRes = mode.nYRes;
-
-	//set the clipping volume corresponding to the depthmap resolution
-	//left, right, buttom, top
-	glOrtho(0, g_nXRes, 0, g_nYRes, -100, 1000);
-	gluLookAt(cam.pos[0], cam.pos[1], cam.pos[2], cam.lookAt[0], cam.lookAt[1], cam.lookAt[2], cam.lookUp[0], cam.lookUp[1], cam.lookUp[2]);
-	// Set the clipping volume
-	//ratio = 1.0f * w / h;
-	//gluPerspective(45,ratio,0.1,1000);
-
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-
+	//only when the left button is clicked 
+	cursorX = x;
+	cursorY = y;
+	mode = SELECT;
 }
 
-//----------------------------------------
-//			PICKING STUFF
-//----------------------------------------
-void processPick(){
-	GLint viewport[4];
-	GLubyte pixel[3];
-
-	//ask for value of the viewport
-	glGetIntegerv(GL_VIEWPORT, viewport);
-
-	//read pixel under the curser
-	glReadPixels(cursorX, viewport[3]-cursorY, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, (void*) pixel);
-
-	printf("%d %d %d\n", pixel[0], pixel[1], pixel[2]);
-
-	if (pixel[0] == 255 && pixel[1] == 0 && pixel[2] == 0){
-	  printf ("You picked the 1st rect");
-	  pickMe = 0;
+void processNormalKeys(unsigned char key, int x, int y){
+	
+	if(key ==27){			//'esc' to exit
+		exit(0);
 	}
-	else if (pixel[0] == 0 && pixel[1] == 255 && pixel[2] == 0){
-	  printf ("You picked the 2nd rect");
-	  pickMe = 1;
+	else if(key == 104){	//'h' to show handmap or palmpoint
+		switchShowHand();
 	}
-	else if (pixel[0] == 0 && pixel[1] == 0 && pixel[2] == 255){
-	  printf ("You picked the 3rd rect");
-	  pickMe = 2;
+	else if(key == 100){	//'d' to show front buffer or back bufferr
+		BACK_BUFF = !BACK_BUFF;
+		if(BACK_BUFF) printf("switch buffer to front\n");
+		else 	printf("switch buffer to back\n");
 	}
-	else if (pixel[0] == 255 && pixel[1] == 255 && pixel[2] == 0){
-	  printf ("You picked the 4rd rect");
-	  pickMe = 3;
-	}
-	else if (pixel[0] == 0 && pixel[1] == 255 && pixel[2] == 255){
-	  printf ("You picked the 5rd rect");
-	  pickMe = 4;
-	}
-	else if (pixel[0] == 255 && pixel[1] == 0 && pixel[2] == 255){
-	  printf ("You picked the 6rd rect");
-	  pickMe = 5;
-	}
-	else if (pixel[0] == 130 && pixel[1] == 0 && pixel[2] == 130){
-	  printf ("You picked the 7rd rect");
-	  pickMe = 6;
-	}
-	else if (pixel[0] == 0 && pixel[1] == 130 && pixel[2] == 130){
-	  printf ("You picked the 8rd rect");
-	  pickMe = 7;
-	}
-	else{
-	   printf("You didn't click any rect!");
-	   pickMe = -1;
-	 }
-	printf ("\n");
-
+	else
+		printf("key: %d\n", key);
 }
 
 //treat grab as a mouse click. 
@@ -160,8 +106,8 @@ void checkCursor(){
 		//stay in grab position should not be recognized as grab
 		else{
 			mode = RENDER;
-			if(pickMe >0){
-				translatePoly(sampleModel.pList[pickMe], &samplePoint,gettranslateX(), gettranslateY());
+			if(getSelection() >0){
+				translatePoly(sampleModel.pList[getSelection()], &samplePoint,gettranslateX(), gettranslateY());
 				calculateNormal(&samplePoint, &sampleModel);
 				
 			}
@@ -178,11 +124,11 @@ void checkCursor(){
 	}
 
 }
-//-------------------------------------
-//          Rendering
-//-------------------------------------
+//------------------------------------------------------------------
+//								Rendering
+//------------------------------------------------------------------
 
-void renderScene(){
+void mainloop(){
 
 	XnPoint3D *handPointList = new XnPoint3D[MAXPOINT];
 	if(handPointList == NULL){
@@ -206,51 +152,51 @@ void renderScene(){
 		else drawPickMe(&sampleModel, &samplePoint);
 	}
 	if(mode == SELECT){
-		processPick();
+		processPick(cursorX, cursorY);
 		mode = RENDER;
 	}
 	else glutSwapBuffers();
 
-	
 	context.WaitAndUpdateAll();
 
 	glFlush();
 	
 }
 
-//------------------------------------------------
-//				Keyboard and mouse
-//------------------------------------------------
+void reshape(int w1, int h1){
 
-void processNormalKeys(unsigned char key, int x, int y){
-	
-	if(key ==27){			//'esc' to exit
-		quit();
-	}
-	else if(key == 104){	//'h' to show handmap or palmpoint
-		switchHandMode();
-	}
-	else if(key == 100){	//'d' to show front buffer or back bufferr
-		BACK_BUFF = !BACK_BUFF;
-	}
-	else
-		processKeyboard(key, x, y);
+	float ratio; 
+	int h = h1; 
+	int w = w1; 
+
+	// prevent divide by zero 
+	if(h1 ==0) h=1; 
+	glViewport(0, 0, w, h); 
+
+	//PROJECTION: set window coordinate
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity(); 
+
+	XnMapOutputMode mode;
+	(*ptr_DepthGen).GetMapOutputMode(mode);
+
+	g_nXRes = mode.nXRes;
+	g_nYRes = mode.nYRes;
+
+	//set the clipping volume corresponding to the depthmap resolution
+	//left, right, buttom, top
+	glOrtho(0, g_nXRes, 0, g_nYRes, -100, 1000);
+	gluLookAt(80, 0, 0, 80, 0, -10, 0, 1, 0);
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
 }
 
-void mouse(int button, int state, int x, int y){
-
-	if (button != GLUT_LEFT_BUTTON || state != GLUT_DOWN)
-	return;
-
-	//only when the left button is clicked 
-	cursorX = x;
-	cursorY = y;
-	mode = SELECT;
-}
+//----------------------------------------------------------------
+//								INIT
+//----------------------------------------------------------------
 void initRender(){
-	
-	//model_display_list = createDL();
-
 
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
@@ -273,11 +219,12 @@ void initRender(){
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	glEnable(GL_DEPTH_TEST);				//don't forget to enable depth test
+	glEnable(GL_DEPTH_TEST);		//don't forget to enable depth test
 	glEnable(GL_NORMALIZE);			//automatically rescale normal when transform the surface
 	glEnable(GL_DEPTH_TEST);
 
 }
+
 void glInit(int argc, char **argv){
 
 	glutInit(&argc, argv);
@@ -288,12 +235,10 @@ void glInit(int argc, char **argv){
 
 	glutKeyboardFunc(processNormalKeys);
 	glutReshapeFunc(reshape);
-	glutDisplayFunc(renderScene);
+	glutDisplayFunc(mainloop);
 	glutMouseFunc(mouse);
-	glutIdleFunc(renderScene);
-
+	glutIdleFunc(mainloop);
 	initRender();
-	init(&cam);
 
 	createGLUTMenus();
 	glutMainLoop();
@@ -301,6 +246,9 @@ void glInit(int argc, char **argv){
 
 
 void kinectInit(){
+
+	//debug to gesture log file "depthmap.txt"
+	enableDebugGesture();
 
 	// Initialize context object
 	XnStatus nval = context.Init();
@@ -330,12 +278,9 @@ void kinectInit(){
 }
 
 int main (int argc, char **argv){
-	
-	debugGesture();
 
 	kinectInit();
 	glInit(argc, argv); 
-
 
 	context.Shutdown();
 	return(0);

@@ -111,8034 +111,1724 @@ nNumberOfPoint = 0
 
 nNumberOfPoint = 0
 
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 8895
-top = 394,108 ---> 260,108
-bottom = 394,186 ---> 260,186
-estimate hand point = 3163, 10452, 0.302622
-H:297.0,108.0 	L:323.0,275.0 >> 167.000000
-H:260.0,154.0 	L:394.0,188.0 >> 0.000000
-
-nNumberOfPoint = 8227
-top = 394,112 ---> 263,112
-bottom = 394,186 ---> 263,186
-estimate hand point = 2977, 9694, 0.307097
-H:298.0,112.0 	L:325.0,262.0 >> 150.000000
-H:263.0,159.0 	L:394.0,186.0 >> 0.000000
-
-nNumberOfPoint = 8363
-top = 390,116 ---> 265,116
-bottom = 390,187 ---> 265,187
-estimate hand point = 2834, 8875, 0.319324
-H:304.0,116.0 	L:321.0,276.0 >> 160.000000
-H:265.0,161.0 	L:390.0,190.0 >> 0.000000
-
-nNumberOfPoint = 8121
-top = 390,121 ---> 267,121
-bottom = 390,177 ---> 267,177
-estimate hand point = 2130, 6888, 0.309233
-H:307.0,121.0 	L:322.0,276.0 >> 155.000000
-H:267.0,162.0 	L:390.0,195.0 >> 0.000000
-
-nNumberOfPoint = 7899
-top = 391,124 ---> 273,124
-bottom = 391,173 ---> 273,173
-estimate hand point = 1879, 5782, 0.324974
-H:308.0,124.0 	L:320.0,273.0 >> 149.000000
-H:273.0,165.0 	L:391.0,198.0 >> 0.000000
-
-nNumberOfPoint = 7510
-top = 390,125 ---> 278,125
-bottom = 390,174 ---> 278,174
-estimate hand point = 1728, 5488, 0.314869
-H:310.0,125.0 	L:327.0,272.0 >> 147.000000
-H:278.0,169.0 	L:390.0,198.0 >> 0.000000
-
-nNumberOfPoint = 7307
-top = 391,127 ---> 280,127
-bottom = 391,175 ---> 280,175
-estimate hand point = 1786, 5328, 0.335210
-H:314.0,127.0 	L:325.0,270.0 >> 143.000000
-H:280.0,167.0 	L:391.0,201.0 >> 0.000000
-
-nNumberOfPoint = 6979
-top = 390,126 ---> 282,126
-bottom = 390,175 ---> 282,175
-estimate hand point = 1738, 5292, 0.328420
-H:319.0,126.0 	L:329.0,269.0 >> 143.000000
-H:282.0,167.0 	L:390.0,199.0 >> 0.000000
-
-nNumberOfPoint = 6960
-top = 392,125 ---> 285,125
-bottom = 392,172 ---> 285,172
-estimate hand point = 1715, 5029, 0.341022
-H:321.0,125.0 	L:328.0,266.0 >> 141.000000
-H:285.0,167.0 	L:392.0,195.0 >> 0.000000
-
-nNumberOfPoint = 6783
-top = 392,124 ---> 288,124
-bottom = 392,170 ---> 288,170
-estimate hand point = 1654, 4784, 0.345736
-H:322.0,124.0 	L:330.0,264.0 >> 140.000000
-H:288.0,159.0 	L:392.0,194.0 >> 0.000000
-
-nNumberOfPoint = 6724
-top = 393,121 ---> 288,121
-bottom = 393,167 ---> 288,167
-estimate hand point = 1579, 4830, 0.326915
-H:324.0,121.0 	L:336.0,264.0 >> 143.000000
-H:288.0,158.0 	L:393.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6615
-top = 393,121 ---> 292,121
-bottom = 393,168 ---> 292,168
-estimate hand point = 1620, 4747, 0.341268
-H:325.0,121.0 	L:337.0,262.0 >> 141.000000
-H:292.0,161.0 	L:393.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6500
-top = 395,120 ---> 295,120
-bottom = 395,164 ---> 295,164
-estimate hand point = 1493, 4400, 0.339318
-H:328.0,120.0 	L:337.0,261.0 >> 141.000000
-H:295.0,155.0 	L:395.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6638
-top = 395,121 ---> 297,121
-bottom = 395,163 ---> 297,163
-estimate hand point = 1505, 4116, 0.365646
-H:330.0,121.0 	L:336.0,258.0 >> 137.000000
-H:297.0,154.0 	L:395.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6585
-top = 395,121 ---> 298,121
-bottom = 395,161 ---> 298,161
-estimate hand point = 1441, 3880, 0.371392
-H:333.0,121.0 	L:334.0,256.0 >> 135.000000
-H:298.0,154.0 	L:395.0,189.0 >> 0.000000
-
-nNumberOfPoint = 6397
-top = 395,121 ---> 300,121
-bottom = 395,160 ---> 300,160
-estimate hand point = 1296, 3705, 0.349798
-H:337.0,121.0 	L:333.0,253.0 >> 132.000000
-H:300.0,153.0 	L:395.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6187
-top = 395,122 ---> 301,122
-bottom = 395,163 ---> 301,163
-estimate hand point = 1361, 3854, 0.353140
-H:338.0,122.0 	L:336.0,251.0 >> 129.000000
-H:301.0,151.0 	L:395.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6122
-top = 395,122 ---> 297,122
-bottom = 395,165 ---> 297,165
-estimate hand point = 1495, 4214, 0.354770
-H:339.0,122.0 	L:335.0,248.0 >> 126.000000
-H:297.0,156.0 	L:395.0,195.0 >> 0.000000
-
-nNumberOfPoint = 5754
-top = 388,123 ---> 296,123
-bottom = 388,164 ---> 296,164
-estimate hand point = 1336, 3772, 0.354189
-H:338.0,123.0 	L:335.0,242.0 >> 119.000000
-H:296.0,157.0 	L:388.0,196.0 >> 0.000000
-
-nNumberOfPoint = 5026
-top = 386,136 ---> 297,136
-bottom = 386,167 ---> 297,167
-estimate hand point = 1112, 2759, 0.403045
-H:332.0,136.0 	L:341.0,239.0 >> 103.000000
-H:297.0,159.0 	L:386.0,208.0 >> 0.000000
-
-nNumberOfPoint = 3963
-top = 376,153 ---> 306,153
-bottom = 376,181 ---> 306,181
-estimate hand point = 945, 1960, 0.482143
-H:333.0,153.0 	L:340.0,239.0 >> 86.000000
-H:306.0,180.0 	L:376.0,203.0 >> 0.000000
-
-nNumberOfPoint = 2840
-top = 361,166 ---> 303,166
-bottom = 361,197 ---> 303,197
-estimate hand point = 1318, 1798, 0.733037
-H:330.0,166.0 	L:345.0,238.0 >> 72.000000
-H:303.0,188.0 	L:361.0,217.0 >> 0.000000
-
-nNumberOfPoint = 2187
-top = 359,169 ---> 306,169
-bottom = 359,200 ---> 306,200
-estimate hand point = 1160, 1643, 0.706026
-H:329.0,169.0 	L:343.0,236.0 >> 67.000000
-H:306.0,190.0 	L:359.0,215.0 >> 0.000000
-
-nNumberOfPoint = 2308
-top = 362,171 ---> 308,171
-bottom = 362,199 ---> 308,199
-estimate hand point = 1086, 1512, 0.718254
-H:330.0,171.0 	L:341.0,236.0 >> 65.000000
-H:308.0,191.0 	L:362.0,191.0 >> 0.000000
-
-nNumberOfPoint = 2103
-top = 360,173 ---> 308,173
-bottom = 360,200 ---> 308,200
-estimate hand point = 934, 1404, 0.665242
-H:331.0,173.0 	L:341.0,235.0 >> 62.000000
-H:308.0,197.0 	L:360.0,209.0 >> 0.000000
-
-nNumberOfPoint = 2259
-top = 361,175 ---> 308,175
-bottom = 361,202 ---> 308,202
-estimate hand point = 970, 1431, 0.677848
-H:334.0,175.0 	L:340.0,235.0 >> 60.000000
-H:308.0,194.0 	L:361.0,209.0 >> 0.000000
-
-nNumberOfPoint = 2224
-top = 361,175 ---> 308,175
-bottom = 361,203 ---> 308,203
-estimate hand point = 1018, 1484, 0.685984
-H:339.0,175.0 	L:342.0,235.0 >> 60.000000
-H:308.0,193.0 	L:361.0,209.0 >> 0.000000
-
-nNumberOfPoint = 2242
-top = 361,174 ---> 307,174
-bottom = 361,203 ---> 307,203
-estimate hand point = 1024, 1566, 0.653895
-H:342.0,174.0 	L:342.0,235.0 >> 61.000000
-H:307.0,194.0 	L:361.0,208.0 >> 0.000000
-
-nNumberOfPoint = 2261
-top = 362,175 ---> 308,175
-bottom = 362,203 ---> 308,203
-estimate hand point = 1017, 1512, 0.672619
-H:348.0,175.0 	L:342.0,235.0 >> 60.000000
-H:308.0,193.0 	L:362.0,209.0 >> 0.000000
-
-nNumberOfPoint = 2278
-top = 361,177 ---> 308,177
-bottom = 361,204 ---> 308,204
-estimate hand point = 1015, 1431, 0.709294
-H:346.0,177.0 	L:342.0,235.0 >> 58.000000
-H:308.0,192.0 	L:361.0,208.0 >> 0.000000
-
-nNumberOfPoint = 2331
-top = 362,176 ---> 308,176
-bottom = 362,206 ---> 308,206
-estimate hand point = 1075, 1620, 0.663580
-H:345.0,176.0 	L:339.0,236.0 >> 60.000000
-H:308.0,194.0 	L:362.0,208.0 >> 0.000000
-
-nNumberOfPoint = 2284
-top = 364,178 ---> 305,178
-bottom = 364,207 ---> 305,207
-estimate hand point = 1062, 1711, 0.620690
-H:343.0,178.0 	L:341.0,238.0 >> 60.000000
-H:305.0,195.0 	L:364.0,212.0 >> 0.000000
-
-nNumberOfPoint = 2447
-top = 362,180 ---> 308,180
-bottom = 362,209 ---> 308,209
-estimate hand point = 1171, 1566, 0.747765
-H:345.0,180.0 	L:342.0,241.0 >> 61.000000
-H:308.0,194.0 	L:362.0,190.0 >> 0.000000
-
-nNumberOfPoint = 2517
-top = 362,183 ---> 307,183
-bottom = 362,213 ---> 307,213
-estimate hand point = 1240, 1650, 0.751515
-H:345.0,183.0 	L:332.0,242.0 >> 59.000000
-H:307.0,203.0 	L:362.0,202.0 >> 0.000000
-
-nNumberOfPoint = 2540
-top = 363,188 ---> 305,188
-bottom = 363,218 ---> 305,218
-estimate hand point = 1240, 1740, 0.712644
-H:342.0,188.0 	L:338.0,249.0 >> 61.000000
-H:305.0,208.0 	L:363.0,217.0 >> 0.000000
-
-nNumberOfPoint = 2562
-top = 362,195 ---> 303,195
-bottom = 362,226 ---> 303,226
-estimate hand point = 1264, 1829, 0.691088
-H:340.0,195.0 	L:319.0,254.0 >> 59.000000
-H:303.0,213.0 	L:362.0,228.0 >> 0.000000
-
-nNumberOfPoint = 2583
-top = 360,198 ---> 300,198
-bottom = 360,232 ---> 300,232
-estimate hand point = 1327, 2040, 0.650490
-H:332.0,198.0 	L:321.0,264.0 >> 66.000000
-H:300.0,228.0 	L:360.0,232.0 >> 0.000000
-
-nNumberOfPoint = 2713
-top = 360,201 ---> 302,201
-bottom = 360,237 ---> 302,237
-estimate hand point = 1428, 2088, 0.683908
-H:344.0,201.0 	L:339.0,268.0 >> 67.000000
-H:302.0,227.0 	L:360.0,249.0 >> 0.000000
-
-nNumberOfPoint = 2727
-top = 361,206 ---> 302,206
-bottom = 361,243 ---> 302,243
-estimate hand point = 1430, 2183, 0.655062
-H:345.0,206.0 	L:351.0,274.0 >> 68.000000
-H:302.0,229.0 	L:361.0,252.0 >> 0.000000
-
-nNumberOfPoint = 2724
-top = 359,210 ---> 299,210
-bottom = 359,248 ---> 299,248
-estimate hand point = 1399, 2280, 0.613596
-H:346.0,210.0 	L:340.0,278.0 >> 68.000000
-H:299.0,241.0 	L:359.0,256.0 >> 0.000000
-
-nNumberOfPoint = 2612
-top = 362,217 ---> 302,217
-bottom = 362,253 ---> 302,253
-estimate hand point = 1372, 2160, 0.635185
-H:345.0,217.0 	L:333.0,281.0 >> 64.000000
-H:302.0,241.0 	L:362.0,263.0 >> 0.000000
-
-nNumberOfPoint = 2400
-top = 361,223 ---> 301,223
-bottom = 361,258 ---> 301,258
-estimate hand point = 1225, 2100, 0.583333
-H:344.0,223.0 	L:340.0,287.0 >> 64.000000
-H:301.0,248.0 	L:361.0,265.0 >> 0.000000
-
-nNumberOfPoint = 2459
-top = 362,227 ---> 302,227
-bottom = 362,260 ---> 302,260
-estimate hand point = 1231, 1980, 0.621717
-H:341.0,227.0 	L:344.0,291.0 >> 64.000000
-H:302.0,253.0 	L:362.0,270.0 >> 0.000000
-
-nNumberOfPoint = 2438
-top = 362,230 ---> 304,230
-bottom = 362,263 ---> 304,263
-estimate hand point = 1283, 1914, 0.670324
-H:342.0,230.0 	L:346.0,293.0 >> 63.000000
-H:304.0,251.0 	L:362.0,272.0 >> 0.000000
-
-nNumberOfPoint = 2396
-top = 364,232 ---> 304,232
-bottom = 364,266 ---> 304,266
-estimate hand point = 1245, 2040, 0.610294
-H:343.0,232.0 	L:340.0,295.0 >> 63.000000
-H:304.0,256.0 	L:364.0,274.0 >> 0.000000
-
-nNumberOfPoint = 2464
-top = 365,234 ---> 301,234
-bottom = 365,267 ---> 301,267
-estimate hand point = 1348, 2112, 0.638258
-H:335.0,234.0 	L:345.0,297.0 >> 63.000000
-H:301.0,257.0 	L:365.0,275.0 >> 0.000000
-
-nNumberOfPoint = 2457
-top = 365,236 ---> 302,236
-bottom = 365,267 ---> 302,267
-estimate hand point = 1271, 1953, 0.650794
-H:331.0,236.0 	L:354.0,298.0 >> 62.000000
-H:302.0,257.0 	L:365.0,277.0 >> 0.000000
-
-nNumberOfPoint = 2380
-top = 366,236 ---> 304,236
-bottom = 366,268 ---> 304,268
-estimate hand point = 1262, 1984, 0.636089
-H:333.0,236.0 	L:345.0,297.0 >> 61.000000
-H:304.0,263.0 	L:366.0,277.0 >> 0.000000
-
-nNumberOfPoint = 2409
-top = 366,236 ---> 304,236
-bottom = 366,269 ---> 304,269
-estimate hand point = 1330, 2046, 0.650049
-H:346.0,236.0 	L:351.0,299.0 >> 63.000000
-H:304.0,263.0 	L:366.0,277.0 >> 0.000000
-
-nNumberOfPoint = 2415
-top = 366,237 ---> 305,237
-bottom = 366,269 ---> 305,269
-estimate hand point = 1305, 1952, 0.668545
-H:334.0,237.0 	L:351.0,300.0 >> 63.000000
-H:305.0,259.0 	L:366.0,277.0 >> 0.000000
-
-nNumberOfPoint = 2436
-top = 368,235 ---> 305,235
-bottom = 368,269 ---> 305,269
-estimate hand point = 1285, 2142, 0.599907
-H:346.0,235.0 	L:350.0,299.0 >> 64.000000
-H:305.0,263.0 	L:368.0,278.0 >> 0.000000
-
-nNumberOfPoint = 2107
-top = 367,236 ---> 309,236
-bottom = 367,270 ---> 309,270
-estimate hand point = 1062, 1972, 0.538540
-H:334.0,236.0 	L:349.0,298.0 >> 62.000000
-H:309.0,271.0 	L:367.0,276.0 >> 0.000000
-
-nNumberOfPoint = 2089
-top = 369,240 ---> 308,240
-bottom = 369,270 ---> 308,270
-estimate hand point = 1072, 1830, 0.585792
-H:346.0,240.0 	L:355.0,297.0 >> 57.000000
-H:308.0,270.0 	L:369.0,275.0 >> 0.000000
-
-nNumberOfPoint = 2337
-top = 372,232 ---> 309,232
-bottom = 372,266 ---> 309,266
-estimate hand point = 1143, 2142, 0.533613
-H:346.0,232.0 	L:349.0,296.0 >> 64.000000
-H:309.0,264.0 	L:372.0,275.0 >> 0.000000
-
-nNumberOfPoint = 2758
-top = 375,224 ---> 309,224
-bottom = 375,261 ---> 309,261
-estimate hand point = 1306, 2442, 0.534808
-H:344.0,224.0 	L:354.0,295.0 >> 71.000000
-H:309.0,256.0 	L:375.0,271.0 >> 0.000000
-
-nNumberOfPoint = 2999
-top = 376,217 ---> 306,217
-bottom = 376,258 ---> 306,258
-estimate hand point = 1461, 2870, 0.509059
-H:346.0,217.0 	L:359.0,294.0 >> 77.000000
-H:306.0,250.0 	L:376.0,271.0 >> 0.000000
-
-nNumberOfPoint = 3431
-top = 380,215 ---> 305,215
-bottom = 380,255 ---> 305,255
-estimate hand point = 1606, 3000, 0.535333
-H:346.0,215.0 	L:355.0,294.0 >> 79.000000
-H:305.0,244.0 	L:380.0,261.0 >> 0.000000
-
-nNumberOfPoint = 3627
-top = 381,214 ---> 305,214
-bottom = 381,253 ---> 305,253
-estimate hand point = 1649, 2964, 0.556343
-H:349.0,214.0 	L:359.0,294.0 >> 80.000000
-H:305.0,241.0 	L:381.0,256.0 >> 0.000000
-
-nNumberOfPoint = 3795
-top = 383,216 ---> 312,216
-bottom = 383,253 ---> 312,253
-estimate hand point = 1500, 2627, 0.570994
-H:337.0,216.0 	L:362.0,296.0 >> 80.000000
-H:312.0,250.0 	L:383.0,257.0 >> 0.000000
-
-nNumberOfPoint = 3654
-top = 384,221 ---> 310,221
-bottom = 384,258 ---> 310,258
-estimate hand point = 1446, 2738, 0.528123
-H:361.0,221.0 	L:347.0,299.0 >> 78.000000
-H:310.0,245.0 	L:384.0,260.0 >> 0.000000
-
-nNumberOfPoint = 4025
-top = 387,216 ---> 307,216
-bottom = 387,260 ---> 307,260
-estimate hand point = 1820, 3520, 0.517045
-H:338.0,216.0 	L:356.0,300.0 >> 84.000000
-H:307.0,239.0 	L:387.0,261.0 >> 0.000000
-
-nNumberOfPoint = 4461
-top = 388,214 ---> 300,214
-bottom = 388,258 ---> 300,258
-estimate hand point = 2061, 3872, 0.532283
-H:336.0,214.0 	L:336.0,300.0 >> 86.000000
-H:300.0,226.0 	L:388.0,263.0 >> 0.000000
-
-nNumberOfPoint = 5004
-top = 392,202 ---> 299,202
-bottom = 392,252 ---> 299,252
-estimate hand point = 2144, 4650, 0.461075
-H:336.0,202.0 	L:355.0,300.0 >> 98.000000
-H:299.0,222.0 	L:392.0,256.0 >> 0.000000
-
-nNumberOfPoint = 5306
-top = 393,199 ---> 298,199
-bottom = 393,249 ---> 298,249
-estimate hand point = 2295, 4750, 0.483158
-H:316.0,199.0 	L:352.0,300.0 >> 101.000000
-H:298.0,218.0 	L:393.0,251.0 >> 0.000000
-
-nNumberOfPoint = 5705
-top = 396,183 ---> 297,183
-bottom = 396,246 ---> 297,246
-estimate hand point = 2531, 6237, 0.405804
-H:333.0,183.0 	L:347.0,299.0 >> 116.000000
-H:297.0,219.0 	L:396.0,249.0 >> 0.000000
-
-nNumberOfPoint = 6033
-top = 398,179 ---> 299,179
-bottom = 398,243 ---> 299,243
-estimate hand point = 2716, 6336, 0.428662
-H:332.0,179.0 	L:349.0,299.0 >> 120.000000
-H:299.0,219.0 	L:398.0,248.0 >> 0.000000
-
-nNumberOfPoint = 6112
-top = 398,176 ---> 300,176
-bottom = 398,242 ---> 300,242
-estimate hand point = 2787, 6468, 0.430891
-H:332.0,176.0 	L:344.0,297.0 >> 121.000000
-H:300.0,209.0 	L:398.0,246.0 >> 0.000000
-
-nNumberOfPoint = 6234
-top = 401,173 ---> 299,173
-bottom = 401,241 ---> 299,241
-estimate hand point = 2911, 6936, 0.419694
-H:331.0,173.0 	L:345.0,296.0 >> 123.000000
-H:299.0,207.0 	L:401.0,241.0 >> 0.000000
-
-nNumberOfPoint = 6390
-top = 399,170 ---> 297,170
-bottom = 399,238 ---> 297,238
-estimate hand point = 2999, 6936, 0.432382
-H:331.0,170.0 	L:347.0,295.0 >> 125.000000
-H:297.0,210.0 	L:399.0,240.0 >> 0.000000
-
-nNumberOfPoint = 6567
-top = 400,169 ---> 298,169
-bottom = 400,233 ---> 298,233
-estimate hand point = 2902, 6528, 0.444547
-H:331.0,169.0 	L:348.0,292.0 >> 123.000000
-H:298.0,203.0 	L:400.0,236.0 >> 0.000000
-
-nNumberOfPoint = 6597
-top = 401,165 ---> 296,165
-bottom = 401,230 ---> 296,230
-estimate hand point = 2873, 6825, 0.420952
-H:332.0,165.0 	L:341.0,290.0 >> 125.000000
-H:296.0,204.0 	L:401.0,236.0 >> 0.000000
-
-nNumberOfPoint = 6548
-top = 400,164 ---> 297,164
-bottom = 400,228 ---> 297,228
-estimate hand point = 2797, 6592, 0.424302
-H:332.0,164.0 	L:342.0,289.0 >> 125.000000
-H:297.0,198.0 	L:400.0,234.0 >> 0.000000
-
-nNumberOfPoint = 6537
-top = 400,161 ---> 296,161
-bottom = 400,227 ---> 296,227
-estimate hand point = 2820, 6864, 0.410839
-H:333.0,161.0 	L:342.0,288.0 >> 127.000000
-H:296.0,197.0 	L:400.0,234.0 >> 0.000000
-
-nNumberOfPoint = 6598
-top = 400,159 ---> 297,159
-bottom = 400,226 ---> 297,226
-estimate hand point = 2920, 6901, 0.423127
-H:332.0,159.0 	L:345.0,286.0 >> 127.000000
-H:297.0,194.0 	L:400.0,228.0 >> 0.000000
-
-nNumberOfPoint = 6662
-top = 400,156 ---> 298,156
-bottom = 400,225 ---> 298,225
-estimate hand point = 3043, 7038, 0.432367
-H:336.0,156.0 	L:340.0,284.0 >> 128.000000
-H:298.0,189.0 	L:400.0,224.0 >> 0.000000
-
-nNumberOfPoint = 6629
-top = 402,155 ---> 298,155
-bottom = 402,224 ---> 298,224
-estimate hand point = 3022, 7176, 0.421126
-H:332.0,155.0 	L:346.0,283.0 >> 128.000000
-H:298.0,191.0 	L:402.0,226.0 >> 0.000000
-
-nNumberOfPoint = 6678
-top = 402,154 ---> 300,154
-bottom = 402,222 ---> 300,222
-estimate hand point = 3028, 6936, 0.436563
-H:334.0,154.0 	L:346.0,282.0 >> 128.000000
-H:300.0,190.0 	L:402.0,223.0 >> 0.000000
-
-nNumberOfPoint = 6614
-top = 404,152 ---> 302,152
-bottom = 404,220 ---> 302,220
-estimate hand point = 2976, 6936, 0.429066
-H:337.0,152.0 	L:347.0,280.0 >> 128.000000
-H:302.0,187.0 	L:404.0,221.0 >> 0.000000
-
-nNumberOfPoint = 6590
-top = 410,150 ---> 303,150
-bottom = 410,219 ---> 303,219
-estimate hand point = 2982, 7383, 0.403901
-H:340.0,150.0 	L:345.0,279.0 >> 129.000000
-H:303.0,184.0 	L:410.0,220.0 >> 0.000000
-
-nNumberOfPoint = 6656
-top = 407,147 ---> 304,147
-bottom = 407,217 ---> 304,217
-estimate hand point = 3018, 7210, 0.418585
-H:343.0,147.0 	L:345.0,278.0 >> 131.000000
-H:304.0,184.0 	L:407.0,216.0 >> 0.000000
-
-nNumberOfPoint = 6897
-top = 409,146 ---> 307,146
-bottom = 409,215 ---> 307,215
-estimate hand point = 3186, 7038, 0.452685
-H:342.0,146.0 	L:352.0,276.0 >> 130.000000
-H:307.0,181.0 	L:409.0,215.0 >> 0.000000
-
-nNumberOfPoint = 6899
-top = 417,141 ---> 311,141
-bottom = 417,211 ---> 311,211
-estimate hand point = 3180, 7420, 0.428571
-H:346.0,141.0 	L:351.0,273.0 >> 132.000000
-H:311.0,172.0 	L:417.0,212.0 >> 0.000000
-
-nNumberOfPoint = 6927
-top = 417,140 ---> 313,140
-bottom = 417,200 ---> 313,200
-estimate hand point = 2654, 6240, 0.425321
-H:349.0,140.0 	L:356.0,271.0 >> 131.000000
-H:313.0,173.0 	L:417.0,210.0 >> 0.000000
-
-nNumberOfPoint = 6921
-top = 419,139 ---> 316,139
-bottom = 419,194 ---> 316,194
-estimate hand point = 2372, 5665, 0.418711
-H:351.0,139.0 	L:356.0,269.0 >> 130.000000
-H:316.0,172.0 	L:419.0,208.0 >> 0.000000
-
-nNumberOfPoint = 6908
-top = 418,135 ---> 317,135
-bottom = 418,190 ---> 317,190
-estimate hand point = 2193, 5555, 0.394779
-H:353.0,135.0 	L:355.0,269.0 >> 134.000000
-H:317.0,168.0 	L:418.0,206.0 >> 0.000000
-
-nNumberOfPoint = 6914
-top = 417,134 ---> 317,134
-bottom = 417,188 ---> 317,188
-estimate hand point = 2155, 5400, 0.399074
-H:354.0,134.0 	L:355.0,267.0 >> 133.000000
-H:317.0,169.0 	L:417.0,206.0 >> 0.000000
-
-nNumberOfPoint = 6880
-top = 419,134 ---> 317,134
-bottom = 419,188 ---> 317,188
-estimate hand point = 2156, 5508, 0.391431
-H:353.0,134.0 	L:363.0,267.0 >> 133.000000
-H:317.0,172.0 	L:419.0,204.0 >> 0.000000
-
-nNumberOfPoint = 6925
-top = 418,133 ---> 317,133
-bottom = 418,187 ---> 317,187
-estimate hand point = 2132, 5454, 0.390906
-H:354.0,133.0 	L:356.0,267.0 >> 134.000000
-H:317.0,172.0 	L:418.0,202.0 >> 0.000000
-
-nNumberOfPoint = 6885
-top = 416,134 ---> 317,134
-bottom = 416,187 ---> 317,187
-estimate hand point = 2134, 5247, 0.406709
-H:353.0,134.0 	L:361.0,267.0 >> 133.000000
-H:317.0,167.0 	L:416.0,203.0 >> 0.000000
-
-nNumberOfPoint = 6927
-top = 416,134 ---> 316,134
-bottom = 416,187 ---> 316,187
-estimate hand point = 2189, 5300, 0.413019
-H:350.0,134.0 	L:362.0,267.0 >> 133.000000
-H:316.0,168.0 	L:416.0,202.0 >> 0.000000
-
-nNumberOfPoint = 6826
-top = 415,135 ---> 315,135
-bottom = 415,188 ---> 315,188
-estimate hand point = 2150, 5300, 0.405660
-H:350.0,135.0 	L:354.0,267.0 >> 132.000000
-H:315.0,167.0 	L:415.0,203.0 >> 0.000000
-
-nNumberOfPoint = 6765
-top = 414,133 ---> 314,133
-bottom = 414,187 ---> 314,187
-estimate hand point = 2156, 5400, 0.399259
-H:348.0,133.0 	L:352.0,266.0 >> 133.000000
-H:314.0,167.0 	L:414.0,202.0 >> 0.000000
-
-nNumberOfPoint = 6687
-top = 411,133 ---> 314,133
-bottom = 411,187 ---> 314,187
-estimate hand point = 2106, 5238, 0.402062
-H:348.0,133.0 	L:348.0,266.0 >> 133.000000
-H:314.0,167.0 	L:411.0,199.0 >> 0.000000
-
-nNumberOfPoint = 6769
-top = 410,132 ---> 313,132
-bottom = 410,186 ---> 313,186
-estimate hand point = 2159, 5238, 0.412180
-H:349.0,132.0 	L:347.0,265.0 >> 133.000000
-H:313.0,166.0 	L:410.0,199.0 >> 0.000000
-
-nNumberOfPoint = 6795
-top = 411,131 ---> 312,131
-bottom = 411,185 ---> 312,185
-estimate hand point = 2107, 5346, 0.394126
-H:347.0,131.0 	L:354.0,265.0 >> 134.000000
-H:312.0,164.0 	L:411.0,201.0 >> 0.000000
-
-nNumberOfPoint = 6786
-top = 410,131 ---> 313,131
-bottom = 410,183 ---> 313,183
-estimate hand point = 2043, 5044, 0.405036
-H:346.0,131.0 	L:348.0,264.0 >> 133.000000
-H:313.0,163.0 	L:410.0,198.0 >> 0.000000
-
-nNumberOfPoint = 6872
-top = 409,130 ---> 311,130
-bottom = 409,182 ---> 311,182
-estimate hand point = 2077, 5096, 0.407575
-H:348.0,130.0 	L:356.0,264.0 >> 134.000000
-H:311.0,161.0 	L:409.0,198.0 >> 0.000000
-
-nNumberOfPoint = 6844
-top = 410,129 ---> 312,129
-bottom = 410,182 ---> 312,182
-estimate hand point = 2102, 5194, 0.404698
-H:347.0,129.0 	L:354.0,263.0 >> 134.000000
-H:312.0,161.0 	L:410.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6799
-top = 408,128 ---> 311,128
-bottom = 408,182 ---> 311,182
-estimate hand point = 2143, 5238, 0.409126
-H:347.0,128.0 	L:350.0,263.0 >> 135.000000
-H:311.0,162.0 	L:408.0,195.0 >> 0.000000
-
-nNumberOfPoint = 6782
-top = 409,128 ---> 311,128
-bottom = 409,182 ---> 311,182
-estimate hand point = 2148, 5292, 0.405896
-H:345.0,128.0 	L:355.0,263.0 >> 135.000000
-H:311.0,163.0 	L:409.0,195.0 >> 0.000000
-
-nNumberOfPoint = 6793
-top = 408,127 ---> 310,127
-bottom = 408,182 ---> 310,182
-estimate hand point = 2149, 5390, 0.398701
-H:348.0,127.0 	L:350.0,264.0 >> 137.000000
-H:310.0,164.0 	L:408.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6849
-top = 408,128 ---> 313,128
-bottom = 408,182 ---> 313,182
-estimate hand point = 2131, 5130, 0.415400
-H:347.0,128.0 	L:355.0,265.0 >> 137.000000
-H:313.0,161.0 	L:408.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6821
-top = 408,129 ---> 311,129
-bottom = 408,181 ---> 311,181
-estimate hand point = 2059, 5044, 0.408208
-H:346.0,129.0 	L:350.0,265.0 >> 136.000000
-H:311.0,165.0 	L:408.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6841
-top = 407,130 ---> 312,130
-bottom = 407,181 ---> 312,181
-estimate hand point = 2012, 4845, 0.415273
-H:346.0,130.0 	L:355.0,266.0 >> 136.000000
-H:312.0,160.0 	L:407.0,195.0 >> 0.000000
-
-nNumberOfPoint = 6906
-top = 407,131 ---> 311,131
-bottom = 407,182 ---> 311,182
-estimate hand point = 2065, 4896, 0.421773
-H:345.0,131.0 	L:354.0,267.0 >> 136.000000
-H:311.0,162.0 	L:407.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6901
-top = 407,131 ---> 310,131
-bottom = 407,182 ---> 310,182
-estimate hand point = 2030, 4947, 0.410350
-H:344.0,131.0 	L:351.0,266.0 >> 135.000000
-H:310.0,163.0 	L:407.0,197.0 >> 0.000000
-
-nNumberOfPoint = 6788
-top = 406,130 ---> 309,130
-bottom = 406,181 ---> 309,181
-estimate hand point = 1957, 4947, 0.395593
-H:345.0,130.0 	L:353.0,266.0 >> 136.000000
-H:309.0,163.0 	L:406.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6831
-top = 406,130 ---> 310,130
-bottom = 406,178 ---> 310,178
-estimate hand point = 1847, 4608, 0.400825
-H:343.0,130.0 	L:348.0,265.0 >> 135.000000
-H:310.0,164.0 	L:406.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6876
-top = 405,128 ---> 310,128
-bottom = 405,176 ---> 310,176
-estimate hand point = 1773, 4560, 0.388816
-H:344.0,128.0 	L:355.0,265.0 >> 137.000000
-H:310.0,164.0 	L:405.0,195.0 >> 0.000000
-
-nNumberOfPoint = 6807
-top = 405,128 ---> 310,128
-bottom = 405,175 ---> 310,175
-estimate hand point = 1737, 4465, 0.389026
-H:343.0,128.0 	L:349.0,265.0 >> 137.000000
-H:310.0,163.0 	L:405.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6816
-top = 405,127 ---> 311,127
-bottom = 405,176 ---> 311,176
-estimate hand point = 1843, 4606, 0.400130
-H:345.0,127.0 	L:348.0,263.0 >> 136.000000
-H:311.0,161.0 	L:405.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6851
-top = 406,127 ---> 310,127
-bottom = 406,175 ---> 310,175
-estimate hand point = 1864, 4608, 0.404514
-H:344.0,127.0 	L:354.0,263.0 >> 136.000000
-H:310.0,160.0 	L:406.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6902
-top = 406,126 ---> 311,126
-bottom = 406,174 ---> 311,174
-estimate hand point = 1804, 4560, 0.395614
-H:344.0,126.0 	L:350.0,263.0 >> 137.000000
-H:311.0,158.0 	L:406.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6885
-top = 407,125 ---> 312,125
-bottom = 407,174 ---> 312,174
-estimate hand point = 1864, 4655, 0.400430
-H:347.0,125.0 	L:351.0,263.0 >> 138.000000
-H:312.0,161.0 	L:407.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6888
-top = 407,125 ---> 312,125
-bottom = 407,174 ---> 312,174
-estimate hand point = 1861, 4655, 0.399785
-H:348.0,125.0 	L:356.0,262.0 >> 137.000000
-H:312.0,162.0 	L:407.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6930
-top = 407,125 ---> 311,125
-bottom = 407,174 ---> 311,174
-estimate hand point = 1871, 4704, 0.397747
-H:347.0,125.0 	L:357.0,263.0 >> 138.000000
-H:311.0,162.0 	L:407.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6761
-top = 403,128 ---> 309,128
-bottom = 403,185 ---> 309,185
-estimate hand point = 2199, 5358, 0.410414
-H:340.0,128.0 	L:347.0,265.0 >> 137.000000
-H:309.0,160.0 	L:403.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6787
-top = 402,128 ---> 309,128
-bottom = 402,184 ---> 309,184
-estimate hand point = 2170, 5208, 0.416667
-H:340.0,128.0 	L:348.0,264.0 >> 136.000000
-H:309.0,158.0 	L:402.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6737
-top = 402,128 ---> 308,128
-bottom = 402,182 ---> 308,182
-estimate hand point = 2065, 5076, 0.406816
-H:340.0,128.0 	L:350.0,264.0 >> 136.000000
-H:308.0,159.0 	L:402.0,190.0 >> 0.000000
-
-nNumberOfPoint = 6740
-top = 404,128 ---> 309,128
-bottom = 404,182 ---> 309,182
-estimate hand point = 2025, 5130, 0.394737
-H:340.0,128.0 	L:351.0,265.0 >> 137.000000
-H:309.0,158.0 	L:404.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6762
-top = 404,128 ---> 309,128
-bottom = 404,182 ---> 309,182
-estimate hand point = 2061, 5130, 0.401754
-H:341.0,128.0 	L:350.0,264.0 >> 136.000000
-H:309.0,157.0 	L:404.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6767
-top = 403,128 ---> 309,128
-bottom = 403,183 ---> 309,183
-estimate hand point = 2101, 5170, 0.406383
-H:341.0,128.0 	L:348.0,265.0 >> 137.000000
-H:309.0,159.0 	L:403.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6757
-top = 404,128 ---> 309,128
-bottom = 404,182 ---> 309,182
-estimate hand point = 2034, 5130, 0.396491
-H:342.0,128.0 	L:348.0,265.0 >> 137.000000
-H:309.0,158.0 	L:404.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6798
-top = 403,128 ---> 309,128
-bottom = 403,183 ---> 309,183
-estimate hand point = 2095, 5170, 0.405222
-H:342.0,128.0 	L:347.0,264.0 >> 136.000000
-H:309.0,159.0 	L:403.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6785
-top = 404,128 ---> 308,128
-bottom = 404,182 ---> 308,182
-estimate hand point = 2084, 5184, 0.402006
-H:341.0,128.0 	L:348.0,264.0 >> 136.000000
-H:308.0,158.0 	L:404.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6755
-top = 405,128 ---> 309,128
-bottom = 405,182 ---> 309,182
-estimate hand point = 2075, 5184, 0.400270
-H:342.0,128.0 	L:348.0,265.0 >> 137.000000
-H:309.0,158.0 	L:405.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6814
-top = 405,128 ---> 309,128
-bottom = 405,182 ---> 309,182
-estimate hand point = 2101, 5184, 0.405285
-H:342.0,128.0 	L:357.0,265.0 >> 137.000000
-H:309.0,157.0 	L:405.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6796
-top = 405,127 ---> 309,127
-bottom = 405,182 ---> 309,182
-estimate hand point = 2122, 5280, 0.401894
-H:343.0,127.0 	L:350.0,264.0 >> 137.000000
-H:309.0,157.0 	L:405.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6811
-top = 405,127 ---> 309,127
-bottom = 405,182 ---> 309,182
-estimate hand point = 2142, 5280, 0.405682
-H:342.0,127.0 	L:350.0,264.0 >> 137.000000
-H:309.0,158.0 	L:405.0,190.0 >> 0.000000
-
-nNumberOfPoint = 6858
-top = 406,127 ---> 309,127
-bottom = 406,181 ---> 309,181
-estimate hand point = 2112, 5238, 0.403207
-H:342.0,127.0 	L:352.0,264.0 >> 137.000000
-H:309.0,158.0 	L:406.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6725
-top = 405,129 ---> 311,129
-bottom = 405,183 ---> 311,183
-estimate hand point = 2074, 5076, 0.408589
-H:343.0,129.0 	L:352.0,265.0 >> 136.000000
-H:311.0,161.0 	L:405.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6706
-top = 405,130 ---> 311,130
-bottom = 405,182 ---> 311,182
-estimate hand point = 2008, 4888, 0.410802
-H:340.0,130.0 	L:352.0,265.0 >> 135.000000
-H:311.0,160.0 	L:405.0,194.0 >> 0.000000
-
-nNumberOfPoint = 6693
-top = 404,130 ---> 310,130
-bottom = 404,182 ---> 310,182
-estimate hand point = 1986, 4888, 0.406301
-H:340.0,130.0 	L:355.0,265.0 >> 135.000000
-H:310.0,160.0 	L:404.0,191.0 >> 0.000000
-
-nNumberOfPoint = 6745
-top = 404,130 ---> 310,130
-bottom = 404,183 ---> 310,183
-estimate hand point = 2053, 4982, 0.412084
-H:341.0,130.0 	L:357.0,266.0 >> 136.000000
-H:310.0,163.0 	L:404.0,194.0 >> 0.000000
-
-nNumberOfPoint = 6753
-top = 405,130 ---> 309,130
-bottom = 405,182 ---> 309,182
-estimate hand point = 2001, 4992, 0.400841
-H:340.0,130.0 	L:357.0,266.0 >> 136.000000
-H:309.0,164.0 	L:405.0,194.0 >> 0.000000
-
-nNumberOfPoint = 6787
-top = 405,130 ---> 309,130
-bottom = 405,182 ---> 309,182
-estimate hand point = 2011, 4992, 0.402845
-H:342.0,130.0 	L:355.0,266.0 >> 136.000000
-H:309.0,164.0 	L:405.0,194.0 >> 0.000000
-
-nNumberOfPoint = 6737
-top = 405,130 ---> 310,130
-bottom = 405,182 ---> 310,182
-estimate hand point = 1970, 4940, 0.398785
-H:341.0,130.0 	L:353.0,266.0 >> 136.000000
-H:310.0,163.0 	L:405.0,194.0 >> 0.000000
-
-nNumberOfPoint = 6839
-top = 405,130 ---> 309,130
-bottom = 405,182 ---> 309,182
-estimate hand point = 2043, 4992, 0.409255
-H:341.0,130.0 	L:350.0,266.0 >> 136.000000
-H:309.0,164.0 	L:405.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6834
-top = 406,130 ---> 310,130
-bottom = 406,182 ---> 310,182
-estimate hand point = 2024, 4992, 0.405449
-H:341.0,130.0 	L:355.0,267.0 >> 137.000000
-H:310.0,162.0 	L:406.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6836
-top = 406,130 ---> 310,130
-bottom = 406,182 ---> 310,182
-estimate hand point = 2043, 4992, 0.409255
-H:342.0,130.0 	L:355.0,266.0 >> 136.000000
-H:310.0,162.0 	L:406.0,193.0 >> 0.000000
-
-nNumberOfPoint = 6912
-top = 406,130 ---> 310,130
-bottom = 406,183 ---> 310,183
-estimate hand point = 2120, 5088, 0.416667
-H:342.0,130.0 	L:350.0,266.0 >> 136.000000
-H:310.0,160.0 	L:406.0,192.0 >> 0.000000
-
-nNumberOfPoint = 6895
-top = 407,130 ---> 309,130
-bottom = 407,183 ---> 309,183
-estimate hand point = 2114, 5194, 0.407008
-H:343.0,130.0 	L:350.0,266.0 >> 136.000000
-H:309.0,162.0 	L:407.0,196.0 >> 0.000000
-
-nNumberOfPoint = 6924
-top = 407,130 ---> 310,130
-bottom = 407,183 ---> 310,183
-estimate hand point = 2121, 5141, 0.412566
-H:344.0,130.0 	L:355.0,267.0 >> 137.000000
-H:310.0,164.0 	L:407.0,195.0 >> 0.000000
-
-nNumberOfPoint = 6937
-top = 408,130 ---> 309,130
-bottom = 408,183 ---> 309,183
-estimate hand point = 2132, 5247, 0.406327
-H:344.0,130.0 	L:354.0,266.0 >> 136.000000
-H:309.0,165.0 	L:408.0,196.0 >> 0.000000
-
-nNumberOfPoint = 7013
-top = 408,131 ---> 309,131
-bottom = 408,183 ---> 309,183
-estimate hand point = 2130, 5148, 0.413753
-H:345.0,131.0 	L:354.0,268.0 >> 137.000000
-H:309.0,164.0 	L:408.0,195.0 >> 0.000000
-
-nNumberOfPoint = 7056
-top = 409,131 ---> 308,131
-bottom = 409,184 ---> 308,184
-estimate hand point = 2196, 5353, 0.410237
-H:345.0,131.0 	L:355.0,269.0 >> 138.000000
-H:308.0,166.0 	L:409.0,196.0 >> 0.000000
-
-nNumberOfPoint = 7091
-top = 410,131 ---> 305,131
-bottom = 410,186 ---> 305,186
-estimate hand point = 2243, 5775, 0.388398
-H:344.0,131.0 	L:355.0,270.0 >> 139.000000
-H:305.0,166.0 	L:410.0,197.0 >> 0.000000
+nNumberOfPoint = 7818
+top = 378,165 ---> 266,165
+bottom = 378,235 ---> 266,235
+estimate hand point = 2791, 7840, 0.355995
+H:303.0,165.0 	L:312.0,327.0 >> 162.000000
+H:266.0,206.0 	L:378.0,240.0 >> 0.000000
+
+nNumberOfPoint = 7260
+top = 377,168 ---> 268,168
+bottom = 377,235 ---> 268,235
+estimate hand point = 2719, 7303, 0.372313
+H:305.0,168.0 	L:316.0,315.0 >> 147.000000
+H:268.0,204.0 	L:377.0,244.0 >> 0.000000
+
+nNumberOfPoint = 7442
+top = 377,167 ---> 271,167
+bottom = 377,223 ---> 271,223
+estimate hand point = 1962, 5936, 0.330526
+H:307.0,167.0 	L:314.0,323.0 >> 156.000000
+H:271.0,204.0 	L:377.0,241.0 >> 0.000000
 
 nNumberOfPoint = 7222
-top = 409,132 ---> 305,132
-bottom = 409,188 ---> 305,188
-estimate hand point = 2291, 5824, 0.393372
-H:343.0,132.0 	L:349.0,271.0 >> 139.000000
-H:305.0,167.0 	L:409.0,201.0 >> 0.000000
+top = 379,167 ---> 272,167
+bottom = 379,217 ---> 272,217
+estimate hand point = 1642, 5350, 0.306916
+H:307.0,167.0 	L:309.0,317.0 >> 150.000000
+H:272.0,205.0 	L:379.0,243.0 >> 0.000000
 
-nNumberOfPoint = 7401
-top = 407,134 ---> 302,134
-bottom = 407,190 ---> 302,190
-estimate hand point = 2377, 5880, 0.404252
-H:342.0,134.0 	L:350.0,273.0 >> 139.000000
-H:302.0,172.0 	L:407.0,200.0 >> 0.000000
+nNumberOfPoint = 7129
+top = 380,168 ---> 273,168
+bottom = 380,216 ---> 273,216
+estimate hand point = 1527, 5136, 0.297313
+H:310.0,168.0 	L:307.0,316.0 >> 148.000000
+H:273.0,205.0 	L:380.0,238.0 >> 0.000000
 
-nNumberOfPoint = 7458
-top = 406,136 ---> 298,136
-bottom = 406,193 ---> 298,193
-estimate hand point = 2406, 6156, 0.390838
-H:336.0,136.0 	L:344.0,276.0 >> 140.000000
-H:298.0,171.0 	L:406.0,207.0 >> 0.000000
+nNumberOfPoint = 6862
+top = 380,169 ---> 275,169
+bottom = 380,214 ---> 275,214
+estimate hand point = 1452, 4725, 0.307302
+H:312.0,169.0 	L:308.0,314.0 >> 145.000000
+H:275.0,205.0 	L:380.0,237.0 >> 0.000000
 
-nNumberOfPoint = 7605
-top = 404,140 ---> 292,140
-bottom = 404,195 ---> 292,195
-estimate hand point = 2408, 6160, 0.390909
-H:329.0,140.0 	L:345.0,277.0 >> 137.000000
-H:292.0,176.0 	L:404.0,212.0 >> 0.000000
+nNumberOfPoint = 6674
+top = 380,171 ---> 277,171
+bottom = 380,214 ---> 277,214
+estimate hand point = 1356, 4429, 0.306164
+H:312.0,171.0 	L:308.0,314.0 >> 143.000000
+H:277.0,206.0 	L:380.0,237.0 >> 0.000000
 
-nNumberOfPoint = 7295
-top = 397,143 ---> 288,143
-bottom = 397,198 ---> 288,198
-estimate hand point = 2355, 5995, 0.392827
-H:332.0,143.0 	L:339.0,278.0 >> 135.000000
-H:288.0,178.0 	L:397.0,213.0 >> 0.000000
+nNumberOfPoint = 6557
+top = 378,172 ---> 277,172
+bottom = 378,216 ---> 277,216
+estimate hand point = 1383, 4444, 0.311206
+H:312.0,172.0 	L:316.0,316.0 >> 144.000000
+H:277.0,206.0 	L:378.0,240.0 >> 0.000000
 
-nNumberOfPoint = 6165
-top = 387,157 ---> 288,157
-bottom = 387,209 ---> 288,209
-estimate hand point = 2086, 5148, 0.405206
-H:345.0,157.0 	L:339.0,279.0 >> 122.000000
-H:288.0,183.0 	L:387.0,224.0 >> 0.000000
+nNumberOfPoint = 6499
+top = 378,173 ---> 277,173
+bottom = 378,218 ---> 277,218
+estimate hand point = 1429, 4545, 0.314411
+H:310.0,173.0 	L:325.0,318.0 >> 145.000000
+H:277.0,206.0 	L:378.0,239.0 >> 0.000000
 
-nNumberOfPoint = 5359
-top = 381,176 ---> 301,176
-bottom = 381,215 ---> 301,215
-estimate hand point = 1844, 3120, 0.591026
-H:329.0,176.0 	L:340.0,277.0 >> 101.000000
-H:301.0,204.0 	L:381.0,228.0 >> 0.000000
+nNumberOfPoint = 6408
+top = 380,174 ---> 277,174
+bottom = 380,218 ---> 277,218
+estimate hand point = 1377, 4532, 0.303839
+H:311.0,174.0 	L:320.0,318.0 >> 144.000000
+H:277.0,208.0 	L:380.0,239.0 >> 0.000000
 
-nNumberOfPoint = 4438
-top = 368,182 ---> 298,182
-bottom = 368,220 ---> 298,220
-estimate hand point = 1802, 2660, 0.677444
-H:331.0,182.0 	L:334.0,271.0 >> 89.000000
-H:298.0,203.0 	L:368.0,232.0 >> 0.000000
+nNumberOfPoint = 6224
+top = 376,175 ---> 278,175
+bottom = 376,220 ---> 278,220
+estimate hand point = 1369, 4410, 0.310431
+H:311.0,175.0 	L:324.0,318.0 >> 143.000000
+H:278.0,210.0 	L:376.0,245.0 >> 0.000000
 
-nNumberOfPoint = 4060
-top = 366,188 ---> 297,188
-bottom = 366,225 ---> 297,225
-estimate hand point = 1734, 2553, 0.679201
-H:343.0,188.0 	L:335.0,272.0 >> 84.000000
-H:297.0,208.0 	L:366.0,233.0 >> 0.000000
+nNumberOfPoint = 6025
+top = 374,176 ---> 278,176
+bottom = 374,221 ---> 278,221
+estimate hand point = 1324, 4320, 0.306481
+H:311.0,176.0 	L:324.0,317.0 >> 141.000000
+H:278.0,214.0 	L:374.0,246.0 >> 0.000000
 
-nNumberOfPoint = 3799
-top = 364,193 ---> 294,193
-bottom = 364,231 ---> 294,231
-estimate hand point = 1639, 2660, 0.616165
-H:346.0,193.0 	L:332.0,275.0 >> 82.000000
-H:294.0,232.0 	L:364.0,235.0 >> 0.000000
+nNumberOfPoint = 5928
+top = 373,179 ---> 277,179
+bottom = 373,221 ---> 277,221
+estimate hand point = 1279, 4032, 0.317212
+H:309.0,179.0 	L:323.0,317.0 >> 138.000000
+H:277.0,210.0 	L:373.0,249.0 >> 0.000000
 
-nNumberOfPoint = 3571
-top = 358,197 ---> 296,197
-bottom = 358,237 ---> 296,237
-estimate hand point = 1633, 2480, 0.658468
-H:339.0,197.0 	L:319.0,280.0 >> 83.000000
-H:296.0,232.0 	L:358.0,232.0 >> 0.000000
+nNumberOfPoint = 5834
+top = 373,181 ---> 276,181
+bottom = 373,222 ---> 276,222
+estimate hand point = 1217, 3977, 0.306010
+H:310.0,181.0 	L:328.0,318.0 >> 137.000000
+H:276.0,214.0 	L:373.0,245.0 >> 0.000000
 
-nNumberOfPoint = 3428
-top = 355,205 ---> 291,205
-bottom = 355,243 ---> 291,243
-estimate hand point = 1620, 2432, 0.666118
-H:332.0,205.0 	L:323.0,281.0 >> 76.000000
-H:291.0,235.0 	L:355.0,237.0 >> 0.000000
+nNumberOfPoint = 5568
+top = 371,183 ---> 276,183
+bottom = 371,225 ---> 276,225
+estimate hand point = 1207, 3990, 0.302506
+H:309.0,183.0 	L:320.0,316.0 >> 133.000000
+H:276.0,214.0 	L:371.0,246.0 >> 0.000000
 
-nNumberOfPoint = 3510
-top = 351,206 ---> 288,206
-bottom = 351,248 ---> 288,248
-estimate hand point = 1714, 2646, 0.647770
-H:344.0,206.0 	L:316.0,286.0 >> 80.000000
-H:288.0,243.0 	L:351.0,231.0 >> 0.000000
+nNumberOfPoint = 5261
+top = 365,190 ---> 279,190
+bottom = 365,229 ---> 279,229
+estimate hand point = 1296, 3354, 0.386404
+H:304.0,190.0 	L:324.0,311.0 >> 121.000000
+H:279.0,220.0 	L:365.0,245.0 >> 0.000000
 
-nNumberOfPoint = 3371
-top = 346,217 ---> 284,217
-bottom = 346,255 ---> 284,255
-estimate hand point = 1647, 2356, 0.699066
-H:330.0,217.0 	L:321.0,290.0 >> 73.000000
-H:284.0,250.0 	L:346.0,251.0 >> 0.000000
+nNumberOfPoint = 4580
+top = 355,200 ---> 283,200
+bottom = 355,233 ---> 283,233
+estimate hand point = 1153, 2376, 0.485269
+H:306.0,200.0 	L:320.0,306.0 >> 106.000000
+H:283.0,228.0 	L:355.0,250.0 >> 0.000000
 
-nNumberOfPoint = 3388
-top = 346,225 ---> 280,225
-bottom = 346,262 ---> 280,262
-estimate hand point = 1703, 2442, 0.697379
-H:320.0,225.0 	L:322.0,298.0 >> 73.000000
-H:280.0,255.0 	L:346.0,246.0 >> 0.000000
+nNumberOfPoint = 3343
+top = 341,216 ---> 283,216
+bottom = 341,246 ---> 283,246
+estimate hand point = 1106, 1740, 0.635632
+H:310.0,216.0 	L:318.0,301.0 >> 85.000000
+H:283.0,235.0 	L:341.0,257.0 >> 0.000000
 
-nNumberOfPoint = 3063
-top = 342,232 ---> 277,232
-bottom = 342,269 ---> 277,269
-estimate hand point = 1505, 2405, 0.625780
-H:327.0,232.0 	L:321.0,303.0 >> 71.000000
-H:277.0,266.0 	L:342.0,259.0 >> 0.000000
+nNumberOfPoint = 2836
+top = 334,222 ---> 282,222
+bottom = 334,249 ---> 282,249
+estimate hand point = 977, 1404, 0.695869
+H:311.0,222.0 	L:312.0,297.0 >> 75.000000
+H:282.0,242.0 	L:334.0,259.0 >> 0.000000
 
-nNumberOfPoint = 3090
-top = 337,240 ---> 272,240
-bottom = 337,278 ---> 272,278
-estimate hand point = 1582, 2470, 0.640486
-H:320.0,240.0 	L:325.0,310.0 >> 70.000000
-H:272.0,275.0 	L:337.0,274.0 >> 0.000000
+nNumberOfPoint = 2414
+top = 328,227 ---> 280,227
+bottom = 328,254 ---> 280,254
+estimate hand point = 905, 1296, 0.698302
+H:307.0,227.0 	L:311.0,296.0 >> 69.000000
+H:280.0,253.0 	L:328.0,261.0 >> 0.000000
 
-nNumberOfPoint = 2859
-top = 332,252 ---> 266,252
-bottom = 332,288 ---> 266,288
-estimate hand point = 1492, 2376, 0.627946
-H:315.0,252.0 	L:310.0,320.0 >> 68.000000
-H:266.0,286.0 	L:332.0,287.0 >> 0.000000
+nNumberOfPoint = 2335
+top = 325,225 ---> 276,225
+bottom = 325,256 ---> 276,256
+estimate hand point = 979, 1519, 0.644503
+H:301.0,225.0 	L:311.0,295.0 >> 70.000000
+H:276.0,250.0 	L:325.0,261.0 >> 0.000000
 
-nNumberOfPoint = 3508
-top = 329,255 ---> 260,255
-bottom = 329,296 ---> 260,296
-estimate hand point = 1848, 2829, 0.653234
-H:309.0,255.0 	L:316.0,332.0 >> 77.000000
-H:260.0,292.0 	L:329.0,287.0 >> 0.000000
+nNumberOfPoint = 2360
+top = 320,221 ---> 271,221
+bottom = 320,254 ---> 271,254
+estimate hand point = 972, 1617, 0.601113
+H:297.0,221.0 	L:307.0,292.0 >> 71.000000
+H:271.0,250.0 	L:320.0,261.0 >> 0.000000
 
-nNumberOfPoint = 3419
-top = 323,268 ---> 258,268
-bottom = 323,309 ---> 258,309
-estimate hand point = 1794, 2665, 0.673171
-H:290.0,268.0 	L:312.0,347.0 >> 79.000000
-H:258.0,316.0 	L:323.0,306.0 >> 0.000000
+nNumberOfPoint = 2327
+top = 320,218 ---> 270,218
+bottom = 320,250 ---> 270,250
+estimate hand point = 953, 1600, 0.595625
+H:293.0,218.0 	L:299.0,287.0 >> 69.000000
+H:270.0,243.0 	L:320.0,246.0 >> 0.000000
 
-nNumberOfPoint = 3436
-top = 322,280 ---> 254,280
-bottom = 322,322 ---> 254,322
-estimate hand point = 1874, 2856, 0.656162
-H:288.0,280.0 	L:308.0,361.0 >> 81.000000
-H:254.0,318.0 	L:322.0,322.0 >> 0.000000
+nNumberOfPoint = 2383
+top = 318,217 ---> 266,217
+bottom = 318,246 ---> 266,246
+estimate hand point = 923, 1508, 0.612069
+H:292.0,217.0 	L:301.0,286.0 >> 69.000000
+H:266.0,243.0 	L:318.0,273.0 >> 0.000000
+
+nNumberOfPoint = 2365
+top = 316,212 ---> 267,212
+bottom = 316,240 ---> 267,240
+estimate hand point = 891, 1372, 0.649417
+H:287.0,212.0 	L:291.0,279.0 >> 67.000000
+H:267.0,235.0 	L:316.0,225.0 >> 0.000000
+
+nNumberOfPoint = 2362
+top = 316,201 ---> 265,201
+bottom = 316,233 ---> 265,233
+estimate hand point = 899, 1632, 0.550858
+H:296.0,201.0 	L:295.0,272.0 >> 71.000000
+H:265.0,236.0 	L:316.0,259.0 >> 0.000000
+
+nNumberOfPoint = 2400
+top = 316,195 ---> 268,195
+bottom = 316,226 ---> 268,226
+estimate hand point = 912, 1488, 0.612903
+H:290.0,195.0 	L:301.0,267.0 >> 72.000000
+H:268.0,221.0 	L:316.0,258.0 >> 0.000000
+
+nNumberOfPoint = 2425
+top = 315,186 ---> 266,186
+bottom = 315,218 ---> 266,218
+estimate hand point = 903, 1568, 0.575893
+H:292.0,186.0 	L:300.0,259.0 >> 73.000000
+H:266.0,217.0 	L:315.0,223.0 >> 0.000000
+
+nNumberOfPoint = 2410
+top = 314,180 ---> 266,180
+bottom = 314,211 ---> 266,211
+estimate hand point = 905, 1488, 0.608199
+H:295.0,180.0 	L:301.0,253.0 >> 73.000000
+H:266.0,204.0 	L:314.0,206.0 >> 0.000000
+
+nNumberOfPoint = 2526
+top = 316,170 ---> 268,170
+bottom = 316,204 ---> 268,204
+estimate hand point = 979, 1632, 0.599877
+H:294.0,170.0 	L:302.0,247.0 >> 77.000000
+H:268.0,206.0 	L:316.0,194.0 >> 0.000000
+
+nNumberOfPoint = 2576
+top = 318,164 ---> 267,164
+bottom = 318,197 ---> 267,197
+estimate hand point = 1037, 1683, 0.616162
+H:295.0,164.0 	L:299.0,241.0 >> 77.000000
+H:267.0,194.0 	L:318.0,190.0 >> 0.000000
+
+nNumberOfPoint = 2613
+top = 319,157 ---> 270,157
+bottom = 319,190 ---> 270,190
+estimate hand point = 1020, 1617, 0.630798
+H:300.0,157.0 	L:299.0,236.0 >> 79.000000
+H:270.0,189.0 	L:319.0,190.0 >> 0.000000
+
+nNumberOfPoint = 2603
+top = 321,151 ---> 272,151
+bottom = 321,184 ---> 272,184
+estimate hand point = 1025, 1617, 0.633890
+H:302.0,151.0 	L:301.0,231.0 >> 80.000000
+H:272.0,186.0 	L:321.0,184.0 >> 0.000000
+
+nNumberOfPoint = 2720
+top = 322,141 ---> 272,141
+bottom = 322,179 ---> 272,179
+estimate hand point = 1095, 1900, 0.576316
+H:304.0,141.0 	L:304.0,226.0 >> 85.000000
+H:272.0,182.0 	L:322.0,170.0 >> 0.000000
+
+nNumberOfPoint = 2833
+top = 323,140 ---> 265,140
+bottom = 323,175 ---> 265,175
+estimate hand point = 1148, 2030, 0.565517
+H:305.0,140.0 	L:301.0,223.0 >> 83.000000
+H:265.0,173.0 	L:323.0,165.0 >> 0.000000
+
+nNumberOfPoint = 2861
+top = 325,135 ---> 273,135
+bottom = 325,170 ---> 273,170
+estimate hand point = 1173, 1820, 0.644505
+H:307.0,135.0 	L:299.0,218.0 >> 83.000000
+H:273.0,165.0 	L:325.0,155.0 >> 0.000000
+
+nNumberOfPoint = 2900
+top = 326,129 ---> 274,129
+bottom = 326,166 ---> 274,166
+estimate hand point = 1157, 1924, 0.601351
+H:309.0,129.0 	L:298.0,216.0 >> 87.000000
+H:274.0,163.0 	L:326.0,160.0 >> 0.000000
+
+nNumberOfPoint = 3067
+top = 328,126 ---> 274,126
+bottom = 328,162 ---> 274,162
+estimate hand point = 1221, 1944, 0.628086
+H:311.0,126.0 	L:299.0,215.0 >> 89.000000
+H:274.0,158.0 	L:328.0,151.0 >> 0.000000
+
+nNumberOfPoint = 3135
+top = 329,123 ---> 275,123
+bottom = 329,159 ---> 275,159
+estimate hand point = 1215, 1944, 0.625000
+H:314.0,123.0 	L:299.0,214.0 >> 91.000000
+H:275.0,157.0 	L:329.0,139.0 >> 0.000000
+
+nNumberOfPoint = 3240
+top = 329,120 ---> 274,120
+bottom = 329,156 ---> 274,156
+estimate hand point = 1234, 1980, 0.623232
+H:313.0,120.0 	L:299.0,212.0 >> 92.000000
+H:274.0,146.0 	L:329.0,140.0 >> 0.000000
+
+nNumberOfPoint = 3359
+top = 331,117 ---> 273,117
+bottom = 331,152 ---> 273,152
+estimate hand point = 1260, 2030, 0.620690
+H:314.0,117.0 	L:297.0,208.0 >> 91.000000
+H:273.0,151.0 	L:331.0,142.0 >> 0.000000
 
 nNumberOfPoint = 3439
-top = 319,292 ---> 252,292
-bottom = 319,333 ---> 252,333
-estimate hand point = 1775, 2747, 0.646159
-H:300.0,292.0 	L:301.0,369.0 >> 77.000000
-H:252.0,332.0 	L:319.0,333.0 >> 0.000000
-
-nNumberOfPoint = 3034
-top = 317,303 ---> 249,303
-bottom = 317,344 ---> 249,344
-estimate hand point = 1433, 2788, 0.513989
-H:285.0,303.0 	L:299.0,376.0 >> 73.000000
-H:249.0,355.0 	L:317.0,356.0 >> 0.000000
-
-nNumberOfPoint = 3100
-top = 315,313 ---> 248,313
-bottom = 315,353 ---> 248,353
-estimate hand point = 1486, 2680, 0.554478
-H:291.0,313.0 	L:304.0,387.0 >> 74.000000
-H:248.0,362.0 	L:315.0,349.0 >> 0.000000
-
-nNumberOfPoint = 3125
-top = 319,324 ---> 241,324
-bottom = 319,358 ---> 241,358
-estimate hand point = 1510, 2652, 0.569382
-H:293.0,324.0 	L:302.0,390.0 >> 66.000000
-H:241.0,357.0 	L:319.0,368.0 >> 0.000000
-
-nNumberOfPoint = 3715
-top = 321,320 ---> 235,320
-bottom = 321,354 ---> 235,354
-estimate hand point = 1849, 2924, 0.632353
-H:273.0,320.0 	L:305.0,390.0 >> 70.000000
-H:235.0,349.0 	L:321.0,378.0 >> 0.000000
-
-nNumberOfPoint = 3659
-top = 324,308 ---> 238,308
-bottom = 324,347 ---> 238,347
-estimate hand point = 1873, 3354, 0.558438
-H:264.0,308.0 	L:307.0,389.0 >> 81.000000
-H:238.0,335.0 	L:324.0,366.0 >> 0.000000
-
-nNumberOfPoint = 4572
-top = 328,300 ---> 242,300
-bottom = 328,342 ---> 242,342
-estimate hand point = 2196, 3612, 0.607973
-H:267.0,300.0 	L:313.0,386.0 >> 86.000000
-H:242.0,319.0 	L:328.0,357.0 >> 0.000000
-
-nNumberOfPoint = 5774
-top = 333,285 ---> 227,285
-bottom = 333,334 ---> 227,334
-estimate hand point = 2910, 5194, 0.560262
-H:254.0,285.0 	L:319.0,382.0 >> 97.000000
-H:227.0,306.0 	L:333.0,350.0 >> 0.000000
-
-nNumberOfPoint = 6913
-top = 339,268 ---> 225,268
-bottom = 339,320 ---> 225,320
-estimate hand point = 3411, 5928, 0.575405
-H:248.0,268.0 	L:308.0,375.0 >> 107.000000
-H:225.0,308.0 	L:339.0,326.0 >> 0.000000
-
-nNumberOfPoint = 7755
-top = 348,248 ---> 231,248
-bottom = 348,307 ---> 231,307
-estimate hand point = 3747, 6903, 0.542807
-H:258.0,248.0 	L:303.0,369.0 >> 121.000000
-H:231.0,290.0 	L:348.0,317.0 >> 0.000000
-
-nNumberOfPoint = 8208
-top = 355,231 ---> 237,231
-bottom = 355,294 ---> 237,294
-estimate hand point = 3755, 7434, 0.505112
-H:269.0,231.0 	L:297.0,358.0 >> 127.000000
-H:237.0,280.0 	L:355.0,296.0 >> 0.000000
-
-nNumberOfPoint = 8440
-top = 362,219 ---> 242,219
-bottom = 362,283 ---> 242,283
-estimate hand point = 3621, 7680, 0.471484
-H:271.0,219.0 	L:303.0,350.0 >> 131.000000
-H:242.0,263.0 	L:362.0,288.0 >> 0.000000
-
-nNumberOfPoint = 8286
-top = 371,208 ---> 248,208
-bottom = 371,276 ---> 248,276
-estimate hand point = 3592, 8364, 0.429460
-H:279.0,208.0 	L:308.0,344.0 >> 136.000000
-H:248.0,255.0 	L:371.0,281.0 >> 0.000000
-
-nNumberOfPoint = 8350
-top = 378,197 ---> 254,197
-bottom = 378,272 ---> 254,272
-estimate hand point = 3909, 9300, 0.420323
-H:283.0,197.0 	L:326.0,338.0 >> 141.000000
-H:254.0,243.0 	L:378.0,273.0 >> 0.000000
-
-nNumberOfPoint = 8225
-top = 381,189 ---> 258,189
-bottom = 381,270 ---> 258,270
-estimate hand point = 4149, 9963, 0.416441
-H:293.0,189.0 	L:313.0,333.0 >> 144.000000
-H:258.0,238.0 	L:381.0,265.0 >> 0.000000
-
-nNumberOfPoint = 8154
-top = 386,184 ---> 263,184
-bottom = 386,268 ---> 263,268
-estimate hand point = 4254, 10332, 0.411731
-H:292.0,184.0 	L:320.0,328.0 >> 144.000000
-H:263.0,227.0 	L:386.0,261.0 >> 0.000000
-
-nNumberOfPoint = 8093
-top = 387,179 ---> 266,179
-bottom = 387,265 ---> 266,265
-estimate hand point = 4378, 10406, 0.420719
-H:295.0,179.0 	L:316.0,322.0 >> 143.000000
-H:266.0,221.0 	L:387.0,255.0 >> 0.000000
-
-nNumberOfPoint = 7907
-top = 388,175 ---> 267,175
-bottom = 388,262 ---> 267,262
-estimate hand point = 4350, 10527, 0.413223
-H:301.0,175.0 	L:329.0,319.0 >> 144.000000
-H:267.0,215.0 	L:388.0,249.0 >> 0.000000
-
-nNumberOfPoint = 7975
-top = 389,170 ---> 270,170
-bottom = 389,258 ---> 270,258
-estimate hand point = 4385, 10472, 0.418736
-H:303.0,170.0 	L:328.0,315.0 >> 145.000000
-H:270.0,210.0 	L:389.0,247.0 >> 0.000000
-
-nNumberOfPoint = 7962
-top = 387,166 ---> 267,166
-bottom = 387,256 ---> 267,256
-estimate hand point = 4525, 10800, 0.418981
-H:304.0,166.0 	L:335.0,313.0 >> 147.000000
-H:267.0,206.0 	L:387.0,243.0 >> 0.000000
-
-nNumberOfPoint = 8031
-top = 387,162 ---> 271,162
-bottom = 387,253 ---> 271,253
-estimate hand point = 4680, 10556, 0.443350
-H:306.0,162.0 	L:324.0,308.0 >> 146.000000
-H:271.0,203.0 	L:387.0,237.0 >> 0.000000
-
-nNumberOfPoint = 8010
-top = 387,157 ---> 271,157
-bottom = 387,249 ---> 271,249
-estimate hand point = 4618, 10672, 0.432721
-H:304.0,157.0 	L:330.0,305.0 >> 148.000000
-H:271.0,201.0 	L:387.0,234.0 >> 0.000000
-
-nNumberOfPoint = 7965
-top = 385,152 ---> 270,152
-bottom = 385,245 ---> 270,245
-estimate hand point = 4657, 10695, 0.435437
-H:303.0,152.0 	L:323.0,300.0 >> 148.000000
-H:270.0,192.0 	L:385.0,228.0 >> 0.000000
-
-nNumberOfPoint = 7983
-top = 384,147 ---> 269,147
-bottom = 384,238 ---> 269,238
-estimate hand point = 4501, 10465, 0.430100
-H:304.0,147.0 	L:326.0,298.0 >> 151.000000
-H:269.0,190.0 	L:384.0,223.0 >> 0.000000
-
-nNumberOfPoint = 7984
-top = 383,141 ---> 269,141
-bottom = 383,230 ---> 269,230
-estimate hand point = 4240, 10146, 0.417899
-H:306.0,141.0 	L:323.0,292.0 >> 151.000000
-H:269.0,186.0 	L:383.0,219.0 >> 0.000000
-
-nNumberOfPoint = 8012
-top = 382,139 ---> 269,139
-bottom = 382,223 ---> 269,223
-estimate hand point = 4026, 9492, 0.424147
-H:303.0,139.0 	L:324.0,289.0 >> 150.000000
-H:269.0,183.0 	L:382.0,216.0 >> 0.000000
-
-nNumberOfPoint = 7962
-top = 382,137 ---> 270,137
-bottom = 382,219 ---> 270,219
-estimate hand point = 3905, 9184, 0.425196
-H:309.0,137.0 	L:323.0,287.0 >> 150.000000
-H:270.0,177.0 	L:382.0,213.0 >> 0.000000
-
-nNumberOfPoint = 7988
-top = 382,136 ---> 271,136
-bottom = 382,216 ---> 271,216
-estimate hand point = 3762, 8880, 0.423649
-H:304.0,136.0 	L:329.0,287.0 >> 151.000000
-H:271.0,176.0 	L:382.0,211.0 >> 0.000000
-
-nNumberOfPoint = 7988
-top = 383,135 ---> 271,135
-bottom = 383,215 ---> 271,215
-estimate hand point = 3724, 8960, 0.415625
-H:304.0,135.0 	L:329.0,286.0 >> 151.000000
-H:271.0,173.0 	L:383.0,212.0 >> 0.000000
-
-nNumberOfPoint = 7939
-top = 383,134 ---> 271,134
-bottom = 383,216 ---> 271,216
-estimate hand point = 3805, 9184, 0.414307
-H:311.0,134.0 	L:326.0,285.0 >> 151.000000
-H:271.0,176.0 	L:383.0,209.0 >> 0.000000
-
-nNumberOfPoint = 7830
-top = 384,134 ---> 271,134
-bottom = 384,218 ---> 271,218
-estimate hand point = 3903, 9492, 0.411188
-H:310.0,134.0 	L:326.0,284.0 >> 150.000000
-H:271.0,177.0 	L:384.0,210.0 >> 0.000000
-
-nNumberOfPoint = 7848
-top = 387,135 ---> 273,135
-bottom = 387,220 ---> 273,220
-estimate hand point = 4015, 9690, 0.414345
-H:311.0,135.0 	L:328.0,285.0 >> 150.000000
-H:273.0,176.0 	L:387.0,209.0 >> 0.000000
-
-nNumberOfPoint = 7891
-top = 387,135 ---> 273,135
-bottom = 387,223 ---> 273,223
-estimate hand point = 4232, 10032, 0.421850
-H:312.0,135.0 	L:331.0,286.0 >> 151.000000
-H:273.0,178.0 	L:387.0,212.0 >> 0.000000
-
-nNumberOfPoint = 7761
-top = 387,136 ---> 274,136
-bottom = 387,223 ---> 274,223
-estimate hand point = 4130, 9831, 0.420100
-H:312.0,136.0 	L:329.0,285.0 >> 149.000000
-H:274.0,176.0 	L:387.0,210.0 >> 0.000000
-
-nNumberOfPoint = 7727
-top = 387,136 ---> 274,136
-bottom = 387,225 ---> 274,225
-estimate hand point = 4283, 10057, 0.425873
-H:312.0,136.0 	L:335.0,287.0 >> 151.000000
-H:274.0,177.0 	L:387.0,209.0 >> 0.000000
-
-nNumberOfPoint = 7773
-top = 389,136 ---> 274,136
-bottom = 389,225 ---> 274,225
-estimate hand point = 4353, 10235, 0.425305
-H:312.0,136.0 	L:331.0,285.0 >> 149.000000
-H:274.0,176.0 	L:389.0,208.0 >> 0.000000
-
-nNumberOfPoint = 7801
-top = 388,135 ---> 274,135
-bottom = 388,225 ---> 274,225
-estimate hand point = 4429, 10260, 0.431676
-H:314.0,135.0 	L:335.0,285.0 >> 150.000000
-H:274.0,176.0 	L:388.0,206.0 >> 0.000000
-
-nNumberOfPoint = 7791
-top = 388,135 ---> 275,135
-bottom = 388,225 ---> 275,225
-estimate hand point = 4472, 10170, 0.439725
-H:312.0,135.0 	L:334.0,285.0 >> 150.000000
-H:275.0,175.0 	L:388.0,207.0 >> 0.000000
-
-nNumberOfPoint = 7859
-top = 388,134 ---> 274,134
-bottom = 388,220 ---> 274,220
-estimate hand point = 4197, 9804, 0.428091
-H:314.0,134.0 	L:333.0,284.0 >> 150.000000
-H:274.0,174.0 	L:388.0,206.0 >> 0.000000
-
-nNumberOfPoint = 7825
-top = 389,133 ---> 273,133
-bottom = 389,201 ---> 273,201
-estimate hand point = 2924, 7888, 0.370690
-H:311.0,133.0 	L:329.0,279.0 >> 146.000000
-H:273.0,173.0 	L:389.0,205.0 >> 0.000000
-
-nNumberOfPoint = 7863
-top = 393,130 ---> 276,130
-bottom = 393,193 ---> 276,193
-estimate hand point = 2567, 7371, 0.348257
-H:311.0,130.0 	L:330.0,278.0 >> 148.000000
-H:276.0,168.0 	L:393.0,203.0 >> 0.000000
-
-nNumberOfPoint = 7862
-top = 389,129 ---> 277,129
-bottom = 389,191 ---> 277,191
-estimate hand point = 2561, 6944, 0.368808
-H:313.0,129.0 	L:332.0,277.0 >> 148.000000
-H:277.0,167.0 	L:389.0,202.0 >> 0.000000
-
-nNumberOfPoint = 7876
-top = 389,123 ---> 278,123
-bottom = 389,180 ---> 278,180
-estimate hand point = 2301, 6327, 0.363679
-H:315.0,123.0 	L:338.0,273.0 >> 150.000000
-H:278.0,160.0 	L:389.0,194.0 >> 0.000000
-
-nNumberOfPoint = 7919
-top = 388,123 ---> 280,123
-bottom = 388,180 ---> 280,180
-estimate hand point = 2330, 6156, 0.378493
-H:315.0,123.0 	L:334.0,273.0 >> 150.000000
-H:280.0,158.0 	L:388.0,191.0 >> 0.000000
-
-nNumberOfPoint = 7924
-top = 388,122 ---> 280,122
-bottom = 388,179 ---> 280,179
-estimate hand point = 2287, 6156, 0.371507
-H:318.0,122.0 	L:331.0,272.0 >> 150.000000
-H:280.0,158.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7912
-top = 388,123 ---> 278,123
-bottom = 388,179 ---> 278,179
-estimate hand point = 2310, 6160, 0.375000
-H:315.0,123.0 	L:332.0,272.0 >> 149.000000
-H:278.0,163.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7937
-top = 388,123 ---> 279,123
-bottom = 388,179 ---> 279,179
-estimate hand point = 2292, 6104, 0.375491
-H:315.0,123.0 	L:330.0,272.0 >> 149.000000
-H:279.0,160.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7930
-top = 388,122 ---> 280,122
-bottom = 388,179 ---> 280,179
-estimate hand point = 2276, 6156, 0.369721
-H:318.0,122.0 	L:334.0,272.0 >> 150.000000
-H:280.0,158.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7891
-top = 388,123 ---> 279,123
-bottom = 388,179 ---> 279,179
-estimate hand point = 2309, 6104, 0.378277
-H:316.0,123.0 	L:334.0,272.0 >> 149.000000
-H:279.0,159.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7838
-top = 388,123 ---> 279,123
-bottom = 388,181 ---> 279,181
-estimate hand point = 2366, 6322, 0.374249
-H:315.0,123.0 	L:332.0,272.0 >> 149.000000
-H:279.0,159.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7809
-top = 388,123 ---> 280,123
-bottom = 388,179 ---> 280,179
-estimate hand point = 2226, 6048, 0.368056
-H:316.0,123.0 	L:330.0,272.0 >> 149.000000
-H:280.0,158.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7809
-top = 388,123 ---> 279,123
-bottom = 388,180 ---> 279,180
-estimate hand point = 2273, 6213, 0.365846
-H:315.0,123.0 	L:330.0,272.0 >> 149.000000
-H:279.0,159.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7787
-top = 388,123 ---> 279,123
-bottom = 388,182 ---> 279,182
-estimate hand point = 2368, 6431, 0.368216
-H:316.0,123.0 	L:334.0,273.0 >> 150.000000
-H:279.0,159.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7787
-top = 388,123 ---> 279,123
-bottom = 388,181 ---> 279,181
-estimate hand point = 2354, 6322, 0.372351
-H:316.0,123.0 	L:331.0,272.0 >> 149.000000
-H:279.0,160.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7713
-top = 388,122 ---> 282,122
-bottom = 388,181 ---> 282,181
-estimate hand point = 2376, 6254, 0.379917
-H:318.0,122.0 	L:332.0,269.0 >> 147.000000
-H:282.0,156.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7654
-top = 388,122 ---> 281,122
-bottom = 388,179 ---> 281,179
-estimate hand point = 2254, 6099, 0.369569
-H:318.0,122.0 	L:335.0,270.0 >> 148.000000
-H:281.0,158.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7714
-top = 388,121 ---> 280,121
-bottom = 388,179 ---> 280,179
-estimate hand point = 2285, 6264, 0.364783
-H:318.0,121.0 	L:332.0,269.0 >> 148.000000
-H:280.0,158.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7755
-top = 388,121 ---> 282,121
-bottom = 388,178 ---> 282,178
-estimate hand point = 2250, 6042, 0.372393
-H:318.0,121.0 	L:335.0,270.0 >> 149.000000
-H:282.0,157.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7748
-top = 388,120 ---> 281,120
-bottom = 388,178 ---> 281,178
-estimate hand point = 2266, 6206, 0.365131
-H:318.0,120.0 	L:333.0,269.0 >> 149.000000
-H:281.0,160.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7718
-top = 388,121 ---> 281,121
-bottom = 388,177 ---> 281,177
-estimate hand point = 2190, 5992, 0.365487
-H:318.0,121.0 	L:335.0,269.0 >> 148.000000
-H:281.0,160.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7718
-top = 388,120 ---> 282,120
-bottom = 388,178 ---> 282,178
-estimate hand point = 2231, 6148, 0.362882
-H:319.0,120.0 	L:332.0,269.0 >> 149.000000
-H:282.0,158.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7747
-top = 388,121 ---> 281,121
-bottom = 388,178 ---> 281,178
-estimate hand point = 2256, 6099, 0.369897
-H:318.0,121.0 	L:338.0,270.0 >> 149.000000
-H:281.0,160.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7704
-top = 388,120 ---> 281,120
-bottom = 388,178 ---> 281,178
-estimate hand point = 2277, 6206, 0.366903
-H:317.0,120.0 	L:332.0,269.0 >> 149.000000
-H:281.0,160.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7662
-top = 388,120 ---> 282,120
-bottom = 388,176 ---> 282,176
-estimate hand point = 2157, 5936, 0.363376
-H:317.0,120.0 	L:332.0,269.0 >> 149.000000
-H:282.0,156.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7639
-top = 388,120 ---> 281,120
-bottom = 388,176 ---> 281,176
-estimate hand point = 2210, 5992, 0.368825
-H:317.0,120.0 	L:335.0,268.0 >> 148.000000
-H:281.0,158.0 	L:388.0,192.0 >> 0.000000
-
-nNumberOfPoint = 7624
-top = 387,120 ---> 280,120
-bottom = 387,176 ---> 280,176
-estimate hand point = 2217, 5992, 0.369993
-H:316.0,120.0 	L:334.0,267.0 >> 147.000000
-H:280.0,156.0 	L:387.0,188.0 >> 0.000000
-
-nNumberOfPoint = 7673
-top = 388,120 ---> 281,120
-bottom = 388,175 ---> 281,175
-estimate hand point = 2198, 5885, 0.373492
-H:317.0,120.0 	L:332.0,266.0 >> 146.000000
-H:281.0,158.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7685
-top = 388,120 ---> 281,120
-bottom = 388,176 ---> 281,176
-estimate hand point = 2246, 5992, 0.374833
-H:317.0,120.0 	L:330.0,266.0 >> 146.000000
-H:281.0,157.0 	L:388.0,190.0 >> 0.000000
-
-nNumberOfPoint = 7529
-top = 386,121 ---> 281,121
-bottom = 386,177 ---> 281,177
-estimate hand point = 2249, 5880, 0.382483
-H:319.0,121.0 	L:331.0,266.0 >> 145.000000
-H:281.0,157.0 	L:386.0,190.0 >> 0.000000
-
-nNumberOfPoint = 6961
-top = 382,131 ---> 283,131
-bottom = 382,179 ---> 283,179
-estimate hand point = 1944, 4752, 0.409091
-H:315.0,131.0 	L:335.0,266.0 >> 135.000000
-H:283.0,155.0 	L:382.0,202.0 >> 0.000000
-
-nNumberOfPoint = 5524
-top = 372,149 ---> 289,149
-bottom = 372,193 ---> 289,193
-estimate hand point = 1800, 3652, 0.492881
-H:322.0,149.0 	L:330.0,263.0 >> 114.000000
-H:289.0,170.0 	L:372.0,205.0 >> 0.000000
-
-nNumberOfPoint = 4108
-top = 355,164 ---> 290,164
-bottom = 355,197 ---> 290,197
-estimate hand point = 1483, 2145, 0.691375
-H:313.0,164.0 	L:329.0,253.0 >> 89.000000
-H:290.0,178.0 	L:355.0,212.0 >> 0.000000
-
-nNumberOfPoint = 3711
-top = 352,168 ---> 289,168
-bottom = 352,201 ---> 289,201
-estimate hand point = 1468, 2079, 0.706109
-H:318.0,168.0 	L:327.0,251.0 >> 83.000000
-H:289.0,184.0 	L:352.0,210.0 >> 0.000000
-
-nNumberOfPoint = 3419
-top = 351,168 ---> 288,168
-bottom = 351,202 ---> 288,202
-estimate hand point = 1473, 2142, 0.687675
-H:317.0,168.0 	L:322.0,245.0 >> 77.000000
-H:288.0,188.0 	L:351.0,210.0 >> 0.000000
-
-nNumberOfPoint = 3503
-top = 348,163 ---> 287,163
-bottom = 348,199 ---> 287,199
-estimate hand point = 1617, 2196, 0.736339
-H:329.0,163.0 	L:320.0,241.0 >> 78.000000
-H:287.0,183.0 	L:348.0,198.0 >> 0.000000
-
-nNumberOfPoint = 3608
-top = 348,153 ---> 286,153
-bottom = 348,191 ---> 286,191
-estimate hand point = 1796, 2356, 0.762309
-H:325.0,153.0 	L:320.0,234.0 >> 81.000000
-H:286.0,172.0 	L:348.0,168.0 >> 0.000000
-
-nNumberOfPoint = 3768
-top = 345,141 ---> 283,141
-bottom = 345,179 ---> 283,179
-estimate hand point = 1890, 2356, 0.802207
-H:323.0,141.0 	L:320.0,222.0 >> 81.000000
-H:283.0,161.0 	L:345.0,154.0 >> 0.000000
-
-nNumberOfPoint = 3905
-top = 343,125 ---> 281,125
-bottom = 343,165 ---> 281,165
-estimate hand point = 1961, 2480, 0.790726
-H:325.0,125.0 	L:326.0,209.0 >> 84.000000
-H:281.0,149.0 	L:343.0,144.0 >> 0.000000
-
-nNumberOfPoint = 4014
-top = 341,110 ---> 278,110
-bottom = 341,147 ---> 278,147
-estimate hand point = 1803, 2331, 0.773488
-H:321.0,110.0 	L:309.0,196.0 >> 86.000000
-H:278.0,128.0 	L:341.0,132.0 >> 0.000000
-
-nNumberOfPoint = 4022
-top = 337,94 ---> 275,94
-bottom = 337,131 ---> 275,131
-estimate hand point = 1712, 2294, 0.746295
-H:321.0,94.0 	L:304.0,182.0 >> 88.000000
-H:275.0,114.0 	L:337.0,128.0 >> 0.000000
-
-nNumberOfPoint = 4182
-top = 336,79 ---> 274,79
-bottom = 336,116 ---> 274,116
-estimate hand point = 1702, 2294, 0.741935
-H:308.0,79.0 	L:304.0,169.0 >> 90.000000
-H:274.0,102.0 	L:336.0,107.0 >> 0.000000
-
-nNumberOfPoint = 4382
-top = 333,64 ---> 272,64
-bottom = 333,102 ---> 272,102
-estimate hand point = 1800, 2318, 0.776531
-H:306.0,64.0 	L:301.0,157.0 >> 93.000000
-H:272.0,88.0 	L:333.0,92.0 >> 0.000000
-
-nNumberOfPoint = 4615
-top = 335,49 ---> 271,49
-bottom = 335,88 ---> 271,88
-estimate hand point = 1863, 2496, 0.746394
-H:306.0,49.0 	L:302.0,145.0 >> 96.000000
-H:271.0,75.0 	L:335.0,70.0 >> 0.000000
-
-nNumberOfPoint = 4730
-top = 333,38 ---> 270,38
-bottom = 333,77 ---> 270,77
-estimate hand point = 1904, 2457, 0.774929
-H:303.0,38.0 	L:297.0,135.0 >> 97.000000
-H:270.0,59.0 	L:333.0,71.0 >> 0.000000
-
-nNumberOfPoint = 4862
-top = 334,26 ---> 270,26
-bottom = 334,66 ---> 270,66
-estimate hand point = 1939, 2560, 0.757422
-H:306.0,26.0 	L:301.0,128.0 >> 102.000000
-H:270.0,57.0 	L:334.0,68.0 >> 0.000000
-
-nNumberOfPoint = 5019
-top = 335,17 ---> 271,17
-bottom = 335,57 ---> 271,57
-estimate hand point = 1912, 2560, 0.746875
-H:308.0,17.0 	L:307.0,123.0 >> 106.000000
-H:271.0,64.0 	L:335.0,47.0 >> 0.000000
-
-nNumberOfPoint = 5343
-top = 338,11 ---> 273,11
-bottom = 338,49 ---> 273,49
-estimate hand point = 1956, 2470, 0.791903
-H:302.0,11.0 	L:305.0,118.0 >> 107.000000
-H:273.0,37.0 	L:338.0,52.0 >> 0.000000
-
-nNumberOfPoint = 5560
-top = 340,3 ---> 276,3
-bottom = 340,42 ---> 276,42
-estimate hand point = 1987, 2496, 0.796074
-H:305.0,3.0 	L:307.0,116.0 >> 113.000000
-H:276.0,44.0 	L:340.0,38.0 >> 0.000000
-
-nNumberOfPoint = 6129
-top = 347,0 ---> 279,0
-bottom = 347,36 ---> 279,36
-estimate hand point = 2035, 2448, 0.831291
-H:300.0,0.0 	L:313.0,116.0 >> 116.000000
-H:279.0,56.0 	L:347.0,20.0 >> 0.000000
-
-nNumberOfPoint = 6693
-top = 354,0 ---> 283,0
-bottom = 354,34 ---> 283,34
-estimate hand point = 2117, 2414, 0.876968
-H:287.0,0.0 	L:307.0,124.0 >> 124.000000
-H:283.0,42.0 	L:354.0,29.0 >> 0.000000
-
-nNumberOfPoint = 7347
-top = 362,0 ---> 286,0
-bottom = 362,34 ---> 286,34
-estimate hand point = 2123, 2584, 0.821594
-H:290.0,0.0 	L:304.0,134.0 >> 134.000000
-H:286.0,59.0 	L:362.0,34.0 >> 0.000000
-
-nNumberOfPoint = 7750
-top = 368,0 ---> 287,0
-bottom = 368,33 ---> 287,33
-estimate hand point = 2151, 2673, 0.804714
-H:290.0,0.0 	L:304.0,133.0 >> 133.000000
-H:287.0,6.0 	L:368.0,34.0 >> 0.000000
-
-nNumberOfPoint = 8043
-top = 375,0 ---> 289,0
-bottom = 375,32 ---> 289,32
-estimate hand point = 2041, 2752, 0.741642
-H:292.0,0.0 	L:300.0,132.0 >> 132.000000
-H:289.0,71.0 	L:375.0,20.0 >> 0.000000
-
-nNumberOfPoint = 8217
-top = 383,0 ---> 292,0
-bottom = 383,32 ---> 292,32
-estimate hand point = 2024, 2912, 0.695055
-H:293.0,0.0 	L:299.0,132.0 >> 132.000000
-H:292.0,70.0 	L:383.0,33.0 >> 0.000000
-
-nNumberOfPoint = 8379
-top = 389,0 ---> 294,0
-bottom = 389,31 ---> 294,31
-estimate hand point = 2009, 2945, 0.682173
-H:295.0,0.0 	L:301.0,131.0 >> 131.000000
-H:294.0,94.0 	L:389.0,40.0 >> 0.000000
-
-nNumberOfPoint = 8326
-top = 396,0 ---> 296,0
-bottom = 396,31 ---> 296,31
-estimate hand point = 1863, 3100, 0.600968
-H:302.0,0.0 	L:302.0,131.0 >> 131.000000
-H:296.0,93.0 	L:396.0,47.0 >> 0.000000
-
-nNumberOfPoint = 8358
-top = 402,0 ---> 298,0
-bottom = 402,31 ---> 298,31
-estimate hand point = 1746, 3224, 0.541563
-H:307.0,0.0 	L:303.0,131.0 >> 131.000000
-H:298.0,88.0 	L:402.0,55.0 >> 0.000000
-
-nNumberOfPoint = 8394
-top = 406,0 ---> 299,0
-bottom = 406,34 ---> 299,34
-estimate hand point = 1776, 3638, 0.488180
-H:323.0,0.0 	L:303.0,134.0 >> 134.000000
-H:299.0,23.0 	L:406.0,63.0 >> 0.000000
-
-nNumberOfPoint = 8375
-top = 407,0 ---> 302,0
-bottom = 407,35 ---> 302,35
-estimate hand point = 1771, 3675, 0.481905
-H:326.0,0.0 	L:305.0,135.0 >> 135.000000
-H:302.0,25.0 	L:407.0,63.0 >> 0.000000
-
-nNumberOfPoint = 8260
-top = 408,0 ---> 304,0
-bottom = 408,37 ---> 304,37
-estimate hand point = 1749, 3848, 0.454522
-H:329.0,0.0 	L:308.0,137.0 >> 137.000000
-H:304.0,80.0 	L:408.0,68.0 >> 0.000000
-
-nNumberOfPoint = 8350
-top = 408,0 ---> 304,0
-bottom = 408,38 ---> 304,38
-estimate hand point = 1783, 3952, 0.451164
-H:329.0,0.0 	L:308.0,138.0 >> 138.000000
-H:304.0,80.0 	L:408.0,70.0 >> 0.000000
-
-nNumberOfPoint = 8293
-top = 407,0 ---> 304,0
-bottom = 407,38 ---> 304,38
-estimate hand point = 1725, 3914, 0.440726
-H:333.0,0.0 	L:308.0,138.0 >> 138.000000
-H:304.0,24.0 	L:407.0,71.0 >> 0.000000
-
-nNumberOfPoint = 8256
-top = 407,0 ---> 302,0
-bottom = 407,37 ---> 302,37
-estimate hand point = 1686, 3885, 0.433977
-H:346.0,0.0 	L:307.0,137.0 >> 137.000000
-H:302.0,31.0 	L:407.0,72.0 >> 0.000000
-
-nNumberOfPoint = 8307
-top = 407,0 ---> 301,0
-bottom = 407,37 ---> 301,37
-estimate hand point = 1702, 3922, 0.433962
-H:332.0,0.0 	L:307.0,137.0 >> 137.000000
-H:301.0,28.0 	L:407.0,72.0 >> 0.000000
-
-nNumberOfPoint = 8291
-top = 407,0 ---> 301,0
-bottom = 407,38 ---> 301,38
-estimate hand point = 1682, 4028, 0.417577
-H:329.0,0.0 	L:306.0,138.0 >> 138.000000
-H:301.0,26.0 	L:407.0,73.0 >> 0.000000
-
-nNumberOfPoint = 8310
-top = 407,0 ---> 299,0
-bottom = 407,39 ---> 299,39
-estimate hand point = 1728, 4212, 0.410256
-H:330.0,0.0 	L:307.0,139.0 >> 139.000000
-H:299.0,29.0 	L:407.0,73.0 >> 0.000000
-
-nNumberOfPoint = 8482
-top = 409,0 ---> 299,0
-bottom = 409,40 ---> 299,40
-estimate hand point = 1757, 4400, 0.399318
-H:346.0,0.0 	L:308.0,140.0 >> 140.000000
-H:299.0,28.0 	L:409.0,75.0 >> 0.000000
-
-nNumberOfPoint = 8572
-top = 412,0 ---> 300,0
-bottom = 412,41 ---> 300,41
-estimate hand point = 1683, 4592, 0.366507
-H:346.0,0.0 	L:309.0,141.0 >> 141.000000
-H:300.0,31.0 	L:412.0,82.0 >> 0.000000
-
-nNumberOfPoint = 8585
-top = 414,0 ---> 303,0
-bottom = 414,42 ---> 303,42
-estimate hand point = 1671, 4662, 0.358430
-H:351.0,0.0 	L:312.0,142.0 >> 142.000000
-H:303.0,35.0 	L:414.0,84.0 >> 0.000000
-
-nNumberOfPoint = 8692
-top = 419,0 ---> 307,0
-bottom = 419,45 ---> 307,45
-estimate hand point = 1560, 5040, 0.309524
-H:360.0,0.0 	L:316.0,145.0 >> 145.000000
-H:307.0,38.0 	L:419.0,92.0 >> 0.000000
-
-nNumberOfPoint = 8680
-top = 422,6 ---> 309,6
-bottom = 422,52 ---> 309,52
-estimate hand point = 1568, 5198, 0.301654
-H:359.0,6.0 	L:317.0,152.0 >> 146.000000
-H:309.0,47.0 	L:422.0,98.0 >> 0.000000
-
-nNumberOfPoint = 8619
-top = 421,12 ---> 310,12
-bottom = 421,60 ---> 310,60
-estimate hand point = 1706, 5328, 0.320195
-H:363.0,12.0 	L:321.0,160.0 >> 148.000000
-H:310.0,47.0 	L:421.0,101.0 >> 0.000000
-
-nNumberOfPoint = 8727
-top = 421,17 ---> 311,17
-bottom = 421,68 ---> 311,68
-estimate hand point = 1851, 5610, 0.329947
-H:360.0,17.0 	L:319.0,168.0 >> 151.000000
-H:311.0,63.0 	L:421.0,108.0 >> 0.000000
-
-nNumberOfPoint = 8857
-top = 422,20 ---> 310,20
-bottom = 422,74 ---> 310,74
-estimate hand point = 1977, 6048, 0.326885
-H:360.0,20.0 	L:321.0,174.0 >> 154.000000
-H:310.0,60.0 	L:422.0,111.0 >> 0.000000
-
-nNumberOfPoint = 8757
-top = 422,24 ---> 311,24
-bottom = 422,79 ---> 311,79
-estimate hand point = 2014, 6105, 0.329894
-H:360.0,24.0 	L:321.0,179.0 >> 155.000000
-H:311.0,63.0 	L:422.0,111.0 >> 0.000000
-
-nNumberOfPoint = 8739
-top = 422,28 ---> 309,28
-bottom = 422,82 ---> 309,82
-estimate hand point = 2044, 6102, 0.334972
-H:363.0,28.0 	L:320.0,182.0 >> 154.000000
-H:309.0,69.0 	L:422.0,116.0 >> 0.000000
-
-nNumberOfPoint = 8727
-top = 421,30 ---> 310,30
-bottom = 421,83 ---> 310,83
-estimate hand point = 1962, 5883, 0.333503
-H:359.0,30.0 	L:320.0,183.0 >> 153.000000
-H:310.0,68.0 	L:421.0,116.0 >> 0.000000
-
-nNumberOfPoint = 8598
-top = 421,30 ---> 308,30
-bottom = 421,82 ---> 308,82
-estimate hand point = 1909, 5876, 0.324881
-H:359.0,30.0 	L:320.0,182.0 >> 152.000000
-H:308.0,75.0 	L:421.0,118.0 >> 0.000000
-
-nNumberOfPoint = 8505
-top = 420,31 ---> 308,31
-bottom = 420,81 ---> 308,81
-estimate hand point = 1841, 5600, 0.328750
-H:355.0,31.0 	L:320.0,181.0 >> 150.000000
-H:308.0,74.0 	L:420.0,117.0 >> 0.000000
-
-nNumberOfPoint = 8538
-top = 419,31 ---> 308,31
-bottom = 419,81 ---> 308,81
-estimate hand point = 1816, 5550, 0.327207
-H:355.0,31.0 	L:319.0,181.0 >> 150.000000
-H:308.0,68.0 	L:419.0,117.0 >> 0.000000
-
-nNumberOfPoint = 8513
-top = 419,30 ---> 306,30
-bottom = 419,81 ---> 306,81
-estimate hand point = 1860, 5763, 0.322749
-H:357.0,30.0 	L:319.0,181.0 >> 151.000000
-H:306.0,71.0 	L:419.0,118.0 >> 0.000000
-
-nNumberOfPoint = 8505
-top = 418,30 ---> 308,30
-bottom = 418,81 ---> 308,81
-estimate hand point = 1865, 5610, 0.332442
-H:357.0,30.0 	L:319.0,181.0 >> 151.000000
-H:308.0,69.0 	L:418.0,115.0 >> 0.000000
-
-nNumberOfPoint = 8513
-top = 418,30 ---> 307,30
-bottom = 418,81 ---> 307,81
-estimate hand point = 1867, 5661, 0.329800
-H:355.0,30.0 	L:319.0,181.0 >> 151.000000
-H:307.0,74.0 	L:418.0,114.0 >> 0.000000
-
-nNumberOfPoint = 8523
-top = 418,29 ---> 307,29
-bottom = 418,80 ---> 307,80
-estimate hand point = 1872, 5661, 0.330684
-H:356.0,29.0 	L:319.0,180.0 >> 151.000000
-H:307.0,73.0 	L:418.0,114.0 >> 0.000000
-
-nNumberOfPoint = 8844
-top = 409,24 ---> 306,24
-bottom = 409,91 ---> 306,91
-estimate hand point = 2669, 6901, 0.386756
-H:352.0,24.0 	L:318.0,191.0 >> 167.000000
-H:306.0,62.0 	L:409.0,107.0 >> 0.000000
-
-nNumberOfPoint = 8771
-top = 409,24 ---> 306,24
-bottom = 409,88 ---> 306,88
-estimate hand point = 2481, 6592, 0.376365
-H:352.0,24.0 	L:318.0,188.0 >> 164.000000
-H:306.0,62.0 	L:409.0,108.0 >> 0.000000
-
-nNumberOfPoint = 8787
-top = 409,24 ---> 306,24
-bottom = 409,86 ---> 306,86
-estimate hand point = 2428, 6386, 0.380207
-H:352.0,24.0 	L:316.0,186.0 >> 162.000000
-H:306.0,62.0 	L:409.0,108.0 >> 0.000000
-
-nNumberOfPoint = 8671
-top = 409,24 ---> 306,24
-bottom = 409,85 ---> 306,85
-estimate hand point = 2367, 6283, 0.376731
-H:352.0,24.0 	L:316.0,185.0 >> 161.000000
-H:306.0,61.0 	L:409.0,107.0 >> 0.000000
-
-nNumberOfPoint = 8727
-top = 410,24 ---> 307,24
-bottom = 410,84 ---> 307,84
-estimate hand point = 2349, 6180, 0.380097
-H:353.0,24.0 	L:316.0,184.0 >> 160.000000
-H:307.0,61.0 	L:410.0,107.0 >> 0.000000
-
-nNumberOfPoint = 8683
-top = 409,24 ---> 307,24
-bottom = 409,84 ---> 307,84
-estimate hand point = 2331, 6120, 0.380882
-H:353.0,24.0 	L:317.0,184.0 >> 160.000000
-H:307.0,61.0 	L:409.0,106.0 >> 0.000000
-
-nNumberOfPoint = 8715
-top = 409,24 ---> 306,24
-bottom = 409,83 ---> 306,83
-estimate hand point = 2354, 6077, 0.387362
-H:352.0,24.0 	L:316.0,183.0 >> 159.000000
-H:306.0,64.0 	L:409.0,106.0 >> 0.000000
-
-nNumberOfPoint = 8752
-top = 410,24 ---> 307,24
-bottom = 410,84 ---> 307,84
-estimate hand point = 2388, 6180, 0.386408
-H:352.0,24.0 	L:317.0,184.0 >> 160.000000
-H:307.0,59.0 	L:410.0,106.0 >> 0.000000
-
-nNumberOfPoint = 8665
-top = 410,24 ---> 307,24
-bottom = 410,83 ---> 307,83
-estimate hand point = 2322, 6077, 0.382096
-H:352.0,24.0 	L:316.0,183.0 >> 159.000000
-H:307.0,67.0 	L:410.0,106.0 >> 0.000000
-
-nNumberOfPoint = 8621
-top = 410,23 ---> 308,23
-bottom = 410,82 ---> 308,82
-estimate hand point = 2288, 6018, 0.380193
-H:359.0,23.0 	L:316.0,182.0 >> 159.000000
-H:308.0,61.0 	L:410.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8729
-top = 411,21 ---> 308,21
-bottom = 411,83 ---> 308,83
-estimate hand point = 2342, 6386, 0.366740
-H:358.0,21.0 	L:316.0,183.0 >> 162.000000
-H:308.0,61.0 	L:411.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8762
-top = 411,22 ---> 309,22
-bottom = 411,83 ---> 309,83
-estimate hand point = 2396, 6222, 0.385085
-H:357.0,22.0 	L:316.0,183.0 >> 161.000000
-H:309.0,60.0 	L:411.0,106.0 >> 0.000000
-
-nNumberOfPoint = 8850
-top = 411,21 ---> 308,21
-bottom = 411,83 ---> 308,83
-estimate hand point = 2453, 6386, 0.384122
-H:358.0,21.0 	L:319.0,183.0 >> 162.000000
-H:308.0,60.0 	L:411.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8865
-top = 412,21 ---> 309,21
-bottom = 412,83 ---> 309,83
-estimate hand point = 2441, 6386, 0.382242
-H:357.0,21.0 	L:317.0,183.0 >> 162.000000
-H:309.0,59.0 	L:412.0,105.0 >> 0.000000
-
-nNumberOfPoint = 8821
-top = 412,21 ---> 309,21
-bottom = 412,83 ---> 309,83
-estimate hand point = 2425, 6386, 0.379737
-H:359.0,21.0 	L:317.0,183.0 >> 162.000000
-H:309.0,60.0 	L:412.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8806
-top = 412,19 ---> 311,19
-bottom = 412,82 ---> 311,82
-estimate hand point = 2409, 6363, 0.378595
-H:358.0,19.0 	L:316.0,182.0 >> 163.000000
-H:311.0,57.0 	L:412.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8689
-top = 412,18 ---> 311,18
-bottom = 412,80 ---> 311,80
-estimate hand point = 2303, 6262, 0.367774
-H:359.0,18.0 	L:317.0,180.0 >> 162.000000
-H:311.0,57.0 	L:412.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8651
-top = 412,18 ---> 311,18
-bottom = 412,79 ---> 311,79
-estimate hand point = 2269, 6161, 0.368284
-H:358.0,18.0 	L:317.0,179.0 >> 161.000000
-H:311.0,58.0 	L:412.0,101.0 >> 0.000000
-
-nNumberOfPoint = 8557
-top = 413,18 ---> 310,18
-bottom = 413,78 ---> 310,78
-estimate hand point = 2225, 6180, 0.360032
-H:358.0,18.0 	L:317.0,178.0 >> 160.000000
-H:310.0,59.0 	L:413.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8498
-top = 413,18 ---> 311,18
-bottom = 413,75 ---> 311,75
-estimate hand point = 2112, 5814, 0.363261
-H:359.0,18.0 	L:317.0,175.0 >> 157.000000
-H:311.0,71.0 	L:413.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8410
-top = 413,18 ---> 310,18
-bottom = 413,72 ---> 310,72
-estimate hand point = 1967, 5562, 0.353650
-H:359.0,18.0 	L:317.0,172.0 >> 154.000000
-H:310.0,64.0 	L:413.0,105.0 >> 0.000000
-
-nNumberOfPoint = 8355
-top = 415,18 ---> 311,18
-bottom = 415,70 ---> 311,70
-estimate hand point = 1837, 5408, 0.339682
-H:358.0,18.0 	L:317.0,170.0 >> 152.000000
-H:311.0,57.0 	L:415.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8418
-top = 414,18 ---> 311,18
-bottom = 414,69 ---> 311,69
-estimate hand point = 1811, 5253, 0.344755
-H:358.0,18.0 	L:317.0,169.0 >> 151.000000
-H:311.0,58.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8224
-top = 413,18 ---> 311,18
-bottom = 413,66 ---> 311,66
-estimate hand point = 1670, 4896, 0.341095
-H:357.0,18.0 	L:317.0,166.0 >> 148.000000
-H:311.0,57.0 	L:413.0,101.0 >> 0.000000
-
-nNumberOfPoint = 8182
-top = 414,17 ---> 312,17
-bottom = 414,65 ---> 312,65
-estimate hand point = 1612, 4896, 0.329248
-H:358.0,17.0 	L:318.0,165.0 >> 148.000000
-H:312.0,58.0 	L:414.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8184
-top = 414,17 ---> 310,17
-bottom = 414,64 ---> 310,64
-estimate hand point = 1555, 4888, 0.318126
-H:359.0,17.0 	L:317.0,164.0 >> 147.000000
-H:310.0,58.0 	L:414.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8135
-top = 414,18 ---> 311,18
-bottom = 414,64 ---> 311,64
-estimate hand point = 1546, 4738, 0.326298
-H:359.0,18.0 	L:317.0,164.0 >> 146.000000
-H:311.0,58.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8244
-top = 415,18 ---> 311,18
-bottom = 415,66 ---> 311,66
-estimate hand point = 1677, 4992, 0.335938
-H:358.0,18.0 	L:319.0,166.0 >> 148.000000
-H:311.0,58.0 	L:415.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8258
-top = 414,18 ---> 311,18
-bottom = 414,66 ---> 311,66
-estimate hand point = 1684, 4944, 0.340615
-H:359.0,18.0 	L:319.0,166.0 >> 148.000000
-H:311.0,54.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8295
-top = 414,18 ---> 310,18
-bottom = 414,66 ---> 310,66
-estimate hand point = 1697, 4992, 0.339944
-H:359.0,18.0 	L:318.0,166.0 >> 148.000000
-H:310.0,58.0 	L:414.0,101.0 >> 0.000000
-
-nNumberOfPoint = 8241
-top = 414,18 ---> 312,18
-bottom = 414,66 ---> 312,66
-estimate hand point = 1649, 4896, 0.336806
-H:359.0,18.0 	L:319.0,166.0 >> 148.000000
-H:312.0,56.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8158
-top = 414,18 ---> 312,18
-bottom = 414,66 ---> 312,66
-estimate hand point = 1614, 4896, 0.329657
-H:358.0,18.0 	L:320.0,166.0 >> 148.000000
-H:312.0,58.0 	L:414.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8164
-top = 414,18 ---> 311,18
-bottom = 414,66 ---> 311,66
-estimate hand point = 1615, 4944, 0.326659
-H:357.0,18.0 	L:318.0,166.0 >> 148.000000
-H:311.0,60.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8229
-top = 414,18 ---> 311,18
-bottom = 414,66 ---> 311,66
-estimate hand point = 1641, 4944, 0.331917
-H:359.0,18.0 	L:318.0,166.0 >> 148.000000
-H:311.0,57.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8255
-top = 414,17 ---> 310,17
-bottom = 414,66 ---> 310,66
-estimate hand point = 1658, 5096, 0.325353
-H:359.0,17.0 	L:319.0,166.0 >> 149.000000
-H:310.0,58.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8230
-top = 415,17 ---> 311,17
-bottom = 415,66 ---> 311,66
-estimate hand point = 1655, 5096, 0.324765
-H:360.0,17.0 	L:321.0,166.0 >> 149.000000
-H:311.0,59.0 	L:415.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8262
-top = 415,17 ---> 312,17
-bottom = 415,66 ---> 312,66
-estimate hand point = 1654, 5047, 0.327719
-H:359.0,17.0 	L:321.0,166.0 >> 149.000000
-H:312.0,56.0 	L:415.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8245
-top = 415,18 ---> 310,18
-bottom = 415,66 ---> 310,66
-estimate hand point = 1670, 5040, 0.331349
-H:359.0,18.0 	L:321.0,166.0 >> 148.000000
-H:310.0,58.0 	L:415.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8339
-top = 414,18 ---> 310,18
-bottom = 414,66 ---> 310,66
-estimate hand point = 1695, 4992, 0.339543
-H:359.0,18.0 	L:318.0,166.0 >> 148.000000
-H:310.0,59.0 	L:414.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8251
-top = 413,18 ---> 311,18
-bottom = 413,66 ---> 311,66
-estimate hand point = 1651, 4896, 0.337214
-H:359.0,18.0 	L:319.0,166.0 >> 148.000000
-H:311.0,58.0 	L:413.0,101.0 >> 0.000000
-
-nNumberOfPoint = 8258
-top = 413,18 ---> 310,18
-bottom = 413,66 ---> 310,66
-estimate hand point = 1640, 4944, 0.331715
-H:358.0,18.0 	L:321.0,166.0 >> 148.000000
-H:310.0,57.0 	L:413.0,101.0 >> 0.000000
-
-nNumberOfPoint = 8265
-top = 413,18 ---> 310,18
-bottom = 413,67 ---> 310,67
-estimate hand point = 1693, 5047, 0.335447
-H:357.0,18.0 	L:320.0,167.0 >> 149.000000
-H:310.0,63.0 	L:413.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8282
-top = 414,18 ---> 310,18
-bottom = 414,66 ---> 310,66
-estimate hand point = 1632, 4992, 0.326923
-H:358.0,18.0 	L:319.0,166.0 >> 148.000000
-H:310.0,58.0 	L:414.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8341
-top = 414,17 ---> 310,17
-bottom = 414,67 ---> 310,67
-estimate hand point = 1701, 5200, 0.327115
-H:359.0,17.0 	L:320.0,167.0 >> 150.000000
-H:310.0,58.0 	L:414.0,103.0 >> 0.000000
-
-nNumberOfPoint = 8243
-top = 414,18 ---> 309,18
-bottom = 414,66 ---> 309,66
-estimate hand point = 1624, 5040, 0.322222
-H:359.0,18.0 	L:320.0,166.0 >> 148.000000
-H:309.0,59.0 	L:414.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8271
-top = 413,18 ---> 310,18
-bottom = 413,67 ---> 310,67
-estimate hand point = 1597, 5047, 0.316426
-H:359.0,18.0 	L:318.0,167.0 >> 149.000000
-H:310.0,57.0 	L:413.0,102.0 >> 0.000000
-
-nNumberOfPoint = 8351
-top = 412,19 ---> 310,19
-bottom = 412,69 ---> 310,69
-estimate hand point = 1696, 5100, 0.332549
-H:359.0,19.0 	L:319.0,169.0 >> 150.000000
-H:310.0,60.0 	L:412.0,104.0 >> 0.000000
-
-nNumberOfPoint = 8337
-top = 412,22 ---> 310,22
-bottom = 412,70 ---> 310,70
-estimate hand point = 1650, 4896, 0.337010
-H:359.0,22.0 	L:318.0,170.0 >> 148.000000
-H:310.0,60.0 	L:412.0,105.0 >> 0.000000
-
-nNumberOfPoint = 8325
-top = 408,25 ---> 307,25
-bottom = 408,71 ---> 307,71
-estimate hand point = 1659, 4646, 0.357081
-H:356.0,25.0 	L:319.0,171.0 >> 146.000000
-H:307.0,61.0 	L:408.0,107.0 >> 0.000000
-
-nNumberOfPoint = 8072
-top = 398,37 ---> 308,37
-bottom = 398,85 ---> 308,85
-estimate hand point = 1845, 4320, 0.427083
-H:352.0,37.0 	L:322.0,185.0 >> 148.000000
-H:308.0,62.0 	L:398.0,105.0 >> 0.000000
-
-nNumberOfPoint = 6343
-top = 384,67 ---> 310,67
-bottom = 384,105 ---> 310,105
-estimate hand point = 1664, 2812, 0.591750
-H:349.0,67.0 	L:330.0,189.0 >> 122.000000
-H:310.0,117.0 	L:384.0,111.0 >> 0.000000
-
-nNumberOfPoint = 4775
-top = 371,91 ---> 306,91
-bottom = 371,126 ---> 306,126
-estimate hand point = 1753, 2275, 0.770549
-H:341.0,91.0 	L:333.0,186.0 >> 95.000000
-H:306.0,114.0 	L:371.0,118.0 >> 0.000000
-
-nNumberOfPoint = 4311
-top = 369,103 ---> 304,103
-bottom = 369,137 ---> 304,137
-estimate hand point = 1705, 2210, 0.771493
-H:335.0,103.0 	L:327.0,190.0 >> 87.000000
-H:304.0,146.0 	L:369.0,144.0 >> 0.000000
-
-nNumberOfPoint = 4204
-top = 368,112 ---> 302,112
-bottom = 368,146 ---> 302,146
-estimate hand point = 1772, 2244, 0.789661
-H:333.0,112.0 	L:331.0,196.0 >> 84.000000
-H:302.0,129.0 	L:368.0,146.0 >> 0.000000
-
-nNumberOfPoint = 4137
-top = 367,119 ---> 298,119
-bottom = 367,153 ---> 298,153
-estimate hand point = 1750, 2346, 0.745951
-H:331.0,119.0 	L:327.0,201.0 >> 82.000000
-H:298.0,157.0 	L:367.0,158.0 >> 0.000000
-
-nNumberOfPoint = 4020
-top = 363,126 ---> 295,126
-bottom = 363,159 ---> 295,159
-estimate hand point = 1685, 2244, 0.750891
-H:328.0,126.0 	L:327.0,206.0 >> 80.000000
-H:295.0,146.0 	L:363.0,164.0 >> 0.000000
-
-nNumberOfPoint = 3815
-top = 359,133 ---> 290,133
-bottom = 359,168 ---> 290,168
-estimate hand point = 1709, 2415, 0.707660
-H:329.0,133.0 	L:321.0,211.0 >> 78.000000
-H:290.0,153.0 	L:359.0,168.0 >> 0.000000
-
-nNumberOfPoint = 3763
-top = 353,140 ---> 286,140
-bottom = 353,175 ---> 286,175
-estimate hand point = 1676, 2345, 0.714712
-H:319.0,140.0 	L:321.0,217.0 >> 77.000000
-H:286.0,160.0 	L:353.0,178.0 >> 0.000000
-
-nNumberOfPoint = 3791
-top = 347,146 ---> 278,146
-bottom = 347,184 ---> 278,184
-estimate hand point = 1885, 2622, 0.718917
-H:324.0,146.0 	L:315.0,223.0 >> 77.000000
-H:278.0,170.0 	L:347.0,182.0 >> 0.000000
-
-nNumberOfPoint = 3674
-top = 341,153 ---> 271,153
-bottom = 341,190 ---> 271,190
-estimate hand point = 1820, 2590, 0.702703
-H:311.0,153.0 	L:309.0,229.0 >> 76.000000
-H:271.0,176.0 	L:341.0,196.0 >> 0.000000
-
-nNumberOfPoint = 3713
-top = 333,159 ---> 261,159
-bottom = 333,195 ---> 261,195
-estimate hand point = 1857, 2592, 0.716435
-H:306.0,159.0 	L:307.0,235.0 >> 76.000000
-H:261.0,183.0 	L:333.0,196.0 >> 0.000000
-
-nNumberOfPoint = 3626
-top = 322,165 ---> 253,165
-bottom = 322,200 ---> 253,200
-estimate hand point = 1842, 2415, 0.762733
-H:295.0,165.0 	L:296.0,239.0 >> 74.000000
-H:253.0,190.0 	L:322.0,201.0 >> 0.000000
-
-nNumberOfPoint = 3513
-top = 314,168 ---> 242,168
-bottom = 314,204 ---> 242,204
-estimate hand point = 1892, 2592, 0.729938
-H:297.0,168.0 	L:294.0,243.0 >> 75.000000
-H:242.0,190.0 	L:314.0,206.0 >> 0.000000
-
-nNumberOfPoint = 3398
-top = 305,172 ---> 233,172
-bottom = 305,206 ---> 233,206
-estimate hand point = 1980, 2448, 0.808824
-H:268.0,172.0 	L:286.0,245.0 >> 73.000000
-H:233.0,191.0 	L:305.0,210.0 >> 0.000000
-
-nNumberOfPoint = 3849
-top = 300,170 ---> 223,170
-bottom = 300,205 ---> 223,205
-estimate hand point = 2076, 2695, 0.770315
-H:254.0,170.0 	L:278.0,248.0 >> 78.000000
-H:223.0,193.0 	L:300.0,194.0 >> 0.000000
-
-nNumberOfPoint = 3989
-top = 291,163 ---> 215,163
-bottom = 291,202 ---> 215,202
-estimate hand point = 2122, 2964, 0.715924
-H:253.0,163.0 	L:269.0,248.0 >> 85.000000
-H:215.0,182.0 	L:291.0,211.0 >> 0.000000
-
-nNumberOfPoint = 3816
-top = 286,156 ---> 210,156
-bottom = 286,199 ---> 210,199
-estimate hand point = 2040, 3268, 0.624235
-H:253.0,156.0 	L:265.0,247.0 >> 91.000000
-H:210.0,185.0 	L:286.0,216.0 >> 0.000000
-
-nNumberOfPoint = 4325
-top = 284,150 ---> 208,150
-bottom = 284,194 ---> 208,194
-estimate hand point = 1957, 3344, 0.585227
-H:222.0,150.0 	L:266.0,247.0 >> 97.000000
-H:208.0,162.0 	L:284.0,210.0 >> 0.000000
-
-nNumberOfPoint = 4678
-top = 282,140 ---> 192,140
-bottom = 282,181 ---> 192,181
-estimate hand point = 2027, 3690, 0.549322
-H:217.0,140.0 	L:265.0,243.0 >> 103.000000
-H:192.0,151.0 	L:282.0,210.0 >> 0.000000
-
-nNumberOfPoint = 5624
-top = 283,129 ---> 194,129
-bottom = 283,172 ---> 194,172
-estimate hand point = 2241, 3827, 0.585576
-H:204.0,129.0 	L:260.0,242.0 >> 113.000000
-H:194.0,140.0 	L:283.0,202.0 >> 0.000000
-
-nNumberOfPoint = 5976
-top = 284,116 ---> 194,116
-bottom = 284,161 ---> 194,161
-estimate hand point = 2156, 4050, 0.532346
-H:208.0,116.0 	L:264.0,239.0 >> 123.000000
-H:194.0,147.0 	L:284.0,201.0 >> 0.000000
-
-nNumberOfPoint = 6365
-top = 285,105 ---> 196,105
-bottom = 285,153 ---> 196,153
-estimate hand point = 2099, 4272, 0.491339
-H:209.0,105.0 	L:269.0,236.0 >> 131.000000
-H:196.0,147.0 	L:285.0,180.0 >> 0.000000
-
-nNumberOfPoint = 6421
-top = 287,98 ---> 198,98
-bottom = 287,149 ---> 198,149
-estimate hand point = 2085, 4539, 0.459352
-H:218.0,98.0 	L:268.0,234.0 >> 136.000000
-H:198.0,138.0 	L:287.0,174.0 >> 0.000000
-
-nNumberOfPoint = 6566
-top = 288,92 ---> 202,92
-bottom = 288,143 ---> 202,143
-estimate hand point = 2029, 4386, 0.462608
-H:222.0,92.0 	L:271.0,231.0 >> 139.000000
-H:202.0,136.0 	L:288.0,182.0 >> 0.000000
-
-nNumberOfPoint = 6577
-top = 293,88 ---> 202,88
-bottom = 293,139 ---> 202,139
-estimate hand point = 1954, 4641, 0.421030
-H:223.0,88.0 	L:269.0,229.0 >> 141.000000
-H:202.0,133.0 	L:293.0,184.0 >> 0.000000
-
-nNumberOfPoint = 6749
-top = 294,83 ---> 206,83
-bottom = 294,136 ---> 206,136
-estimate hand point = 2080, 4664, 0.445969
-H:231.0,83.0 	L:271.0,227.0 >> 144.000000
-H:206.0,125.0 	L:294.0,165.0 >> 0.000000
-
-nNumberOfPoint = 6888
-top = 295,80 ---> 207,80
-bottom = 295,132 ---> 207,132
-estimate hand point = 2109, 4576, 0.460883
-H:227.0,80.0 	L:273.0,224.0 >> 144.000000
-H:207.0,124.0 	L:295.0,160.0 >> 0.000000
-
-nNumberOfPoint = 6813
-top = 302,71 ---> 213,71
-bottom = 302,125 ---> 213,125
-estimate hand point = 2054, 4806, 0.427382
-H:238.0,71.0 	L:278.0,217.0 >> 146.000000
-H:213.0,115.0 	L:302.0,155.0 >> 0.000000
-
-nNumberOfPoint = 7020
-top = 305,68 ---> 218,68
-bottom = 305,122 ---> 218,122
-estimate hand point = 2092, 4698, 0.445296
-H:238.0,68.0 	L:278.0,215.0 >> 147.000000
-H:218.0,112.0 	L:305.0,146.0 >> 0.000000
-
-nNumberOfPoint = 7007
-top = 307,64 ---> 221,64
-bottom = 307,119 ---> 221,119
-estimate hand point = 2071, 4730, 0.437844
-H:247.0,64.0 	L:278.0,214.0 >> 150.000000
-H:221.0,110.0 	L:307.0,141.0 >> 0.000000
-
-nNumberOfPoint = 7107
-top = 312,63 ---> 224,63
-bottom = 312,117 ---> 224,117
-estimate hand point = 2179, 4752, 0.458544
-H:250.0,63.0 	L:281.0,213.0 >> 150.000000
-H:224.0,106.0 	L:312.0,146.0 >> 0.000000
+top = 331,115 ---> 272,115
+bottom = 331,151 ---> 272,151
+estimate hand point = 1285, 2124, 0.604991
+H:315.0,115.0 	L:300.0,210.0 >> 95.000000
+H:272.0,147.0 	L:331.0,141.0 >> 0.000000
+
+nNumberOfPoint = 3546
+top = 331,111 ---> 272,111
+bottom = 331,148 ---> 272,148
+estimate hand point = 1304, 2183, 0.597343
+H:316.0,111.0 	L:298.0,206.0 >> 95.000000
+H:272.0,147.0 	L:331.0,141.0 >> 0.000000
+
+nNumberOfPoint = 3653
+top = 329,111 ---> 273,111
+bottom = 329,146 ---> 273,146
+estimate hand point = 1234, 1960, 0.629592
+H:313.0,111.0 	L:294.0,208.0 >> 97.000000
+H:273.0,159.0 	L:329.0,126.0 >> 0.000000
+
+nNumberOfPoint = 3766
+top = 328,108 ---> 271,108
+bottom = 328,144 ---> 271,144
+estimate hand point = 1252, 2052, 0.610136
+H:313.0,108.0 	L:295.0,210.0 >> 102.000000
+H:271.0,139.0 	L:328.0,124.0 >> 0.000000
+
+nNumberOfPoint = 3782
+top = 327,107 ---> 266,107
+bottom = 327,142 ---> 266,142
+estimate hand point = 1200, 2135, 0.562061
+H:313.0,107.0 	L:288.0,209.0 >> 102.000000
+H:266.0,141.0 	L:327.0,123.0 >> 0.000000
+
+nNumberOfPoint = 4037
+top = 326,105 ---> 266,105
+bottom = 326,141 ---> 266,141
+estimate hand point = 1249, 2160, 0.578241
+H:311.0,105.0 	L:293.0,214.0 >> 109.000000
+H:266.0,141.0 	L:326.0,128.0 >> 0.000000
+
+nNumberOfPoint = 4166
+top = 326,105 ---> 265,105
+bottom = 326,140 ---> 265,140
+estimate hand point = 1266, 2135, 0.592974
+H:311.0,105.0 	L:290.0,218.0 >> 113.000000
+H:265.0,136.0 	L:326.0,126.0 >> 0.000000
+
+nNumberOfPoint = 4290
+top = 325,104 ---> 265,104
+bottom = 325,139 ---> 265,139
+estimate hand point = 1261, 2100, 0.600476
+H:311.0,104.0 	L:287.0,221.0 >> 117.000000
+H:265.0,148.0 	L:325.0,121.0 >> 0.000000
+
+nNumberOfPoint = 4534
+top = 326,103 ---> 265,103
+bottom = 326,138 ---> 265,138
+estimate hand point = 1307, 2135, 0.612178
+H:311.0,103.0 	L:284.0,222.0 >> 119.000000
+H:265.0,134.0 	L:326.0,126.0 >> 0.000000
+
+nNumberOfPoint = 4859
+top = 325,103 ---> 265,103
+bottom = 325,136 ---> 265,136
+estimate hand point = 1270, 1980, 0.641414
+H:310.0,103.0 	L:292.0,233.0 >> 130.000000
+H:265.0,142.0 	L:325.0,122.0 >> 0.000000
+
+nNumberOfPoint = 5096
+top = 325,102 ---> 265,102
+bottom = 325,135 ---> 265,135
+estimate hand point = 1345, 1980, 0.679293
+H:311.0,102.0 	L:284.0,235.0 >> 133.000000
+H:265.0,139.0 	L:325.0,121.0 >> 0.000000
+
+nNumberOfPoint = 5364
+top = 326,102 ---> 265,102
+bottom = 326,132 ---> 265,132
+estimate hand point = 1366, 1830, 0.746448
+H:310.0,102.0 	L:278.0,232.0 >> 130.000000
+H:265.0,139.0 	L:326.0,122.0 >> 0.000000
+
+nNumberOfPoint = 5426
+top = 326,100 ---> 264,100
+bottom = 326,129 ---> 264,129
+estimate hand point = 1327, 1798, 0.738042
+H:310.0,100.0 	L:274.0,229.0 >> 129.000000
+H:264.0,151.0 	L:326.0,122.0 >> 0.000000
+
+nNumberOfPoint = 5617
+top = 325,97 ---> 266,97
+bottom = 325,127 ---> 266,127
+estimate hand point = 1308, 1770, 0.738983
+H:293.0,97.0 	L:273.0,227.0 >> 130.000000
+H:266.0,135.0 	L:325.0,122.0 >> 0.000000
+
+nNumberOfPoint = 5803
+top = 326,93 ---> 265,93
+bottom = 326,126 ---> 265,126
+estimate hand point = 1384, 2013, 0.687531
+H:293.0,93.0 	L:272.0,226.0 >> 133.000000
+H:265.0,137.0 	L:326.0,126.0 >> 0.000000
+
+nNumberOfPoint = 5935
+top = 327,93 ---> 265,93
+bottom = 327,126 ---> 265,126
+estimate hand point = 1439, 2046, 0.703324
+H:310.0,93.0 	L:272.0,226.0 >> 133.000000
+H:265.0,142.0 	L:327.0,124.0 >> 0.000000
+
+nNumberOfPoint = 6507
+top = 330,79 ---> 263,79
+bottom = 330,122 ---> 263,122
+estimate hand point = 1692, 2881, 0.587296
+H:291.0,79.0 	L:268.0,222.0 >> 143.000000
+H:263.0,111.0 	L:330.0,127.0 >> 0.000000
+
+nNumberOfPoint = 7050
+top = 333,72 ---> 260,72
+bottom = 333,120 ---> 260,120
+estimate hand point = 1815, 3504, 0.517979
+H:289.0,72.0 	L:268.0,220.0 >> 148.000000
+H:260.0,99.0 	L:333.0,115.0 >> 0.000000
+
+nNumberOfPoint = 7122
+top = 340,72 ---> 259,72
+bottom = 340,121 ---> 259,121
+estimate hand point = 1765, 3969, 0.444696
+H:291.0,72.0 	L:268.0,221.0 >> 149.000000
+H:259.0,98.0 	L:340.0,120.0 >> 0.000000
+
+nNumberOfPoint = 7309
+top = 348,71 ---> 256,71
+bottom = 348,124 ---> 256,124
+estimate hand point = 1824, 4876, 0.374077
+H:292.0,71.0 	L:270.0,224.0 >> 153.000000
+H:256.0,104.0 	L:348.0,125.0 >> 0.000000
+
+nNumberOfPoint = 7223
+top = 353,74 ---> 253,74
+bottom = 353,124 ---> 253,124
+estimate hand point = 1709, 5000, 0.341800
+H:297.0,74.0 	L:270.0,224.0 >> 150.000000
+H:253.0,106.0 	L:353.0,135.0 >> 0.000000
+
+nNumberOfPoint = 7243
+top = 356,75 ---> 253,75
+bottom = 356,124 ---> 253,124
+estimate hand point = 1667, 5047, 0.330295
+H:299.0,75.0 	L:270.0,224.0 >> 149.000000
+H:253.0,106.0 	L:356.0,136.0 >> 0.000000
+
+nNumberOfPoint = 7271
+top = 361,76 ---> 253,76
+bottom = 361,122 ---> 253,122
+estimate hand point = 1526, 4968, 0.307166
+H:300.0,76.0 	L:271.0,222.0 >> 146.000000
+H:253.0,110.0 	L:361.0,145.0 >> 0.000000
 
 nNumberOfPoint = 7208
-top = 319,58 ---> 229,58
-bottom = 319,112 ---> 229,112
-estimate hand point = 2142, 4860, 0.440741
-H:257.0,58.0 	L:290.0,210.0 >> 152.000000
-H:229.0,100.0 	L:319.0,138.0 >> 0.000000
-
-nNumberOfPoint = 7364
-top = 322,55 ---> 234,55
-bottom = 322,109 ---> 234,109
-estimate hand point = 2132, 4752, 0.448653
-H:261.0,55.0 	L:291.0,208.0 >> 153.000000
-H:234.0,96.0 	L:322.0,137.0 >> 0.000000
-
-nNumberOfPoint = 7340
-top = 327,53 ---> 238,53
-bottom = 327,108 ---> 238,108
-estimate hand point = 2098, 4895, 0.428601
-H:266.0,53.0 	L:293.0,208.0 >> 155.000000
-H:238.0,94.0 	L:327.0,135.0 >> 0.000000
-
-nNumberOfPoint = 7447
-top = 330,50 ---> 242,50
-bottom = 330,105 ---> 242,105
-estimate hand point = 2146, 4840, 0.443388
-H:269.0,50.0 	L:294.0,204.0 >> 154.000000
-H:242.0,91.0 	L:330.0,137.0 >> 0.000000
-
-nNumberOfPoint = 7394
-top = 334,48 ---> 246,48
-bottom = 334,104 ---> 246,104
-estimate hand point = 2109, 4928, 0.427963
-H:274.0,48.0 	L:298.0,204.0 >> 156.000000
-H:246.0,86.0 	L:334.0,128.0 >> 0.000000
-
-nNumberOfPoint = 7541
-top = 336,47 ---> 247,47
-bottom = 336,103 ---> 247,103
-estimate hand point = 2141, 4984, 0.429575
-H:275.0,47.0 	L:297.0,203.0 >> 156.000000
-H:247.0,87.0 	L:336.0,125.0 >> 0.000000
-
-nNumberOfPoint = 7657
-top = 339,46 ---> 252,46
-bottom = 339,101 ---> 252,101
-estimate hand point = 2207, 4785, 0.461233
-H:279.0,46.0 	L:296.0,201.0 >> 155.000000
-H:252.0,83.0 	L:339.0,126.0 >> 0.000000
-
-nNumberOfPoint = 7996
-top = 348,41 ---> 257,41
-bottom = 348,95 ---> 257,95
-estimate hand point = 2283, 4914, 0.464591
-H:290.0,41.0 	L:296.0,195.0 >> 154.000000
-H:257.0,80.0 	L:348.0,120.0 >> 0.000000
-
-nNumberOfPoint = 7955
-top = 352,40 ---> 260,40
-bottom = 352,93 ---> 260,93
-estimate hand point = 2206, 4876, 0.452420
-H:292.0,40.0 	L:298.0,193.0 >> 153.000000
-H:260.0,75.0 	L:352.0,119.0 >> 0.000000
-
-nNumberOfPoint = 8202
-top = 358,39 ---> 263,39
-bottom = 358,90 ---> 263,90
-estimate hand point = 2245, 4845, 0.463364
-H:294.0,39.0 	L:300.0,190.0 >> 151.000000
-H:263.0,73.0 	L:358.0,117.0 >> 0.000000
-
-nNumberOfPoint = 8061
-top = 364,46 ---> 267,46
-bottom = 364,91 ---> 267,91
-estimate hand point = 2213, 4365, 0.506987
-H:319.0,46.0 	L:314.0,191.0 >> 145.000000
-H:267.0,68.0 	L:364.0,105.0 >> 0.000000
-
-nNumberOfPoint = 7840
-top = 370,48 ---> 273,48
-bottom = 370,92 ---> 273,92
-estimate hand point = 2418, 4268, 0.566542
-H:330.0,48.0 	L:326.0,187.0 >> 139.000000
-H:273.0,68.0 	L:370.0,91.0 >> 0.000000
-
-nNumberOfPoint = 7707
-top = 380,40 ---> 281,40
-bottom = 380,87 ---> 281,87
-estimate hand point = 2524, 4653, 0.542446
-H:339.0,40.0 	L:333.0,170.0 >> 130.000000
-H:281.0,65.0 	L:380.0,86.0 >> 0.000000
-
-nNumberOfPoint = 7617
-top = 394,38 ---> 292,38
-bottom = 394,82 ---> 292,82
-estimate hand point = 2549, 4488, 0.567959
-H:348.0,38.0 	L:348.0,157.0 >> 119.000000
-H:292.0,61.0 	L:394.0,77.0 >> 0.000000
-
-nNumberOfPoint = 7789
-top = 419,39 ---> 307,39
-bottom = 419,76 ---> 307,76
-estimate hand point = 2437, 4144, 0.588079
-H:340.0,39.0 	L:373.0,151.0 >> 112.000000
-H:307.0,62.0 	L:419.0,86.0 >> 0.000000
-
-nNumberOfPoint = 8220
-top = 445,30 ---> 329,30
-bottom = 445,73 ---> 329,73
-estimate hand point = 2820, 4988, 0.565357
-H:366.0,30.0 	L:397.0,143.0 >> 113.000000
-H:329.0,48.0 	L:445.0,68.0 >> 0.000000
-
-nNumberOfPoint = 9468
-top = 492,20 ---> 353,20
-bottom = 492,66 ---> 353,66
-estimate hand point = 3054, 6394, 0.477635
-H:392.0,20.0 	L:423.0,142.0 >> 122.000000
-H:353.0,42.0 	L:492.0,62.0 >> 0.000000
-
-nNumberOfPoint = 10230
-top = 529,9 ---> 389,9
-bottom = 529,65 ---> 389,65
-estimate hand point = 3823, 7840, 0.487628
-H:431.0,9.0 	L:439.0,131.0 >> 122.000000
-H:389.0,34.0 	L:529.0,63.0 >> 0.000000
-
-nNumberOfPoint = 10087
-top = 564,18 ---> 427,18
-bottom = 564,73 ---> 427,73
-estimate hand point = 4586, 7535, 0.608626
-H:452.0,18.0 	L:466.0,151.0 >> 133.000000
-H:427.0,36.0 	L:564.0,62.0 >> 0.000000
-
-nNumberOfPoint = 7308
-top = 605,41 ---> 471,41
-bottom = 605,85 ---> 471,85
-estimate hand point = 3468, 5896, 0.588195
-H:599.0,41.0 	L:491.0,163.0 >> 122.000000
-H:471.0,108.0 	L:605.0,48.0 >> 0.000000
-
-nNumberOfPoint = 4313
-top = 567,82 ---> 479,82
-bottom = 567,132 ---> 479,132
-estimate hand point = 1733, 4400, 0.393864
-H:519.0,82.0 	L:498.0,201.0 >> 119.000000
-H:479.0,148.0 	L:567.0,122.0 >> 0.000000
-
-nNumberOfPoint = 4487
-top = 590,99 ---> 504,99
-bottom = 590,142 ---> 504,142
-estimate hand point = 1974, 3698, 0.533802
-H:555.0,99.0 	L:520.0,202.0 >> 103.000000
-H:504.0,155.0 	L:590.0,134.0 >> 0.000000
-
-nNumberOfPoint = 4188
-top = 602,155 ---> 521,155
-bottom = 602,187 ---> 521,187
-estimate hand point = 1846, 2592, 0.712191
-H:563.0,155.0 	L:549.0,228.0 >> 73.000000
-H:521.0,199.0 	L:602.0,169.0 >> 0.000000
-
-nNumberOfPoint = 3795
-top = 610,156 ---> 532,156
-bottom = 610,197 ---> 532,197
-estimate hand point = 1711, 3198, 0.535022
-H:589.0,156.0 	L:563.0,237.0 >> 81.000000
-H:532.0,193.0 	L:610.0,201.0 >> 0.000000
-
-nNumberOfPoint = 2742
-top = 611,166 ---> 540,166
-bottom = 611,206 ---> 540,206
-estimate hand point = 1380, 2840, 0.485915
-H:593.0,166.0 	L:566.0,236.0 >> 70.000000
-H:540.0,203.0 	L:611.0,201.0 >> 0.000000
-
-nNumberOfPoint = 2110
-top = 602,180 ---> 548,180
-bottom = 602,212 ---> 548,212
-estimate hand point = 964, 1728, 0.557870
-H:596.0,180.0 	L:576.0,240.0 >> 60.000000
-H:548.0,204.0 	L:602.0,184.0 >> 0.000000
-
-nNumberOfPoint = 1611
-top = 599,181 ---> 558,181
-bottom = 599,212 ---> 558,212
-estimate hand point = 574, 1271, 0.451613
-H:595.0,181.0 	L:577.0,243.0 >> 62.000000
-H:558.0,214.0 	L:599.0,185.0 >> 0.000000
-
-nNumberOfPoint = 811
-top = 598,191 ---> 566,191
-bottom = 598,212 ---> 566,212
-estimate hand point = 155, 672, 0.230655
-H:593.0,191.0 	L:584.0,242.0 >> 51.000000
-H:566.0,225.0 	L:598.0,213.0 >> 0.000000
-
-nNumberOfPoint = 407
-top = 596,209 ---> 574,209
-bottom = 596,212 ---> 574,212
-estimate hand point = 15, 66, 0.227273
-H:584.0,209.0 	L:587.0,244.0 >> 35.000000
-H:574.0,228.0 	L:596.0,223.0 >> 0.000000
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
-
-nNumberOfPoint = 0
+top = 364,76 ---> 252,76
+bottom = 364,122 ---> 252,122
+estimate hand point = 1464, 5152, 0.284161
+H:299.0,76.0 	L:272.0,222.0 >> 146.000000
+H:252.0,113.0 	L:364.0,144.0 >> 0.000000
+
+nNumberOfPoint = 7249
+top = 366,75 ---> 252,75
+bottom = 366,122 ---> 252,122
+estimate hand point = 1479, 5358, 0.276036
+H:300.0,75.0 	L:273.0,222.0 >> 147.000000
+H:252.0,111.0 	L:366.0,145.0 >> 0.000000
+
+nNumberOfPoint = 7405
+top = 367,75 ---> 253,75
+bottom = 367,125 ---> 253,125
+estimate hand point = 1609, 5700, 0.282281
+H:301.0,75.0 	L:272.0,225.0 >> 150.000000
+H:253.0,109.0 	L:367.0,144.0 >> 0.000000
+
+nNumberOfPoint = 7530
+top = 367,74 ---> 252,74
+bottom = 367,128 ---> 252,128
+estimate hand point = 1834, 6210, 0.295330
+H:302.0,74.0 	L:271.0,228.0 >> 154.000000
+H:252.0,110.0 	L:367.0,144.0 >> 0.000000
+
+nNumberOfPoint = 7483
+top = 367,74 ---> 252,74
+bottom = 367,127 ---> 252,127
+estimate hand point = 1790, 6095, 0.293683
+H:301.0,74.0 	L:272.0,227.0 >> 153.000000
+H:252.0,112.0 	L:367.0,144.0 >> 0.000000
+
+nNumberOfPoint = 7521
+top = 368,74 ---> 252,74
+bottom = 368,128 ---> 252,128
+estimate hand point = 1857, 6264, 0.296456
+H:300.0,74.0 	L:274.0,228.0 >> 154.000000
+H:252.0,113.0 	L:368.0,146.0 >> 0.000000
+
+nNumberOfPoint = 7559
+top = 368,74 ---> 253,74
+bottom = 368,126 ---> 253,126
+estimate hand point = 1814, 5980, 0.303344
+H:301.0,74.0 	L:276.0,226.0 >> 152.000000
+H:253.0,113.0 	L:368.0,145.0 >> 0.000000
+
+nNumberOfPoint = 7669
+top = 369,75 ---> 252,75
+bottom = 369,127 ---> 252,127
+estimate hand point = 1810, 6084, 0.297502
+H:301.0,75.0 	L:277.0,227.0 >> 152.000000
+H:252.0,114.0 	L:369.0,147.0 >> 0.000000
+
+nNumberOfPoint = 7619
+top = 371,76 ---> 253,76
+bottom = 371,127 ---> 253,127
+estimate hand point = 1722, 6018, 0.286142
+H:302.0,76.0 	L:276.0,227.0 >> 151.000000
+H:253.0,115.0 	L:371.0,156.0 >> 0.000000
+
+nNumberOfPoint = 7636
+top = 368,76 ---> 253,76
+bottom = 368,127 ---> 253,127
+estimate hand point = 1699, 5865, 0.289685
+H:302.0,76.0 	L:276.0,227.0 >> 151.000000
+H:253.0,113.0 	L:368.0,147.0 >> 0.000000
+
+nNumberOfPoint = 7405
+top = 356,74 ---> 253,74
+bottom = 356,126 ---> 253,126
+estimate hand point = 1744, 5356, 0.325616
+H:302.0,74.0 	L:277.0,226.0 >> 152.000000
+H:253.0,116.0 	L:356.0,161.0 >> 0.000000
+
+nNumberOfPoint = 7177
+top = 351,78 ---> 255,78
+bottom = 351,126 ---> 255,126
+estimate hand point = 1616, 4608, 0.350694
+H:296.0,78.0 	L:278.0,226.0 >> 148.000000
+H:255.0,113.0 	L:351.0,159.0 >> 0.000000
+
+nNumberOfPoint = 6831
+top = 346,93 ---> 257,93
+bottom = 346,132 ---> 257,132
+estimate hand point = 1442, 3471, 0.415442
+H:297.0,93.0 	L:279.0,232.0 >> 139.000000
+H:257.0,120.0 	L:346.0,154.0 >> 0.000000
+
+nNumberOfPoint = 6502
+top = 338,107 ---> 265,107
+bottom = 338,142 ---> 265,142
+estimate hand point = 1466, 2555, 0.573777
+H:297.0,107.0 	L:279.0,242.0 >> 135.000000
+H:265.0,138.0 	L:338.0,146.0 >> 0.000000
+
+nNumberOfPoint = 4885
+top = 321,126 ---> 263,126
+bottom = 321,166 ---> 263,166
+estimate hand point = 1728, 2320, 0.744828
+H:307.0,126.0 	L:291.0,251.0 >> 125.000000
+H:263.0,163.0 	L:321.0,162.0 >> 0.000000
+
+nNumberOfPoint = 4467
+top = 320,131 ---> 264,131
+bottom = 320,170 ---> 264,170
+estimate hand point = 1480, 2184, 0.677656
+H:290.0,131.0 	L:286.0,250.0 >> 119.000000
+H:264.0,166.0 	L:320.0,164.0 >> 0.000000
+
+nNumberOfPoint = 4489
+top = 320,132 ---> 263,132
+bottom = 320,172 ---> 263,172
+estimate hand point = 1513, 2280, 0.663596
+H:290.0,132.0 	L:286.0,250.0 >> 118.000000
+H:263.0,169.0 	L:320.0,148.0 >> 0.000000
+
+nNumberOfPoint = 4190
+top = 317,136 ---> 261,136
+bottom = 317,173 ---> 261,173
+estimate hand point = 1391, 2072, 0.671332
+H:303.0,136.0 	L:288.0,244.0 >> 108.000000
+H:261.0,171.0 	L:317.0,165.0 >> 0.000000
+
+nNumberOfPoint = 4181
+top = 318,141 ---> 261,141
+bottom = 318,175 ---> 261,175
+estimate hand point = 1263, 1938, 0.651703
+H:289.0,141.0 	L:291.0,247.0 >> 106.000000
+H:261.0,177.0 	L:318.0,171.0 >> 0.000000
+
+nNumberOfPoint = 4145
+top = 319,144 ---> 260,144
+bottom = 319,178 ---> 260,178
+estimate hand point = 1306, 2006, 0.651047
+H:304.0,144.0 	L:288.0,246.0 >> 102.000000
+H:260.0,183.0 	L:319.0,169.0 >> 0.000000
+
+nNumberOfPoint = 4074
+top = 316,150 ---> 258,150
+bottom = 316,184 ---> 258,184
+estimate hand point = 1221, 1972, 0.619168
+H:298.0,150.0 	L:292.0,249.0 >> 99.000000
+H:258.0,187.0 	L:316.0,184.0 >> 0.000000
+
+nNumberOfPoint = 3943
+top = 315,157 ---> 254,157
+bottom = 315,193 ---> 254,193
+estimate hand point = 1237, 2196, 0.563297
+H:298.0,157.0 	L:288.0,254.0 >> 97.000000
+H:254.0,199.0 	L:315.0,192.0 >> 0.000000
+
+nNumberOfPoint = 3747
+top = 313,165 ---> 254,165
+bottom = 313,201 ---> 254,201
+estimate hand point = 1248, 2124, 0.587571
+H:297.0,165.0 	L:285.0,258.0 >> 93.000000
+H:254.0,209.0 	L:313.0,202.0 >> 0.000000
+
+nNumberOfPoint = 3737
+top = 310,178 ---> 251,178
+bottom = 310,214 ---> 251,214
+estimate hand point = 1252, 2124, 0.589454
+H:291.0,178.0 	L:283.0,270.0 >> 92.000000
+H:251.0,221.0 	L:310.0,212.0 >> 0.000000
+
+nNumberOfPoint = 3770
+top = 308,184 ---> 243,184
+bottom = 308,225 ---> 243,225
+estimate hand point = 1289, 2665, 0.483677
+H:290.0,184.0 	L:275.0,281.0 >> 97.000000
+H:243.0,229.0 	L:308.0,226.0 >> 0.000000
+
+nNumberOfPoint = 3642
+top = 305,199 ---> 247,199
+bottom = 305,240 ---> 247,240
+estimate hand point = 1326, 2378, 0.557611
+H:287.0,199.0 	L:264.0,290.0 >> 91.000000
+H:247.0,254.0 	L:305.0,241.0 >> 0.000000
+
+nNumberOfPoint = 3850
+top = 305,215 ---> 244,215
+bottom = 305,255 ---> 244,255
+estimate hand point = 1555, 2440, 0.637295
+H:283.0,215.0 	L:267.0,310.0 >> 95.000000
+H:244.0,251.0 	L:305.0,229.0 >> 0.000000
+
+nNumberOfPoint = 3381
+top = 304,230 ---> 241,230
+bottom = 304,274 ---> 241,274
+estimate hand point = 1460, 2772, 0.526696
+H:282.0,230.0 	L:258.0,315.0 >> 85.000000
+H:241.0,269.0 	L:304.0,274.0 >> 0.000000
+
+nNumberOfPoint = 3725
+top = 302,245 ---> 237,245
+bottom = 302,288 ---> 237,288
+estimate hand point = 1711, 2795, 0.612165
+H:290.0,245.0 	L:263.0,333.0 >> 88.000000
+H:237.0,285.0 	L:302.0,278.0 >> 0.000000
+
+nNumberOfPoint = 3571
+top = 302,260 ---> 236,260
+bottom = 302,304 ---> 236,304
+estimate hand point = 1634, 2904, 0.562672
+H:287.0,260.0 	L:263.0,348.0 >> 88.000000
+H:236.0,305.0 	L:302.0,293.0 >> 0.000000
+
+nNumberOfPoint = 3553
+top = 301,278 ---> 235,278
+bottom = 301,316 ---> 235,316
+estimate hand point = 1594, 2508, 0.635566
+H:278.0,278.0 	L:260.0,357.0 >> 79.000000
+H:235.0,315.0 	L:301.0,320.0 >> 0.000000
+
+nNumberOfPoint = 3816
+top = 304,284 ---> 234,284
+bottom = 304,325 ---> 234,325
+estimate hand point = 1691, 2870, 0.589199
+H:264.0,284.0 	L:261.0,368.0 >> 84.000000
+H:234.0,314.0 	L:304.0,357.0 >> 0.000000
+
+nNumberOfPoint = 3631
+top = 301,294 ---> 234,294
+bottom = 301,334 ---> 234,334
+estimate hand point = 1651, 2680, 0.616045
+H:264.0,294.0 	L:272.0,372.0 >> 78.000000
+H:234.0,322.0 	L:301.0,366.0 >> 0.000000
+
+nNumberOfPoint = 3584
+top = 298,301 ---> 228,301
+bottom = 298,339 ---> 228,339
+estimate hand point = 1585, 2660, 0.595865
+H:268.0,301.0 	L:278.0,378.0 >> 77.000000
+H:228.0,340.0 	L:298.0,347.0 >> 0.000000
+
+nNumberOfPoint = 2802
+top = 298,309 ---> 229,309
+bottom = 298,350 ---> 229,350
+estimate hand point = 1288, 2829, 0.455285
+H:264.0,309.0 	L:256.0,380.0 >> 71.000000
+H:229.0,348.0 	L:298.0,350.0 >> 0.000000
+
+nNumberOfPoint = 2818
+top = 298,310 ---> 231,310
+bottom = 298,349 ---> 231,349
+estimate hand point = 1194, 2613, 0.456946
+H:264.0,310.0 	L:270.0,382.0 >> 72.000000
+H:231.0,349.0 	L:298.0,355.0 >> 0.000000
+
+nNumberOfPoint = 3170
+top = 297,308 ---> 228,308
+bottom = 297,346 ---> 228,346
+estimate hand point = 1344, 2622, 0.512586
+H:275.0,308.0 	L:273.0,382.0 >> 74.000000
+H:228.0,346.0 	L:297.0,350.0 >> 0.000000
+
+nNumberOfPoint = 2876
+top = 299,312 ---> 233,312
+bottom = 299,349 ---> 233,349
+estimate hand point = 1282, 2442, 0.524980
+H:272.0,312.0 	L:263.0,385.0 >> 73.000000
+H:233.0,344.0 	L:299.0,349.0 >> 0.000000
+
+nNumberOfPoint = 3028
+top = 297,308 ---> 234,308
+bottom = 297,347 ---> 234,347
+estimate hand point = 1435, 2457, 0.584046
+H:274.0,308.0 	L:263.0,383.0 >> 75.000000
+H:234.0,341.0 	L:297.0,346.0 >> 0.000000
+
+nNumberOfPoint = 3165
+top = 300,306 ---> 233,306
+bottom = 300,345 ---> 233,345
+estimate hand point = 1445, 2613, 0.553004
+H:271.0,306.0 	L:261.0,379.0 >> 73.000000
+H:233.0,340.0 	L:300.0,362.0 >> 0.000000
+
+nNumberOfPoint = 3117
+top = 299,305 ---> 233,305
+bottom = 299,342 ---> 233,342
+estimate hand point = 1380, 2442, 0.565111
+H:275.0,305.0 	L:280.0,379.0 >> 74.000000
+H:233.0,338.0 	L:299.0,353.0 >> 0.000000
+
+nNumberOfPoint = 3049
+top = 298,304 ---> 231,304
+bottom = 298,341 ---> 231,341
+estimate hand point = 1348, 2479, 0.543768
+H:272.0,304.0 	L:261.0,378.0 >> 74.000000
+H:231.0,338.0 	L:298.0,344.0 >> 0.000000
+
+nNumberOfPoint = 3159
+top = 299,304 ---> 231,304
+bottom = 299,342 ---> 231,342
+estimate hand point = 1396, 2584, 0.540248
+H:275.0,304.0 	L:262.0,378.0 >> 74.000000
+H:231.0,338.0 	L:299.0,363.0 >> 0.000000
+
+nNumberOfPoint = 3077
+top = 299,305 ---> 231,305
+bottom = 299,342 ---> 231,342
+estimate hand point = 1345, 2516, 0.534579
+H:278.0,305.0 	L:278.0,379.0 >> 74.000000
+H:231.0,339.0 	L:299.0,347.0 >> 0.000000
+
+nNumberOfPoint = 3168
+top = 300,305 ---> 231,305
+bottom = 300,343 ---> 231,343
+estimate hand point = 1374, 2622, 0.524027
+H:275.0,305.0 	L:277.0,379.0 >> 74.000000
+H:231.0,341.0 	L:300.0,361.0 >> 0.000000
+
+nNumberOfPoint = 3235
+top = 300,304 ---> 232,304
+bottom = 300,343 ---> 232,343
+estimate hand point = 1421, 2652, 0.535822
+H:277.0,304.0 	L:278.0,380.0 >> 76.000000
+H:232.0,341.0 	L:300.0,347.0 >> 0.000000
+
+nNumberOfPoint = 3416
+top = 301,302 ---> 233,302
+bottom = 301,343 ---> 233,343
+estimate hand point = 1557, 2788, 0.558465
+H:274.0,302.0 	L:277.0,380.0 >> 78.000000
+H:233.0,336.0 	L:301.0,342.0 >> 0.000000
+
+nNumberOfPoint = 3746
+top = 302,299 ---> 231,299
+bottom = 302,340 ---> 231,340
+estimate hand point = 1658, 2911, 0.569564
+H:272.0,299.0 	L:262.0,380.0 >> 81.000000
+H:231.0,329.0 	L:302.0,345.0 >> 0.000000
+
+nNumberOfPoint = 4119
+top = 303,295 ---> 228,295
+bottom = 303,338 ---> 228,338
+estimate hand point = 1844, 3225, 0.571783
+H:274.0,295.0 	L:262.0,380.0 >> 85.000000
+H:228.0,327.0 	L:303.0,345.0 >> 0.000000
+
+nNumberOfPoint = 4345
+top = 304,291 ---> 226,291
+bottom = 304,336 ---> 226,336
+estimate hand point = 1932, 3510, 0.550427
+H:269.0,291.0 	L:261.0,381.0 >> 90.000000
+H:226.0,321.0 	L:304.0,339.0 >> 0.000000
+
+nNumberOfPoint = 4804
+top = 307,285 ---> 227,285
+bottom = 307,332 ---> 227,332
+estimate hand point = 2148, 3760, 0.571277
+H:278.0,285.0 	L:267.0,380.0 >> 95.000000
+H:227.0,316.0 	L:307.0,328.0 >> 0.000000
+
+nNumberOfPoint = 5168
+top = 309,282 ---> 230,282
+bottom = 309,328 ---> 230,328
+estimate hand point = 2159, 3634, 0.594111
+H:277.0,282.0 	L:266.0,381.0 >> 99.000000
+H:230.0,314.0 	L:309.0,326.0 >> 0.000000
+
+nNumberOfPoint = 5660
+top = 312,274 ---> 227,274
+bottom = 312,325 ---> 227,325
+estimate hand point = 2322, 4335, 0.535640
+H:261.0,274.0 	L:270.0,383.0 >> 109.000000
+H:227.0,310.0 	L:312.0,322.0 >> 0.000000
+
+nNumberOfPoint = 5866
+top = 315,270 ---> 233,270
+bottom = 315,324 ---> 233,324
+estimate hand point = 2297, 4428, 0.518744
+H:257.0,270.0 	L:271.0,384.0 >> 114.000000
+H:233.0,325.0 	L:315.0,320.0 >> 0.000000
+
+nNumberOfPoint = 6565
+top = 320,272 ---> 231,272
+bottom = 320,323 ---> 231,323
+estimate hand point = 2679, 4539, 0.590218
+H:259.0,272.0 	L:285.0,387.0 >> 115.000000
+H:231.0,284.0 	L:320.0,319.0 >> 0.000000
+
+nNumberOfPoint = 6990
+top = 328,265 ---> 230,265
+bottom = 328,324 ---> 230,324
+estimate hand point = 3053, 5782, 0.528018
+H:258.0,265.0 	L:285.0,387.0 >> 122.000000
+H:230.0,307.0 	L:328.0,321.0 >> 0.000000
+
+nNumberOfPoint = 7756
+top = 331,243 ---> 221,243
+bottom = 331,324 ---> 221,324
+estimate hand point = 3802, 8910, 0.426712
+H:249.0,243.0 	L:277.0,388.0 >> 145.000000
+H:221.0,289.0 	L:331.0,319.0 >> 0.000000
+
+nNumberOfPoint = 8332
+top = 333,239 ---> 219,239
+bottom = 333,322 ---> 219,322
+estimate hand point = 4270, 9462, 0.451279
+H:251.0,239.0 	L:284.0,386.0 >> 147.000000
+H:219.0,285.0 	L:333.0,315.0 >> 0.000000
+
+nNumberOfPoint = 8473
+top = 339,230 ---> 221,230
+bottom = 339,317 ---> 221,317
+estimate hand point = 4286, 10266, 0.417495
+H:260.0,230.0 	L:280.0,383.0 >> 153.000000
+H:221.0,279.0 	L:339.0,302.0 >> 0.000000
+
+nNumberOfPoint = 8648
+top = 341,228 ---> 221,228
+bottom = 341,315 ---> 221,315
+estimate hand point = 4332, 10440, 0.414943
+H:255.0,228.0 	L:286.0,381.0 >> 153.000000
+H:221.0,274.0 	L:341.0,302.0 >> 0.000000
+
+nNumberOfPoint = 8713
+top = 341,228 ---> 222,228
+bottom = 341,312 ---> 222,312
+estimate hand point = 4205, 9996, 0.420668
+H:261.0,228.0 	L:290.0,381.0 >> 153.000000
+H:222.0,277.0 	L:341.0,294.0 >> 0.000000
+
+nNumberOfPoint = 8651
+top = 347,227 ---> 223,227
+bottom = 347,310 ---> 223,310
+estimate hand point = 4038, 10292, 0.392344
+H:261.0,227.0 	L:280.0,379.0 >> 152.000000
+H:223.0,271.0 	L:347.0,299.0 >> 0.000000
+
+nNumberOfPoint = 8808
+top = 346,226 ---> 223,226
+bottom = 346,310 ---> 223,310
+estimate hand point = 4224, 10332, 0.408827
+H:261.0,226.0 	L:282.0,379.0 >> 153.000000
+H:223.0,271.0 	L:346.0,295.0 >> 0.000000
+
+nNumberOfPoint = 8717
+top = 347,222 ---> 225,222
+bottom = 347,309 ---> 225,309
+estimate hand point = 4198, 10614, 0.395515
+H:265.0,222.0 	L:296.0,378.0 >> 156.000000
+H:225.0,269.0 	L:347.0,296.0 >> 0.000000
+
+nNumberOfPoint = 8764
+top = 349,220 ---> 225,220
+bottom = 349,307 ---> 225,307
+estimate hand point = 4186, 10788, 0.388024
+H:264.0,220.0 	L:294.0,378.0 >> 158.000000
+H:225.0,266.0 	L:349.0,295.0 >> 0.000000
+
+nNumberOfPoint = 8664
+top = 348,221 ---> 223,221
+bottom = 348,306 ---> 223,306
+estimate hand point = 4145, 10625, 0.390118
+H:261.0,221.0 	L:290.0,375.0 >> 154.000000
+H:223.0,266.0 	L:348.0,290.0 >> 0.000000
+
+nNumberOfPoint = 8798
+top = 350,219 ---> 223,219
+bottom = 350,305 ---> 223,305
+estimate hand point = 4345, 10922, 0.397821
+H:264.0,219.0 	L:291.0,374.0 >> 155.000000
+H:223.0,266.0 	L:350.0,288.0 >> 0.000000
+
+nNumberOfPoint = 8825
+top = 352,216 ---> 225,216
+bottom = 352,304 ---> 225,304
+estimate hand point = 4513, 11176, 0.403812
+H:264.0,216.0 	L:286.0,372.0 >> 156.000000
+H:225.0,265.0 	L:352.0,284.0 >> 0.000000
+
+nNumberOfPoint = 8978
+top = 355,210 ---> 228,210
+bottom = 355,301 ---> 228,301
+estimate hand point = 4549, 11557, 0.393614
+H:267.0,210.0 	L:287.0,370.0 >> 160.000000
+H:228.0,255.0 	L:355.0,284.0 >> 0.000000
+
+nNumberOfPoint = 9014
+top = 356,208 ---> 228,208
+bottom = 356,298 ---> 228,298
+estimate hand point = 4529, 11520, 0.393142
+H:269.0,208.0 	L:294.0,368.0 >> 160.000000
+H:228.0,256.0 	L:356.0,281.0 >> 0.000000
+
+nNumberOfPoint = 9061
+top = 357,204 ---> 231,204
+bottom = 357,296 ---> 231,296
+estimate hand point = 4573, 11592, 0.394496
+H:271.0,204.0 	L:293.0,366.0 >> 162.000000
+H:231.0,253.0 	L:357.0,281.0 >> 0.000000
+
+nNumberOfPoint = 8950
+top = 359,202 ---> 233,202
+bottom = 359,296 ---> 233,296
+estimate hand point = 4706, 11844, 0.397332
+H:272.0,202.0 	L:296.0,364.0 >> 162.000000
+H:233.0,249.0 	L:359.0,274.0 >> 0.000000
+
+nNumberOfPoint = 8870
+top = 363,201 ---> 234,201
+bottom = 363,296 ---> 234,296
+estimate hand point = 4844, 12255, 0.395267
+H:274.0,201.0 	L:296.0,362.0 >> 161.000000
+H:234.0,247.0 	L:363.0,277.0 >> 0.000000
+
+nNumberOfPoint = 9097
+top = 362,199 ---> 237,199
+bottom = 362,296 ---> 237,296
+estimate hand point = 5142, 12125, 0.424082
+H:278.0,199.0 	L:296.0,361.0 >> 162.000000
+H:237.0,244.0 	L:362.0,273.0 >> 0.000000
+
+nNumberOfPoint = 9044
+top = 364,196 ---> 238,196
+bottom = 364,295 ---> 238,295
+estimate hand point = 5159, 12474, 0.413580
+H:279.0,196.0 	L:293.0,359.0 >> 163.000000
+H:238.0,244.0 	L:364.0,272.0 >> 0.000000
+
+nNumberOfPoint = 8946
+top = 366,196 ---> 239,196
+bottom = 366,293 ---> 239,293
+estimate hand point = 5019, 12319, 0.407419
+H:279.0,196.0 	L:300.0,358.0 >> 162.000000
+H:239.0,241.0 	L:366.0,270.0 >> 0.000000
+
+nNumberOfPoint = 9170
+top = 368,193 ---> 242,193
+bottom = 368,291 ---> 242,291
+estimate hand point = 5029, 12348, 0.407272
+H:282.0,193.0 	L:300.0,357.0 >> 164.000000
+H:242.0,239.0 	L:368.0,269.0 >> 0.000000
+
+nNumberOfPoint = 9178
+top = 371,192 ---> 245,192
+bottom = 371,289 ---> 245,289
+estimate hand point = 4996, 12222, 0.408771
+H:290.0,192.0 	L:300.0,356.0 >> 164.000000
+H:245.0,237.0 	L:371.0,268.0 >> 0.000000
+
+nNumberOfPoint = 9170
+top = 374,188 ---> 247,188
+bottom = 374,287 ---> 247,287
+estimate hand point = 5012, 12573, 0.398632
+H:292.0,188.0 	L:300.0,355.0 >> 167.000000
+H:247.0,235.0 	L:374.0,267.0 >> 0.000000
+
+nNumberOfPoint = 9323
+top = 377,186 ---> 250,186
+bottom = 377,283 ---> 250,283
+estimate hand point = 5004, 12319, 0.406202
+H:294.0,186.0 	L:302.0,352.0 >> 166.000000
+H:250.0,233.0 	L:377.0,265.0 >> 0.000000
+
+nNumberOfPoint = 9400
+top = 383,185 ---> 255,185
+bottom = 383,278 ---> 255,278
+estimate hand point = 4845, 11904, 0.407006
+H:293.0,185.0 	L:310.0,351.0 >> 166.000000
+H:255.0,231.0 	L:383.0,264.0 >> 0.000000
+
+nNumberOfPoint = 9505
+top = 385,183 ---> 257,183
+bottom = 385,275 ---> 257,275
+estimate hand point = 4983, 11776, 0.423149
+H:303.0,183.0 	L:306.0,345.0 >> 162.000000
+H:257.0,226.0 	L:385.0,257.0 >> 0.000000
+
+nNumberOfPoint = 9469
+top = 389,178 ---> 263,178
+bottom = 389,265 ---> 263,265
+estimate hand point = 4467, 10962, 0.407499
+H:306.0,178.0 	L:317.0,343.0 >> 165.000000
+H:263.0,222.0 	L:389.0,254.0 >> 0.000000
+
+nNumberOfPoint = 9379
+top = 391,173 ---> 267,173
+bottom = 391,251 ---> 267,251
+estimate hand point = 3470, 9672, 0.358768
+H:313.0,173.0 	L:318.0,340.0 >> 167.000000
+H:267.0,218.0 	L:391.0,250.0 >> 0.000000
+
+nNumberOfPoint = 9504
+top = 396,169 ---> 270,169
+bottom = 396,239 ---> 270,239
+estimate hand point = 3018, 8820, 0.342177
+H:315.0,169.0 	L:318.0,338.0 >> 169.000000
+H:270.0,217.0 	L:396.0,243.0 >> 0.000000
+
+nNumberOfPoint = 9432
+top = 397,166 ---> 274,166
+bottom = 397,233 ---> 274,233
+estimate hand point = 2771, 8241, 0.336246
+H:319.0,166.0 	L:310.0,333.0 >> 167.000000
+H:274.0,209.0 	L:397.0,246.0 >> 0.000000
+
+nNumberOfPoint = 9324
+top = 398,163 ---> 275,163
+bottom = 398,229 ---> 275,229
+estimate hand point = 2741, 8118, 0.337645
+H:324.0,163.0 	L:311.0,329.0 >> 166.000000
+H:275.0,208.0 	L:398.0,237.0 >> 0.000000
+
+nNumberOfPoint = 9347
+top = 400,159 ---> 279,159
+bottom = 400,226 ---> 279,226
+estimate hand point = 2714, 8107, 0.334772
+H:322.0,159.0 	L:311.0,326.0 >> 167.000000
+H:279.0,203.0 	L:400.0,236.0 >> 0.000000
+
+nNumberOfPoint = 9325
+top = 401,157 ---> 278,157
+bottom = 401,225 ---> 278,225
+estimate hand point = 2728, 8364, 0.326160
+H:322.0,157.0 	L:312.0,325.0 >> 168.000000
+H:278.0,198.0 	L:401.0,233.0 >> 0.000000
+
+nNumberOfPoint = 9359
+top = 403,153 ---> 279,153
+bottom = 403,222 ---> 279,222
+estimate hand point = 2730, 8556, 0.319074
+H:326.0,153.0 	L:312.0,322.0 >> 169.000000
+H:279.0,200.0 	L:403.0,232.0 >> 0.000000
+
+nNumberOfPoint = 9392
+top = 401,149 ---> 279,149
+bottom = 401,219 ---> 279,219
+estimate hand point = 2770, 8540, 0.324356
+H:322.0,149.0 	L:311.0,319.0 >> 170.000000
+H:279.0,193.0 	L:401.0,229.0 >> 0.000000
+
+nNumberOfPoint = 9489
+top = 402,146 ---> 276,146
+bottom = 402,215 ---> 276,215
+estimate hand point = 2781, 8694, 0.319876
+H:323.0,146.0 	L:315.0,315.0 >> 169.000000
+H:276.0,188.0 	L:402.0,228.0 >> 0.000000
+
+nNumberOfPoint = 9442
+top = 400,141 ---> 275,141
+bottom = 400,211 ---> 275,211
+estimate hand point = 2766, 8750, 0.316114
+H:322.0,141.0 	L:313.0,311.0 >> 170.000000
+H:275.0,184.0 	L:400.0,218.0 >> 0.000000
+
+nNumberOfPoint = 9546
+top = 401,136 ---> 274,136
+bottom = 401,207 ---> 274,207
+estimate hand point = 2817, 9017, 0.312410
+H:320.0,136.0 	L:313.0,307.0 >> 171.000000
+H:274.0,181.0 	L:401.0,217.0 >> 0.000000
+
+nNumberOfPoint = 9420
+top = 399,135 ---> 275,135
+bottom = 399,203 ---> 275,203
+estimate hand point = 2718, 8432, 0.322343
+H:322.0,135.0 	L:312.0,303.0 >> 168.000000
+H:275.0,179.0 	L:399.0,214.0 >> 0.000000
+
+nNumberOfPoint = 9534
+top = 398,132 ---> 275,132
+bottom = 398,199 ---> 275,199
+estimate hand point = 2749, 8241, 0.333576
+H:317.0,132.0 	L:310.0,299.0 >> 167.000000
+H:275.0,176.0 	L:398.0,209.0 >> 0.000000
+
+nNumberOfPoint = 9438
+top = 397,129 ---> 273,129
+bottom = 397,197 ---> 273,197
+estimate hand point = 2736, 8432, 0.324478
+H:319.0,129.0 	L:312.0,297.0 >> 168.000000
+H:273.0,172.0 	L:397.0,207.0 >> 0.000000
+
+nNumberOfPoint = 9425
+top = 397,125 ---> 273,125
+bottom = 397,196 ---> 273,196
+estimate hand point = 2771, 8804, 0.314743
+H:318.0,125.0 	L:311.0,296.0 >> 171.000000
+H:273.0,170.0 	L:397.0,206.0 >> 0.000000
+
+nNumberOfPoint = 9521
+top = 396,125 ---> 272,125
+bottom = 396,194 ---> 272,194
+estimate hand point = 2780, 8556, 0.324918
+H:318.0,125.0 	L:311.0,294.0 >> 169.000000
+H:272.0,170.0 	L:396.0,203.0 >> 0.000000
+
+nNumberOfPoint = 9530
+top = 396,124 ---> 272,124
+bottom = 396,194 ---> 272,194
+estimate hand point = 2863, 8680, 0.329839
+H:318.0,124.0 	L:310.0,294.0 >> 170.000000
+H:272.0,169.0 	L:396.0,200.0 >> 0.000000
+
+nNumberOfPoint = 9482
+top = 397,123 ---> 271,123
+bottom = 397,193 ---> 271,193
+estimate hand point = 2843, 8820, 0.322336
+H:322.0,123.0 	L:310.0,293.0 >> 170.000000
+H:271.0,168.0 	L:397.0,201.0 >> 0.000000
+
+nNumberOfPoint = 9438
+top = 395,123 ---> 273,123
+bottom = 395,191 ---> 273,191
+estimate hand point = 2756, 8296, 0.332208
+H:321.0,123.0 	L:310.0,291.0 >> 168.000000
+H:273.0,167.0 	L:395.0,199.0 >> 0.000000
+
+nNumberOfPoint = 9299
+top = 395,120 ---> 274,120
+bottom = 395,188 ---> 274,188
+estimate hand point = 2587, 8228, 0.314414
+H:322.0,120.0 	L:310.0,288.0 >> 168.000000
+H:274.0,167.0 	L:395.0,200.0 >> 0.000000
+
+nNumberOfPoint = 9251
+top = 395,121 ---> 275,121
+bottom = 395,188 ---> 275,188
+estimate hand point = 2568, 8040, 0.319403
+H:320.0,121.0 	L:310.0,288.0 >> 167.000000
+H:275.0,166.0 	L:395.0,204.0 >> 0.000000
+
+nNumberOfPoint = 9328
+top = 395,123 ---> 274,123
+bottom = 395,190 ---> 274,190
+estimate hand point = 2696, 8107, 0.332552
+H:315.0,123.0 	L:310.0,290.0 >> 167.000000
+H:274.0,165.0 	L:395.0,202.0 >> 0.000000
+
+nNumberOfPoint = 9348
+top = 393,123 ---> 272,123
+bottom = 393,190 ---> 272,190
+estimate hand point = 2693, 8107, 0.332182
+H:320.0,123.0 	L:311.0,290.0 >> 167.000000
+H:272.0,167.0 	L:393.0,200.0 >> 0.000000
+
+nNumberOfPoint = 9339
+top = 392,124 ---> 271,124
+bottom = 392,191 ---> 271,191
+estimate hand point = 2705, 8107, 0.333662
+H:321.0,124.0 	L:311.0,291.0 >> 167.000000
+H:271.0,169.0 	L:392.0,199.0 >> 0.000000
+
+nNumberOfPoint = 9313
+top = 392,124 ---> 271,124
+bottom = 392,192 ---> 271,192
+estimate hand point = 2748, 8228, 0.333982
+H:315.0,124.0 	L:313.0,292.0 >> 168.000000
+H:271.0,167.0 	L:392.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9327
+top = 394,124 ---> 271,124
+bottom = 394,192 ---> 271,192
+estimate hand point = 2755, 8364, 0.329388
+H:315.0,124.0 	L:314.0,292.0 >> 168.000000
+H:271.0,170.0 	L:394.0,199.0 >> 0.000000
+
+nNumberOfPoint = 9473
+top = 398,117 ---> 279,117
+bottom = 398,191 ---> 279,191
+estimate hand point = 2954, 8806, 0.335453
+H:323.0,117.0 	L:334.0,289.0 >> 172.000000
+H:279.0,163.0 	L:398.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9443
+top = 398,117 ---> 279,117
+bottom = 398,188 ---> 279,188
+estimate hand point = 2831, 8449, 0.335069
+H:321.0,117.0 	L:327.0,288.0 >> 171.000000
+H:279.0,164.0 	L:398.0,199.0 >> 0.000000
+
+nNumberOfPoint = 9475
+top = 398,117 ---> 277,117
+bottom = 398,188 ---> 277,188
+estimate hand point = 2778, 8591, 0.323362
+H:322.0,117.0 	L:328.0,288.0 >> 171.000000
+H:277.0,161.0 	L:398.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9453
+top = 398,117 ---> 279,117
+bottom = 398,186 ---> 279,186
+estimate hand point = 2677, 8211, 0.326026
+H:324.0,117.0 	L:320.0,286.0 >> 169.000000
+H:279.0,160.0 	L:398.0,201.0 >> 0.000000
+
+nNumberOfPoint = 9352
+top = 397,117 ---> 279,117
+bottom = 397,182 ---> 279,182
+estimate hand point = 2488, 7670, 0.324381
+H:322.0,117.0 	L:317.0,282.0 >> 165.000000
+H:279.0,160.0 	L:397.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9390
+top = 397,117 ---> 280,117
+bottom = 397,181 ---> 280,181
+estimate hand point = 2415, 7488, 0.322516
+H:322.0,117.0 	L:315.0,281.0 >> 164.000000
+H:280.0,160.0 	L:397.0,197.0 >> 0.000000
+
+nNumberOfPoint = 9229
+top = 398,117 ---> 280,117
+bottom = 398,180 ---> 280,180
+estimate hand point = 2300, 7434, 0.309389
+H:322.0,117.0 	L:315.0,280.0 >> 163.000000
+H:280.0,161.0 	L:398.0,197.0 >> 0.000000
+
+nNumberOfPoint = 9313
+top = 398,116 ---> 280,116
+bottom = 398,181 ---> 280,181
+estimate hand point = 2378, 7670, 0.310039
+H:325.0,116.0 	L:315.0,281.0 >> 165.000000
+H:280.0,167.0 	L:398.0,201.0 >> 0.000000
+
+nNumberOfPoint = 9277
+top = 398,117 ---> 280,117
+bottom = 398,180 ---> 280,180
+estimate hand point = 2370, 7434, 0.318805
+H:322.0,117.0 	L:315.0,280.0 >> 163.000000
+H:280.0,160.0 	L:398.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9394
+top = 398,116 ---> 280,116
+bottom = 398,179 ---> 280,179
+estimate hand point = 2372, 7434, 0.319075
+H:325.0,116.0 	L:314.0,279.0 >> 163.000000
+H:280.0,159.0 	L:398.0,196.0 >> 0.000000
+
+nNumberOfPoint = 9279
+top = 397,116 ---> 281,116
+bottom = 397,179 ---> 281,179
+estimate hand point = 2329, 7308, 0.318692
+H:324.0,116.0 	L:315.0,279.0 >> 163.000000
+H:281.0,160.0 	L:397.0,196.0 >> 0.000000
+
+nNumberOfPoint = 9345
+top = 400,115 ---> 280,115
+bottom = 400,179 ---> 280,179
+estimate hand point = 2402, 7680, 0.312760
+H:325.0,115.0 	L:316.0,279.0 >> 164.000000
+H:280.0,159.0 	L:400.0,199.0 >> 0.000000
+
+nNumberOfPoint = 9306
+top = 398,115 ---> 281,115
+bottom = 398,180 ---> 281,180
+estimate hand point = 2426, 7605, 0.319001
+H:325.0,115.0 	L:317.0,280.0 >> 165.000000
+H:281.0,159.0 	L:398.0,197.0 >> 0.000000
+
+nNumberOfPoint = 9207
+top = 398,115 ---> 281,115
+bottom = 398,180 ---> 281,180
+estimate hand point = 2356, 7605, 0.309796
+H:325.0,115.0 	L:317.0,280.0 >> 165.000000
+H:281.0,159.0 	L:398.0,196.0 >> 0.000000
+
+nNumberOfPoint = 9282
+top = 400,114 ---> 280,114
+bottom = 400,180 ---> 280,180
+estimate hand point = 2410, 7920, 0.304293
+H:326.0,114.0 	L:317.0,280.0 >> 166.000000
+H:280.0,160.0 	L:400.0,196.0 >> 0.000000
+
+nNumberOfPoint = 9359
+top = 400,114 ---> 280,114
+bottom = 400,180 ---> 280,180
+estimate hand point = 2527, 7920, 0.319066
+H:326.0,114.0 	L:317.0,280.0 >> 166.000000
+H:280.0,160.0 	L:400.0,202.0 >> 0.000000
+
+nNumberOfPoint = 9287
+top = 400,115 ---> 281,115
+bottom = 400,178 ---> 281,178
+estimate hand point = 2362, 7497, 0.315059
+H:326.0,115.0 	L:317.0,278.0 >> 163.000000
+H:281.0,159.0 	L:400.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9118
+top = 399,114 ---> 280,114
+bottom = 399,177 ---> 280,177
+estimate hand point = 2287, 7497, 0.305055
+H:326.0,114.0 	L:317.0,277.0 >> 163.000000
+H:280.0,160.0 	L:399.0,196.0 >> 0.000000
+
+nNumberOfPoint = 9234
+top = 400,114 ---> 281,114
+bottom = 400,177 ---> 281,177
+estimate hand point = 2321, 7497, 0.309591
+H:326.0,114.0 	L:317.0,277.0 >> 163.000000
+H:281.0,159.0 	L:400.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9411
+top = 401,114 ---> 282,114
+bottom = 401,187 ---> 282,187
+estimate hand point = 2928, 8687, 0.337055
+H:327.0,114.0 	L:332.0,287.0 >> 173.000000
+H:282.0,157.0 	L:401.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9408
+top = 402,114 ---> 282,114
+bottom = 402,186 ---> 282,186
+estimate hand point = 2809, 8640, 0.325116
+H:327.0,114.0 	L:329.0,286.0 >> 172.000000
+H:282.0,158.0 	L:402.0,194.0 >> 0.000000
+
+nNumberOfPoint = 9321
+top = 399,114 ---> 282,114
+bottom = 399,186 ---> 282,186
+estimate hand point = 2803, 8424, 0.332740
+H:327.0,114.0 	L:329.0,286.0 >> 172.000000
+H:282.0,159.0 	L:399.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9315
+top = 401,114 ---> 282,114
+bottom = 401,185 ---> 282,185
+estimate hand point = 2713, 8449, 0.321103
+H:327.0,114.0 	L:326.0,285.0 >> 171.000000
+H:282.0,160.0 	L:401.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9229
+top = 399,114 ---> 282,114
+bottom = 399,182 ---> 282,182
+estimate hand point = 2529, 7956, 0.317873
+H:327.0,114.0 	L:319.0,282.0 >> 168.000000
+H:282.0,160.0 	L:399.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9103
+top = 399,115 ---> 283,115
+bottom = 399,178 ---> 283,178
+estimate hand point = 2325, 7308, 0.318144
+H:325.0,115.0 	L:319.0,278.0 >> 163.000000
+H:283.0,158.0 	L:399.0,194.0 >> 0.000000
+
+nNumberOfPoint = 9038
+top = 400,114 ---> 283,114
+bottom = 400,176 ---> 283,176
+estimate hand point = 2208, 7254, 0.304384
+H:326.0,114.0 	L:318.0,276.0 >> 162.000000
+H:283.0,158.0 	L:400.0,192.0 >> 0.000000
+
+nNumberOfPoint = 9027
+top = 401,114 ---> 282,114
+bottom = 401,178 ---> 282,178
+estimate hand point = 2210, 7616, 0.290179
+H:328.0,114.0 	L:319.0,278.0 >> 164.000000
+H:282.0,158.0 	L:401.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9093
+top = 400,115 ---> 282,115
+bottom = 400,178 ---> 282,178
+estimate hand point = 2257, 7434, 0.303605
+H:326.0,115.0 	L:319.0,278.0 >> 163.000000
+H:282.0,159.0 	L:400.0,193.0 >> 0.000000
+
+nNumberOfPoint = 9181
+top = 398,115 ---> 282,115
+bottom = 398,179 ---> 282,179
+estimate hand point = 2367, 7424, 0.318831
+H:325.0,115.0 	L:319.0,279.0 >> 164.000000
+H:282.0,160.0 	L:398.0,197.0 >> 0.000000
+
+nNumberOfPoint = 9120
+top = 398,115 ---> 282,115
+bottom = 398,180 ---> 282,180
+estimate hand point = 2375, 7540, 0.314987
+H:325.0,115.0 	L:317.0,280.0 >> 165.000000
+H:282.0,158.0 	L:398.0,195.0 >> 0.000000
+
+nNumberOfPoint = 9167
+top = 398,115 ---> 281,115
+bottom = 398,180 ---> 281,180
+estimate hand point = 2394, 7605, 0.314793
+H:325.0,115.0 	L:318.0,280.0 >> 165.000000
+H:281.0,160.0 	L:398.0,203.0 >> 0.000000
+
+nNumberOfPoint = 9177
+top = 397,115 ---> 283,115
+bottom = 397,180 ---> 283,180
+estimate hand point = 2373, 7410, 0.320243
+H:325.0,115.0 	L:317.0,280.0 >> 165.000000
+H:283.0,159.0 	L:397.0,195.0 >> 0.000000
+
+nNumberOfPoint = 9285
+top = 397,115 ---> 282,115
+bottom = 397,180 ---> 282,180
+estimate hand point = 2459, 7475, 0.328963
+H:324.0,115.0 	L:316.0,280.0 >> 165.000000
+H:282.0,160.0 	L:397.0,196.0 >> 0.000000
+
+nNumberOfPoint = 9315
+top = 399,115 ---> 280,115
+bottom = 399,180 ---> 280,180
+estimate hand point = 2439, 7735, 0.315320
+H:324.0,115.0 	L:317.0,280.0 >> 165.000000
+H:280.0,160.0 	L:399.0,195.0 >> 0.000000
+
+nNumberOfPoint = 9194
+top = 399,115 ---> 281,115
+bottom = 399,179 ---> 281,179
+estimate hand point = 2372, 7552, 0.314089
+H:327.0,115.0 	L:317.0,279.0 >> 164.000000
+H:281.0,160.0 	L:399.0,197.0 >> 0.000000
+
+nNumberOfPoint = 9250
+top = 398,115 ---> 281,115
+bottom = 398,180 ---> 281,180
+estimate hand point = 2419, 7605, 0.318080
+H:325.0,115.0 	L:316.0,280.0 >> 165.000000
+H:281.0,159.0 	L:398.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9179
+top = 398,115 ---> 281,115
+bottom = 398,181 ---> 281,181
+estimate hand point = 2415, 7722, 0.312743
+H:325.0,115.0 	L:316.0,281.0 >> 166.000000
+H:281.0,160.0 	L:398.0,199.0 >> 0.000000
+
+nNumberOfPoint = 9403
+top = 401,114 ---> 284,114
+bottom = 401,188 ---> 284,188
+estimate hand point = 2999, 8658, 0.346385
+H:326.0,114.0 	L:335.0,288.0 >> 174.000000
+H:284.0,158.0 	L:401.0,197.0 >> 0.000000
+
+nNumberOfPoint = 9520
+top = 401,115 ---> 284,115
+bottom = 401,185 ---> 284,185
+estimate hand point = 2919, 8190, 0.356410
+H:325.0,115.0 	L:328.0,285.0 >> 170.000000
+H:284.0,158.0 	L:401.0,198.0 >> 0.000000
+
+nNumberOfPoint = 9530
+top = 402,114 ---> 284,114
+bottom = 402,183 ---> 284,183
+estimate hand point = 2815, 8142, 0.345738
+H:326.0,114.0 	L:327.0,283.0 >> 169.000000
+H:284.0,158.0 	L:402.0,195.0 >> 0.000000
+
+nNumberOfPoint = 9612
+top = 403,114 ---> 285,114
+bottom = 403,183 ---> 285,183
+estimate hand point = 2890, 8142, 0.354950
+H:326.0,114.0 	L:329.0,283.0 >> 169.000000
+H:285.0,159.0 	L:403.0,194.0 >> 0.000000
+
+nNumberOfPoint = 9520
+top = 402,113 ---> 285,113
+bottom = 402,182 ---> 285,182
+estimate hand point = 2834, 8073, 0.351047
+H:327.0,113.0 	L:330.0,282.0 >> 169.000000
+H:285.0,158.0 	L:402.0,192.0 >> 0.000000
+
+nNumberOfPoint = 9494
+top = 402,112 ---> 286,112
+bottom = 402,181 ---> 286,181
+estimate hand point = 2784, 8004, 0.347826
+H:329.0,112.0 	L:328.0,281.0 >> 169.000000
+H:286.0,155.0 	L:402.0,191.0 >> 0.000000
+
+nNumberOfPoint = 9522
+top = 403,111 ---> 286,111
+bottom = 403,179 ---> 286,179
+estimate hand point = 2825, 7956, 0.355078
+H:329.0,111.0 	L:328.0,279.0 >> 168.000000
+H:286.0,157.0 	L:403.0,192.0 >> 0.000000
+
+nNumberOfPoint = 9489
+top = 403,108 ---> 289,108
+bottom = 403,176 ---> 289,176
+estimate hand point = 2707, 7752, 0.349200
+H:332.0,108.0 	L:324.0,276.0 >> 168.000000
+H:289.0,151.0 	L:403.0,188.0 >> 0.000000
+
+nNumberOfPoint = 9426
+top = 404,107 ---> 288,107
+bottom = 404,174 ---> 288,174
+estimate hand point = 2658, 7772, 0.341997
+H:332.0,107.0 	L:321.0,274.0 >> 167.000000
+H:288.0,148.0 	L:404.0,189.0 >> 0.000000
+
+nNumberOfPoint = 9493
+top = 404,108 ---> 289,108
+bottom = 404,174 ---> 289,174
+estimate hand point = 2717, 7590, 0.357971
+H:331.0,108.0 	L:321.0,274.0 >> 166.000000
+H:289.0,149.0 	L:404.0,186.0 >> 0.000000
+
+nNumberOfPoint = 9634
+top = 405,105 ---> 290,105
+bottom = 405,174 ---> 290,174
+estimate hand point = 2880, 7935, 0.362949
+H:336.0,105.0 	L:322.0,274.0 >> 169.000000
+H:290.0,149.0 	L:405.0,186.0 >> 0.000000
+
+nNumberOfPoint = 9449
+top = 405,106 ---> 290,106
+bottom = 405,173 ---> 290,173
+estimate hand point = 2737, 7705, 0.355224
+H:333.0,106.0 	L:322.0,273.0 >> 167.000000
+H:290.0,148.0 	L:405.0,185.0 >> 0.000000
+
+nNumberOfPoint = 9359
+top = 406,105 ---> 290,105
+bottom = 406,172 ---> 290,172
+estimate hand point = 2709, 7772, 0.348559
+H:335.0,105.0 	L:322.0,272.0 >> 167.000000
+H:290.0,148.0 	L:406.0,189.0 >> 0.000000
+
+nNumberOfPoint = 9389
+top = 406,105 ---> 290,105
+bottom = 406,173 ---> 290,173
+estimate hand point = 2740, 7888, 0.347363
+H:335.0,105.0 	L:325.0,273.0 >> 168.000000
+H:290.0,150.0 	L:406.0,185.0 >> 0.000000
+
+nNumberOfPoint = 9261
+top = 404,106 ---> 290,106
+bottom = 404,171 ---> 290,171
+estimate hand point = 2634, 7410, 0.355466
+H:336.0,106.0 	L:325.0,271.0 >> 165.000000
+H:290.0,149.0 	L:404.0,184.0 >> 0.000000
+
+nNumberOfPoint = 9243
+top = 404,107 ---> 289,107
+bottom = 404,171 ---> 289,171
+estimate hand point = 2564, 7360, 0.348370
+H:332.0,107.0 	L:325.0,271.0 >> 164.000000
+H:289.0,149.0 	L:404.0,184.0 >> 0.000000
+
+nNumberOfPoint = 9172
+top = 403,107 ---> 290,107
+bottom = 403,171 ---> 290,171
+estimate hand point = 2523, 7232, 0.348866
+H:332.0,107.0 	L:326.0,271.0 >> 164.000000
+H:290.0,150.0 	L:403.0,186.0 >> 0.000000
+
+nNumberOfPoint = 9102
+top = 404,107 ---> 289,107
+bottom = 404,171 ---> 289,171
+estimate hand point = 2478, 7360, 0.336685
+H:332.0,107.0 	L:326.0,271.0 >> 164.000000
+H:289.0,151.0 	L:404.0,200.0 >> 0.000000
+
+nNumberOfPoint = 9046
+top = 403,108 ---> 290,108
+bottom = 403,172 ---> 290,172
+estimate hand point = 2471, 7232, 0.341676
+H:331.0,108.0 	L:327.0,272.0 >> 164.000000
+H:290.0,152.0 	L:403.0,188.0 >> 0.000000
+
+nNumberOfPoint = 9068
+top = 403,108 ---> 291,108
+bottom = 403,172 ---> 291,172
+estimate hand point = 2519, 7168, 0.351423
+H:333.0,108.0 	L:326.0,272.0 >> 164.000000
+H:291.0,149.0 	L:403.0,189.0 >> 0.000000
+
+nNumberOfPoint = 9041
+top = 404,110 ---> 293,110
+bottom = 404,174 ---> 293,174
+estimate hand point = 2565, 7104, 0.361064
+H:335.0,110.0 	L:329.0,274.0 >> 164.000000
+H:293.0,150.0 	L:404.0,191.0 >> 0.000000
+
+nNumberOfPoint = 8918
+top = 404,112 ---> 295,112
+bottom = 404,173 ---> 295,173
+estimate hand point = 2454, 6649, 0.369078
+H:332.0,112.0 	L:330.0,273.0 >> 161.000000
+H:295.0,153.0 	L:404.0,188.0 >> 0.000000
+
+nNumberOfPoint = 8986
+top = 406,112 ---> 295,112
+bottom = 406,174 ---> 295,174
+estimate hand point = 2522, 6882, 0.366463
+H:337.0,112.0 	L:335.0,274.0 >> 162.000000
+H:295.0,156.0 	L:406.0,189.0 >> 0.000000
+
+nNumberOfPoint = 8959
+top = 406,112 ---> 295,112
+bottom = 406,175 ---> 295,175
+estimate hand point = 2511, 6993, 0.359073
+H:337.0,112.0 	L:337.0,275.0 >> 163.000000
+H:295.0,157.0 	L:406.0,187.0 >> 0.000000
+
+nNumberOfPoint = 8987
+top = 407,111 ---> 297,111
+bottom = 407,176 ---> 297,176
+estimate hand point = 2590, 7150, 0.362238
+H:338.0,111.0 	L:343.0,276.0 >> 165.000000
+H:297.0,154.0 	L:407.0,188.0 >> 0.000000
+
+nNumberOfPoint = 8879
+top = 407,112 ---> 299,112
+bottom = 407,175 ---> 299,175
+estimate hand point = 2569, 6804, 0.377572
+H:336.0,112.0 	L:344.0,275.0 >> 163.000000
+H:299.0,155.0 	L:407.0,188.0 >> 0.000000
+
+nNumberOfPoint = 8803
+top = 408,111 ---> 301,111
+bottom = 408,173 ---> 301,173
+estimate hand point = 2448, 6634, 0.369008
+H:341.0,111.0 	L:344.0,273.0 >> 162.000000
+H:301.0,155.0 	L:408.0,186.0 >> 0.000000
+
+nNumberOfPoint = 8935
+top = 409,110 ---> 302,110
+bottom = 409,171 ---> 302,171
+estimate hand point = 2495, 6527, 0.382258
+H:341.0,110.0 	L:344.0,271.0 >> 161.000000
+H:302.0,156.0 	L:409.0,186.0 >> 0.000000
+
+nNumberOfPoint = 8818
+top = 410,109 ---> 304,109
+bottom = 410,170 ---> 304,170
+estimate hand point = 2516, 6466, 0.389112
+H:342.0,109.0 	L:347.0,270.0 >> 161.000000
+H:304.0,148.0 	L:410.0,187.0 >> 0.000000
+
+nNumberOfPoint = 8763
+top = 412,108 ---> 306,108
+bottom = 412,169 ---> 306,169
+estimate hand point = 2476, 6466, 0.382926
+H:346.0,108.0 	L:347.0,269.0 >> 161.000000
+H:306.0,147.0 	L:412.0,192.0 >> 0.000000
+
+nNumberOfPoint = 8803
+top = 412,108 ---> 306,108
+bottom = 412,169 ---> 306,169
+estimate hand point = 2520, 6466, 0.389731
+H:345.0,108.0 	L:349.0,269.0 >> 161.000000
+H:306.0,146.0 	L:412.0,185.0 >> 0.000000
+
+nNumberOfPoint = 8789
+top = 413,104 ---> 307,104
+bottom = 413,167 ---> 307,167
+estimate hand point = 2544, 6678, 0.380952
+H:344.0,104.0 	L:353.0,267.0 >> 163.000000
+H:307.0,146.0 	L:413.0,179.0 >> 0.000000
+
+nNumberOfPoint = 8874
+top = 415,103 ---> 309,103
+bottom = 415,164 ---> 309,164
+estimate hand point = 2498, 6466, 0.386328
+H:348.0,103.0 	L:350.0,264.0 >> 161.000000
+H:309.0,141.0 	L:415.0,179.0 >> 0.000000
+
+nNumberOfPoint = 8854
+top = 417,101 ---> 310,101
+bottom = 417,160 ---> 310,160
+estimate hand point = 2415, 6313, 0.382544
+H:350.0,101.0 	L:345.0,260.0 >> 159.000000
+H:310.0,138.0 	L:417.0,179.0 >> 0.000000
+
+nNumberOfPoint = 8794
+top = 420,99 ---> 312,99
+bottom = 420,157 ---> 312,157
+estimate hand point = 2318, 6264, 0.370051
+H:352.0,99.0 	L:342.0,257.0 >> 158.000000
+H:312.0,137.0 	L:420.0,177.0 >> 0.000000
+
+nNumberOfPoint = 8949
+top = 420,97 ---> 312,97
+bottom = 420,158 ---> 312,158
+estimate hand point = 2503, 6588, 0.379933
+H:354.0,97.0 	L:350.0,258.0 >> 161.000000
+H:312.0,137.0 	L:420.0,177.0 >> 0.000000

@@ -6,7 +6,7 @@
 #include <XnVNite.h>
 
 #include "gesture.h"
-
+#include "window.h"
 using namespace xn;
 
 #define GESTURE_TO_USE "Click" 
@@ -25,18 +25,16 @@ int printDebug = 0;
 FILE *pFile;
 XnStatus nRetVal = XN_STATUS_OK;
 XnUInt16 nXRes, nYRes;
+static bool SHOWHAND;
 
-//display 
-bool SHOWHAND = true;
 
 
 //-----------------------------------------------------
 //					   LOG
 //-----------------------------------------------------
-void debugGesture(){
+void enableDebugGesture(){
 	pFile = fopen("depthmap.txt", "w");
-	printDebug = 1;		
-			
+	printDebug = 1;				
 }
 
 //------------------------------------------------------
@@ -50,10 +48,10 @@ XnPoint3D getPalm(){
 	return palmPos;
 }
 
-void switchHandMode(){
+void switchShowHand(){
 	SHOWHAND = !SHOWHAND;
-	if(SHOWHAND) printf("switch hand mode to SHOW\n");
-	else 	printf("switch hand mode to NOT_SHOW\n");
+		if(SHOWHAND) printf("switch hand mode to SHOW\n");
+		else 	printf("switch hand mode to NOT_SHOW\n");
 }
 //-----------------------------------------------------
 //					Register generator
