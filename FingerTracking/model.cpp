@@ -2,32 +2,99 @@
 #include <stdlib.h>
 #include <gl/glut.h>
 #include <deque>
+#include <fstream>
+#include <iostream>
 
 #include "model.h"
+#include "undo.h"
 
-float coor[] = //change number of points need to reflect in the data structure
-	{200, 200, -50, 
-	600, 200, -50, 
-	600, 300, -100,
-	200, 300, -100,
-	0, 100, 0, 
-	800, 100, 0, 
-	800, 400, -150, 
-	0, 400, -150,
-	400, 200, -50,
-	400, 100, 0, 
-	400, 300, -100, 
-	400, 400, -150};
+using std::ifstream;
+using std::ofstream;
 
-int poly[] =  
-	{11,10,2,6,
-	7,3,10,11,
-	8,9,5,1,
-	0,4,9,8,
-	2,1,5,6,
-	7,4,0,3,
-	10,8,1,2,
-	3,0,8,10 };
+//back up 
+float *pointt; //change number of points need to reflect in the data structure
+int *poly;
+int nPoly, nPoint;
+
+int getnPoint(){ return nPoint;}
+int getnPoly(){ return nPoly;}
+float* getPoint(){ return pointt;}
+int* getPoly(){return poly;}
+
+//open the file and load data into the array
+void ImportModel(){
+	ifstream indata; 
+	float num;
+
+	indata.open("modelinput.txt");
+	if(!indata) {
+		printf("Error: inpu file couldn't be opened\n");
+		exit(1);
+	}
+
+	indata >> nPoint;
+	pointt = (float*) malloc(sizeof(float)*3*nPoint);
+	indata >> nPoly;
+	poly = (int*) malloc(sizeof(int)*4*nPoly);
+	indata >> num;
+	
+	for(int i=0; i< nPoint; i++){
+		for(int j=0; j<3; j++){
+			std::cout << num << " ";
+			pointt[i*3+j] = num;
+			indata >> num;
+		}
+		std::cout << std::endl;
+	}
+
+	//read quad (fix to triangle later)
+	for(int i=0; i< nPoly; i++){
+		for(int j=0; j<4; j++){
+			std::cout << num << " ";
+			poly[i*4+j] = num;
+			indata >> num;
+		}
+		std::cout <<std::endl;
+	}
+
+	indata.close();
+
+}
+
+void ExportModel(){
+	ofstream outdata; 
+	float num;
+
+	outdata.open("modeloutput.txt");
+	if(!outdata) {
+		printf("Error: output file couldn't be opened\n");
+		exit(1);
+	}
+
+	outdata << nPoint << " ";
+	outdata << nPoly << std::endl;
+	
+	for(int i=0; i< nPoint; i++){
+		for(int j=0; j<3; j++){
+			num = pointt[i*3+j];
+			outdata << num << "\t";
+		}
+		outdata << std::endl;
+	}
+	outdata << std::endl;
+
+	//read quad (fix to triangle later)
+	for(int i=0; i< nPoly; i++){
+		for(int j=0; j<4; j++){
+			num = poly[i*4+j];
+			outdata << num << "\t";
+		}
+		outdata <<std::endl;
+	}
+
+	outdata.close();
+
+}
 
 //load manually for now
 void LoadModel(point_t* point, model_t* model){
@@ -40,13 +107,13 @@ void LoadModel(point_t* point, model_t* model){
 		 // allocate enough memory for this model
 		 vertex_t* v = (vertex_t *)malloc(sizeof(point_t));
 		
-		 v->X = coor[(3*i)];
-		 v->Y = coor[(3*i)+1];
-		 v->Z = coor[(3*i)+2];
+		 v->X = pointt[(3*i)];
+		 v->Y = pointt[(3*i)+1];
+		 v->Z = pointt[(3*i)+2];
 
 		 point->pPoints[i] = (*v);
 
-		 printf("coor%d: %f,%f,%f\n", i, v->X, v->Y, v->Z);
+		 printf("point%d: %f,%f,%f\n", i, v->X, v->Y, v->Z);
 	 } 
 
 	 // add 8 polygons to the list
@@ -62,6 +129,8 @@ void LoadModel(point_t* point, model_t* model){
 
 		printf("poly: %d,%d,%d,%d\n", poly[j*4], poly[j*4+1], poly[j*4+2], poly[j*4+3]);
 	 }
+
+	calculateNormal(&samplePoint, &sampleModel);
 }
 
 void calculateNormal(point_t* point, model_t* model){
@@ -191,5 +260,10 @@ void translatePoly(polygon_t p, point_t* vertexlist,float transx, float transy){
 
 		vertexlist->pPoints[index].X = prevx+transx;
 		vertexlist->pPoints[index].Y = prevy+transy;
+		
+		//index indecates points 
+		pointt[index*3] = prevx+transx;	//x pointdinate
+		pointt[index*3+1] = prevy+transy; //y pointdinate
 	}
 }
+

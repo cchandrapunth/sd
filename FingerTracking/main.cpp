@@ -10,8 +10,10 @@
 #include "gesture.h"
 #include "hand_history.h"
 #include "window.h"
-
 #include "model.h"
+
+#include "undo.h"
+
 
 // static //
 static camera cam;
@@ -161,6 +163,7 @@ void checkCursor(){
 			if(pickMe >0){
 				translatePoly(sampleModel.pList[pickMe], &samplePoint,gettranslateX(), gettranslateY());
 				calculateNormal(&samplePoint, &sampleModel);
+				
 			}
 		}
 	}
@@ -169,6 +172,8 @@ void checkCursor(){
 		if(stateGrab){
 			stateGrab = false; 
 			clearHandList();
+
+			storeModelHist();
 		}
 	}
 
@@ -210,6 +215,7 @@ void renderScene(){
 	context.WaitAndUpdateAll();
 
 	glFlush();
+	
 }
 
 //------------------------------------------------
@@ -261,8 +267,9 @@ void initRender(){
 	glLightfv(GL_LIGHT0, GL_SPECULAR, whitelight);
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, model_ambient);
 
+	ImportModel();
 	LoadModel(&samplePoint, &sampleModel);
-	calculateNormal(&samplePoint, &sampleModel);
+	storeModelHist();
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
@@ -290,7 +297,6 @@ void glInit(int argc, char **argv){
 
 	createGLUTMenus();
 	glutMainLoop();
-
 }
 
 
@@ -329,7 +335,8 @@ int main (int argc, char **argv){
 
 	kinectInit();
 	glInit(argc, argv); 
-	
+
+
 	context.Shutdown();
 	return(0);
 }

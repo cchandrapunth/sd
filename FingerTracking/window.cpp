@@ -3,6 +3,8 @@
 #include <GL/glut.h>
 
 #include "window.h"
+#include "model.h"
+#include "undo.h"
 
 #define RED 1
 #define GREEN 2
@@ -20,8 +22,8 @@ void createGLUTMenus() {
 	menu = glutCreateMenu(processMenuEvents);
 
 	//add entries to our menu
-	glutAddMenuEntry("Red",RED);
-	glutAddMenuEntry("Blue",BLUE);
+	glutAddMenuEntry("SAVE",RED);
+	glutAddMenuEntry("Undo",BLUE);
 	glutAddMenuEntry("Green",GREEN);
 	glutAddMenuEntry("Orange",ORANGE);
 
@@ -34,11 +36,15 @@ void processMenuEvents(int option) {
 
 	switch (option) {
 		case RED :
-			printf("red"); break;
+			printf("Save the model to modeloutput.txt\n"); 
+			ExportModel();
+			break;
+		case BLUE :
+			printf("Undo the action"); 
+			undo_m();
+			break;
 		case GREEN :
 			printf("green"); break;
-		case BLUE :
-			printf("blue"); break;
 		case ORANGE :
 			printf("orange"); break;
 	}

@@ -31,10 +31,15 @@ typedef struct model_s
 
 extern model_t sampleModel;
 
+
+
 //render polygon
 void DraPolygon (vertex_t vert, polygon_t *p);
 
 //model ops
+void ImportModel();
+void ExportModel();
+
 void LoadModel(point_t* point, model_t* model);
 void drawMe (model_t *model, point_t* poly);
 void drawPickMe(model_t* model, point_t* poly);
@@ -43,3 +48,9 @@ void calculateNormal(point_t* point, model_t* model);
 
 //translate
 void translatePoly(polygon_t p, point_t* vertexlist,float transx, float transy);
+
+//get
+int getnPoint();
+int getnPoly();
+float* getPoint();
+int* getPoly();

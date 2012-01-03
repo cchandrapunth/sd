@@ -7,7 +7,9 @@
 
 #include "hand_history.h";
 
-//store hand history
+//helper for the real time effect 
+//allow the model to react to movement of the hand during grab gesture
+
 #define MAX_HANDLIST 1000
 std::deque<XnPoint3D> handList;
 
