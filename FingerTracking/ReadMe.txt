@@ -1,7 +1,12 @@
 ========================================================================
 							COMMIT DETAIL 
 ========================================================================
-40% Demo
+50% Demo: Commmit on 3Jan
+	- undo function
+	- import and export model from/to fle
+	- Make a list for improvement 
+
+40% Demo: Commit on 27Dec
 	Ability to alter 3d surface by grab and release gesture.
 	- gesture.cpp: grab
 	- hand_history.cpp: list of handpoint 
@@ -9,8 +14,6 @@
 	- model.cpp: load, draw, select, translate polygon
 	- render.cpp: only handle camera lookAt
 	- window.cpp: menu event (did not use)
-
-Dec 27: Commit to Github
 
 
 ========================================================================
