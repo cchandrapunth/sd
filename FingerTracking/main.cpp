@@ -107,7 +107,7 @@ void checkCursor(){
 		else{
 			mode = RENDER;
 			if(getSelection() >0){
-				translatePoly(sampleModel.pList[getSelection()], &samplePoint,gettranslateX(), gettranslateY());
+				translatePoly(&sampleModel, getSelection(), &samplePoint,gettranslateX(), gettranslateY());
 				calculateNormal(&samplePoint, &sampleModel);
 				
 			}

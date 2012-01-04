@@ -1,26 +1,29 @@
 
+//-----------------------------------------------
+//			Model data structure
+//-----------------------------------------------
 
+//A vetex has its x,y,z coordinate
 typedef struct vertex_s
 {
 	float X,Y,Z;
 } vertex_t;
 
-//list of points' name 
+//list of all the verteices
 typedef struct point_s
 {
 	int nVertexs; 
 	vertex_t pPoints[12]; 
 } point_t;
 
-extern point_t samplePoint;
-
-//contain 4 points' name that make the polygon
+//A quad contains 4 points' id and its normal
 typedef struct polygon_s
 {
 	int p[4];
 	vertex_t normal;	//surface normal
 } polygon_t;
 
+//list of all quads
 typedef struct model_s
 {
 	int nPolygons;
@@ -29,14 +32,16 @@ typedef struct model_s
 } model_t;
 
 
+//-------------------------------------------------------
+//						extern
+//-------------------------------------------------------
 extern model_t sampleModel;
+extern point_t samplePoint;
 
 
-
-//render polygon
-void DraPolygon (vertex_t vert, polygon_t *p);
-
-//model ops
+//--------------------------------------------------------
+//						function
+//--------------------------------------------------------
 void ImportModel();
 void ExportModel();
 
@@ -47,9 +52,11 @@ void FreeModel (model_t* model);
 void calculateNormal(point_t* point, model_t* model);
 
 //translate
-void translatePoly(polygon_t p, point_t* vertexlist,float transx, float transy);
+void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy);
 
-//get
+//---------------------------------------------------------
+//							geter
+//---------------------------------------------------------
 int getnPoint();
 int getnPoly();
 float* getPoint();

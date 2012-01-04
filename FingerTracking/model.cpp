@@ -6,7 +6,7 @@
 #include <iostream>
 
 #include "model.h"
-#include "undo.h"
+#include "softSelection.h"
 
 using std::ifstream;
 using std::ofstream;
@@ -249,21 +249,7 @@ void FreeModel (model_t *model)
     }
 }
 
-void translatePoly(polygon_t p, point_t* vertexlist,float transx, float transy){
+void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy){
 
-	//translate x and y of the points in the chosen poly
-	for(int k=0; k<4; k++){
-		int index = p.p[k];
-		
-		float prevx = vertexlist->pPoints[index].X;
-		float prevy = vertexlist->pPoints[index].Y;
-
-		vertexlist->pPoints[index].X = prevx+transx;
-		vertexlist->pPoints[index].Y = prevy+transy;
-		
-		//index indecates points 
-		pointt[index*3] = prevx+transx;	//x pointdinate
-		pointt[index*3+1] = prevy+transy; //y pointdinate
-	}
+	softSelect(model, id, vertexlist,transx, transy, pointt);
 }
-

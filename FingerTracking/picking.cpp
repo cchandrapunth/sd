@@ -11,11 +11,6 @@
 static GLint model_display_list;
 
 
-
-
-//----------------------------------------
-//			PICKING STUFF
-//----------------------------------------
 void processPick(int cursorX, int cursorY){
 	GLint viewport[4];
 	GLubyte pixel[3];
