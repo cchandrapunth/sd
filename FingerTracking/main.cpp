@@ -61,6 +61,12 @@ point_t samplePoint;
 //ui
 ui *Master_ui =new ui();
 
+// feature
+bool sculpting = true;
+bool control = false;
+bool paint = false;
+
+
 //---------------------------------------------------------------
 //				Keyboard and mouse
 //----------------------------------------------------------------
@@ -96,7 +102,6 @@ void processNormalKeys(unsigned char key, int x, int y){
 //treat grab as a mouse click. 
 void checkCursor(){
 	
-
 	if(isGrab()) {
 		//keep the movement history
 		storeHand(getPalm());
@@ -154,25 +159,40 @@ void mainloop(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 
+	checkCursor(); //check grabing, store palm
+	UIhandler(); //check ui touch
 
-	//check grabing, store palm
-	checkCursor();
+	//-------------------sculpting--------------------------
+	if(sculpting){
 
-	UIhandler();
+		if(mode == SELECT){
+			drawPickMe(&sampleModel, &samplePoint);
+			processPick(cursorX, cursorY);
+			mode = RENDER;
+		}
+		else {
+			drawHand(handPointList);
+			if(!BACK_BUFF)
+				drawMe(&sampleModel, &samplePoint);
+			else drawPickMe(&sampleModel, &samplePoint);
+			glutSwapBuffers();
+		}
 
-	if(mode == SELECT)
-		drawPickMe(&sampleModel, &samplePoint);
-	else {
+	}
+	else if(control) {
+		//render no back buffer 
+		//diddn't process pick
 		drawHand(handPointList);
-		if(!BACK_BUFF)
 		drawMe(&sampleModel, &samplePoint);
-		else drawPickMe(&sampleModel, &samplePoint);
+		glutSwapBuffers();
 	}
-	if(mode == SELECT){
-		processPick(cursorX, cursorY);
-		mode = RENDER;
+	else if(paint) {
+		//render no back buffer 
+		//diddn't process pick
+		drawHand(handPointList);
+		drawPickMe(&sampleModel, &samplePoint);
+		glutSwapBuffers();
 	}
-	else glutSwapBuffers();
 
 	context.WaitAndUpdateAll();
 	
@@ -249,18 +269,31 @@ void initRender(){
 }
 
 //-----------------push menu-------------------
+//sculpting
 void option1(){
-	printf("option1\n");
+	printf("Ready to sculpt?\n");
+	sculpting = true;
+	control = false;
+	paint = false;
 	Master_ui->remove_menu();
 }
+//move camera (move/rotate object)
 void option2(){
-	printf("option2\n");
+	printf("Control\n");
+	sculpting = false;
+	control = true;
+	paint = false;
 	Master_ui->remove_menu();
 }
+//paint brush
 void option3(){
-	printf("option3\n");
+	printf("Paint\n");
+	sculpting = false;
+	control = false;
+	paint = true;
 	Master_ui->remove_menu();
 }
+
 
 //FIXME: should hide the menu button once it's click
 void push_menu(){

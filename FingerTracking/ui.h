@@ -24,6 +24,9 @@ public:
 	void remove_menu();
 
 	void add_panel();
+
+private:
+	void draw_circle(int center_x, int center_y, int angle);
 };
 
 extern ui* Master_ui;

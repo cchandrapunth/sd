@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include <deque>
+#include "math.h"
 #include <gl/glut.h>
 
 #include "ui.h"
@@ -53,7 +54,8 @@ void ui::check_click(int hand_x, int hand_y){
 		if(hand_x > b->x && hand_x < b->x+width && hand_y > b->y && hand_y < b->y+height){
 			b->hand_down_handler(hand_x, hand_y);
 			b->wait = b->wait+1;
-			if(b->wait >15){
+			draw_circle(hand_x, hand_y, b->wait);
+			if(b->wait >24){
 				if(b->currently_inside) {
 					b->hand_up_handler(hand_x, hand_y, true);					
 				}
@@ -89,4 +91,17 @@ void ui::add_panel(){
 	glVertex3i( 170, 400, -10);
 	glEnd();
 	
+}
+//--------------draw circle-----------------------
+void ui::draw_circle(int x1, int y1, int angle){
+
+	glDisable(GL_LIGHTING);
+	glColor3f(0.3,0.8,0.8);
+
+	glBegin(GL_LINE_STRIP);
+	glVertex3f(x1, y1, 10);
+	for(int a= 0; a < angle*15; a+=5){
+		glVertex3f(x1 + sin((double)a) * 20, y1 + cos((double)a) * 20, 10);
+	}
+	glEnd();
 }
