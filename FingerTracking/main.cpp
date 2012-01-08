@@ -12,6 +12,7 @@
 #include <GL/glut.h>
 #include <XnCppWrapper.h>
 #include <XnVNite.h>
+#include "glui.h"
 
 #include "picking.h"
 #include "gesture.h"
@@ -21,18 +22,19 @@
 #include "undo.h"
 
 
+#include "ui.h"
+
 //----------------------------------------------------------------
 //							Variable
 //----------------------------------------------------------------
 
 #define SelBuffSize 512		//selection buffer 
 #define BUFSIZE 1024 
-GLuint selectBuf[BUFSIZE];
+
 
 //rendering mode
 #define RENDER	1	
 #define SELECT	2	
-
 
 // static //
 static int mainWindow;
@@ -41,6 +43,8 @@ static int cursorX, cursorY;
 static int mode = RENDER; 	
 static XnUInt16 g_nXRes, g_nYRes;
 static bool BACK_BUFF;	//show back buffer
+
+GLuint selectBuf[BUFSIZE];
 
 //gesture 
 #define GESTURE_TO_USE "Click" 
@@ -54,6 +58,8 @@ bool stateGrab = false; //0- not grab, 1 - already in grab
 model_t sampleModel; 
 point_t samplePoint; 
 
+//ui
+ui *Master_ui =new ui();
 
 //---------------------------------------------------------------
 //				Keyboard and mouse
@@ -101,7 +107,10 @@ void checkCursor(){
 			cursorY = getPalm().Y;
 			mode = SELECT; 
 			stateGrab = true;
-			Beep(750,50);				//play sound lol
+			Beep(750,50);				//play sound
+
+			mouse(GLUT_LEFT_BUTTON, GLUT_DOWN,  g_nXRes- getPalm().X, getPalm().Y);
+
 		}
 		//stay in grab position should not be recognized as grab
 		else{
@@ -127,9 +136,15 @@ void checkCursor(){
 //------------------------------------------------------------------
 //								Rendering
 //------------------------------------------------------------------
+void UIhandler(){
+	
+	Master_ui->check_click(g_nXRes - getPalm().X,g_nYRes- getPalm().Y);
+}
 
 void mainloop(){
 
+	if(glutGetWindow()!=mainWindow)  
+		glutSetWindow(mainWindow);
 	XnPoint3D *handPointList = new XnPoint3D[MAXPOINT];
 	if(handPointList == NULL){
 		printf("error. can't allocate memory for handPointList");
@@ -142,6 +157,8 @@ void mainloop(){
 
 	//check grabing, store palm
 	checkCursor();
+
+	UIhandler();
 
 	if(mode == SELECT)
 		drawPickMe(&sampleModel, &samplePoint);
@@ -158,13 +175,16 @@ void mainloop(){
 	else glutSwapBuffers();
 
 	context.WaitAndUpdateAll();
-
+	
+	glutSetWindow(mainWindow); //set current GLUT window before rendering
 	glFlush();
 	
 }
 
 void reshape(int w1, int h1){
 
+	glutSetWindow(mainWindow); 
+	
 	float ratio; 
 	int h = h1; 
 	int w = w1; 
@@ -172,6 +192,8 @@ void reshape(int w1, int h1){
 	// prevent divide by zero 
 	if(h1 ==0) h=1; 
 	glViewport(0, 0, w, h); 
+
+	//GLUI_Master.auto_set_viewport();
 
 	//PROJECTION: set window coordinate
 	glMatrixMode(GL_PROJECTION);
@@ -197,6 +219,7 @@ void reshape(int w1, int h1){
 //								INIT
 //----------------------------------------------------------------
 void initRender(){
+
 
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
@@ -225,23 +248,14 @@ void initRender(){
 
 }
 
-void glInit(int argc, char **argv){
+//all ui in here
+void uiInit(){
 
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(300, 100);
-	glutInitWindowSize(w,h);
-	mainWindow = glutCreateWindow("picking back buffer");
+	Master_ui->add_button("test butt", 80, 420, true);
 
-	glutKeyboardFunc(processNormalKeys);
-	glutReshapeFunc(reshape);
-	glutDisplayFunc(mainloop);
-	glutMouseFunc(mouse);
-	glutIdleFunc(mainloop);
-	initRender();
-
-	createGLUTMenus();
-	glutMainLoop();
+	Master_ui->add_button("option1", 200, 100, false);
+	Master_ui->add_button("option2", 340, 100, false);
+	Master_ui->add_button("option3", 480, 100, false);
 }
 
 
@@ -280,7 +294,25 @@ void kinectInit(){
 int main (int argc, char **argv){
 
 	kinectInit();
-	glInit(argc, argv); 
+	
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+	glutInitWindowPosition(300, 100);
+	glutInitWindowSize(w,h);
+	mainWindow = glutCreateWindow("picking back buffer");
+
+	glutKeyboardFunc(processNormalKeys);
+	glutReshapeFunc(reshape);
+	glutDisplayFunc(mainloop);
+	glutMouseFunc(mouse);
+
+
+	initRender();
+	uiInit(); 
+	glutIdleFunc(mainloop);	//enable GLUI window to take advantage of idle event
+
+	createGLUTMenus();
+	glutMainLoop();
 
 	context.Shutdown();
 	return(0);
