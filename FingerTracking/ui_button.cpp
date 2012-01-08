@@ -2,23 +2,30 @@
 #include <gl/glut.h>
 #include "ui.h"
 
-ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, int width, int height)
+ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, int width, int height, cb_function cb)
 {
-	ui_button(name, id, begin_x, begin_y, true);
 	h = height;
 	w = width;
+
+	user_id = id;
+	currently_inside = false;
+	x = begin_x;
+	y = begin_y;
+	callback = cb;
+
 	wait = 0;
 }
 
-ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, bool act)
+ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, cb_function cb)
 {
 	common_init();
 	user_id = id;
 	currently_inside = false;
 	x = begin_x;
 	y = begin_y;
-	activate = act;
+	callback = cb;
 
+	wait = 0;
 }
 
 int  ui_button::hand_down_handler( int local_x, int local_y ){
@@ -26,6 +33,10 @@ int  ui_button::hand_down_handler( int local_x, int local_y ){
 	draw();
 
 	return false;
+}
+
+void ui_button::reactivate(){
+	activate = true;
 }
 
 int  ui_button::hand_up_handler( int local_x, int local_y, bool inside ){
@@ -36,12 +47,13 @@ int  ui_button::hand_up_handler( int local_x, int local_y, bool inside ){
 		if(!execute){
 			activate = false;
 			execute = true;
-			printf("FUCKKKKKKKKKK\n");
+			
+			callback();
+
 			return true;
 		}
 	}
 	else{
-		activate = true;
 		execute = false; 
 	}
 	return false;

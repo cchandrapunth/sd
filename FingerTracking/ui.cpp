@@ -1,5 +1,7 @@
 #include "StdAfx.h"
 #include <deque>
+#include <gl/glut.h>
+
 #include "ui.h"
 
 using namespace std;
@@ -13,10 +15,18 @@ ui::ui(void)
 
 
 //------------add_button--------------------------
-void ui::add_button(const char* name, int x, int y, bool activated){
+void ui::add_button(const char* name, int x, int y, int ww, int hh, cb_function cb){
 
 	//initialize button 
-	ui_button *b = new ui_button(name, count, x, y, activated);
+	ui_button *b = new ui_button(name, count, x, y,ww, hh, cb);
+	button_list[count] = b;
+	count++;
+}
+
+void ui::add_button(const char* name, int x, int y, cb_function cb){
+
+	//initialize button 
+	ui_button *b = new ui_button(name, count, x, y, cb);
 	button_list[count] = b;
 	count++;
 }
@@ -32,6 +42,7 @@ void ui::draw(){
 
 //-------------------check_click------------------
 void ui::check_click(int hand_x, int hand_y){
+	
 	for(int i=0; i< count; i++){
 		ui_button *b = button_list[i];
 		
@@ -44,7 +55,7 @@ void ui::check_click(int hand_x, int hand_y){
 			b->wait = b->wait+1;
 			if(b->wait >15){
 				if(b->currently_inside) {
-					activate_menu = b->hand_up_handler(hand_x, hand_y, true);
+					b->hand_up_handler(hand_x, hand_y, true);					
 				}
 			}	
 		} 
@@ -53,11 +64,29 @@ void ui::check_click(int hand_x, int hand_y){
 			b->wait = 0;
 		}
 	}
+
+	if(activate_menu){
+		add_panel();
+	}
 }
-//-----------------push menu-------------------
-void ui::push_menu(int fs_x, int fs_y){
-	//draw panel 
 
-	printf("pushing menu\n");
+//----------------remove menu-----------------
+void ui::remove_menu(){
+	count = 1;
+	activate_menu = false;
+	button_list[0]->reactivate();
+}
 
+//---------------------add panel----------------
+void ui::add_panel(){
+	
+	glDisable(GL_LIGHTING);
+	glColor3f(0.2,0.2,0.2);
+	glBegin(GL_QUADS);
+	glVertex3i( 170, 100, -10);         
+	glVertex3i( 600, 100, -10);
+    glVertex3i( 600, 400, -10);     
+	glVertex3i( 170, 400, -10);
+	glEnd();
+	
 }

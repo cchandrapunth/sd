@@ -248,14 +248,36 @@ void initRender(){
 
 }
 
+//-----------------push menu-------------------
+void option1(){
+	printf("option1\n");
+	Master_ui->remove_menu();
+}
+void option2(){
+	printf("option2\n");
+	Master_ui->remove_menu();
+}
+void option3(){
+	printf("option3\n");
+	Master_ui->remove_menu();
+}
+
+//FIXME: should hide the menu button once it's click
+void push_menu(){
+	//draw panel 
+	Master_ui->activate_menu = true;
+	printf("pushing menu\n");
+	Master_ui->add_button("option1", 200, 150, 100, 200, option1);
+	Master_ui->add_button("option2", 340, 150, 100, 200, option2);
+	Master_ui->add_button("option3", 480, 150, 100, 200, option3);
+
+}
+
 //all ui in here
 void uiInit(){
 
-	Master_ui->add_button("test butt", 80, 420, true);
+	Master_ui->add_button("test butt", 80, 420, push_menu);
 
-	Master_ui->add_button("option1", 200, 100, false);
-	Master_ui->add_button("option2", 340, 100, false);
-	Master_ui->add_button("option3", 480, 100, false);
 }
 
 
