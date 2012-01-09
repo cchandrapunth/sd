@@ -197,6 +197,13 @@ void drawMe (model_t *model, point_t* vertexList)
 			glPushMatrix();
 			glPushName(j*2+i);
 
+			int roll =0;
+			int pinch =0;
+			int heading = 0;
+			glTranslated(50, 50, 0);
+			glRotated(roll, 0, 0, 1);
+			glRotated(pinch, 0, 1, 0);
+			glRotated(heading, 1,0,0);
 			DrawPolygon(ptr[(j*4)+i], vertexList);
 
 			glPopName();

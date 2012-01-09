@@ -164,7 +164,6 @@ void mainloop(){
 
 	//-------------------sculpting--------------------------
 	if(sculpting){
-
 		if(mode == SELECT){
 			drawPickMe(&sampleModel, &samplePoint);
 			processPick(cursorX, cursorY);
