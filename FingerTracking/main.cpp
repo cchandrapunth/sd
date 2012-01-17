@@ -20,9 +20,8 @@
 #include "window.h"
 #include "model.h"
 #include "undo.h"
-
-
 #include "ui.h"
+#include "miniball.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -112,12 +111,10 @@ void checkCursor(){
 			cursorY = getPalm().Y;
 			mode = SELECT; 
 			stateGrab = true;
-			Beep(750,50);				//play sound
-
-			mouse(GLUT_LEFT_BUTTON, GLUT_DOWN,  g_nXRes- getPalm().X, getPalm().Y);
+			//Beep(750,50);				//play sound
 
 		}
-		//stay in grab position should not be recognized as grab
+		//still in grab position should not be recognized as grab
 		else{
 			mode = RENDER;
 			if(getSelection() >0){
@@ -203,16 +200,32 @@ void mainloop(){
 void reshape(int w1, int h1){
 
 	glutSetWindow(mainWindow); 
-	
-	float ratio; 
+
+	vertex_t c = getCenterSphere();
+	float diam = getDiamSphere();
+
+	float zNear = 0.0;
+    float zFar = zNear + diam;
+	GLdouble left = c.X - diam;
+    GLdouble right = c.X + diam;
+    GLdouble bottom = c.Y - diam;
+    GLdouble top = c.Y + diam;
+
+     
 	int h = h1; 
 	int w = w1; 
-
-	// prevent divide by zero 
 	if(h1 ==0) h=1; 
 	glViewport(0, 0, w, h); 
 
-	//GLUI_Master.auto_set_viewport();
+	/*
+	float aspect= w/h;
+	if ( aspect < 1.0 ) { // window taller than wide
+     bottom /= aspect;
+     top /= aspect;
+   } else {
+     left *= aspect;
+     right *= aspect;
+   }*/
 
 	//PROJECTION: set window coordinate
 	glMatrixMode(GL_PROJECTION);
@@ -226,8 +239,9 @@ void reshape(int w1, int h1){
 
 	//set the clipping volume corresponding to the depthmap resolution
 	//left, right, buttom, top
-	glOrtho(0, g_nXRes, 0, g_nYRes, -100, 1000);
-	gluLookAt(80, 0, 0, 80, 0, -10, 0, 1, 0);
+	//glOrtho(0, g_nXRes, 0, g_nYRes, -100, 1000);
+	glOrtho(left, right, bottom, top, zNear, zFar);
+	//gluLookAt(0, 0, 0, 0, 0, -10, 0, 1, 0);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -258,6 +272,7 @@ void initRender(){
 	ImportModel();
 	LoadModel(&samplePoint, &sampleModel);
 	storeModelHist();
+	calBoundingSphere();
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);

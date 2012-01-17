@@ -5,8 +5,11 @@
 #include <fstream>
 #include <iostream>
 
+
+
 #include "model.h"
 #include "softSelection.h"
+#include "miniball.h"
 
 using std::ifstream;
 using std::ofstream;
@@ -200,7 +203,13 @@ void drawMe (model_t *model, point_t* vertexList)
 			int roll =0;
 			int pinch =0;
 			int heading = 0;
-			glTranslated(50, 50, 0);
+
+			vertex_t c = getCenterSphere();
+
+			glTranslated(c.X, c.Y, c.Z);
+			glRotated(90, 0,0,1);
+			glTranslated(-c.X, -c.Y, -c.Z);
+
 			glRotated(roll, 0, 0, 1);
 			glRotated(pinch, 0, 1, 0);
 			glRotated(heading, 1,0,0);

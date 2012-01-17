@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="gesture.h" />
     <ClInclude Include="hand_history.h" />
+    <ClInclude Include="miniball.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="picking.h" />
     <ClInclude Include="softSelection.h" />
@@ -95,6 +96,7 @@
     <ClCompile Include="gesture.cpp" />
     <ClCompile Include="hand_history.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="miniball.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="picking.cpp" />
     <ClCompile Include="softSelection.cpp" />

@@ -7,6 +7,7 @@
 
 #include "gesture.h"
 #include "window.h"
+
 using namespace xn;
 
 #define GESTURE_TO_USE "Click" 
@@ -282,10 +283,10 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints){
 
 		//cross hair 
 		glBegin(GL_LINES);
-		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y)+20.0);
-		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y)-20.0);
-		glVertex2f((GLfloat) (nXRes-palmPos.X)+20.0, (GLfloat) (nYRes- palmPos.Y));
-		glVertex2f((GLfloat) (nXRes-palmPos.X)-20.0, (GLfloat) (nYRes- palmPos.Y));
+		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y)+30.0);
+		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y)-30.0);
+		glVertex2f((GLfloat) (nXRes-palmPos.X)+30.0, (GLfloat) (nYRes- palmPos.Y));
+		glVertex2f((GLfloat) (nXRes-palmPos.X)-30.0, (GLfloat) (nYRes- palmPos.Y));
 		glEnd();
 	}
 }

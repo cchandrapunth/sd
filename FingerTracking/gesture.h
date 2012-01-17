@@ -52,3 +52,4 @@ void estimateGrab(
 	XnPoint3D* lowest, 
 	XnPoint3D* leftmost, 
 	XnPoint3D* rightmost);
+
