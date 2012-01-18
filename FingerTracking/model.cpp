@@ -8,8 +8,10 @@
 
 
 #include "model.h"
+#include "undo.h"
 #include "softSelection.h"
 #include "miniball.h"
+
 
 using std::ifstream;
 using std::ofstream;
@@ -18,6 +20,11 @@ using std::ofstream;
 float *pointt; //change number of points need to reflect in the data structure
 int *poly;
 int nPoly, nPoint;
+
+//translate scene
+float rollX = 0; 
+float rollY = 0;
+
 
 int getnPoint(){ return nPoint;}
 int getnPoly(){ return nPoly;}
@@ -189,6 +196,28 @@ void DrawPolygon(polygon_t p, point_t* poly){
 	glEnd();	
 }
 
+void handleRoll(){
+	//store new roll input 
+	int rotX, rotY;
+
+	rotX = restoreMatX()+getMatX()+ (int)rollX;
+	rotY = restoreMatY()+getMatY()+ (int)rollY;
+	
+	vertex_t c = getCenterSphere();
+	glTranslated(c.X, c.Y, c.Z);
+	glRotated(rotX, 0, 1, 0);	//rotate around y axis
+	glTranslated(-c.X, -c.Y, -c.Z);
+
+	glTranslated(c.X, c.Y, c.Z);
+	glRotated(rotY, 1, 0, 0);	//rotate around x axis
+	glTranslated(-c.X, -c.Y, -c.Z);
+
+	addMatrix((int)rollX, (int)rollY);
+
+	//reset
+	rollX=0;
+	rollY=0;
+}
 // DrawModel(); draws a model
 void drawMe (model_t *model, point_t* vertexList)
 {
@@ -200,21 +229,7 @@ void drawMe (model_t *model, point_t* vertexList)
 			glPushMatrix();
 			glPushName(j*2+i);
 
-			int roll =0;
-			int pinch =90;
-			int heading = 0;
-
-			vertex_t c = getCenterSphere();
-
-			glTranslated(c.X, c.Y, c.Z);
-			//glRotated(90, 0,0,1);
-			
-
-			glRotated(roll, 0, 0, 1); //rotate around z axis 
-			glRotated(pinch, 0, 1, 0);	//rotate around y axis
-			glRotated(heading, 1, 0, 0);	//rotate around x axis
-			glTranslated(-c.X, -c.Y, -c.Z);
-
+			handleRoll();
 			DrawPolygon(ptr[(j*4)+i], vertexList);
 
 			glPopName();
@@ -269,4 +284,10 @@ void FreeModel (model_t *model)
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy){
 
 	softSelect(model, id, vertexlist,transx, transy, pointt);
+}
+
+void translateScene(float transx, float transy){
+	//set variable for rotate/zoom
+	rollX = transx;
+	rollY = transy;
 }

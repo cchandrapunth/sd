@@ -13,9 +13,13 @@
 
 //should be changable by the users
 #define maxAct 30
+#define maxControl 30
 
 std::deque<model_state> actionList;
+std::deque<matrix_state> controlList;
 
+static int rotateSceneX =0;
+static int rotateSceneY =0;
 
 //model history
 void storeModelHist(){
@@ -24,8 +28,6 @@ void storeModelHist(){
 	int numPolygon = getnPoly();
 	float* vertices = getPoint();	//important! vertices => x,y,z coordinates stored
 	int* polygons = getPoly();		//important! polygon => 4 points made quad
-
-	
 
 	float* tempv = (float*) malloc(sizeof(float)* numVertex*3);
 	int* tempp = (int*) malloc(sizeof(int)* numPolygon*4);
@@ -78,3 +80,45 @@ void undo_m(){
 	}
 }
 
+void addMatrix(int x, int y){
+	rotateSceneX += x;
+	if(rotateSceneX > 360) rotateSceneX -=360; 
+
+	rotateSceneY += y;
+	if(rotateSceneY > 360) rotateSceneY -=360; 
+}
+
+int getMatX() {return rotateSceneX;}
+int getMatY() {return rotateSceneY;}
+
+//prepare for undo
+void pushMatrix(){
+	matrix_state* ms= (matrix_state*) malloc (sizeof(matrix_state));
+	ms->rollX = rotateSceneX; 
+	ms->rollY = rotateSceneY;
+
+	if(!controlList.empty()){
+		ms->rollX += controlList.front().rollX;
+		if(ms->rollX > 360) ms->rollX -=360;
+		ms->rollY += controlList.front().rollY;
+		if(ms->rollY > 360) ms->rollY -=360;
+	}
+
+	controlList.push_front(*ms);
+	if(controlList.size() > maxControl){
+		controlList.pop_back();
+	}
+
+	rotateSceneX = 0;
+	rotateSceneY = 0;
+}
+
+int restoreMatX(){
+	if(controlList.empty()) return 0;
+	return controlList.front().rollX;
+}
+
+int restoreMatY(){
+	if(controlList.empty()) return 0;
+	return controlList.front().rollY;
+}

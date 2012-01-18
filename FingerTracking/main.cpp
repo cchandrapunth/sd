@@ -99,7 +99,7 @@ void processNormalKeys(unsigned char key, int x, int y){
 }
 
 //treat grab as a mouse click. 
-void checkCursor(){
+void checkCursor(int func){
 	
 	if(isGrab()) {
 		//keep the movement history
@@ -114,14 +114,18 @@ void checkCursor(){
 			//Beep(750,50);				//play sound
 
 		}
-		//still in grab position should not be recognized as grab
+		//still in grab gesture
 		else{
 			mode = RENDER;
-			if(getSelection() >0){
-				translatePoly(&sampleModel, getSelection(), &samplePoint,gettranslateX(), gettranslateY());
-				calculateNormal(&samplePoint, &sampleModel);
-				
+			if(func == 1) {
+				if(getSelection() >0){
+					translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY());
+					calculateNormal(&samplePoint, &sampleModel);
+				}
 			}
+			else if(func ==2){
+					translateScene(gettranslateX(), gettranslateY());
+				}
 		}
 	}
 	else{
@@ -130,7 +134,9 @@ void checkCursor(){
 			stateGrab = false; 
 			clearHandList();
 
-			storeModelHist();
+			//undo
+			if(func == 1) storeModelHist(); 
+			else if(func ==2) pushMatrix(); 
 		}
 	}
 
@@ -143,7 +149,10 @@ void UIhandler(){
 	Master_ui->check_click(convertX(getPalm().X), convertY(getPalm().Y));
 }
 
-void mainloop(){
+//------------------------------------------------------------------
+//								display
+//------------------------------------------------------------------
+void display(){
 
 	if(glutGetWindow()!=mainWindow)  
 		glutSetWindow(mainWindow);
@@ -156,11 +165,14 @@ void mainloop(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 
-	checkCursor(); //check grabing, store palm
 	UIhandler(); //check ui touch
 
 	//-------------------sculpting--------------------------
+	
 	if(sculpting){
+		//check grabing, store palm
+		checkCursor(1); 
+		
 		if(mode == SELECT){
 			drawPickMe(&sampleModel, &samplePoint);
 			processPick(cursorX, cursorY);
@@ -175,7 +187,10 @@ void mainloop(){
 		}
 
 	}
+	//-------------------control----------------------------
 	else if(control) {
+		checkCursor(2); 
+
 		//render no back buffer 
 		//diddn't process pick
 		drawHand(handPointList);
@@ -197,6 +212,9 @@ void mainloop(){
 	
 }
 
+//-------------------------------------------------------------------------
+//									Reshape
+//-------------------------------------------------------------------------
 void reshape(int w1, int h1){
 
 	glutSetWindow(mainWindow); 
@@ -237,9 +255,8 @@ void reshape(int w1, int h1){
 	g_nXRes = mode.nXRes;
 	g_nYRes = mode.nYRes;
 
-	//set the clipping volume corresponding to the depthmap resolution
+	//set the clipping volume corresponding to the viewport
 	//left, right, buttom, top
-	//glOrtho(0, g_nXRes, 0, g_nYRes, -100, 1000);
 	glOrtho(left, right, bottom, top, zNear, zFar);
 	//gluLookAt(0, 0, 0, 0, 0, -10, 0, 1, 0);
 
@@ -371,13 +388,13 @@ int main (int argc, char **argv){
 
 	glutKeyboardFunc(processNormalKeys);
 	glutReshapeFunc(reshape);
-	glutDisplayFunc(mainloop);
+	glutDisplayFunc(display);
 	glutMouseFunc(mouse);
 
 
 	initRender();
 	uiInit(); 
-	glutIdleFunc(mainloop);	//enable GLUI window to take advantage of idle event
+	glutIdleFunc(display);	//enable GLUI window to take advantage of idle event
 
 	createGLUTMenus();
 	glutMainLoop();

@@ -64,6 +64,7 @@ void processPick(int cursorX, int cursorY){
 }
 
 int getSelection(){
+	printf("**select: %d\n", pickMe);
 	return pickMe;
 }
 
