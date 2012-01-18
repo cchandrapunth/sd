@@ -85,10 +85,10 @@ void ui::add_panel(){
 	glDisable(GL_LIGHTING);
 	glColor3f(0.2,0.2,0.2);
 	glBegin(GL_QUADS);
-	glVertex3i( 170, 100, -10);         
-	glVertex3i( 600, 100, -10);
-    glVertex3i( 600, 400, -10);     
-	glVertex3i( 170, 400, -10);
+	glVertex3i( 120, 100, -10);         
+	glVertex3i( 650, 100, -10);
+    glVertex3i( 650, 450, -10);     
+	glVertex3i( 120, 450, -10);
 	glEnd();
 	
 }

@@ -107,8 +107,8 @@ void checkCursor(){
 
 		//first time grab gesture occurs
 		if(!stateGrab) {
-			cursorX = g_nXRes - getPalm().X;
-			cursorY = getPalm().Y;
+			cursorX = convertX(getPalm().X);
+			cursorY = convertYcursor(getPalm().Y);
 			mode = SELECT; 
 			stateGrab = true;
 			//Beep(750,50);				//play sound
@@ -140,7 +140,7 @@ void checkCursor(){
 //------------------------------------------------------------------
 void UIhandler(){
 	
-	Master_ui->check_click(g_nXRes - getPalm().X,g_nYRes- getPalm().Y);
+	Master_ui->check_click(convertX(getPalm().X), convertY(getPalm().Y));
 }
 
 void mainloop(){
@@ -314,17 +314,16 @@ void push_menu(){
 	//draw panel 
 	Master_ui->activate_menu = true;
 	printf("pushing menu\n");
-	Master_ui->add_button("option1", 200, 150, 100, 200, option1);
-	Master_ui->add_button("option2", 340, 150, 100, 200, option2);
-	Master_ui->add_button("option3", 480, 150, 100, 200, option3);
+	Master_ui->add_button("option1", 200, 150, 100, 250, option1);
+	Master_ui->add_button("option2", 340, 150, 100, 250, option2);
+	Master_ui->add_button("option3", 480, 150, 100, 250, option3);
 
 }
 
 //all ui in here
 void uiInit(){
-
-	Master_ui->add_button("test butt", 80, 420, push_menu);
-
+	//main menu button
+	Master_ui->add_button("test butt", -30, 600, push_menu);
 }
 
 

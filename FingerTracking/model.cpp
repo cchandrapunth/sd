@@ -201,18 +201,20 @@ void drawMe (model_t *model, point_t* vertexList)
 			glPushName(j*2+i);
 
 			int roll =0;
-			int pinch =0;
+			int pinch =90;
 			int heading = 0;
 
 			vertex_t c = getCenterSphere();
 
 			glTranslated(c.X, c.Y, c.Z);
-			glRotated(90, 0,0,1);
+			//glRotated(90, 0,0,1);
+			
+
+			glRotated(roll, 0, 0, 1); //rotate around z axis 
+			glRotated(pinch, 0, 1, 0);	//rotate around y axis
+			glRotated(heading, 1, 0, 0);	//rotate around x axis
 			glTranslated(-c.X, -c.Y, -c.Z);
 
-			glRotated(roll, 0, 0, 1);
-			glRotated(pinch, 0, 1, 0);
-			glRotated(heading, 1,0,0);
 			DrawPolygon(ptr[(j*4)+i], vertexList);
 
 			glPopName();

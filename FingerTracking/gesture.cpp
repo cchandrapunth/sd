@@ -7,6 +7,8 @@
 
 #include "gesture.h"
 #include "window.h"
+#include "model.h"
+#include "miniball.h"
 
 using namespace xn;
 
@@ -54,6 +56,23 @@ void switchShowHand(){
 		if(SHOWHAND) printf("switch hand mode to SHOW\n");
 		else 	printf("switch hand mode to NOT_SHOW\n");
 }
+
+float convertX(float x){
+	float left = getCenterSphere().X- getDiamSphere(); //get the leftmost coordinate
+	return left + (nXRes-x)*(2*getDiamSphere())/nXRes;	//scale to the viewport
+}
+
+float convertY(float y){
+	float bottom = getCenterSphere().Y- getDiamSphere(); //get the leftmost coordinate
+	return bottom + (nYRes-y)*(2*getDiamSphere())/nYRes;
+}
+//for cursor, do not reverse the side (nYRes)
+float convertYcursor(float y){
+	float bottom = getCenterSphere().Y- getDiamSphere(); //get the leftmost coordinate
+	return bottom + y*(2*getDiamSphere())/nYRes;
+
+}
+
 //-----------------------------------------------------
 //					Register generator
 //-----------------------------------------------------
@@ -175,8 +194,9 @@ void drawHand(XnPoint3D* handPointList){
 							//the depth map is mirroring. As glOrtho is scaled to 0,nXRes and 0,nYRes
 							//we flip the coordinate using nXRes and nYRes
 
+							//convert in relative to viewport 
 							if(SHOWHAND)
-								glVertex3f(nXRes-nX, nYRes-nY, 50.0f);
+								glVertex3f(convertX(nX), convertY(nY), 0.0f);
 							
 							XnPoint3D *p = new XnPoint3D;
 							(*p).X = nX;
@@ -266,10 +286,10 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints){
 		glPointSize(8);
 		glColor3f(0, 1.0, 0);
 		glBegin(GL_POINTS);
-		glVertex2f((GLfloat) (nXRes -(*highest).X), (GLfloat) (nYRes-(*highest).Y));
-		glVertex2f((GLfloat) (nXRes -(*lowest).X), (GLfloat) (nYRes-(*lowest).Y));
-		glVertex2f((GLfloat) (nXRes -(*rightmost).X), (GLfloat) (nYRes-(*rightmost).Y));
-		glVertex2f((GLfloat) (nXRes -(*leftmost).X), (GLfloat) (nYRes-(*leftmost).Y));
+		glVertex2f((GLfloat) convertX((*highest).X), (GLfloat) convertY((*highest).Y));
+		glVertex2f((GLfloat) convertX((*lowest).X), (GLfloat) convertY((*lowest).Y));
+		glVertex2f((GLfloat) convertX((*rightmost).X), (GLfloat) convertY((*rightmost).Y));
+		glVertex2f((GLfloat) convertX((*leftmost).X), (GLfloat) convertY((*leftmost).Y));
 		glEnd();
 	}
 	else{
@@ -278,15 +298,15 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints){
 		else glColor3f(0, 1.0, 0);
 				
 		glBegin(GL_POINTS);
-		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y));
+		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y));
 		glEnd();
 
 		//cross hair 
 		glBegin(GL_LINES);
-		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y)+30.0);
-		glVertex2f((GLfloat) (nXRes-palmPos.X), (GLfloat) (nYRes- palmPos.Y)-30.0);
-		glVertex2f((GLfloat) (nXRes-palmPos.X)+30.0, (GLfloat) (nYRes- palmPos.Y));
-		glVertex2f((GLfloat) (nXRes-palmPos.X)-30.0, (GLfloat) (nYRes- palmPos.Y));
+		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)+30.0);
+		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)-30.0);
+		glVertex2f((GLfloat) convertX(palmPos.X)+30.0, (GLfloat) convertY(palmPos.Y));
+		glVertex2f((GLfloat) convertX(palmPos.X)-30.0, (GLfloat) convertY(palmPos.Y));
 		glEnd();
 	}
 }

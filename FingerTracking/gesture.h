@@ -53,3 +53,7 @@ void estimateGrab(
 	XnPoint3D* leftmost, 
 	XnPoint3D* rightmost);
 
+
+float convertX(float x);
+float convertY(float y);
+float convertYcursor(float y);
