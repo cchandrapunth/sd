@@ -22,6 +22,7 @@
 #include "undo.h"
 #include "ui.h"
 #include "miniball.h"
+#include "paint.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -61,9 +62,9 @@ point_t samplePoint;
 ui *Master_ui =new ui();
 
 // feature
-bool sculpting = true;
+bool sculpting = false;
 bool control = false;
-bool paint = false;
+bool paint = true;
 
 
 //---------------------------------------------------------------
@@ -124,8 +125,13 @@ void checkCursor(int func){
 				}
 			}
 			else if(func ==2){
-					translateScene(gettranslateX(), gettranslateY());
+				translateScene(gettranslateX(), gettranslateY());
+			}
+			else if(func ==3){
+				if(getSelection() >0){
+					paintMesh(&sampleModel, getSelection());
 				}
+			}
 		}
 	}
 	else{
@@ -191,18 +197,33 @@ void display(){
 	else if(control) {
 		checkCursor(2); 
 
-		//render no back buffer 
-		//diddn't process pick
-		drawHand(handPointList);
-		drawMe(&sampleModel, &samplePoint);
-		glutSwapBuffers();
+		if(mode == SELECT){
+			drawPickMe(&sampleModel, &samplePoint);
+			mode = RENDER;
+		}
+		else {
+			drawHand(handPointList);
+			if(!BACK_BUFF)
+				drawMe(&sampleModel, &samplePoint);
+			else drawPickMe(&sampleModel, &samplePoint);
+			glutSwapBuffers();
+		}
 	}
 	else if(paint) {
-		//render no back buffer 
-		//diddn't process pick
-		drawHand(handPointList);
-		drawPickMe(&sampleModel, &samplePoint);
-		glutSwapBuffers();
+		checkCursor(3);
+
+		if(mode == SELECT){
+			drawPickMe(&sampleModel, &samplePoint);
+			processPick(cursorX, cursorY);
+			mode = RENDER;
+		}
+		else {
+			drawHand(handPointList);
+			if(!BACK_BUFF)
+				drawMe(&sampleModel, &samplePoint);
+			else drawPickMe(&sampleModel, &samplePoint);
+			glutSwapBuffers();
+		}
 	}
 
 	context.WaitAndUpdateAll();
@@ -273,9 +294,9 @@ void initRender(){
 
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
-	GLfloat light_position[] = {100.0, -1000.0, 0.0, 0.0};
+	GLfloat light_position[] = {0.0, -100.0, 0.0, 0.0};
 	GLfloat whitelight[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat model_ambient[] = {0.5, 0, 0.5, 1.0};
+	GLfloat model_ambient[] = {1.0, 1.0, 1.0, 1.0};
 
 	glClearColor(0.0,0.0,0.0,0.0);
 	glShadeModel(GL_FLAT);

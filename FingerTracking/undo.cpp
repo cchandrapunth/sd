@@ -13,7 +13,7 @@
 
 //should be changable by the users
 #define maxAct 30
-#define maxControl 30
+#define maxControl 10
 
 std::deque<model_state> actionList;
 std::deque<matrix_state> controlList;

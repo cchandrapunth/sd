@@ -40,11 +40,12 @@ void processMenuEvents(int option) {
 			ExportModel();
 			break;
 		case BLUE :
-			printf("Undo the action"); 
+			printf("Undo action1"); 
 			undo_m();
 			break;
 		case GREEN :
-			printf("green"); break;
+			printf("Undo action2"); 
+			break;
 		case ORANGE :
 			printf("orange"); break;
 	}

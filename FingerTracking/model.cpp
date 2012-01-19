@@ -109,11 +109,11 @@ void ExportModel(){
 //load manually for now
 void LoadModel(point_t* point, model_t* model){
 
-   	 model->nPolygons = 8;
-	 point->nVertexs = 12;
+	model->nPolygons = nPoly;
+	point->nVertexs = nPoint;
 
-	 //add 12 points to the list
-	 for(int i=0; i<12; i++){
+	 //add all points to the list
+	for(int i=0; i<nPoint; i++){
 		 // allocate enough memory for this model
 		 vertex_t* v = (vertex_t *)malloc(sizeof(point_t));
 		
@@ -126,11 +126,11 @@ void LoadModel(point_t* point, model_t* model){
 		 printf("point%d: %f,%f,%f\n", i, v->X, v->Y, v->Z);
 	 } 
 
-	 // add 8 polygons to the list
-	 model->pList = (polygon_t *)malloc(8 * sizeof(polygon_t));
+	 // add all polygons to the list
+	 model->pList = (polygon_t *)malloc(nPoly * sizeof(polygon_t));
 	 polygon_t* ptr = model->pList; 
 
-	 for(int j=0; j<8; j++){
+	 for(int j=0; j<nPoly; j++){
 		
 		ptr[j].p[0] = poly[j*4];
 		ptr[j].p[1] = poly[(j*4)+1];
@@ -141,6 +141,7 @@ void LoadModel(point_t* point, model_t* model){
 	 }
 
 	calculateNormal(&samplePoint, &sampleModel);
+	setColor(&sampleModel);
 }
 
 void calculateNormal(point_t* point, model_t* model){
@@ -150,7 +151,7 @@ void calculateNormal(point_t* point, model_t* model){
 	 //calculate normal
 
 	 vertex_t* norm = (vertex_t *)malloc(sizeof(vertex_t));
-	 for(int k=0; k<8; k++){
+	 for(int k=0; k<nPoly; k++){
 	 
 		 //construct 2 vecter 
 		 vertex_t v1, v2; 
@@ -185,8 +186,21 @@ void calculateNormal(point_t* point, model_t* model){
 
 }
 
-void DrawPolygon(polygon_t p, point_t* poly){
+//white
+void setColor(model_t* model){
+	polygon_t* mesh = model->pList;
+	color* c = (color*) malloc (sizeof(color));
+	c->r = 255;
+	c->g = 255;
+	c->b = 255;
 
+	for(int i=0; i< nPoly; i++){
+		mesh[i].color = *c;
+	}
+}
+
+void DrawPolygon(polygon_t p, point_t* poly){
+	
 	glBegin(GL_QUADS);
 	 glNormal3f(p.normal.X, p.normal.Y, p.normal.Z);
 	 glVertex3f(poly->pPoints[p.p[0]].X, poly->pPoints[p.p[0]].Y, poly->pPoints[p.p[0]].Z);
@@ -221,16 +235,24 @@ void handleRoll(){
 // DrawModel(); draws a model
 void drawMe (model_t *model, point_t* vertexList)
 {
+
+	//glDisable(GL_DITHER); //disable blending color function
+	//glDisable(GL_LIGHT0);
+	//glDisable(GL_LIGHTING);
+
     glLoadIdentity();
 
 	polygon_t *ptr = model->pList;
-	for(int j=0; j<2; j++){
+	for(int j=0; j<(nPoly/4); j++){
 	    for (int i=0; i< 4; i++){
 			glPushMatrix();
-			glPushName(j*2+i);
+			glPushName(j*4+i);
 
 			handleRoll();
-			DrawPolygon(ptr[(j*4)+i], vertexList);
+			polygon_t p = ptr[(j*4)+i];
+			glColor3ub(p.color.r, p.color.g, p.color.b);
+			printf(">>painttttt %d, %d, %d\n", p.color.r, p.color.g, p.color.b);
+			DrawPolygon(p, vertexList);
 
 			glPopName();
 			glPopMatrix();
@@ -246,9 +268,11 @@ void drawPickMe(model_t *model, point_t* vertexList){
 
 
 		polygon_t *ptr = model->pList;
-		for(int j=0; j<2; j++){
+		for(int j=0; j<(nPoly/4); j++){
 			for (int i=0; i< 4; i++){
 				glPushMatrix();
+
+				handleRoll();
 
 				switch(j*4+i){
 				case 0: glColor3ub(255, 0, 0); break;

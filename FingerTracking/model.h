@@ -1,4 +1,10 @@
 
+typedef struct color
+{
+	int r;
+	int g;
+	int b;
+} color;
 //-----------------------------------------------
 //			Model data structure
 //-----------------------------------------------
@@ -21,6 +27,7 @@ typedef struct polygon_s
 {
 	int p[4];
 	vertex_t normal;	//surface normal
+	color color;
 } polygon_t;
 
 //list of all quads
@@ -50,6 +57,7 @@ void drawMe (model_t *model, point_t* poly);
 void drawPickMe(model_t* model, point_t* poly);
 void FreeModel (model_t* model);
 void calculateNormal(point_t* point, model_t* model);
+void setColor(model_t* model);
 
 //translate
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy);
