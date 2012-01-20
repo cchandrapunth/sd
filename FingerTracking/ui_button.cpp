@@ -2,11 +2,16 @@
 #include <gl/glut.h>
 #include "ui.h"
 
+#include <string.h>
+
+void *font = GLUT_BITMAP_TIMES_ROMAN_24;
+
 ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, int width, int height, cb_function cb)
 {
 	h = height;
 	w = width;
 
+	butt_name = name;
 	user_id = id;
 	currently_inside = false;
 	x = begin_x;
@@ -19,6 +24,7 @@ ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, int wi
 ui_button::ui_button(const char *name, long id, int begin_x, int begin_y, cb_function cb)
 {
 	common_init();
+	butt_name = name;
 	user_id = id;
 	currently_inside = false;
 	x = begin_x;
@@ -102,4 +108,18 @@ void ui_button::draw_text(int sunken){
   glVertex3i( x+w-2, y+h-2, -5);     glVertex3i( x+2, y+h-2, -5);
   glEnd();
 
+  glColor3f(0.0, 0.0, 0.0);
+  output(x+w/5, y+h/4, (char*) butt_name);
+}
+
+
+void ui_button::output(int x, int y, char *string)
+{
+  int len, i;
+
+  glRasterPos2f(x, y);
+  len = (int) strlen(string);
+  for (i = 0; i < len; i++) {
+    glutBitmapCharacter(font, string[i]);
+  }
 }

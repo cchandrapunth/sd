@@ -4,6 +4,7 @@ class ui_button
 public:
 
 	bool currently_inside;
+	const char *butt_name;
 	int user_id;
 	int w, h, x, y;
 	bool execute;
@@ -17,6 +18,7 @@ public:
     void draw();
     void draw_pressed( void );
     void draw_text( int sunken );
+	void output(int x, int y, char *string);
 
 	void reactivate();
 	/**

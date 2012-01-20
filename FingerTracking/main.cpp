@@ -437,16 +437,16 @@ void push_menu(){
 	//draw panel 
 	Master_ui->activate_menu = true;
 	printf("pushing menu\n");
-	Master_ui->add_button("option1", 200, 150, 100, 250, option1);
-	Master_ui->add_button("option2", 340, 150, 100, 250, option2);
-	Master_ui->add_button("option3", 480, 150, 100, 250, option3);
+	Master_ui->add_button("Sculpt", 200, 150, 100, 250, option1);
+	Master_ui->add_button("Rotate", 340, 150, 100, 250, option2);
+	Master_ui->add_button("Paint", 480, 150, 100, 250, option3);
 
 }
 
 //all ui in here
 void uiInit(){
 	//main menu button
-	Master_ui->add_button("test butt", -30, 600, push_menu);
+	Master_ui->add_button("Menu", -30, 600, push_menu);
 }
 
 
