@@ -6,12 +6,15 @@
 #include <iostream>
 
 
-
 #include "model.h"
 #include "undo.h"
 #include "softSelection.h"
 #include "miniball.h"
 
+#define check 1
+#define red 2
+#define blue 3
+#define green 4
 
 using std::ifstream;
 using std::ofstream;
@@ -24,6 +27,8 @@ int nPoly, nPoint;
 //translate scene
 float rollX = 0; 
 float rollY = 0;
+
+static GLuint texName[3];
 
 
 int getnPoint(){ return nPoint;}
@@ -201,11 +206,17 @@ void setColor(model_t* model){
 
 void DrawPolygon(polygon_t p, point_t* poly){
 	
+	glBindTexture(GL_TEXTURE_2D, 4);
+
 	glBegin(GL_QUADS);
 	 glNormal3f(p.normal.X, p.normal.Y, p.normal.Z);
+	 glTexCoord2f(0.0, 0.0);
 	 glVertex3f(poly->pPoints[p.p[0]].X, poly->pPoints[p.p[0]].Y, poly->pPoints[p.p[0]].Z);
+	 glTexCoord2f(0.0, 1.0);
 	 glVertex3f(poly->pPoints[p.p[1]].X, poly->pPoints[p.p[1]].Y, poly->pPoints[p.p[1]].Z);
+	 glTexCoord2f(1.0, 1.0);
 	 glVertex3f(poly->pPoints[p.p[2]].X, poly->pPoints[p.p[2]].Y, poly->pPoints[p.p[2]].Z);
+	 glTexCoord2f(1.0, 0.0);
 	 glVertex3f(poly->pPoints[p.p[3]].X, poly->pPoints[p.p[3]].Y, poly->pPoints[p.p[3]].Z);
 	glEnd();	
 }
@@ -235,14 +246,10 @@ void handleRoll(){
 // DrawModel(); draws a model
 void drawMe (model_t *model, point_t* vertexList)
 {
-
-	//glDisable(GL_DITHER); //disable blending color function
-	//glDisable(GL_LIGHT0);
-	//glDisable(GL_LIGHTING);
-
     glLoadIdentity();
-
+	glEnable(GL_TEXTURE_2D);
 	polygon_t *ptr = model->pList;
+
 	for(int j=0; j<(nPoly/4); j++){
 	    for (int i=0; i< 4; i++){
 			glPushMatrix();
@@ -251,7 +258,6 @@ void drawMe (model_t *model, point_t* vertexList)
 			handleRoll();
 			polygon_t p = ptr[(j*4)+i];
 			glColor3ub(p.color.r, p.color.g, p.color.b);
-			printf(">>painttttt %d, %d, %d\n", p.color.r, p.color.g, p.color.b);
 			DrawPolygon(p, vertexList);
 
 			glPopName();
@@ -265,7 +271,7 @@ void drawPickMe(model_t *model, point_t* vertexList){
 		glDisable(GL_DITHER); //disable blending color function
 		glDisable(GL_LIGHT0);
 		glDisable(GL_LIGHTING);
-
+		glDisable(GL_TEXTURE_2D);
 
 		polygon_t *ptr = model->pList;
 		for(int j=0; j<(nPoly/4); j++){
@@ -286,7 +292,7 @@ void drawPickMe(model_t *model, point_t* vertexList){
 				}
 
 				DrawPolygon(ptr[(j*4)+i], vertexList);
-	
+				
 				glPopMatrix();
 			}
 		}
@@ -294,6 +300,7 @@ void drawPickMe(model_t *model, point_t* vertexList){
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT0);
 		glEnable(GL_DITHER);
+		glEnable(GL_TEXTURE_2D);
 }
 
 void FreeModel (model_t *model)

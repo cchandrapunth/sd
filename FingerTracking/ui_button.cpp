@@ -62,7 +62,7 @@ int  ui_button::hand_up_handler( int local_x, int local_y, bool inside ){
 
 void ui_button::draw(){
 	if(activate){
-
+		glDisable(GL_TEXTURE_2D);
 		if(currently_inside) draw_pressed();
 		else {
 			draw_text(0);

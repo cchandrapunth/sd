@@ -168,6 +168,7 @@ void drawHand(XnPoint3D* handPointList){
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glDisable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 
 	//draw hand from depth map
 	if(palmPos.Z != 0){

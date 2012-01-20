@@ -22,7 +22,7 @@
 #include "undo.h"
 #include "ui.h"
 #include "miniball.h"
-#include "paint.h"
+
 
 //----------------------------------------------------------------
 //							Variable
@@ -66,6 +66,16 @@ bool sculpting = false;
 bool control = false;
 bool paint = true;
 
+//paint
+
+#define checkImageWidth 64
+#define checkImageHeight 64
+
+static GLubyte checkImage[checkImageWidth][checkImageHeight][4];
+static GLubyte redTex[4];
+static GLubyte blueTex[4];
+static GLubyte greenTex[4];
+static GLuint texName[4];
 
 //---------------------------------------------------------------
 //				Keyboard and mouse
@@ -129,7 +139,7 @@ void checkCursor(int func){
 			}
 			else if(func ==3){
 				if(getSelection() >0){
-					paintMesh(&sampleModel, getSelection());
+					//paintMesh(&sampleModel, getSelection());
 				}
 			}
 		}
@@ -148,8 +158,42 @@ void checkCursor(int func){
 
 }
 //------------------------------------------------------------------
-//								Rendering
+//								Texture & UI
 //------------------------------------------------------------------
+
+void makeTexImage(){
+	int i, j, c;
+
+	//check
+	for(i=0; i< 64; i++){
+		for(j=0; j< 64; j++){
+			c = (((i&0x8)==0) ^ ((j&0x8))==0)*255;
+			
+			checkImage[i][j][0] = (GLubyte) c;
+			checkImage[i][j][1] = (GLubyte) c;
+			checkImage[i][j][2] = (GLubyte) c;
+			checkImage[i][j][3] = (GLubyte) 255;
+		}	
+	}
+
+	//red
+	redTex[0] = 255;
+	redTex[1] = 0;
+	redTex[2] = 0;
+	redTex[3] = 255;
+
+	//blue
+	blueTex[0] = 0;
+	blueTex[1] = 0;
+	blueTex[2] = 255;
+	blueTex[3] = 255;
+
+	//green
+	greenTex[0] = 0;
+	greenTex[1] = 255;
+	greenTex[2] = 0;
+	greenTex[3] = 255;
+}
 void UIhandler(){
 	
 	Master_ui->check_click(convertX(getPalm().X), convertY(getPalm().Y));
@@ -169,6 +213,8 @@ void display(){
 
 	glutSetWindow(mainWindow);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+
 	glLoadIdentity();
 
 	UIhandler(); //check ui touch
@@ -289,6 +335,45 @@ void reshape(int w1, int h1){
 //----------------------------------------------------------------
 //								INIT
 //----------------------------------------------------------------
+void initTex(void){
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glShadeModel(GL_FLAT);
+	glEnable(GL_DEPTH_TEST);
+	makeTexImage();
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+	glGenTextures(4, texName);
+
+	glBindTexture(GL_TEXTURE_2D, texName[0]);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, checkImageWidth, checkImageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, checkImage);
+	
+	
+	glBindTexture(GL_TEXTURE_2D, texName[1]);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, redTex);
+
+	glBindTexture(GL_TEXTURE_2D, texName[2]);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, blueTex);
+
+	glBindTexture(GL_TEXTURE_2D, texName[3]);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, greenTex);
+}
+
 void initRender(){
 
 
@@ -414,6 +499,7 @@ int main (int argc, char **argv){
 
 
 	initRender();
+	initTex();
 	uiInit(); 
 	glutIdleFunc(display);	//enable GLUI window to take advantage of idle event
 
