@@ -146,7 +146,12 @@ void LoadModel(point_t* point, model_t* model){
 	 }
 
 	calculateNormal(&samplePoint, &sampleModel);
-	setColor(&sampleModel);
+
+	//set color
+	polygon_t* mesh = model->pList;
+	for(int i=0; i< nPoly; i++){
+		mesh[i].colorID = 1;
+	}
 }
 
 void calculateNormal(point_t* point, model_t* model){
@@ -192,22 +197,24 @@ void calculateNormal(point_t* point, model_t* model){
 }
 
 //white
-void setColor(model_t* model){
-	polygon_t* mesh = model->pList;
-	color* c = (color*) malloc (sizeof(color));
-	c->r = 255;
-	c->g = 255;
-	c->b = 255;
+void setColor(model_t *poly, int polyId, int cid){
+	poly->pList[polyId].colorID = cid;
+}
 
-	for(int i=0; i< nPoly; i++){
-		mesh[i].color = *c;
-	}
+void loadColor(polygon_t poly){
+	if(poly.colorID == 0) 
+		glBindTexture(GL_TEXTURE_2D, 1);
+	else if(poly.colorID == 1) 
+		glBindTexture(GL_TEXTURE_2D, 2);
+	else if(poly.colorID == 2)
+		glBindTexture(GL_TEXTURE_2D, 3);
+	else if(poly.colorID == 3)
+		glBindTexture(GL_TEXTURE_2D, 4);
+
 }
 
 void DrawPolygon(polygon_t p, point_t* poly){
 	
-	glBindTexture(GL_TEXTURE_2D, 4);
-
 	glBegin(GL_QUADS);
 	 glNormal3f(p.normal.X, p.normal.Y, p.normal.Z);
 	 glTexCoord2f(0.0, 0.0);
@@ -257,7 +264,7 @@ void drawMe (model_t *model, point_t* vertexList)
 
 			handleRoll();
 			polygon_t p = ptr[(j*4)+i];
-			glColor3ub(p.color.r, p.color.g, p.color.b);
+			loadColor(p);
 			DrawPolygon(p, vertexList);
 
 			glPopName();

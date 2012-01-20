@@ -139,7 +139,7 @@ void checkCursor(int func){
 			}
 			else if(func ==3){
 				if(getSelection() >0){
-					//paintMesh(&sampleModel, getSelection());
+					setColor(&sampleModel, getSelection(), 3);
 				}
 			}
 		}
