@@ -11,7 +11,7 @@
 static GLint model_display_list;
 
 
-void processPick(int cursorX, int cursorY){
+void processPick(float cursorX, float cursorY){
 	GLint viewport[4];
 	GLubyte pixel[3];
 
@@ -21,6 +21,7 @@ void processPick(int cursorX, int cursorY){
 	//read pixel under the curser
 	glReadPixels(cursorX, viewport[3]-cursorY, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, (void*) pixel);
 
+	printf("cursorX= %f, cursorY= %f\n", cursorX, viewport[3]-cursorY);
 	printf("%d %d %d\n", pixel[0], pixel[1], pixel[2]);
 
 	if (pixel[0] == 255 && pixel[1] == 0 && pixel[2] == 0){
@@ -64,7 +65,6 @@ void processPick(int cursorX, int cursorY){
 }
 
 int getSelection(){
-	printf("**select: %d\n", pickMe);
 	return pickMe;
 }
 

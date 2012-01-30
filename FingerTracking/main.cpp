@@ -39,7 +39,7 @@
 // static //
 static int mainWindow;
 static int border =6, h=480, w= 800; 
-static int cursorX, cursorY; 
+static float cursorX, cursorY; 
 static int mode = RENDER; 	
 static XnUInt16 g_nXRes, g_nYRes;
 static bool BACK_BUFF;	//show back buffer
@@ -62,9 +62,9 @@ point_t samplePoint;
 ui *Master_ui =new ui();
 
 // feature
-bool sculpting = false;
+bool sculpting = true;
 bool control = false;
-bool paint = true;
+bool paint = false;
 
 //paint
 
@@ -76,6 +76,15 @@ static GLubyte redTex[4];
 static GLubyte blueTex[4];
 static GLubyte greenTex[4];
 static GLuint texName[4];
+
+//viewport
+
+float zNear;
+float zFar; 
+GLdouble left; 
+GLdouble right; 
+GLdouble bottom; 
+GLdouble top; 
 
 //---------------------------------------------------------------
 //				Keyboard and mouse
@@ -117,9 +126,10 @@ void checkCursor(int func){
 		storeHand(getPalm());
 
 		//first time grab gesture occurs
-		if(!stateGrab) {
-			cursorX = convertX(getPalm().X);
-			cursorY = convertYcursor(getPalm().Y);
+		if(!stateGrab) {	
+			//adjust with width and height of the screen
+			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
+			cursorY = getPalm().Y*h/g_nYRes;
 			mode = SELECT; 
 			stateGrab = true;
 			//Beep(750,50);				//play sound
@@ -286,24 +296,13 @@ void reshape(int w1, int h1){
 
 	glutSetWindow(mainWindow); 
 
-	vertex_t c = getCenterSphere();
-	float diam = getDiamSphere();
-
-	float zNear = 0.0;
-    float zFar = zNear + diam;
-	GLdouble left = c.X - diam;
-    GLdouble right = c.X + diam;
-    GLdouble bottom = c.Y - diam;
-    GLdouble top = c.Y + diam;
-
-     
-	int h = h1; 
-	int w = w1; 
+	h = h1; 
+	w = w1; 
 	if(h1 ==0) h=1; 
 	glViewport(0, 0, w, h); 
 
 	/*
-	float aspect= w/h;
+	float aspect= (float)w/h;
 	if ( aspect < 1.0 ) { // window taller than wide
      bottom /= aspect;
      top /= aspect;
@@ -325,7 +324,9 @@ void reshape(int w1, int h1){
 	//set the clipping volume corresponding to the viewport
 	//left, right, buttom, top
 	glOrtho(left, right, bottom, top, zNear, zFar);
-	//gluLookAt(0, 0, 0, 0, 0, -10, 0, 1, 0);
+
+
+	printf("l: %f, r:%f, bot: %f, top: %f, zN: %f, zF: %f\n", left, right, bottom, top, zNear, zFar);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -379,7 +380,8 @@ void initRender(){
 
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
-	GLfloat light_position[] = {0.0, -100.0, 0.0, 0.0};
+	//GLfloat light_position[] = {0.0, -100.0, 0.0, 0.0};
+	GLfloat light_position[] = {0.0, 0.0, 5, 10.0};
 	GLfloat whitelight[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat model_ambient[] = {1.0, 1.0, 1.0, 1.0};
 
@@ -437,16 +439,31 @@ void push_menu(){
 	//draw panel 
 	Master_ui->activate_menu = true;
 	printf("pushing menu\n");
-	Master_ui->add_button("Sculpt", 200, 150, 100, 250, option1);
-	Master_ui->add_button("Rotate", 340, 150, 100, 250, option2);
-	Master_ui->add_button("Paint", 480, 150, 100, 250, option3);
 
+	float width = right -left;
+	float height = top -bottom; 
+	float off = width/20;
+
+	Master_ui->add_button("Sculpt", left+ width/5, bottom+height/3, width/5-off, height/3, option1);
+	Master_ui->add_button("Rotate", left+ width*2/5, bottom+height/3, width/5-off, height/3, option2);
+	Master_ui->add_button("Paint", left+ width*3/5, bottom+height/3, width/5-off, height/3, option3);
 }
 
 //all ui in here
 void uiInit(){
+
+	vertex_t c = getCenterSphere();
+	float diam = getDiamSphere();
+
+	zNear = 0;
+    zFar = diam;
+	left = c.X - diam;
+    right = c.X + diam;
+    bottom = c.Y - diam;
+    top = c.Y + diam;
+
 	//main menu button
-	Master_ui->add_button("Menu", -30, 600, push_menu);
+	Master_ui->add_button("Menu", left, bottom, 0.5, 0.3, push_menu);
 }
 
 
@@ -500,7 +517,7 @@ int main (int argc, char **argv){
 
 	initRender();
 	initTex();
-	uiInit(); 
+	uiInit();
 	glutIdleFunc(display);	//enable GLUI window to take advantage of idle event
 
 	createGLUTMenus();

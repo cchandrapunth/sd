@@ -303,11 +303,12 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints){
 		glEnd();
 
 		//cross hair 
+		float cl = 0.2;
 		glBegin(GL_LINES);
-		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)+30.0);
-		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)-30.0);
-		glVertex2f((GLfloat) convertX(palmPos.X)+30.0, (GLfloat) convertY(palmPos.Y));
-		glVertex2f((GLfloat) convertX(palmPos.X)-30.0, (GLfloat) convertY(palmPos.Y));
+		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)+cl);
+		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)-cl);
+		glVertex2f((GLfloat) convertX(palmPos.X)+cl, (GLfloat) convertY(palmPos.Y));
+		glVertex2f((GLfloat) convertX(palmPos.X)-cl, (GLfloat) convertY(palmPos.Y));
 		glEnd();
 	}
 }

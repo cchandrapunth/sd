@@ -5,7 +5,7 @@
 
 point_t* vlist; 
 float* plist;
-int maxEffect =200;
+int maxEffect =0.5;
 
 void translatePoint(int id, float mult, float transx, float transy){
 		float prevx = vlist->pPoints[id].X;
@@ -14,12 +14,13 @@ void translatePoint(int id, float mult, float transx, float transy){
 		vlist->pPoints[id].X = prevx+(mult*transx);
 		vlist->pPoints[id].Y = prevy+(mult*transy);
 
+		printf("id: %d, tranx: %f, transy: %f\n", id, mult*transx, mult*transy);
 		//index indecates points 
 		plist[id*3] = prevx+(mult*transx);	//x pointdinate
 		plist[id*3+1] = prevy+(mult*transy); //y pointdinate
 }
 
-//assign max distance = 500
+//assign max distance = 0.5
 void linearfunc(float xc, float yc, float transx, float transy){
 	int n = vlist->nVertexs;
 	
@@ -46,8 +47,8 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 	int* targets = mesh.p;
 	
 	//find vertex center of the mass (estimated)
-	float xCenter = (vlist->pPoints[targets[0]].X + vlist->pPoints[targets[2]].X)/2;
-	float yCenter = (vlist->pPoints[targets[1]].Y + vlist->pPoints[targets[3]].Y)/2;
+	float xCenter = (vlist->pPoints[targets[0]].X + vlist->pPoints[targets[1]].X+ vlist->pPoints[targets[2]].X)/3;
+	float yCenter = (vlist->pPoints[targets[0]].Y + vlist->pPoints[targets[1]].Y+ vlist->pPoints[targets[2]].Y)/3;
 
 	linearfunc(xCenter, yCenter, transx, transy);
 }

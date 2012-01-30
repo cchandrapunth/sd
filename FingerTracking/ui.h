@@ -16,17 +16,17 @@ public:
 	bool activate_menu;
 
 	ui(void);
-	void add_button(const char* name, int x, int y, cb_function cb);
-	void add_button(const char* name, int x, int y, int ww, int hh, cb_function cb);
+	void add_button(const char* name, float x, float y, cb_function cb);
+	void add_button(const char* name, float x, float y, float ww, float hh, cb_function cb);
 	void draw();
-	void check_click(int hand_x, int hand_y);
+	void check_click(float hand_x, float hand_y);
 
 	void remove_menu();
 
 	void add_panel();
 
 private:
-	void draw_circle(int center_x, int center_y, int angle);
+	void draw_circle(float center_x, float center_y, int angle);
 };
 
 extern ui* Master_ui;

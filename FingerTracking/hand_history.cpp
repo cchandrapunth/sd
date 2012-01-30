@@ -10,7 +10,7 @@
 //helper for the real time effect 
 //allow the model to react to movement of the hand during grab gesture
 
-#define MAX_HANDLIST 1000
+#define MAX_HANDLIST 2000
 std::deque<XnPoint3D> handList;
 
 //list of palm position when grab occurs
@@ -28,7 +28,7 @@ void clearHandList(){
 
 //movement in x-axis
 float gettranslateX(){
-	return (handList.size() > 1) ? handList.at(1).X-handList.front().X : 0;
+	return (handList.size() > 1) ? handList.at(1).X -handList.front().X : 0;
 	
 }
 

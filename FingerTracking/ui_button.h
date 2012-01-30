@@ -6,7 +6,7 @@ public:
 	bool currently_inside;
 	const char *butt_name;
 	int user_id;
-	int w, h, x, y;
+	float w, h, x, y;
 	bool execute;
 	bool activate;
 	int wait;	//hand hovering time
@@ -18,7 +18,7 @@ public:
     void draw();
     void draw_pressed( void );
     void draw_text( int sunken );
-	void output(int x, int y, char *string);
+	void output(float x, float y, char *string);
 
 	void reactivate();
 	/**
@@ -29,8 +29,8 @@ public:
 	 @param callback Optional callback function, taking either the int ID or control.
 	*/
 
-	ui_button(const char *name, long id, int begin_x, int begin_y, int width, int height, cb_function cb);
-	ui_button(const char *name, long id, int begin_x, int begin_y, cb_function cb);
+	ui_button(const char *name, long id, float begin_x, float begin_y, float width, float height, cb_function cb);
+	ui_button(const char *name, long id, float begin_x, float begin_y, cb_function cb);
 	ui_button(void){ common_init(); };
 
 private:

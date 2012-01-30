@@ -64,9 +64,9 @@ void ImportModel(){
 
 	//read quad (fix to triangle later)
 	for(int i=0; i< nPoly; i++){
-		for(int j=0; j<4; j++){
+		for(int j=0; j<3; j++){
 			std::cout << num << " ";
-			poly[i*4+j] = num;
+			poly[i*3+j] = num;
 			indata >> num;
 		}
 		std::cout <<std::endl;
@@ -100,8 +100,8 @@ void ExportModel(){
 
 	//read quad (fix to triangle later)
 	for(int i=0; i< nPoly; i++){
-		for(int j=0; j<4; j++){
-			num = poly[i*4+j];
+		for(int j=0; j<3; j++){
+			num = poly[i*3+j];
 			outdata << num << "\t";
 		}
 		outdata <<std::endl;
@@ -137,12 +137,11 @@ void LoadModel(point_t* point, model_t* model){
 
 	 for(int j=0; j<nPoly; j++){
 		
-		ptr[j].p[0] = poly[j*4];
-		ptr[j].p[1] = poly[(j*4)+1];
-		ptr[j].p[2] = poly[(j*4)+2];
-		ptr[j].p[3] = poly[(j*4)+3];
+		ptr[j].p[0] = poly[j*3];
+		ptr[j].p[1] = poly[(j*3)+1];
+		ptr[j].p[2] = poly[(j*3)+2];
 
-		printf("poly: %d,%d,%d,%d\n", poly[j*4], poly[j*4+1], poly[j*4+2], poly[j*4+3]);
+		printf("poly: %d,%d,%d\n", poly[j*3], poly[j*3+1], poly[j*3+2]);
 	 }
 
 	calculateNormal(&samplePoint, &sampleModel);
@@ -160,34 +159,14 @@ void calculateNormal(point_t* point, model_t* model){
 
 	 //calculate normal
 
-	 vertex_t* norm = (vertex_t *)malloc(sizeof(vertex_t));
 	 for(int k=0; k<nPoly; k++){
 	 
-		 //construct 2 vecter 
-		 vertex_t v1, v2; 
 		 int index0 = ptr[k].p[0];
 		 int index1 = ptr[k].p[1];
 		 int index2 = ptr[k].p[2];
-		 v1.X = point->pPoints[index2].X - point->pPoints[index0].X;
-		 v1.Y = point->pPoints[index2].Y - point->pPoints[index0].Y;
-		 v1.Z = point->pPoints[index2].Z - point->pPoints[index0].Z;
 
-		 v2.X = point->pPoints[index1].X - point->pPoints[index0].X;
-		 v2.Y = point->pPoints[index1].Y - point->pPoints[index0].Y;
-		 v2.Z = point->pPoints[index1].Z - point->pPoints[index0].Z;
-
-		 //find normal using cross product
-		 norm->X = (v1.Y * v2.Z) - (v1.Z * v2.Y);
-		 norm->Y = -((v2.Z * v1.X) - (v2.X * v1.Z));
-		 norm->Z = (v1.X * v2.Y) - (v1.Y * v2.X);	
-
-
-		 float CombinedSquares = (norm->X * norm->X) +(norm->Y * norm->Y) +(norm->Z * norm->Z);
-		 float NormalisationFactor = sqrt(CombinedSquares);
-		 norm->X = norm->X / NormalisationFactor;		
-		 norm->Y = norm->Y / NormalisationFactor;
-		 norm->Z = norm->Z / NormalisationFactor;
-
+		 vertex_t *norm = findnormal(point->pPoints[index0], point->pPoints[index1], point->pPoints[index2]);
+		 normalize(norm);
 
 		 ptr[k].normal = (*norm);
 
@@ -215,7 +194,7 @@ void loadColor(polygon_t poly){
 
 void DrawPolygon(polygon_t p, point_t* poly){
 	
-	glBegin(GL_QUADS);
+	glBegin(GL_TRIANGLES);
 	 glNormal3f(p.normal.X, p.normal.Y, p.normal.Z);
 	 glTexCoord2f(0.0, 0.0);
 	 glVertex3f(poly->pPoints[p.p[0]].X, poly->pPoints[p.p[0]].Y, poly->pPoints[p.p[0]].Z);
@@ -223,8 +202,7 @@ void DrawPolygon(polygon_t p, point_t* poly){
 	 glVertex3f(poly->pPoints[p.p[1]].X, poly->pPoints[p.p[1]].Y, poly->pPoints[p.p[1]].Z);
 	 glTexCoord2f(1.0, 1.0);
 	 glVertex3f(poly->pPoints[p.p[2]].X, poly->pPoints[p.p[2]].Y, poly->pPoints[p.p[2]].Z);
-	 glTexCoord2f(1.0, 0.0);
-	 glVertex3f(poly->pPoints[p.p[3]].X, poly->pPoints[p.p[3]].Y, poly->pPoints[p.p[3]].Z);
+	 
 	glEnd();	
 }
 
@@ -237,7 +215,7 @@ void handleRoll(){
 	
 	vertex_t c = getCenterSphere();
 	glTranslated(c.X, c.Y, c.Z);
-	glRotated(rotX, 0, 1, 0);	//rotate around y axis
+	glRotated(-rotX, 0, 1, 0);	//rotate around y axis
 	glTranslated(-c.X, -c.Y, -c.Z);
 
 	glTranslated(c.X, c.Y, c.Z);
@@ -266,6 +244,7 @@ void drawMe (model_t *model, point_t* vertexList)
 			polygon_t p = ptr[(j*4)+i];
 			loadColor(p);
 			DrawPolygon(p, vertexList);
+			//subdivide(p, vertexList);
 
 			glPopName();
 			glPopMatrix();
@@ -328,4 +307,77 @@ void translateScene(float transx, float transy){
 	//set variable for rotate/zoom
 	rollX = transx;
 	rollY = transy;
+}
+
+vertex_t* findnormal(vertex_t vv1, vertex_t vv2, vertex_t vv3){
+
+	vertex_t v1, v2; 
+	v1.X = vv3.X - vv1.X;
+	v1.Y = vv3.Y - vv1.Y;
+	v1.Z = vv3.Z - vv1.Z;
+
+	v2.X = vv2.X - vv1.X;
+	v2.Y = vv2.Y - vv1.Y;
+	v2.Z = vv2.Z - vv1.Z;
+
+	vertex_t* norm = (vertex_t *)malloc(sizeof(vertex_t));
+	//find normal using cross product
+	norm->X = (v1.Y * v2.Z) - (v1.Z * v2.Y);
+	norm->Y = -((v2.Z * v1.X) - (v2.X * v1.Z));
+	norm->Z = (v1.X * v2.Y) - (v1.Y * v2.X);	
+
+	return norm;
+}
+
+void normalize(vertex_t *norm){
+	 float CombinedSquares = (norm->X * norm->X) +(norm->Y * norm->Y) +(norm->Z * norm->Z);
+		 float NormalisationFactor = sqrt(CombinedSquares);
+		 norm->X = norm->X / NormalisationFactor;		
+		 norm->Y = norm->Y / NormalisationFactor;
+		 norm->Z = norm->Z / NormalisationFactor;
+}
+
+void drawtriangle(vertex_t v1, vertex_t v2, vertex_t v3){
+	vertex_t *norm = findnormal(v1, v2, v3);
+	normalize(norm);
+
+	glBegin(GL_TRIANGLES);
+	 glNormal3f(norm->X, norm->Y, norm->Z);
+	 glVertex3f(v1.X, v1.Y, v1.Z);
+	 glVertex3f(v2.X, v2.Y, v2.Z);
+	 glVertex3f(v3.X, v3.Y, v3.Z);
+	glEnd();
+	 
+}
+
+void subdivide(polygon_t p, point_t* poly){
+
+	vertex_t v1 = poly->pPoints[p.p[0]];
+	vertex_t v2 = poly->pPoints[p.p[1]];
+	vertex_t v3 = poly->pPoints[p.p[2]];
+
+	vertex_t* v12 = (vertex_t *)malloc(sizeof(vertex_t));
+	vertex_t* v23 = (vertex_t *)malloc(sizeof(vertex_t));
+	vertex_t* v31 = (vertex_t *)malloc(sizeof(vertex_t));
+
+	v12->X = (v1.X+v2.X)/2.0;
+	v12->Y = (v1.Y+v2.Y)/2.0;
+	v12->Z = (v1.Z+v2.Z)/2.0;
+
+	v23->X = (v2.X+v3.X)/2.0;
+	v23->Y = (v2.Y+v3.Y)/2.0;
+	v23->Z = (v2.Z+v3.Z)/2.0;
+
+	v31->X = (v3.X+v1.X)/2.0;
+	v31->Y = (v3.Y+v1.Y)/2.0;
+	v31->Z = (v3.Z+v1.Z)/2.0;
+
+	normalize(v12);
+	normalize(v23);
+	normalize(v31);
+	
+	drawtriangle(v1, *v12, *v31);
+	drawtriangle(v2, *v23, *v12);
+	drawtriangle(v3, *v31, *v23);
+	drawtriangle(*v12, *v23, *v31);
 }

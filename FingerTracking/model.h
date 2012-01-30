@@ -54,6 +54,12 @@ void FreeModel (model_t* model);
 void calculateNormal(point_t* point, model_t* model);
 void setColor(model_t *poly, int polyId, int cid);
 
+//subdivide
+vertex_t* findnormal(vertex_t vv1, vertex_t vv2, vertex_t vv3);
+void normalize(vertex_t *norm);
+void drawtriangle(float* v1, float* v2, float* v3);
+void subdivide(polygon_t p, point_t* poly);
+
 //translate
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy);
 void translateScene(float transx, float transy);

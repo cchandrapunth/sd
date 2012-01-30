@@ -75,7 +75,7 @@ vertex_t getCenterSphere(){
 }
 
 float getDiamSphere(){
-	return radius;
+	return radius*2;
 }
 /*
 int main (int argc, char* argv[])
