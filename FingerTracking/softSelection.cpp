@@ -5,7 +5,7 @@
 
 point_t* vlist; 
 float* plist;
-int maxEffect =0.5;
+float maxEffect =0.5;
 
 void translatePoint(int id, float mult, float transx, float transy){
 		float prevx = vlist->pPoints[id].X;
@@ -28,7 +28,7 @@ void linearfunc(float xc, float yc, float transx, float transy){
 		float dis = sqrt(pow(vlist->pPoints[i].X -xc, 2)+ pow(vlist->pPoints[i].Y -yc, 2));
 		if(dis < maxEffect){
 			double param = (maxEffect-dis)/maxEffect;
-			translatePoint(i,pow(param, 2), transx, transy);
+			translatePoint(i,pow(param, 2)/0.5, transx, transy);
 		}
 	}
 

@@ -265,17 +265,12 @@ void drawPickMe(model_t *model, point_t* vertexList){
 				glPushMatrix();
 
 				handleRoll();
-
-				switch(j*4+i){
-				case 0: glColor3ub(255, 0, 0); break;
-				case 1: glColor3ub(0, 255, 0); break;
-				case 2: glColor3ub(0, 0, 255); break; 
-				case 3: glColor3ub(255, 255, 0); break;
-				case 4: glColor3ub(0, 255, 255); break;
-				case 5: glColor3ub(255, 0, 255); break;
-				case 6: glColor3ub(130, 0, 130); break;
-				case 7: glColor3ub(0, 130, 130); break;
+				
+				int nMesh = j*4+i;
+				if(nMesh < 255){
+					glColor3ub(255,255, nMesh);	
 				}
+				else printf("TOO MANY MASH\n");
 
 				DrawPolygon(ptr[(j*4)+i], vertexList);
 				
