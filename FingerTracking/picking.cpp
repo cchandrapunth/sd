@@ -26,6 +26,7 @@ void processPick(float cursorX, float cursorY){
 
 	if(pixel[0] == 255 && pixel[1] == 255){
 		pickMe = pixel[2];
+		printf("You pick %d\n", pixel[2]);
 	}
 	else{
 	   printf("You didn't click any rect!");

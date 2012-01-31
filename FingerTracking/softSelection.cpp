@@ -3,9 +3,12 @@
 #include "model.h"
 #include "softSelection.h"
 
+#define e 2.71828
+
 point_t* vlist; 
 float* plist;
-float maxEffect =0.5;
+float maxEffect = 0.5;
+static float s = 0.3;
 
 void translatePoint(int id, float mult, float transx, float transy){
 		float prevx = vlist->pPoints[id].X;
@@ -14,7 +17,7 @@ void translatePoint(int id, float mult, float transx, float transy){
 		vlist->pPoints[id].X = prevx+(mult*transx);
 		vlist->pPoints[id].Y = prevy+(mult*transy);
 
-		printf("id: %d, tranx: %f, transy: %f\n", id, mult*transx, mult*transy);
+		printf("id: %d, mult: %f, tranx: %f, transy: %f\n", id, mult, transx, transy);
 		//index indecates points 
 		plist[id*3] = prevx+(mult*transx);	//x pointdinate
 		plist[id*3+1] = prevy+(mult*transy); //y pointdinate
@@ -28,8 +31,16 @@ void linearfunc(float xc, float yc, float transx, float transy){
 		float dis = sqrt(pow(vlist->pPoints[i].X -xc, 2)+ pow(vlist->pPoints[i].Y -yc, 2));
 		if(dis < maxEffect){
 			double param = (maxEffect-dis)/maxEffect;
-			translatePoint(i,pow(param, 2)/0.5, transx, transy);
+			translatePoint(i,pow(param, 2), transx/5, transy/5);
 		}
+		/*
+		float x = vlist->pPoints[i].X; 
+		float y = vlist->pPoints[i].Y;
+		double func = (0.3989/s)*pow(e, -(double)((pow((x-xc),2) + pow((y-yc), 2))/(2*pow(s,2))));
+
+		printf("func: %f\n", func);
+		translatePoint(i,func, transx, transy);
+		*/
 	}
 
 }
@@ -47,9 +58,21 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 	int* targets = mesh.p;
 	
 	//find vertex center of the mass (estimated)
-	float xCenter = (vlist->pPoints[targets[0]].X + vlist->pPoints[targets[1]].X+ vlist->pPoints[targets[2]].X)/3;
-	float yCenter = (vlist->pPoints[targets[0]].Y + vlist->pPoints[targets[1]].Y+ vlist->pPoints[targets[2]].Y)/3;
+	//float xCenter = (vlist->pPoints[targets[0]].X + vlist->pPoints[targets[1]].X+ vlist->pPoints[targets[2]].X)/3;
+	//float yCenter = (vlist->pPoints[targets[0]].Y + vlist->pPoints[targets[1]].Y+ vlist->pPoints[targets[2]].Y)/3;
 
-	linearfunc(xCenter, yCenter, transx, transy);
+	//linearfunc(xCenter, yCenter, transx, transy);
+
+	for(int i=0; i<3; i++){
+		float prevx = vlist->pPoints[targets[i]].X;
+		float prevy = vlist->pPoints[targets[i]].Y;
+		vlist->pPoints[targets[i]].X = transx/100+ prevx;
+		vlist->pPoints[targets[i]].Y = transy/100+ prevy;
+
+		printf("id: %d, tranx: %f, transy: %f\n", id, transx, transy);
+		//index indecates points 
+		plist[targets[i]*3] = transx/100+ prevx;//x pointdinate
+		plist[targets[i]*3+1] = transy/100+ prevy; //y pointdinate
+	}
 }
 

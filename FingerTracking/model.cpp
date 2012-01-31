@@ -170,7 +170,7 @@ void calculateNormal(point_t* point, model_t* model){
 
 		 ptr[k].normal = (*norm);
 
-		 printf("norm %d: %f, %f, %f\n", k, norm->X, norm->Y, norm->Z);
+		 //printf("norm %d: %f, %f, %f\n", k, norm->X, norm->Y, norm->Z);
 	 }
 
 }
