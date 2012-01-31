@@ -57,12 +57,14 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 	//get its vertex id
 	int* targets = mesh.p;
 	
+	//old stuff
 	//find vertex center of the mass (estimated)
 	//float xCenter = (vlist->pPoints[targets[0]].X + vlist->pPoints[targets[1]].X+ vlist->pPoints[targets[2]].X)/3;
 	//float yCenter = (vlist->pPoints[targets[0]].Y + vlist->pPoints[targets[1]].Y+ vlist->pPoints[targets[2]].Y)/3;
 
 	//linearfunc(xCenter, yCenter, transx, transy);
 
+	/* Just move the one
 	for(int i=0; i<3; i++){
 		float prevx = vlist->pPoints[targets[i]].X;
 		float prevy = vlist->pPoints[targets[i]].Y;
@@ -74,5 +76,50 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 		plist[targets[i]*3] = transx/100+ prevx;//x pointdinate
 		plist[targets[i]*3+1] = transy/100+ prevy; //y pointdinate
 	}
+	*/
+
+	//normal-based
+	vertex_t norm = mesh.normal;
+	float normx = abs(norm.X);
+	float normy = abs(norm.Y);
+	float normz = abs(norm.Z);
+
+
+		//use tranx to control 
+	if(normx > normy){
+
+		for(int i=0; i<3; i++){
+		float prevx = vlist->pPoints[targets[i]].X;
+		float prevy = vlist->pPoints[targets[i]].Y;
+		float prevz = vlist->pPoints[targets[i]].Z;
+
+		vlist->pPoints[targets[i]].X = (transx/100)*abs(norm.X)+ prevx;
+		vlist->pPoints[targets[i]].Y = (transx/100)*abs(norm.Y)+ prevy;
+		vlist->pPoints[targets[i]].Z = (transx/100)*abs(norm.Z)+ prevz;
+
+		printf("id: %d, tranx: %f\n", id, transx);
+		//index indecates points 
+		plist[targets[i]*3] = transx/100*abs(norm.X)+ prevx;//x 
+		plist[targets[i]*3+1] = transx/100*abs(norm.Y)+ prevy; //y 
+		plist[targets[i]*3+2] = transx/100*abs(norm.Z)+ prevz; //z 
+		}
+	}else{
+	 for(int i=0; i<3; i++){
+		float prevx = vlist->pPoints[targets[i]].X;
+		float prevy = vlist->pPoints[targets[i]].Y;
+		float prevz = vlist->pPoints[targets[i]].Z;
+
+		vlist->pPoints[targets[i]].X = (transy/100)*abs(norm.X)+ prevx;
+		vlist->pPoints[targets[i]].Y = (transy/100)*abs(norm.Y)+ prevy;
+		vlist->pPoints[targets[i]].Z = (transy/100)*abs(norm.Z)+ prevz;
+
+		printf("id: %d, tranx: %f\n", id, transx);
+		//index indecates points 
+		plist[targets[i]*3] = transy/100*abs(norm.X)+ prevx;//x 
+		plist[targets[i]*3+1] = transy/100*abs(norm.Y)+ prevy; //y 
+		plist[targets[i]*3+2] = transy/100*abs(norm.Z)+ prevz; //z 
+	 }
+	}
+	
 }
 
