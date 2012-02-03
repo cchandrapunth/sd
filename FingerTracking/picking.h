@@ -4,5 +4,8 @@
 //callback when picking occurs
 void picked(GLuint name, int sw);
 void processPick(float cursorX, float cursorY);
+
+static int pickMe = -1;	
+
 int getSelection();
-static int pickMe = 0;	
+void setNullSelection();

@@ -43,6 +43,7 @@ static float cursorX, cursorY;
 static int mode = RENDER; 	
 static XnUInt16 g_nXRes, g_nYRes;
 static bool BACK_BUFF;	//show back buffer
+static XnPoint3D *handPointList;
 
 GLuint selectBuf[BUFSIZE];
 
@@ -114,6 +115,9 @@ void processNormalKeys(unsigned char key, int x, int y){
 		if(BACK_BUFF) printf("switch buffer to front\n");
 		else 	printf("switch buffer to back\n");
 	}
+	else if(key == 'l'){
+		enable_line();
+	}
 	else
 		printf("key: %d\n", key);
 }
@@ -160,6 +164,7 @@ void checkCursor(int func){
 		if(stateGrab){
 			stateGrab = false; 
 			clearHandList();
+			setNullSelection();
 
 			//undo
 			if(func == 1) storeModelHist(); 
@@ -217,7 +222,6 @@ void display(){
 
 	if(glutGetWindow()!=mainWindow)  
 		glutSetWindow(mainWindow);
-	XnPoint3D *handPointList = new XnPoint3D[MAXPOINT];
 	if(handPointList == NULL){
 		printf("error. can't allocate memory for handPointList");
 	}
@@ -378,11 +382,10 @@ void initTex(void){
 
 void initRender(){
 
-
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
 	//GLfloat light_position[] = {0.0, -100.0, 0.0, 0.0};
-	GLfloat light_position[] = {0.0, 0.0, 5, 10.0};
+	GLfloat light_position[] = {-1.0, -1.0, 5, 10.0};
 	GLfloat whitelight[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat model_ambient[] = {1.0, 1.0, 1.0, 1.0};
 
@@ -393,12 +396,16 @@ void initRender(){
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, whitelight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, whitelight);
+
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, model_ambient);
+
 
 	ImportModel();
 	LoadModel(&samplePoint, &sampleModel);
 	storeModelHist();
 	calBoundingSphere();
+
+	handPointList = new XnPoint3D[MAXPOINT];
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
@@ -464,7 +471,7 @@ void uiInit(){
     top = c.Y + diam;
 
 	//main menu button
-	Master_ui->add_button("Menu", left, bottom, 0.5, 0.3, push_menu);
+	Master_ui->add_button("Menu", left+0.5, bottom+0.5, 0.5, 0.3, push_menu);
 }
 
 
@@ -524,6 +531,7 @@ int main (int argc, char **argv){
 	createGLUTMenus();
 	glutMainLoop();
 
+	FreeModel(&sampleModel);
 	context.Shutdown();
 	return(0);
 }

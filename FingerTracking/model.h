@@ -64,6 +64,9 @@ void subdivide(polygon_t p, point_t* poly);
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy);
 void translateScene(float transx, float transy, float z);
 
+
+//flag
+void enable_line();
 //---------------------------------------------------------
 //							geter
 //---------------------------------------------------------

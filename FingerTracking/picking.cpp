@@ -39,6 +39,9 @@ void processPick(float cursorX, float cursorY){
 int getSelection(){
 	return pickMe;
 }
+void setNullSelection(){
+	pickMe = -1;
+}
 
 void picked(GLuint name, int sw){
 	printf("my name = %d in %d\n", name, sw);

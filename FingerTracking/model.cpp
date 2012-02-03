@@ -11,6 +11,7 @@
 #include "undo.h"
 #include "softSelection.h"
 #include "miniball.h"
+#include "picking.h"
 
 #define check 1
 #define red 2
@@ -31,7 +32,7 @@ float rollY = 0;
 float zoomZ;
 
 static GLuint texName[3];
-
+static bool FLAG_LINE; //draw contour
 
 int getnPoint(){ return nPoint;}
 int getnPoly(){ return nPoly;}
@@ -199,7 +200,8 @@ void loadColor(polygon_t poly){
 }
 
 void DrawPolygon(polygon_t p, point_t* poly){
-	
+
+	//draw mesh
 	glBegin(GL_TRIANGLES);
 	 glNormal3f(p.normal.X, p.normal.Y, p.normal.Z);
 	 glTexCoord2f(0.0, 0.0);
@@ -208,8 +210,33 @@ void DrawPolygon(polygon_t p, point_t* poly){
 	 glVertex3f(poly->pPoints[p.p[1]].X, poly->pPoints[p.p[1]].Y, poly->pPoints[p.p[1]].Z);
 	 glTexCoord2f(1.0, 1.0);
 	 glVertex3f(poly->pPoints[p.p[2]].X, poly->pPoints[p.p[2]].Y, poly->pPoints[p.p[2]].Z);
-	 
-	glEnd();	
+	glEnd();
+
+		//Draw contour line
+	if(FLAG_LINE){
+		glEnable(GL_LINE_SMOOTH);
+		glBindTexture(GL_TEXTURE_2D, 3);
+
+		glBegin(GL_LINES);
+		for(int i=0; i< 2; i++){
+			vertex_t v1 = poly->pPoints[p.p[i]];
+			vertex_t v2;
+			if(i < 2){
+				 v2 = poly->pPoints[p.p[i+1]];
+			}
+			else{
+				v2 = poly->pPoints[p.p[0]];
+			}
+			//line
+			glVertex3f(v1.X, v1.Y, v1.Z);
+			glVertex3f(v2.X, v2.Y, v2.Z);
+		}
+		 
+		glEnd();
+	}
+
+	
+
 }
 
 void handleRoll(){
@@ -252,20 +279,24 @@ void drawMe (model_t *model, point_t* vertexList)
 	glEnable(GL_TEXTURE_2D);
 	polygon_t *ptr = model->pList;
 
-	for(int j=0; j<(nPoly/4); j++){
-	    for (int i=0; i< 4; i++){
+	for(int j=0; j<nPoly; j++){
 			glPushMatrix();
-			glPushName(j*4+i);
+			glPushName(j);
 
 			handleRoll();
-			polygon_t p = ptr[(j*4)+i];
-			loadColor(p);
+			polygon_t p = ptr[j];
+
+			if(getSelection() == j){
+				glBindTexture(GL_TEXTURE_2D, 4);
+			}
+			else{
+				loadColor(p);
+			}
 			DrawPolygon(p, vertexList);
 			//subdivide(p, vertexList);
 
 			glPopName();
 			glPopMatrix();
-		}
 	}
 }
 
@@ -393,4 +424,8 @@ void subdivide(polygon_t p, point_t* poly){
 	drawtriangle(v2, *v23, *v12);
 	drawtriangle(v3, *v31, *v23);
 	drawtriangle(*v12, *v23, *v31);
+}
+
+void enable_line(){
+	FLAG_LINE = !FLAG_LINE;
 }
