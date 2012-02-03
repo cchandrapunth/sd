@@ -62,7 +62,7 @@ void subdivide(polygon_t p, point_t* poly);
 
 //translate
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy);
-void translateScene(float transx, float transy);
+void translateScene(float transx, float transy, float z);
 
 //---------------------------------------------------------
 //							geter

@@ -12,17 +12,21 @@ typedef struct model_st{
 typedef struct matrix_state{
 	int rollX;
 	int rollY;
+	int zoomZ;
 }matrix_state;
 
 
 //getter 
 int getMatX();
 int getMatY();
+float getMatZ();
+
 int restoreMatX();
 int restoreMatY();
+float restoreMatZ();
 
 //storage
-void addMatrix(int x, int y);
+void addMatrix(int x, int y, float z);
 void pushMatrix();
 
 void storeModelHist();

@@ -10,3 +10,4 @@ void clearHandList();
 //get info
 float gettranslateX();
 float gettranslateY();
+float gettranslateZ();

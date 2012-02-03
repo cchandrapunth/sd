@@ -36,3 +36,8 @@ float gettranslateX(){
 float gettranslateY(){
 	return (handList.size() > 1) ? handList.at(1).Y -handList.front().Y : 0;
 }
+
+float gettranslateZ(){
+	return (handList.size() > 1) ? handList.at(1).Z -handList.front().Z : 0;
+	
+}

@@ -4,6 +4,7 @@
 #include <deque>
 #include <fstream>
 #include <iostream>
+#include <math.h>
 
 
 #include "model.h"
@@ -27,6 +28,7 @@ int nPoly, nPoint;
 //translate scene
 float rollX = 0; 
 float rollY = 0;
+float zoomZ;
 
 static GLuint texName[3];
 
@@ -35,9 +37,13 @@ int getnPoint(){ return nPoint;}
 int getnPoly(){ return nPoly;}
 float* getPoint(){ return pointt;}
 int* getPoly(){return poly;}
+ofstream myfile;
 
 //open the file and load data into the array
 void ImportModel(){
+	
+	myfile.open ("zoom.txt");
+
 	ifstream indata; 
 	float num;
 
@@ -209,10 +215,12 @@ void DrawPolygon(polygon_t p, point_t* poly){
 void handleRoll(){
 	//store new roll input 
 	int rotX, rotY;
+	float zoom, rate = 500;
 
 	rotX = restoreMatX()+getMatX()+ (int)rollX;
 	rotY = restoreMatY()+getMatY()+ (int)rollY;
-	
+	zoom = restoreMatZ()+getMatZ()+zoomZ;
+
 	vertex_t c = getCenterSphere();
 	glTranslated(c.X, c.Y, c.Z);
 	glRotated(-rotX, 0, 1, 0);	//rotate around y axis
@@ -221,12 +229,21 @@ void handleRoll(){
 	glTranslated(c.X, c.Y, c.Z);
 	glRotated(rotY, 1, 0, 0);	//rotate around x axis
 	glTranslated(-c.X, -c.Y, -c.Z);
+	
+	//when hand lost -> #INF
+	if(abs(zoom) >1){
+		glTranslated(c.X, c.Y, c.Z);
+		glScalef(1+(float)zoom/rate, 1+(float)zoom/rate, 1+(float)zoom/rate);
+		glTranslated(-c.X, -c.Y, -c.Z);
+		myfile << restoreMatZ() <<"\t" << getMatZ() << "\t" <<zoomZ << "\n";
+	}
 
-	addMatrix((int)rollX, (int)rollY);
+	addMatrix((int)rollX, (int)rollY, zoomZ);
 
 	//reset
 	rollX=0;
 	rollY=0;
+	zoomZ=0;
 }
 // DrawModel(); draws a model
 void drawMe (model_t *model, point_t* vertexList)
@@ -298,10 +315,11 @@ void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, flo
 	softSelect(model, id, vertexlist,transx, transy, pointt);
 }
 
-void translateScene(float transx, float transy){
+void translateScene(float transx, float transy, float z){
 	//set variable for rotate/zoom
 	rollX = transx;
 	rollY = transy;
+	zoomZ = z;
 }
 
 vertex_t* findnormal(vertex_t vv1, vertex_t vv2, vertex_t vv3){

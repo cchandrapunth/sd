@@ -62,8 +62,8 @@ point_t samplePoint;
 ui *Master_ui =new ui();
 
 // feature
-bool sculpting = true;
-bool control = false;
+bool sculpting = false;
+bool control = true;
 bool paint = false;
 
 //paint
@@ -145,7 +145,8 @@ void checkCursor(int func){
 				}
 			}
 			else if(func ==2){
-				translateScene(gettranslateX(), gettranslateY());
+				translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
+				calculateNormal(&samplePoint, &sampleModel);
 			}
 			else if(func ==3){
 				if(getSelection() >0){
@@ -456,7 +457,7 @@ void uiInit(){
 	float diam = getDiamSphere();
 
 	zNear = 0;
-    zFar = diam;
+    zFar = 5;
 	left = c.X - diam;
     right = c.X + diam;
     bottom = c.Y - diam;
