@@ -46,7 +46,7 @@ void linearfunc(float xc, float yc, float transx, float transy){
 }
 
 
-void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float transy, float* pointt){
+void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float transy, float transz, float* pointt){
 
 	vlist = vertextlist;
 	plist = pointt;
@@ -64,21 +64,26 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 
 	//linearfunc(xCenter, yCenter, transx, transy);
 
-	/* Just move the one
+
+	// Just move the one
 	for(int i=0; i<3; i++){
 		float prevx = vlist->pPoints[targets[i]].X;
 		float prevy = vlist->pPoints[targets[i]].Y;
+		float prevz = vlist->pPoints[targets[i]].Z;
+
 		vlist->pPoints[targets[i]].X = transx/100+ prevx;
 		vlist->pPoints[targets[i]].Y = transy/100+ prevy;
+		vlist->pPoints[targets[i]].Z = transz/100+ prevz;
 
-		printf("id: %d, tranx: %f, transy: %f\n", id, transx, transy);
+		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
 		//index indecates points 
-		plist[targets[i]*3] = transx/100+ prevx;//x pointdinate
-		plist[targets[i]*3+1] = transy/100+ prevy; //y pointdinate
+		plist[targets[i]*3] = transx/100+ prevx;//x 
+		plist[targets[i]*3+1] = transy/100+ prevy; //y 
+		plist[targets[i]*3+2] = transz/100+ prevz; //z 
 	}
-	*/
+	
 
-	//normal-based
+	/*normal-based
 	vertex_t norm = mesh.normal;
 	float normx = norm.X > 0 ? norm.X : -norm.X;
 	float normy = norm.Y > 0 ? norm.Y : -norm.Y;
@@ -120,6 +125,7 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 		plist[targets[i]*3+2] = transy/100*normz+ prevz; //z 
 	 }
 	}
+	*/
 	
 }
 

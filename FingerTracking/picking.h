@@ -8,4 +8,4 @@ void processPick(float cursorX, float cursorY);
 static int pickMe = -1;	
 
 int getSelection();
-void setNullSelection();
+void setNullSelection();	//show no mesh response when hand release

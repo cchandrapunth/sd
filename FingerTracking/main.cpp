@@ -63,8 +63,8 @@ point_t samplePoint;
 ui *Master_ui =new ui();
 
 // feature
-bool sculpting = false;
-bool control = true;
+bool sculpting = true;
+bool control = false;
 bool paint = false;
 
 //paint
@@ -143,8 +143,9 @@ void checkCursor(int func){
 		else{
 			mode = RENDER;
 			if(func == 1) {
-				if(getSelection() >0){
-					translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY());
+				//fix this if changin the number of poly
+				if(getSelection() >0 && getSelection() < sampleModel.nPolygons){
+					translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
 					calculateNormal(&samplePoint, &sampleModel);
 				}
 			}
@@ -164,7 +165,7 @@ void checkCursor(int func){
 		if(stateGrab){
 			stateGrab = false; 
 			clearHandList();
-			setNullSelection();
+			setNullSelection(); //show no mesh response when hand released
 
 			//undo
 			if(func == 1) storeModelHist(); 

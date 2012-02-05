@@ -244,6 +244,7 @@ void handleRoll(){
 	int rotX, rotY;
 	float zoom, rate = 500;
 
+	//the old state+ the new adjustment for this grab+ current roll in this second
 	rotX = restoreMatX()+getMatX()+ (int)rollX;
 	rotY = restoreMatY()+getMatY()+ (int)rollY;
 	zoom = restoreMatZ()+getMatZ()+zoomZ;
@@ -282,7 +283,7 @@ void drawMe (model_t *model, point_t* vertexList)
 	for(int j=0; j<nPoly; j++){
 			glPushMatrix();
 			glPushName(j);
-
+			glLoadIdentity();
 			handleRoll();
 			polygon_t p = ptr[j];
 
@@ -341,9 +342,9 @@ void FreeModel (model_t *model)
     }
 }
 
-void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy){
+void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy, float transz){
 
-	softSelect(model, id, vertexlist,transx, transy, pointt);
+	softSelect(model, id, vertexlist,transx, transy, transz, pointt);
 }
 
 void translateScene(float transx, float transy, float z){
