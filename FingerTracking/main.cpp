@@ -151,7 +151,7 @@ void checkCursor(int func){
 			}
 			else if(func ==2){
 				translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
-				calculateNormal(&samplePoint, &sampleModel);
+				calculateNormal(&samplePoint, &sampleModel);			
 			}
 			else if(func ==3){
 				if(getSelection() >0){
@@ -248,9 +248,12 @@ void display(){
 		}
 		else {
 			drawHand(handPointList);
-			if(!BACK_BUFF)
+			if(!BACK_BUFF){
 				drawMe(&sampleModel, &samplePoint);
-			else drawPickMe(&sampleModel, &samplePoint);
+			}
+			else{ 
+				drawPickMe(&sampleModel, &samplePoint);
+			}
 			glutSwapBuffers();
 		}
 

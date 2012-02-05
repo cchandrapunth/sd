@@ -75,7 +75,7 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 		vlist->pPoints[targets[i]].Y = transy/100+ prevy;
 		vlist->pPoints[targets[i]].Z = transz/100+ prevz;
 
-		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
+		//printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
 		//index indecates points 
 		plist[targets[i]*3] = transx/100+ prevx;//x 
 		plist[targets[i]*3+1] = transy/100+ prevy; //y 
@@ -126,6 +126,53 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 	 }
 	}
 	*/
+	regenerate(model, vertextlist);
+}
+
+void regenerate(model_t* model, point_t* vlist){
+
+	float maxArea = 1.5;
+
+	//consider every mesh
+	for(int i=0; i< model->nPolygons; i++){
+		polygon_t mesh= model->pList[i];
+		float *length = new float[3];
+
+		for(int j=0; j< 3; j++){
+			
+			int id = mesh.p[j];
+
+			float x1 = vlist->pPoints[id].X;
+			float y1 = vlist->pPoints[id].Y;
+			float z1 = vlist->pPoints[id].Z;
+			
+			int nextj;
+			if(j == 2) nextj = 0; 
+			else nextj = j+1;
+
+
+			int nextid = model->pList->p[nextj];
+			float x2 = vlist->pPoints[nextid].X;
+			float y2 = vlist->pPoints[nextid].Y;
+			float z2 = vlist->pPoints[nextid].Z;
+
+			length[j] = sqrt(pow(x1-x2, 2)+ pow(y1-y2, 2)+ pow(z1-z2, 2)); 
+		}
+		//printf("id: %d, l1: %f, l2: %f, l3: %f\n", i, length[0], length[1], length[2]);
+		
+		//find the area of triangles
+		float p = (length[0]+ length[1]+ length[2])/2;
+		float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
+		printf("id: %d, area: %f\n", i,area);
+
+		if(area > maxArea){
+			model->pList[i].colorID = 0;
+		}
+	} 
+
 	
+
+
+
 }
 

@@ -279,12 +279,18 @@ void drawMe (model_t *model, point_t* vertexList)
     glLoadIdentity();
 	glEnable(GL_TEXTURE_2D);
 	polygon_t *ptr = model->pList;
+	float matrix[16];
+
 
 	for(int j=0; j<nPoly; j++){
 			glPushMatrix();
 			glPushName(j);
+			
 			glLoadIdentity();
 			handleRoll();
+			glGetFloatv(GL_MODELVIEW_MATRIX , matrix);
+			
+			
 			polygon_t p = ptr[j];
 
 			if(getSelection() == j){
@@ -293,12 +299,18 @@ void drawMe (model_t *model, point_t* vertexList)
 			else{
 				loadColor(p);
 			}
+			
+			
 			DrawPolygon(p, vertexList);
 			//subdivide(p, vertexList);
 
+			
 			glPopName();
 			glPopMatrix();
+			
+			glMultMatrixf(matrix);
 	}
+	
 }
 
 void drawPickMe(model_t *model, point_t* vertexList){
@@ -345,6 +357,7 @@ void FreeModel (model_t *model)
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy, float transz){
 
 	softSelect(model, id, vertexlist,transx, transy, transz, pointt);
+	
 }
 
 void translateScene(float transx, float transy, float z){

@@ -175,7 +175,7 @@ void drawHand(XnPoint3D* handPointList){
 	glPointSize(2);
 	if(!GRAB)	glColor3f(0, 1, 0);
 	else glColor3f(1, 0.0, 0.0);
-	
+	XnPoint3D *p = new XnPoint3D;
 
 	glBegin(GL_POINTS);
 		//Iterate through the pixel from top to bottom/ right to left
@@ -198,8 +198,7 @@ void drawHand(XnPoint3D* handPointList){
 							//convert in relative to viewport 
 							if(SHOWHAND)
 								glVertex3f(convertX(nX), convertY(nY), 0.0f);
-							
-							XnPoint3D *p = new XnPoint3D;
+
 							(*p).X = nX;
 							(*p).Y = nY;
 							(*p).Z = nValue;
