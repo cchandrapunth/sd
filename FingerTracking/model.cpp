@@ -139,7 +139,7 @@ void LoadModel(point_t* point, model_t* model){
 	 } 
 
 	 // add all polygons to the list
-	 model->pList = (polygon_t *)malloc(nPoly * sizeof(polygon_t));
+	 model->pList = (polygon_t *)malloc((nPoly+3) * sizeof(polygon_t));
 	 polygon_t* ptr = model->pList; 
 
 	 for(int j=0; j<nPoly; j++){
@@ -302,7 +302,7 @@ void drawMe (model_t *model, point_t* vertexList)
 			
 			
 			DrawPolygon(p, vertexList);
-			//subdivide(p, vertexList);
+			//subdivide(&p, vertexList);
 
 			
 			glPopName();
@@ -408,11 +408,15 @@ void drawtriangle(vertex_t v1, vertex_t v2, vertex_t v3){
 	 
 }
 
-void subdivide(polygon_t p, point_t* poly){
+void subdivide(model_t* model, polygon_t* p, point_t* poly, int id){
 
-	vertex_t v1 = poly->pPoints[p.p[0]];
-	vertex_t v2 = poly->pPoints[p.p[1]];
-	vertex_t v3 = poly->pPoints[p.p[2]];
+	//change color
+	//p->colorID = 0;
+
+	//do subdivide
+	vertex_t v1 = poly->pPoints[p->p[0]];
+	vertex_t v2 = poly->pPoints[p->p[1]];
+	vertex_t v3 = poly->pPoints[p->p[2]];
 
 	vertex_t* v12 = (vertex_t *)malloc(sizeof(vertex_t));
 	vertex_t* v23 = (vertex_t *)malloc(sizeof(vertex_t));
@@ -433,11 +437,63 @@ void subdivide(polygon_t p, point_t* poly){
 	normalize(v12);
 	normalize(v23);
 	normalize(v31);
-	
+	/*
 	drawtriangle(v1, *v12, *v31);
 	drawtriangle(v2, *v23, *v12);
 	drawtriangle(v3, *v31, *v23);
 	drawtriangle(*v12, *v23, *v31);
+	*/
+
+	//substitute the big triangle with three new ones
+	//add 3 vertices 
+	int nv = poly->nVertexs;
+	
+	//make sure we did allocate enough for vlist (in model.h)
+	poly->pPoints[nv] = *v12;
+	poly->pPoints[nv+1] = *v23;
+	poly->pPoints[nv+2] = *v31;
+
+	poly->nVertexs = nv+3;
+
+	//add the first triangle (replace the old one)
+	int id1 = p->p[0];
+	int id2 = p->p[1];
+	int id3 = p->p[2];
+
+	p->p[0] = id1;
+	p->p[1] = nv;	//v12
+	p->p[2] = nv+2;  //v31
+
+	//second triangle
+	int npoly = model->nPolygons;
+	polygon_t* newtri = (polygon_t*) malloc(3* sizeof(polygon_t));
+	
+	for(int i=0; i< 3; i++){	
+
+		polygon_t poly;
+		if(i == 0){
+			poly.p[0] = id1;	//v2
+			poly.p[1] = nv+1;	//v23
+			poly.p[2] = nv;		//v12
+		}
+		else if(i==1){
+			poly.p[0] = id2;	//v3
+			poly.p[1] = nv+2;	//v31
+			poly.p[2] = nv+1;	//v23
+		}
+		else{
+			poly.p[0] = nv;		//v12
+			poly.p[1] = nv+1;	//v23
+			poly.p[2] = nv+2;	//v31
+		}
+		poly.colorID = 0;
+		newtri[i]= poly;
+
+		model->pList[npoly+i] = *newtri; 
+		
+	}
+	model->nPolygons = npoly+3;
+	
 }
 
 void enable_line(){

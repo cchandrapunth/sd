@@ -47,7 +47,7 @@ void linearfunc(float xc, float yc, float transx, float transy){
 
 
 void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float transy, float transz, float* pointt){
-
+	
 	vlist = vertextlist;
 	plist = pointt;
 
@@ -126,10 +126,10 @@ void softSelect(model_t* model, int id, point_t* vertextlist,float transx, float
 	 }
 	}
 	*/
-	regenerate(model, vertextlist);
+	regenerate(model);
 }
 
-void regenerate(model_t* model, point_t* vlist){
+void regenerate(model_t* model){
 
 	float maxArea = 1.5;
 
@@ -165,9 +165,11 @@ void regenerate(model_t* model, point_t* vlist){
 		float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
 		printf("id: %d, area: %f\n", i,area);
 
-		if(area > maxArea){
-			model->pList[i].colorID = 0;
+		/*
+		if(area > maxArea) {
+			subdivide(model, &(model->pList[i]), vlist, i);	//sudivide this mesh
 		}
+		*/
 	} 
 
 	

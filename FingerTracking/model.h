@@ -14,7 +14,7 @@ typedef struct vertex_s
 typedef struct point_s
 {
 	int nVertexs; 
-	vertex_t pPoints[12]; 
+	vertex_t pPoints[15]; 
 } point_t;
 
 //A quad contains 4 points' id and its normal
@@ -58,7 +58,7 @@ void setColor(model_t *poly, int polyId, int cid);
 vertex_t* findnormal(vertex_t vv1, vertex_t vv2, vertex_t vv3);
 void normalize(vertex_t *norm);
 void drawtriangle(float* v1, float* v2, float* v3);
-void subdivide(polygon_t p, point_t* poly);
+void subdivide(model_t* model, polygon_t* p, point_t* poly, int id);
 
 //translate
 void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy, float transz);
