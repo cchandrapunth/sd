@@ -147,17 +147,20 @@ void checkCursor(int func){
 			if(func == 1) {
 				//fix this if changin the number of poly
 				if(getSelection() >0 && getSelection() < sampleModel.nPolygons){
-					translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
+					//translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
+					interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ());
 					calculateNormal(&samplePoint, &sampleModel);
 				}
 			}
 			else if(func ==2){
-				translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
+				//translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
+				commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
 				calculateNormal(&samplePoint, &sampleModel);			
 			}
 			else if(func ==3){
 				if(getSelection() >0){
-					setColor(&sampleModel, getSelection(), 3);
+					//setColor(&sampleModel, getSelection(), 3);
+					paintMesh(getSelection());
 				}
 			}
 		}
@@ -255,7 +258,7 @@ void display(){
 				drawVMModel();
 			}
 			else{ 
-				drawPickMe(&sampleModel, &samplePoint);
+				drawPickVMModel();
 			}
 			glutSwapBuffers();
 		}
@@ -266,7 +269,7 @@ void display(){
 		checkCursor(2); 
 
 		if(mode == SELECT){
-			drawPickMe(&sampleModel, &samplePoint);
+			drawPickVMModel();
 			mode = RENDER;
 		}
 		else {
@@ -275,7 +278,7 @@ void display(){
 				//drawMe(&sampleModel, &samplePoint);
 				drawVMModel();
 			}
-			else drawPickMe(&sampleModel, &samplePoint);
+			else drawPickVMModel();
 			glutSwapBuffers();
 		}
 	}
@@ -283,15 +286,15 @@ void display(){
 		checkCursor(3);
 
 		if(mode == SELECT){
-			drawPickMe(&sampleModel, &samplePoint);
+			drawPickVMModel();
 			processPick(cursorX, cursorY);
 			mode = RENDER;
 		}
 		else {
 			drawHand(handPointList);
 			if(!BACK_BUFF)
-				drawMe(&sampleModel, &samplePoint);
-			else drawPickMe(&sampleModel, &samplePoint);
+				drawVMModel();
+			else drawPickVMModel();
 			glutSwapBuffers();
 		}
 	}
@@ -472,15 +475,15 @@ void push_menu(){
 //all ui in here
 void uiInit(){
 
-	vertex_t c = getCenterSphere();
+	vertex c = getCenterSphere();
 	float diam = getDiamSphere();
 
 	zNear = 0;
     zFar = 5;
-	left = c.X - diam;
-    right = c.X + diam;
-    bottom = c.Y - diam;
-    top = c.Y + diam;
+	left = c.x - diam;
+    right = c.x + diam;
+    bottom = c.y - diam;
+    top = c.y + diam;
 
 	//main menu button
 	Master_ui->add_button("Menu", left+0.5, bottom+0.5, 0.5, 0.3, push_menu);

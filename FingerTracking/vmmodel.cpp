@@ -150,7 +150,20 @@ vertex* normalizeV(vertex* norm){
 	return norm;
 }
 
+void setColorPaint(int id){
+	int cid = faceList.at(id).colorId;
+	if(cid == 0) 
+		glBindTexture(GL_TEXTURE_2D, 1);
+	else if(cid == 1) 
+		glBindTexture(GL_TEXTURE_2D, 2);
+	else if(cid == 2)
+		glBindTexture(GL_TEXTURE_2D, 3);
+	else if(cid == 3)
+		glBindTexture(GL_TEXTURE_2D, 4);
+}
+
 void drawMesh(int meshId){
+
 	mesh m = faceList.at(meshId);
 
 	vertex v1 = vertexList.at(m.ind1);
@@ -164,6 +177,9 @@ void drawMesh(int meshId){
 	 glVertex3f(v3.x, v3.y, v3.z);
 	glEnd();
 	 
+}
+void paintMesh(int mid){
+	faceList.at(mid).colorId = 3;
 }
 
 //divide a mesh into 4 new mesh
@@ -243,4 +259,87 @@ void subDivide(int meshId){
 
 		faceList.push_back(*m);	
 	}
+}
+
+void interpolate(int id, float transx, float transy, float transz){
+	//move only the selected mesh
+	for(int i=0; i<3; i++){
+
+		int index = 0;
+		if(i == 0){	
+			index = faceList.at(id).ind1;
+		}else if(i ==1) {
+			index = faceList.at(id).ind2;
+		}else{
+			index = faceList.at(id).ind3;
+		}
+
+		float prevx = vertexList.at(index).x;
+		float prevy = vertexList.at(index).y;
+		float prevz = vertexList.at(index).z;
+
+
+		vertexList.at(index).x = transx/100+ prevx;
+		vertexList.at(index).y = transy/100+ prevy;
+		vertexList.at(index).z = transz/100+ prevz;
+
+		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
+	}
+
+	for(int i=0; i< faceList.size(); i++){
+		bool boo = checkSize(i);
+	}
+}
+
+bool checkSize(int i){
+
+	float maxArea = 1.5;
+
+	//consider every mesh
+	
+		mesh m= faceList.at(i);
+		float *length = new float[3];
+
+		for(int j=0; j< 3; j++){
+			
+			int id1, id2;
+
+			if(j ==0) {
+				id1 = m.ind1;
+				id2 = m.ind2;
+			}
+			if(j ==1){
+				id1 = m.ind2;
+				id2 = m.ind3;
+			}
+			if(j ==2){
+				id1 = m.ind3;
+				id2 = m.ind1;
+			}
+
+			float x1 = vertexList.at(id1).x;
+			float y1 = vertexList.at(id1).y;
+			float z1 = vertexList.at(id1).z;
+			
+			float x2 = vertexList.at(id2).x;
+			float y2 = vertexList.at(id2).y;
+			float z2 = vertexList.at(id2).z;
+
+			length[j] = sqrt(pow(x1-x2, 2)+ pow(y1-y2, 2)+ pow(z1-z2, 2)); 
+		}
+		//printf("id: %d, l1: %f, l2: %f, l3: %f\n", i, length[0], length[1], length[2]);
+		
+		//find the area of triangles
+		float p = (length[0]+ length[1]+ length[2])/2;
+		float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
+		printf("id: %d, area: %f\n", i,area);
+
+		
+		if(area > maxArea) {
+			m.colorId = 0;
+			//subdivide(model, &(model->pList[i]), vlist, i);	//sudivide this mesh
+			return true;
+		}
+		return false;
+
 }

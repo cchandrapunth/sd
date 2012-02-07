@@ -5,6 +5,7 @@
 #include <XnCppWrapper.h>
 #include <XnVNite.h>
 
+#include "vertex.h"
 #include "gesture.h"
 #include "window.h"
 #include "model.h"
@@ -58,17 +59,17 @@ void switchShowHand(){
 }
 
 float convertX(float x){
-	float left = getCenterSphere().X- getDiamSphere(); //get the leftmost coordinate
+	float left = getCenterSphere().x- getDiamSphere(); //get the leftmost coordinate
 	return left + (nXRes-x)*(2*getDiamSphere())/nXRes;	//scale to the viewport
 }
 
 float convertY(float y){
-	float bottom = getCenterSphere().Y- getDiamSphere(); //get the leftmost coordinate
+	float bottom = getCenterSphere().y- getDiamSphere(); //get the leftmost coordinate
 	return bottom + (nYRes-y)*(2*getDiamSphere())/nYRes;
 }
 //for cursor, do not reverse the side (nYRes)
 float convertYcursor(float y){
-	float bottom = getCenterSphere().Y- getDiamSphere(); //get the leftmost coordinate
+	float bottom = getCenterSphere().y- getDiamSphere(); //get the leftmost coordinate
 	return bottom + y*(2*getDiamSphere())/nYRes;
 
 }

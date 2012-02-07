@@ -254,7 +254,7 @@ void handleRoll(){
 	rotX = restoreMatX()+getMatX()+ (int)rollX;
 	rotY = restoreMatY()+getMatY()+ (int)rollY;
 	zoom = restoreMatZ()+getMatZ()+zoomZ;
-
+	/*
 	vertex_t c = getCenterSphere();
 	glTranslated(c.X, c.Y, c.Z);
 	glRotated(-rotX, 0, 1, 0);	//rotate around y axis
@@ -278,6 +278,7 @@ void handleRoll(){
 	rollX=0;
 	rollY=0;
 	zoomZ=0;
+	*/
 }
 // DrawModel(); draws a model
 void drawMe (model_t *model, point_t* vertexList)

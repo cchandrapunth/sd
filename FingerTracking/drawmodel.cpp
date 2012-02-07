@@ -7,30 +7,112 @@
 #include "vertex.h"
 #include "vmmodel.h"
 
+#include "model.h"
+
+#include "undo.h"
+#include "softSelection.h"
+#include "miniball.h"
+#include "picking.h"
+
+//translate scene
+float rollvX = 0; 
+float rollvY = 0;
+float zoomvZ;
+
+
+
 void drawVMModel(){
 
-    glLoadIdentity();
+	glLoadIdentity();
 	glEnable(GL_TEXTURE_2D);
 
 	for(int j=0; j< getFaceListSize(); j++){
-			glPushMatrix();
-			glPushName(j);
-			
-			glLoadIdentity();
-			//handleRoll();
-				
-			/*
-			if(getSelection() == j){
-				glBindTexture(GL_TEXTURE_2D, 4);
-			}
-			else{
-				loadColor(p);
-			}
-			*/
-			
-			drawMesh(j);
-		
-			glPopName();
-			glPopMatrix();
+		glPushMatrix();
+		glPushName(j);
+
+		glLoadIdentity();
+		trackRoll();
+
+		if(getSelection() == j){
+			printf("select %d\n", getSelection());
+			glBindTexture(GL_TEXTURE_2D, 4);
+		}
+		else{
+			setColorPaint(j);
+		}
+
+		drawMesh(j);
+
+		glPopName();
+		glPopMatrix();
 	}
 }
+
+void drawPickVMModel(){
+
+	glDisable(GL_DITHER); //disable blending color function
+	glDisable(GL_LIGHT0);
+	glDisable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
+	for (int i=0; i< getFaceListSize(); i++){
+		glPushMatrix();
+
+		trackRoll();
+		if(i < 255){
+			glColor3ub(255,255, i);	
+		}
+		else printf("TOO MANY MASH\n");
+
+		drawMesh(i);
+		glPopMatrix();
+	}
+	
+
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_DITHER);
+	glEnable(GL_TEXTURE_2D);
+}
+
+void trackRoll(){
+	//store new roll input 
+	int rotX, rotY;
+	float zoom, rate = 500;
+
+	//the old state+ the new adjustment for this grab+ current roll in this second
+	rotX = restoreMatX()+getMatX()+ (int)rollvX;
+	rotY = restoreMatY()+getMatY()+ (int)rollvY;
+	zoom = restoreMatZ()+getMatZ()+zoomvZ;
+
+	vertex c = getCenterSphere();
+	glTranslated(c.x, c.y, c.z);
+	glRotated(-rotX, 0, 1, 0);	//rotate around y axis
+	glTranslated(-c.x, -c.y, -c.z);
+
+	glTranslated(c.x, c.y, c.z);
+	glRotated(rotY, 1, 0, 0);	//rotate around x axis
+	glTranslated(-c.x, -c.y, -c.z);
+	
+	//when hand lost -> #INF
+	if(abs(zoom) >1){
+		glTranslated(c.x, c.y, c.z);
+		glScalef(1+(float)zoom/rate, 1+(float)zoom/rate, 1+(float)zoom/rate);
+		glTranslated(-c.x, -c.y, -c.z);
+	}
+
+	addMatrix((int)rollvX, (int)rollvY, zoomvZ);
+
+	//reset
+	rollvX=0;
+	rollvY=0;
+	zoomvZ=0;
+}
+
+void commitScene(float transx, float transy, float z){
+	//set variable for rotate/zoom
+	rollvX = transx;
+	rollvY = transy;
+	zoomvZ = z;
+}
+
