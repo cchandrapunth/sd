@@ -1,10 +1,25 @@
 
 
-//-----------------------------------------------
-//			Model data structure
-//-----------------------------------------------
+//Face-vertex Meshes
+/* consists of Face list and Vertex List 
+*  example: http://en.wikipedia.org/wiki/Polygon_mesh
+*
+****Face List
+*	id		ind			nomalX,Y,Z	colorId
+*	mesh0	v0 v4 v5		...		  ...
+*	mesh1	v3 v5 v6
+*	mesh2	v2 v8 v10
+*	mesh3	v0 v3 v1
+*	...
+*
+****Vertex List
+*	id		x, y, z			faceId (nface)
+*	v0		1. 2. 0..		mesh0, mesh2, mesh9 
+*	v1		...				mesh4, mesh1
+*	v2		...				mesh8, mesh2, mesh1, mesh5
+*	...
+*/
 
-//A vetex has its x,y,z coordinate
 typedef struct vertex_s
 {
 	float X,Y,Z;

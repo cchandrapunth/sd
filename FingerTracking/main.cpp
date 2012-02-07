@@ -22,7 +22,9 @@
 #include "undo.h"
 #include "ui.h"
 #include "miniball.h"
-
+#include "vertex.h"
+#include "vmmodel.h"
+#include "drawmodel.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -249,7 +251,8 @@ void display(){
 		else {
 			drawHand(handPointList);
 			if(!BACK_BUFF){
-				drawMe(&sampleModel, &samplePoint);
+				//drawMe(&sampleModel, &samplePoint);
+				drawVMModel();
 			}
 			else{ 
 				drawPickMe(&sampleModel, &samplePoint);
@@ -268,8 +271,10 @@ void display(){
 		}
 		else {
 			drawHand(handPointList);
-			if(!BACK_BUFF)
-				drawMe(&sampleModel, &samplePoint);
+			if(!BACK_BUFF){
+				//drawMe(&sampleModel, &samplePoint);
+				drawVMModel();
+			}
 			else drawPickMe(&sampleModel, &samplePoint);
 			glutSwapBuffers();
 		}
@@ -408,6 +413,9 @@ void initRender(){
 	LoadModel(&samplePoint, &sampleModel);
 	storeModelHist();
 	calBoundingSphere();
+	
+	//new
+	import_vm();
 
 	handPointList = new XnPoint3D[MAXPOINT];
 

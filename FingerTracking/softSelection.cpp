@@ -172,9 +172,5 @@ void regenerate(model_t* model){
 		*/
 	} 
 
-	
-
-
-
 }
 

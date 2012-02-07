@@ -12,6 +12,8 @@
 #include "softSelection.h"
 #include "miniball.h"
 #include "picking.h"
+#include "mesh.h"
+#include "vertex.h"
 
 #define check 1
 #define red 2
@@ -20,6 +22,8 @@
 
 using std::ifstream;
 using std::ofstream;
+using namespace::std;
+
 
 //back up 
 float *pointt; //change number of points need to reflect in the data structure
@@ -40,6 +44,8 @@ float* getPoint(){ return pointt;}
 int* getPoly(){return poly;}
 ofstream myfile;
 
+
+
 //open the file and load data into the array
 void ImportModel(){
 	
@@ -50,7 +56,7 @@ void ImportModel(){
 
 	indata.open("modelinput.txt");
 	if(!indata) {
-		printf("Error: inpu file couldn't be opened\n");
+		printf("Error: input file couldn't be opened\n");
 		exit(1);
 	}
 

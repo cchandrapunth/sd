@@ -5,6 +5,8 @@
 #include "window.h"
 #include "model.h"
 #include "undo.h"
+#include "vertex.h"
+#include "vmmodel.h"
 
 #define RED 1
 #define GREEN 2
@@ -38,6 +40,7 @@ void processMenuEvents(int option) {
 		case RED :
 			printf("Save the model to modeloutput.txt\n"); 
 			ExportModel();
+			export_vm();
 			break;
 		case BLUE :
 			printf("Undo action1"); 
