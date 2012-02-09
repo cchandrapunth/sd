@@ -5,7 +5,7 @@ void export_vm();
 vertex* getNormal(vertex v1, vertex v2, vertex v3);
 
 void drawMesh(int i);
-void subDivide();
+void subDivide(int i);
 
 int getFaceListSize();
 int getVertexListSize();

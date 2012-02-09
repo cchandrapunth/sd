@@ -66,14 +66,18 @@ void import_vm(){
 		vertexList.at(id3).addFaceId(j);
 	}
 
+	for(int i=0; i< nmesh; i++){ //nmesh is constant
+		subDivide(i);
+	}
+
 	if(debug){
 		pLog->Write("load model complete");
-		for(int i=0; i< nvertex; i++){
+		for(int i=0; i< vertexList.size(); i++){
 			vertexList.at(i).printv();
 			vertexList.at(i).printface();
 		}
 
-		for(int i=0; i< nmesh; i++){
+		for(int i=0; i< faceList.size(); i++){
 			faceList.at(i).printmesh();
 		}
 	}
@@ -177,6 +181,15 @@ void paintMesh(int mid, int cid){
 	faceList.at(mid).colorId = cid;
 }
 
+bool sameVertex(vertex v1, vertex v2){
+	if(v1.x - v2.x < 0.00001 && v1.x - v2.x > -0.00001 &&
+			v1.y - v2.y < 0.00001 && v1.y - v2.y > -0.00001 &&
+			v1.z - v2.z < 0.00001 && v1.z - v2.z > -0.00001){
+				return true;
+	}
+	return false;
+}
+
 //divide a mesh into 4 new mesh
 //handle the operation and restoration in the deque
 void subDivide(int meshId){
@@ -208,18 +221,24 @@ void subDivide(int meshId){
 	v23 = normalizeV(v23);
 	v31 = normalizeV(v31);
 
-	/*
-	drawtriangle(v1, *v12, *v31);
-	drawtriangle(v2, *v23, *v12);
-	drawtriangle(v3, *v31, *v23);
-	drawtriangle(*v12, *v23, *v31);
-	*/
+	int begin_index = vertexList.size();
+	
+	//check if the vertices already existed?
+	for(int k=0; k< begin_index; k++){
+		vertex v = vertexList.at(k);
+		if(sameVertex(*v12, v) || sameVertex(*v23, v) || sameVertex(*v31, v)){
+			printf("shout %d\n",k);
+		} 
+	}
 
 	//add 3 new vertices 
-	int begin_index = vertexList.size();
+	
 	vertexList.push_back(*v12);		//index = begin_index
 	vertexList.push_back(*v23);		//index = begin_index+1
 	vertexList.push_back(*v31);		//index = begine_index+2
+	//add face id 
+	//*************
+
 
 	//store the old index
 	int old1 = faceList.at(meshId).ind1;
@@ -231,26 +250,47 @@ void subDivide(int meshId){
 	faceList.at(meshId).ind1 = old1;
 	faceList.at(meshId).ind2 = begin_index;
 	faceList.at(meshId).ind3 = begin_index+2;
+	faceList.at(meshId).colorId = 5;
+
+	//find normal
+	vertex* v = getNormal(vertexList.at(old1), vertexList.at(begin_index), vertexList.at(begin_index+2));	
+	faceList.at(meshId).normalX = v->x;
+	faceList.at(meshId).normalY = v->y;
+	faceList.at(meshId).normalZ = v->z;
 
 	//the rest 
 	for(int i=0; i< 3; i++){	
 		mesh *m = new mesh(0, 0, 0);
+		vertex* v;
+
 		if(i == 0){
 			m->ind1 = old2;	//v2
 			m->ind2 = begin_index+1;	//v23
 			m->ind3 = begin_index;		//v12
+
+		v = getNormal(vertexList.at(old2), vertexList.at(begin_index+1), vertexList.at(begin_index));	
+		
+
 		}
 		else if(i==1){
 			m->ind1 = old3;	//v3
 			m->ind2 = begin_index+2;	//v31
 			m->ind3 = begin_index+1;	//v23
+
+			v = getNormal(vertexList.at(old3), vertexList.at(begin_index+2), vertexList.at(begin_index+1));	
 		}
 		else{
 			m->ind1 = begin_index;		//v12
 			m->ind2 = begin_index+1;	//v23
 			m->ind3 = begin_index+2;	//v31
+
+			v = getNormal(vertexList.at(begin_index), vertexList.at(begin_index+1), vertexList.at(begin_index+2));	
 		}
-		m->colorId = 0;
+
+		m->normalX = v->x;
+		m->normalY = v->y;
+		m->normalZ = v->z;
+		m->colorId = 5;
 
 		faceList.push_back(*m);	
 	}
@@ -288,8 +328,10 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, relativeTransx, relativeTransy, relativeTransz);
 	}
 
+	bool once = false;
 	for(int i=0; i< faceList.size(); i++){
-		bool boo = checkSize(i);
+		once = checkSize(i);
+		if(once) break;	//only one large mesh would subdivide the whole model 
 	}
 }
 
@@ -338,8 +380,10 @@ bool checkSize(int i){
 
 		
 		if(area > maxArea) {
-			m.colorId = 0;
-			//subdivide(model, &(model->pList[i]), vlist, i);	//sudivide this mesh
+			int nmesh = faceList.size();
+			for(int k=0; k< nmesh; k++){
+				subDivide(k);	//sudivide this mesh
+			}
 			return true;
 		}
 		return false;
