@@ -19,9 +19,16 @@ float rollvX = 0;
 float rollvY = 0;
 float zoomvZ;
 
+//store new roll input 
+int rotX, rotY;
+float zoom, rate = 500;
 
 
 void drawVMModel(){
+	//qraternian
+
+	float mat[16];
+	
 
 	glLoadIdentity();
 	glEnable(GL_TEXTURE_2D);
@@ -32,10 +39,11 @@ void drawVMModel(){
 
 		glLoadIdentity();
 		trackRoll();
+		//glGetFloatv(GL_MODELVIEW_MATRIX, mat);
 
 		if(getSelection() == j){
 			printf("select %d\n", getSelection());
-			glBindTexture(GL_TEXTURE_2D, 4);
+			glBindTexture(GL_TEXTURE_2D, 3);	//green
 		}
 		else{
 			setColorPaint(j);
@@ -45,6 +53,11 @@ void drawVMModel(){
 
 		glPopName();
 		glPopMatrix();
+		//glMultMatrixf(mat);
+		
+			glRotated(rotX, 0, 1, 0);
+				glRotated(rotY, 0, 1, 0);
+		
 	}
 }
 
@@ -76,9 +89,6 @@ void drawPickVMModel(){
 }
 
 void trackRoll(){
-	//store new roll input 
-	int rotX, rotY;
-	float zoom, rate = 500;
 
 	//the old state+ the new adjustment for this grab+ current roll in this second
 	rotX = restoreMatX()+getMatX()+ (int)rollvX;
@@ -91,7 +101,7 @@ void trackRoll(){
 	glTranslated(-c.x, -c.y, -c.z);
 
 	glTranslated(c.x, c.y, c.z);
-	glRotated(rotY, 1, 0, 0);	//rotate around x axis
+	glRotated(-rotY, 1, 0, 0);	//rotate around x axis
 	glTranslated(-c.x, -c.y, -c.z);
 	
 	//when hand lost -> #INF

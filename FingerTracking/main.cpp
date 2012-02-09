@@ -25,6 +25,7 @@
 #include "vertex.h"
 #include "vmmodel.h"
 #include "drawmodel.h"
+#include "paint.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -70,15 +71,18 @@ bool control = false;
 bool paint = false;
 
 //paint
-
 #define checkImageWidth 64
 #define checkImageHeight 64
 
-static GLubyte checkImage[checkImageWidth][checkImageHeight][4];
-static GLubyte redTex[4];
-static GLubyte blueTex[4];
-static GLubyte greenTex[4];
-static GLuint texName[4];
+static GLuint texName[6];
+static GLubyte checkImage[checkImageWidth][checkImageHeight][4]; //colorId 1
+static GLubyte redTex[4];	//2
+static GLubyte blueTex[4];	//3
+static GLubyte greenTex[4];	//4
+static GLubyte yellowTex[4];	//5
+static GLubyte whiteTex[4];	//6
+
+
 
 //viewport
 
@@ -158,9 +162,9 @@ void checkCursor(int func){
 				calculateNormal(&samplePoint, &sampleModel);			
 			}
 			else if(func ==3){
-				if(getSelection() >0){
+				if(getSelection() >0 && getSelection() < getFaceListSize()){
 					//setColor(&sampleModel, getSelection(), 3);
-					paintMesh(getSelection());
+					paintMesh(getSelection(), getBrushColor());
 				}
 			}
 		}
@@ -186,11 +190,10 @@ void checkCursor(int func){
 void makeTexImage(){
 	int i, j, c;
 
-	//check
+	//check board
 	for(i=0; i< 64; i++){
 		for(j=0; j< 64; j++){
-			c = (((i&0x8)==0) ^ ((j&0x8))==0)*255;
-			
+			c = (((i&0x8)==0) ^ ((j&0x8))==0)*255;		
 			checkImage[i][j][0] = (GLubyte) c;
 			checkImage[i][j][1] = (GLubyte) c;
 			checkImage[i][j][2] = (GLubyte) c;
@@ -199,22 +202,20 @@ void makeTexImage(){
 	}
 
 	//red
-	redTex[0] = 255;
-	redTex[1] = 0;
-	redTex[2] = 0;
-	redTex[3] = 255;
+	redTex[0] = 255; redTex[1] = 0; redTex[2] = 0; redTex[3] = 255;
 
 	//blue
-	blueTex[0] = 0;
-	blueTex[1] = 0;
-	blueTex[2] = 255;
-	blueTex[3] = 255;
+	blueTex[0] = 0; blueTex[1] = 0; blueTex[2] = 255; blueTex[3] = 255;
 
 	//green
-	greenTex[0] = 0;
-	greenTex[1] = 255;
-	greenTex[2] = 0;
-	greenTex[3] = 255;
+	greenTex[0] = 0; greenTex[1] = 255; greenTex[2] = 0; greenTex[3] = 255;
+
+	//yellow 
+	yellowTex[0] =255; yellowTex[1] = 255; yellowTex[2] = 0; yellowTex[3] = 255;
+
+	//white
+	whiteTex[0] = 255; whiteTex[1] = 255; whiteTex[2] = 255; whiteTex[3] = 255;
+
 }
 void UIhandler(){
 	
@@ -247,7 +248,7 @@ void display(){
 		checkCursor(1); 
 		
 		if(mode == SELECT){
-			drawPickMe(&sampleModel, &samplePoint);
+			drawPickVMModel();
 			processPick(cursorX, cursorY);
 			mode = RENDER;
 		}
@@ -360,36 +361,37 @@ void initTex(void){
 	makeTexImage();
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-	glGenTextures(4, texName);
+	glGenTextures(6, texName);
+	printf("generate texture: %d, %d, %d, %d, %d, %d\n", texName[0], texName[1], texName[2], texName[3], texName[4], texName[5]);
 
+
+	//check texture
 	glBindTexture(GL_TEXTURE_2D, texName[0]);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, checkImageWidth, checkImageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, checkImage);
-	
-	
-	glBindTexture(GL_TEXTURE_2D, texName[1]);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, redTex);
 
-	glBindTexture(GL_TEXTURE_2D, texName[2]);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, blueTex);
 
-	glBindTexture(GL_TEXTURE_2D, texName[3]);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, greenTex);
+	//plane color texture
+	for(int i=1; i< 6; i++){
+		glBindTexture(GL_TEXTURE_2D, texName[i]);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		if(i==1) 
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, redTex);
+		if(i==2)
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, greenTex);
+		if(i==3)
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, blueTex);
+		if(i==4)
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, yellowTex);
+		if(i==5) 
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, whiteTex);
+	}
 }
 
 void initRender(){
@@ -454,13 +456,24 @@ void option3(){
 	control = false;
 	paint = true;
 	Master_ui->remove_menu();
+
+	float width = right -left;
+	float height = top -bottom; 
+	float off = height/30;
+
+	Master_ui->add_button("red", left+ width/15, top-height/10, width/10, height/10-off, setRed);	//red
+	Master_ui->add_button("green", left+ width/15, top-height*2/10, width/10, height/10-off, setGreen);	//green
+	Master_ui->add_button("blue", left+ width/15, top-height*3/10, width/10, height/10-off, setBlue);	//blue
+	Master_ui->add_button("yellow", left+ width/15, top-height*4/10, width/10, height/10-off, setYellow);	//yellow
+	Master_ui->add_button("white", left+ width/15, top-height*5/10, width/10, height/10-off, setWhite);	//white
+
 }
 
 
 //FIXME: should hide the menu button once it's click
 void push_menu(){
 	//draw panel 
-	Master_ui->activate_menu = true;
+	Master_ui->activate_menu = true; //addpanel
 	printf("pushing menu\n");
 
 	float width = right -left;
@@ -486,7 +499,7 @@ void uiInit(){
     top = c.y + diam;
 
 	//main menu button
-	Master_ui->add_button("Menu", left+0.5, bottom+0.5, 0.5, 0.3, push_menu);
+	Master_ui->add_button("Menu", left+(right-left)/15, bottom+0.5, 0.5, 0.3, push_menu);
 }
 
 

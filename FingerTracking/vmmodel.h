@@ -15,4 +15,4 @@ void interpolate(int id, float transx, float transy, float transz);
 bool checkSize(int i);
 void setColorPaint(int id);
 
-void paintMesh(int mid);
+void paintMesh(int mid, int cid);

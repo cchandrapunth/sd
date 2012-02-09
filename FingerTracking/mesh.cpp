@@ -24,5 +24,5 @@ void mesh::setColor(int id){
 }
 
 void mesh::printmesh(){
-	printf("ind %d, %d, %d \t| normal %.5f, %.5f, %.5f\n", ind1, ind2, ind3, normalX, normalY, normalZ);
+	printf("ind %d, %d, %d \t| normal %.5f, %.5f, %.5f \t| colorId = %d\n", ind1, ind2, ind3, normalX, normalY, normalZ, colorId);
 }

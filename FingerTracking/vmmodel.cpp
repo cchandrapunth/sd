@@ -57,7 +57,7 @@ void import_vm(){
 		m->normalY = v->y;
 		m->normalZ = v->z;
 
-		m->setColor(1);	//default is red
+		m->setColor(6);	//default is white-6
 		faceList.push_back(*m);
 
 		//fill the lookup table for vertices 
@@ -152,14 +152,9 @@ vertex* normalizeV(vertex* norm){
 
 void setColorPaint(int id){
 	int cid = faceList.at(id).colorId;
-	if(cid == 0) 
-		glBindTexture(GL_TEXTURE_2D, 1);
-	else if(cid == 1) 
-		glBindTexture(GL_TEXTURE_2D, 2);
-	else if(cid == 2)
-		glBindTexture(GL_TEXTURE_2D, 3);
-	else if(cid == 3)
-		glBindTexture(GL_TEXTURE_2D, 4);
+	//check-1, red-2, blue-3, green-4, yellow-5, white-6 
+	glBindTexture(GL_TEXTURE_2D,cid);
+
 }
 
 void drawMesh(int meshId){
@@ -178,8 +173,8 @@ void drawMesh(int meshId){
 	glEnd();
 	 
 }
-void paintMesh(int mid){
-	faceList.at(mid).colorId = 3;
+void paintMesh(int mid, int cid){
+	faceList.at(mid).colorId = cid;
 }
 
 //divide a mesh into 4 new mesh

@@ -55,9 +55,11 @@ void ui::check_click(float hand_x, float hand_y){
 			b->hand_down_handler(hand_x, hand_y);
 			b->wait = b->wait+1;
 			draw_circle(hand_x, hand_y, b->wait);
-			if(b->wait >24){
+			if(b->wait >24 && b-> wait < 35){
+				b->wait = b->wait+1;
 				if(b->currently_inside) {
-					b->hand_up_handler(hand_x, hand_y, true);					
+					b->hand_up_handler(hand_x, hand_y, true);	
+					
 				}
 			}	
 		} 

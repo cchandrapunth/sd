@@ -53,7 +53,10 @@ int  ui_button::hand_up_handler( int local_x, int local_y, bool inside ){
 
 	if ( inside ) {
 		if(!execute){
-			activate = false;
+			//make the button disappear after click
+			if (strcmp ("Menu", butt_name) == 0){
+				activate = false;
+			}
 			execute = true;
 			
 			callback();
@@ -105,7 +108,18 @@ void ui_button::draw_text(int sunken){
 	glColor3f(1.0,1.0,1.0);
   }
   else{
-	glColor3f(0.5,0.5,0.5);
+	  if (strcmp ("red", butt_name) == 0)
+		  glColor3f(1, 0, 0);
+	  else if(strcmp ("green", butt_name) == 0)
+		  glColor3f(0, 1, 0);
+	  else if(strcmp ("blue", butt_name) == 0)
+		  glColor3f(0, 0, 1);
+	  else if(strcmp ("yellow", butt_name) == 0)
+		  glColor3f(1, 1, 0);
+	  else if(strcmp ("white", butt_name) == 0)
+		  glColor3f(1, 1, 1);
+	  else
+		  glColor3f(0.5,0.5,0.5);
   }
 
   glBegin( GL_QUADS );

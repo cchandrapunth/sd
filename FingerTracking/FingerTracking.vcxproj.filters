@@ -69,6 +69,9 @@
     <ClInclude Include="drawmodel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="paint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -120,6 +123,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="drawmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="paint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
