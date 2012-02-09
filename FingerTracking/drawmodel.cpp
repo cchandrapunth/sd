@@ -23,6 +23,8 @@ float zoomvZ;
 int rotX, rotY;
 float zoom, rate = 500;
 
+int getRotX(){ return rotX; }
+int getRotY(){ return rotY; }
 
 void drawVMModel(){
 	//qraternian
@@ -53,11 +55,7 @@ void drawVMModel(){
 
 		glPopName();
 		glPopMatrix();
-		//glMultMatrixf(mat);
-		
-			glRotated(rotX, 0, 1, 0);
-				glRotated(rotY, 0, 1, 0);
-		
+		//glMultMatrixf(mat);	
 	}
 }
 

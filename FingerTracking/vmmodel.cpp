@@ -256,7 +256,14 @@ void subDivide(int meshId){
 	}
 }
 
-void interpolate(int id, float transx, float transy, float transz){
+void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
+	//multiply by inverse matrix
+	float radian = rotx*2*3.14159265/360;
+	
+	float relativeTransx = transx*cos(radian);
+	float relativeTransy = transy*cos(radian);
+	float relativeTransz = transz*cos(radian);
+
 	//move only the selected mesh
 	for(int i=0; i<3; i++){
 
@@ -274,11 +281,11 @@ void interpolate(int id, float transx, float transy, float transz){
 		float prevz = vertexList.at(index).z;
 
 
-		vertexList.at(index).x = transx/100+ prevx;
-		vertexList.at(index).y = transy/100+ prevy;
-		vertexList.at(index).z = transz/100+ prevz;
+		vertexList.at(index).x = relativeTransx/100+ prevx;
+		vertexList.at(index).y = relativeTransy/100+ prevy;
+		vertexList.at(index).z = relativeTransz/100+ prevz;
 
-		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
+		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, relativeTransx, relativeTransy, relativeTransz);
 	}
 
 	for(int i=0; i< faceList.size(); i++){

@@ -152,7 +152,7 @@ void checkCursor(int func){
 				//fix this if changin the number of poly
 				if(getSelection() >0 && getSelection() < sampleModel.nPolygons){
 					//translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
-					interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ());
+					interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
 					calculateNormal(&samplePoint, &sampleModel);
 				}
 			}

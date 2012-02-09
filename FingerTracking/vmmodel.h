@@ -11,7 +11,7 @@ int getFaceListSize();
 int getVertexListSize();
 
 vertex* normalizeV(vertex* norm);
-void interpolate(int id, float transx, float transy, float transz);
+void interpolate(int id, float transx, float transy, float transz, int rotx, int roty);
 bool checkSize(int i);
 void setColorPaint(int id);
 
