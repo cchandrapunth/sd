@@ -469,6 +469,13 @@ void option3(){
 
 }
 
+void test_divide(){
+	int size = getFaceListSize();
+	for(int i=0; i< size; i++){
+		subDivide(i);
+	}
+}
+
 
 //FIXME: should hide the menu button once it's click
 void push_menu(){
@@ -500,6 +507,7 @@ void uiInit(){
 
 	//main menu button
 	Master_ui->add_button("Menu", left+(right-left)/15, bottom+0.5, 0.5, 0.3, push_menu);
+	Master_ui->add_button("divide", right-(right-left)/5, bottom+0.5, 0.5, 0.3, test_divide);
 }
 
 

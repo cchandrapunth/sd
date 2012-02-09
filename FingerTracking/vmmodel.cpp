@@ -66,17 +66,20 @@ void import_vm(){
 		vertexList.at(id3).addFaceId(j);
 	}
 
-	for(int i=0; i< nmesh; i++){ //nmesh is constant
-		subDivide(i);
-	}
 
 	if(debug){
 		pLog->Write("load model complete");
+		printf("\n=================================================\n");
+		printf("\tvertexList :: nVertex = %d\n", vertexList.size());
+		printf("=================================================\n");
 		for(int i=0; i< vertexList.size(); i++){
 			vertexList.at(i).printv();
-			vertexList.at(i).printface();
+			//vertexList.at(i).printface();
 		}
 
+		printf("\n=================================================\n");
+		printf("\tfaceList :: nFace = %d\n", faceList.size());
+		printf("=================================================\n");
 		for(int i=0; i< faceList.size(); i++){
 			faceList.at(i).printmesh();
 		}
@@ -221,39 +224,90 @@ void subDivide(int meshId){
 	v23 = normalizeV(v23);
 	v31 = normalizeV(v31);
 
-	int begin_index = vertexList.size();
-	
-	//check if the vertices already existed?
-	for(int k=0; k< begin_index; k++){
-		vertex v = vertexList.at(k);
-		if(sameVertex(*v12, v) || sameVertex(*v23, v) || sameVertex(*v31, v)){
-			printf("shout %d\n",k);
-		} 
-	}
 
-	//add 3 new vertices 
-	
-	vertexList.push_back(*v12);		//index = begin_index
-	vertexList.push_back(*v23);		//index = begin_index+1
-	vertexList.push_back(*v31);		//index = begine_index+2
+
+	//only check the vector once 
+	bool v12repete = false, v23repete = false, v31repete = false;
+
+	//assign index
+	int size = vertexList.size();
+	int indexv12;
+	int indexv23;
+	int indexv31;
+
+	//check if the vertices already existed?
+	//add only the new vertices
+	//change index if neccessary
 	//add face id 
 	//*************
 
+	for(int k=0; k< size; k++){
+		vertex* v = &(vertexList.at(k));
+		if(!v12repete && sameVertex(*v12, *v)){
+			v12 = v;
+			indexv12 = k;
+			v12repete = true;
+			break;
+		} 
+	}
+
+	for(int k=0; k< size; k++){
+		vertex* v = &(vertexList.at(k));
+		if(!v12repete && sameVertex(*v12, *v)){
+			v12 = v;
+			indexv12 = k;
+			v12repete = true;
+			break;
+		} 
+	}
+
+	for(int k=0; k< size; k++){
+		vertex* v = &(vertexList.at(k));
+		if(!v31repete && sameVertex(*v31, *v)){
+			v31 = v;
+			indexv31 = k;
+			v31repete = true;
+			break;
+		}
+	}
+
+	if(!v12repete) {
+		vertexList.push_back(*v12);		//index = begin_index	
+		indexv12 = vertexList.size()-1;
+	}
+
+	if(!v23repete) {
+		vertexList.push_back(*v23);		//index = begin_index+1
+		indexv23 = vertexList.size()-1;
+	}
+
+	if(!v31repete) {
+		vertexList.push_back(*v31);		//index = begine_index+2
+		indexv31 = vertexList.size()-1;
+	}
+
 
 	//store the old index
+	printf("old1 ");
 	int old1 = faceList.at(meshId).ind1;
+	printf("indexv12 ");
 	int old2 = faceList.at(meshId).ind2;
+	printf("indexv31 ");
 	int old3 = faceList.at(meshId).ind3;
 
 	//add the first triangle (replace the old one)
 	//v1, v12, v31
 	faceList.at(meshId).ind1 = old1;
-	faceList.at(meshId).ind2 = begin_index;
-	faceList.at(meshId).ind3 = begin_index+2;
+	faceList.at(meshId).ind2 = indexv12;
+	faceList.at(meshId).ind3 = indexv31;
 	faceList.at(meshId).colorId = 5;
 
+	vertexList.at(old1).printv();
+	vertexList.at(indexv12).printv();
+	vertexList.at(indexv31).printv();
+
 	//find normal
-	vertex* v = getNormal(vertexList.at(old1), vertexList.at(begin_index), vertexList.at(begin_index+2));	
+	vertex* v = getNormal(vertexList.at(old1), vertexList.at(indexv12), vertexList.at(indexv31));	
 	faceList.at(meshId).normalX = v->x;
 	faceList.at(meshId).normalY = v->y;
 	faceList.at(meshId).normalZ = v->z;
@@ -264,27 +318,27 @@ void subDivide(int meshId){
 		vertex* v;
 
 		if(i == 0){
-			m->ind1 = old2;	//v2
-			m->ind2 = begin_index+1;	//v23
-			m->ind3 = begin_index;		//v12
+			m->ind1 = old2;			//v2
+			m->ind2 = indexv23;		//v23
+			m->ind3 = indexv12;		//v12
 
-		v = getNormal(vertexList.at(old2), vertexList.at(begin_index+1), vertexList.at(begin_index));	
+		v = getNormal(vertexList.at(old2), vertexList.at(indexv23), vertexList.at(indexv12));	
 		
 
 		}
 		else if(i==1){
-			m->ind1 = old3;	//v3
-			m->ind2 = begin_index+2;	//v31
-			m->ind3 = begin_index+1;	//v23
+			m->ind1 = old3;			//v3
+			m->ind2 = indexv31;		//v31
+			m->ind3 = indexv23;		//v23
 
-			v = getNormal(vertexList.at(old3), vertexList.at(begin_index+2), vertexList.at(begin_index+1));	
+			v = getNormal(vertexList.at(old3), vertexList.at(indexv31), vertexList.at(indexv23));	
 		}
 		else{
-			m->ind1 = begin_index;		//v12
-			m->ind2 = begin_index+1;	//v23
-			m->ind3 = begin_index+2;	//v31
+			m->ind1 = indexv12;		//v12
+			m->ind2 = indexv23;		//v23
+			m->ind3 = indexv31;		//v31
 
-			v = getNormal(vertexList.at(begin_index), vertexList.at(begin_index+1), vertexList.at(begin_index+2));	
+			v = getNormal(vertexList.at(indexv12), vertexList.at(indexv23), vertexList.at(indexv31));	
 		}
 
 		m->normalX = v->x;
@@ -381,9 +435,9 @@ bool checkSize(int i){
 		
 		if(area > maxArea) {
 			int nmesh = faceList.size();
-			for(int k=0; k< nmesh; k++){
-				subDivide(k);	//sudivide this mesh
-			}
+			//for(int k=0; k< nmesh; k++){
+			//	subDivide(k);	//sudivide this mesh
+			//}
 			return true;
 		}
 		return false;
