@@ -10,6 +10,9 @@
 #include "model.h"
 #include "undo.h"
 
+#include "mesh.h"
+#include "vertex.h"
+#include "vmmodel.h"
 
 //should be changable by the users
 #define maxAct 30
@@ -24,6 +27,8 @@ static float zoomSceneZ = 0;
 
 //model history
 void storeModelHist(){
+	
+	
 	//access model data from model.cpp
 	int numVertex = getnPoint();
 	int numPolygon = getnPoly();

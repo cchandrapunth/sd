@@ -67,7 +67,7 @@ ui *Master_ui =new ui();
 
 // feature
 bool sculpting = true;
-bool control = false;
+bool knife = false;
 bool paint = false;
 
 //paint
@@ -148,24 +148,37 @@ void checkCursor(int func){
 		//still in grab gesture
 		else{
 			mode = RENDER;
+			//free hand
 			if(func == 1) {
-				//fix this if changin the number of poly
+				//grab mesh
 				if(getSelection() >0 && getSelection() < getFaceListSize()){
 					//translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
 					interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
 					calculateNormal(&samplePoint, &sampleModel);
 				}
+				//select the grey area: rotation 
+				else{
+					//translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					calculateNormal(&samplePoint, &sampleModel);	
+				}
 			}
+			//paint
 			else if(func ==2){
-				//translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
-				commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-				calculateNormal(&samplePoint, &sampleModel);			
-			}
-			else if(func ==3){
 				if(getSelection() >0 && getSelection() < getFaceListSize()){
 					//setColor(&sampleModel, getSelection(), 3);
 					paintMesh(getSelection(), getBrushColor());
+				}		
+				//select the grey area: rotation 
+				else{
+					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					calculateNormal(&samplePoint, &sampleModel);	
 				}
+			}
+
+			//knife
+			else if(func ==3){
+				
 			}
 		}
 	}
@@ -177,7 +190,7 @@ void checkCursor(int func){
 			setNullSelection(); //show no mesh response when hand released
 
 			//undo
-			if(func == 1) storeModelHist(); 
+			if(func == 1) copy_vmmodel(); 
 			else if(func ==2) pushMatrix(); 
 		}
 	}
@@ -265,27 +278,9 @@ void display(){
 		}
 
 	}
-	//-------------------control----------------------------
-	else if(control) {
-		checkCursor(2); 
-
-		if(mode == SELECT){
-			drawPickVMModel();
-			mode = RENDER;
-		}
-		else {
-			drawHand(handPointList);
-			if(!BACK_BUFF){
-				//drawMe(&sampleModel, &samplePoint);
-				drawVMModel();
-			}
-			else drawPickVMModel();
-			glutSwapBuffers();
-		}
-	}
+	//-------------------paint----------------------------
 	else if(paint) {
-		checkCursor(3);
-
+		checkCursor(2); 
 		if(mode == SELECT){
 			drawPickVMModel();
 			processPick(cursorX, cursorY);
@@ -298,6 +293,23 @@ void display(){
 			else drawPickVMModel();
 			glutSwapBuffers();
 		}
+	}
+	else if(knife) {
+		checkCursor(3);
+ 
+		if(mode == SELECT){
+			drawPickVMModel();
+
+			mode = RENDER;
+		}
+		else {
+			drawHand(handPointList);
+			if(!BACK_BUFF)
+				drawVMModel();
+			else drawPickVMModel();
+			glutSwapBuffers();
+		}
+		
 	}
 
 	context.WaitAndUpdateAll();
@@ -327,7 +339,8 @@ void reshape(int w1, int h1){
    } else {
      left *= aspect;
      right *= aspect;
-   }*/
+   }
+   */
 
 	//PROJECTION: set window coordinate
 	glMatrixMode(GL_PROJECTION);
@@ -355,7 +368,7 @@ void reshape(int w1, int h1){
 //								INIT
 //----------------------------------------------------------------
 void initTex(void){
-	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClearColor(0.1, 0.1, 0.1, 1.0);
 	glShadeModel(GL_FLAT);
 	glEnable(GL_DEPTH_TEST);
 	makeTexImage();
@@ -403,7 +416,6 @@ void initRender(){
 	GLfloat whitelight[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat model_ambient[] = {1.0, 1.0, 1.0, 1.0};
 
-	glClearColor(0.0,0.0,0.0,0.0);
 	glShadeModel(GL_FLAT);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
 	glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
@@ -416,7 +428,7 @@ void initRender(){
 
 	ImportModel();
 	LoadModel(&samplePoint, &sampleModel);
-	storeModelHist();
+	copy_vmmodel();
 	calBoundingSphere();
 	
 	//new
@@ -428,7 +440,9 @@ void initRender(){
 	glEnable(GL_LIGHT0);
 	glEnable(GL_DEPTH_TEST);		//don't forget to enable depth test
 	glEnable(GL_NORMALIZE);			//automatically rescale normal when transform the surface
-	glEnable(GL_DEPTH_TEST);
+	
+	glEnable (GL_BLEND);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 }
 
@@ -437,23 +451,15 @@ void initRender(){
 void option1(){
 	printf("Ready to sculpt?\n");
 	sculpting = true;
-	control = false;
+	knife = false;
 	paint = false;
 	Master_ui->remove_menu();
 }
 //move camera (move/rotate object)
 void option2(){
-	printf("Control\n");
+	printf("paint\n");
 	sculpting = false;
-	control = true;
-	paint = false;
-	Master_ui->remove_menu();
-}
-//paint brush
-void option3(){
-	printf("Paint\n");
-	sculpting = false;
-	control = false;
+	knife = false;
 	paint = true;
 	Master_ui->remove_menu();
 
@@ -466,14 +472,19 @@ void option3(){
 	Master_ui->add_button("blue", left+ width/15, top-height*3/10, width/10, height/10-off, setBlue);	//blue
 	Master_ui->add_button("yellow", left+ width/15, top-height*4/10, width/10, height/10-off, setYellow);	//yellow
 	Master_ui->add_button("white", left+ width/15, top-height*5/10, width/10, height/10-off, setWhite);	//white
+}
+//paint brush
+void option3(){
+	printf("Knife\n");
+	sculpting = false;
+	knife = true;
+	paint = false;
+	Master_ui->remove_menu();
 
 }
 
-void test_divide(){
-	int size = getFaceListSize();
-	for(int i=0; i< size; i++){
-		subDivide(i);
-	}
+void reload(){
+	import_vm();
 }
 
 
@@ -488,8 +499,8 @@ void push_menu(){
 	float off = width/20;
 
 	Master_ui->add_button("Sculpt", left+ width/5, bottom+height/3, width/5-off, height/3, option1);
-	Master_ui->add_button("Rotate", left+ width*2/5, bottom+height/3, width/5-off, height/3, option2);
-	Master_ui->add_button("Paint", left+ width*3/5, bottom+height/3, width/5-off, height/3, option3);
+	Master_ui->add_button("Paint", left+ width*2/5, bottom+height/3, width/5-off, height/3, option2);
+	Master_ui->add_button("Slice", left+ width*3/5, bottom+height/3, width/5-off, height/3, option3);
 }
 
 //all ui in here
@@ -507,7 +518,7 @@ void uiInit(){
 
 	//main menu button
 	Master_ui->add_button("Menu", left+(right-left)/15, bottom+0.5, 0.5, 0.3, push_menu);
-	Master_ui->add_button("divide", right-(right-left)/5, bottom+0.5, 0.5, 0.3, test_divide);
+	Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);
 }
 
 

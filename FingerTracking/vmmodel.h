@@ -16,3 +16,10 @@ bool checkSize(int i);
 void setColorPaint(int id);
 
 void paintMesh(int mid, int cid);
+
+void copy_vmmodel();
+
+void undo_vmmodel();
+
+
+void softselection(int id,float relativeTransx,float relativeTransy,float relativeTransz);

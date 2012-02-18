@@ -12,6 +12,9 @@ using namespace std;
 static deque<mesh> faceList;
 static deque<vertex> vertexList;
 
+static deque<mesh> exfaceList;
+static deque<vertex> exvertexList;
+
 bool debug = true;
 Log *pLog; 
 
@@ -28,6 +31,10 @@ void import_vm(){
 		pLog->Write("Error: input file couldn't be opened");
 		exit(1);
 	}
+
+	vertexList.clear();
+	faceList.clear();
+
 	int nvertex, nmesh;
 	indata >> nvertex;
 	indata >> nmesh;
@@ -57,7 +64,7 @@ void import_vm(){
 		m->normalY = v->y;
 		m->normalZ = v->z;
 
-		m->setColor(6);	//default is white-6
+		m->setColor(2);	//default is white-6
 		faceList.push_back(*m);
 
 		//fill the lookup table for vertices 
@@ -65,8 +72,14 @@ void import_vm(){
 		vertexList.at(id2).addFaceId(j);
 		vertexList.at(id3).addFaceId(j);
 	}
-
-
+	
+	
+	//subdivide
+	int size = getFaceListSize();
+	for(int i=0; i< size; i++){
+		subDivide(i);
+	}
+	
 	if(debug){
 		pLog->Write("load model complete");
 		printf("\n=================================================\n");
@@ -74,7 +87,7 @@ void import_vm(){
 		printf("=================================================\n");
 		for(int i=0; i< vertexList.size(); i++){
 			vertexList.at(i).printv();
-			//vertexList.at(i).printface();
+			vertexList.at(i).printface();
 		}
 
 		printf("\n=================================================\n");
@@ -123,6 +136,7 @@ void export_vm(){
 		}
 	}
 }
+
 
 //find normal of 3 vertices
 //output pointer to norm vector
@@ -185,9 +199,9 @@ void paintMesh(int mid, int cid){
 }
 
 bool sameVertex(vertex v1, vertex v2){
-	if(v1.x - v2.x < 0.00001 && v1.x - v2.x > -0.00001 &&
-			v1.y - v2.y < 0.00001 && v1.y - v2.y > -0.00001 &&
-			v1.z - v2.z < 0.00001 && v1.z - v2.z > -0.00001){
+	if(v1.x - v2.x < 0.001 && v1.x - v2.x > -0.001 &&
+			v1.y - v2.y < 0.001 && v1.y - v2.y > -0.001 &&
+			v1.z - v2.z < 0.001 && v1.z - v2.z > -0.001){
 				return true;
 	}
 	return false;
@@ -253,10 +267,10 @@ void subDivide(int meshId){
 
 	for(int k=0; k< size; k++){
 		vertex* v = &(vertexList.at(k));
-		if(!v12repete && sameVertex(*v12, *v)){
-			v12 = v;
-			indexv12 = k;
-			v12repete = true;
+		if(!v23repete && sameVertex(*v23, *v)){
+			v23 = v;
+			indexv23 = k;
+			v23repete = true;
 			break;
 		} 
 	}
@@ -350,14 +364,27 @@ void subDivide(int meshId){
 	}
 }
 
+
+
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
 	//multiply by inverse matrix
 	float radian = rotx*2*3.14159265/360;
 	
-	float relativeTransx = transx*cos(radian);
-	float relativeTransy = transy*cos(radian);
-	float relativeTransz = transz*cos(radian);
+	float relativeTransx = transx;
+	float relativeTransy = transy;
+	float relativeTransz = transz;
 
+	//rotate around x axis
+	//x, ycos0, zcos0
+	relativeTransy = relativeTransy*cos(radian);
+	relativeTransz = relativeTransz*cos(radian);
+
+	//rotate around y axis 
+	//xcos0, y, zcos0
+	relativeTransx = relativeTransx*cos(radian);
+	relativeTransz = relativeTransz*cos(radian);
+
+	/*
 	//move only the selected mesh
 	for(int i=0; i<3; i++){
 
@@ -375,12 +402,15 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 		float prevz = vertexList.at(index).z;
 
 
-		vertexList.at(index).x = relativeTransx/100+ prevx;
-		vertexList.at(index).y = relativeTransy/100+ prevy;
-		vertexList.at(index).z = relativeTransz/100+ prevz;
+		vertexList.at(index).x = relativeTransx/120+ prevx;
+		vertexList.at(index).y = relativeTransy/120+ prevy;
+		vertexList.at(index).z = relativeTransz/120+ prevz;
 
 		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, relativeTransx, relativeTransy, relativeTransz);
 	}
+	*/
+
+	softselection(id, relativeTransx, relativeTransy, relativeTransz);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){
@@ -430,7 +460,7 @@ bool checkSize(int i){
 		//find the area of triangles
 		float p = (length[0]+ length[1]+ length[2])/2;
 		float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
-		printf("id: %d, area: %f\n", i,area);
+		//printf("id: %d, area: %f\n", i,area);
 
 		
 		if(area > maxArea) {
@@ -441,5 +471,85 @@ bool checkSize(int i){
 			return true;
 		}
 		return false;
+
+}
+
+//copy to ex-data
+void copy_vmmodel(){
+
+	int nv = vertexList.size();
+	int nf = faceList.size();
+	
+	for(int i=0 ; i< nv; i++){
+		vertex* v = new vertex(&(vertexList.at(i)));
+		exvertexList.push_back(*v);
+	}
+
+	for(int i=0; i< nf; i++){
+		mesh* m = new mesh(&(faceList.at(i)));
+		exfaceList.push_back(*m);
+	}
+}
+
+//restore ex-data to the data structure
+void undo_vmmodel(){
+	
+	if(exvertexList.size() >0 && exfaceList.size() > 0 ){
+	vertexList.clear();
+	faceList.clear();
+
+	int nv = exvertexList.size();
+	int nf = exfaceList.size();
+
+	for(int i=0 ; i< nv; i++){
+		vertexList.push_back(exvertexList.at(i));
+	}
+
+	for(int i=0; i< nf; i++){
+		faceList.push_back(exfaceList.at(i));
+	}
+
+	exvertexList.clear();
+	exfaceList.clear();
+	}
+}
+
+//----------------------Softselection zone------------------------------------------
+void softselection(int id,float relativeTransx,float relativeTransy,float relativeTransz){
+
+	//function
+	//f(x,y) = Ae^ -((x-x0)^2/2sx^2  + (y-y0)^2/2sy^2)
+	//A = amplitude
+	//x0, y0 = center
+	//sx, sy = x and y spreads
+
+	float s = 0.4;
+
+	float denom = 2*pow(s,2);
+
+	//find the center 
+	int ind1 = faceList.at(id).ind1;
+	int ind2 = faceList.at(id).ind2;
+	int ind3 = faceList.at(id).ind3;
+	//center
+	float x0 = (vertexList.at(ind1).x + vertexList.at(ind2).x + vertexList.at(ind3).x )/3;	
+	float y0 = (vertexList.at(ind1).y + vertexList.at(ind2).y + vertexList.at(ind3).y )/3; 
+	float z0 = (vertexList.at(ind1).z + vertexList.at(ind2).z + vertexList.at(ind3).z )/3; 
+
+	float exp, coef= 1, e= 2.71828183;
+	for(int i=0; i< vertexList.size(); i++){
+		vertex v = vertexList.at(i);
+
+		exp = pow(v.x-x0, 2)/denom + pow(v.y-y0, 2)/denom;
+		coef = pow(e, -exp);
+
+		printf("v: %d \t| coef = %f\n", i, coef);
+
+
+		//translate the point
+		vertexList.at(i).x = vertexList.at(i).x + relativeTransx/100*coef;	//x
+		vertexList.at(i).y = vertexList.at(i).y + relativeTransy/100*coef;	//y
+		vertexList.at(i).z = vertexList.at(i).z + relativeTransz/200*coef;
+	}
 
 }

@@ -12,7 +12,8 @@ class mesh
 public:
 	
 	mesh(int ind1, int ind2, int ind3);
-	//~mesh(void);
+	mesh(mesh* m);
+	~mesh(void);
 	void setColor(int);
 	void printmesh();
 

@@ -13,11 +13,20 @@ mesh::mesh(int id1, int id2, int id3)
 	normalX = 0; normalY = 0; normalZ = 0;
 }
 
-/*
-mesh::~mesh(){
-	delete this;
+mesh::mesh(mesh* m){
+	ind1 = m->ind1;
+	ind2 = m->ind2;
+	ind3 = m->ind3;
+	colorId = m->colorId;
+
+	normalX = m->normalX;
+	normalY = m->normalY;
+	normalZ = m->normalZ;
 }
-*/
+
+mesh::~mesh(){
+}
+
 
 void mesh::setColor(int id){
 	colorId = id;

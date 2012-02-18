@@ -18,7 +18,9 @@ public:
 
 	//functions
 	vertex(float, float, float);
-	//~vertex();
+	vertex(vertex* v);
+
+	~vertex();
 	int addFaceId(int);
 
 	//debug

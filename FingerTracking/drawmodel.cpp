@@ -72,6 +72,8 @@ void drawPickVMModel(){
 		trackRoll();
 		if(i < 255){
 			glColor3ub(255,255, i);	
+		}else if(i < 510){
+			glColor3ub(255, (i-255), 255);
 		}
 		else printf("TOO MANY MASH\n");
 

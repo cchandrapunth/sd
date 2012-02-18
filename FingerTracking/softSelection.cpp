@@ -163,7 +163,7 @@ void regenerate(model_t* model){
 		//find the area of triangles
 		float p = (length[0]+ length[1]+ length[2])/2;
 		float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
-		printf("id: %d, area: %f\n", i,area);
+		//printf("id: %d, area: %f\n", i,area);
 
 		/*
 		if(area > maxArea) {
@@ -173,4 +173,5 @@ void regenerate(model_t* model){
 	} 
 
 }
+
 

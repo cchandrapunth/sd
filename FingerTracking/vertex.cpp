@@ -4,7 +4,7 @@
 #include "log.h"
 vertex::vertex(float a, float b, float c)
 {
-	max = 15;
+	max = 20;
 	x = a;
 	y = b;
 	z = c;
@@ -14,15 +14,28 @@ vertex::vertex(float a, float b, float c)
 	
 }
 
-/*
-vertex::~vertex(){
-	printf("delete\n");
-	delete this;
+//copy
+vertex::vertex(vertex* v){
+	max = 20;
+
+	x = v->x;
+	y = v->y;
+	z = v->z;
+
+	faceId = (int *) malloc(sizeof(int)*max);
+	nface = 0;
+
+	for(int i=0; i< v->nface; i++){
+		addFaceId(v->faceId[i]);
+	}
 }
-*/
+
+vertex::~vertex(){
+}
+
 //auto-incremented number of face
 int vertex::addFaceId(int i){
-	if(nface >= max) {
+	if(nface >= max-1) {
 		printf("unable to add face because the vertex had %d face\n", max);
 		return -1;
 	}
