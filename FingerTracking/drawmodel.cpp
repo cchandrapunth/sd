@@ -7,11 +7,7 @@
 #include "vertex.h"
 #include "vmmodel.h"
 
-#include "model.h"
-
 #include "undo.h"
-#include "softSelection.h"
-#include "miniball.h"
 #include "picking.h"
 
 //translate scene
@@ -28,8 +24,6 @@ int getRotY(){ return rotY; }
 
 void drawVMModel(){
 	//qraternian
-
-	float mat[16];
 	
 
 	glLoadIdentity();
@@ -95,7 +89,7 @@ void trackRoll(){
 	rotY = restoreMatY()+getMatY()+ (int)rollvY;
 	zoom = restoreMatZ()+getMatZ()+zoomvZ;
 
-	vertex c = getCenterSphere();
+	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);
 	glRotated(-rotX, 0, 1, 0);	//rotate around y axis
 	glTranslated(-c.x, -c.y, -c.z);

@@ -80,8 +80,6 @@ void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, flo
 void translateScene(float transx, float transy, float z);
 
 
-//flag
-void enable_line();
 //---------------------------------------------------------
 //							geter
 //---------------------------------------------------------

@@ -6,11 +6,7 @@
 #include <iostream>
 #include <math.h>
 
-
-#include "model.h"
 #include "undo.h"
-#include "softSelection.h"
-#include "miniball.h"
 #include "picking.h"
 #include "mesh.h"
 #include "vertex.h"
@@ -24,7 +20,7 @@ using std::ifstream;
 using std::ofstream;
 using namespace::std;
 
-
+/*
 //back up 
 float *pointt; //change number of points need to reflect in the data structure
 int *poly;
@@ -278,7 +274,7 @@ void handleRoll(){
 	rollX=0;
 	rollY=0;
 	zoomZ=0;
-	*/
+	*//*
 }
 // DrawModel(); draws a model
 void drawMe (model_t *model, point_t* vertexList)
@@ -361,11 +357,6 @@ void FreeModel (model_t *model)
     }
 }
 
-void translatePoly(model_t* model, int id, point_t* vertexlist,float transx, float transy, float transz){
-
-	softSelect(model, id, vertexlist,transx, transy, transz, pointt);
-	
-}
 
 void translateScene(float transx, float transy, float z){
 	//set variable for rotate/zoom
@@ -449,7 +440,7 @@ void subdivide(model_t* model, polygon_t* p, point_t* poly, int id){
 	drawtriangle(v2, *v23, *v12);
 	drawtriangle(v3, *v31, *v23);
 	drawtriangle(*v12, *v23, *v31);
-	*/
+	*//*
 
 	//substitute the big triangle with three new ones
 	//add 3 vertices 
@@ -503,6 +494,4 @@ void subdivide(model_t* model, polygon_t* p, point_t* poly, int id){
 	
 }
 
-void enable_line(){
-	FLAG_LINE = !FLAG_LINE;
-}
+*/

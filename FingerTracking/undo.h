@@ -28,6 +28,3 @@ float restoreMatZ();
 //storage
 void addMatrix(int x, int y, float z);
 void pushMatrix();
-
-void storeModelHist();
-void undo_m();

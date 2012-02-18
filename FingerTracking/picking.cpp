@@ -5,7 +5,6 @@
 #include <stdio.h>
 
 #include "picking.h";
-#include "model.h";
 #include "undo.h";
 
 static GLint model_display_list;

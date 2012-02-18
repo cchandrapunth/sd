@@ -30,9 +30,6 @@
     <ClInclude Include="window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="undo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,16 +39,10 @@
     <ClInclude Include="picking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="softSelection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ui_button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ui.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="miniball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mesh.h">
@@ -86,9 +77,6 @@
     <ClCompile Include="window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="undo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -98,16 +86,10 @@
     <ClCompile Include="picking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="softSelection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ui_button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ui.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="miniball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mesh.cpp">

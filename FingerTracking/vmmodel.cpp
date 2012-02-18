@@ -137,6 +137,19 @@ void export_vm(){
 	}
 }
 
+//recalculate nornal in all 
+void recalNormal(){
+	for(int i=0; i< faceList.size(); i++){
+		int ind1 = faceList.at(i).ind1;
+		int ind2 = faceList.at(i).ind2;
+		int ind3 = faceList.at(i).ind3;
+
+		vertex *v = getNormal(vertexList.at(ind1), vertexList.at(ind2), vertexList.at(ind3));
+		faceList.at(i).normalX = v->x;
+		faceList.at(i).normalY = v->y;
+		faceList.at(i).normalZ = v->z;
+	}
+}
 
 //find normal of 3 vertices
 //output pointer to norm vector
@@ -549,7 +562,71 @@ void softselection(int id,float relativeTransx,float relativeTransy,float relati
 		//translate the point
 		vertexList.at(i).x = vertexList.at(i).x + relativeTransx/100*coef;	//x
 		vertexList.at(i).y = vertexList.at(i).y + relativeTransy/100*coef;	//y
-		vertexList.at(i).z = vertexList.at(i).z + relativeTransz/200*coef;
+		vertexList.at(i).z = vertexList.at(i).z + relativeTransz/100*coef;	//z
 	}
 
+}
+
+//------------------------Bounding sphere---------------------------------
+#define MIN_F -1000000;
+#define MAX_F 1000000;
+
+vertex *center;
+float radius =0;
+
+void findBoundingSphere(){
+
+	//find the bound
+	float top = MIN_F; 
+	float right = MIN_F;
+	float front= MIN_F;
+	float bottom = MAX_F;
+	float left = MAX_F;
+	float back = MAX_F;
+
+	int numVertex = getVertexListSize();
+
+	for(int i=0; i< numVertex; i++){
+		float x = vertexList.at(i).x;
+		float y = vertexList.at(i).y; 
+		float z = vertexList.at(i).z;
+
+		//find the bounding box
+		if(x < left) left = x;
+		else if(x > right) right = x;
+		
+		if(z < back) back = z;
+		else if(z > front) front = z;
+		
+		if(y <bottom) bottom = y;
+		else if(y >top) top = y;
+
+		//find the model's center from the bounding box
+		center = new vertex((left+right)/2, (bottom+top)/2, (back+front)/2);
+	}
+	printf("center: %f, %f, %f\n", center->x, center->y, center->z);	
+
+
+	//calculate the distance from the center
+	//and find the radius 
+
+	for(int i =0; i < numVertex; i++){
+		float x = vertexList.at(i).x;
+		float y = vertexList.at(i).y; 
+		float z = vertexList.at(i).z;
+
+		float dis = sqrt(pow(x-center->x, 2)+pow(y-center->y, 2)+pow(z-center->z, 2));
+		if(dis >radius) radius = dis;
+	}
+	printf("radius: %f\n", radius);
+
+	float result[4] = {center->x, center->y, center->z, radius}; 
+} 
+
+vertex getCenter(){
+	return (*center);
+}
+
+float getDiam(){
+	return radius*2;
 }

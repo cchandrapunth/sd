@@ -8,8 +8,7 @@
 #include "vertex.h"
 #include "gesture.h"
 #include "window.h"
-#include "model.h"
-#include "miniball.h"
+#include "vmmodel.h"
 
 using namespace xn;
 
@@ -59,18 +58,18 @@ void switchShowHand(){
 }
 
 float convertX(float x){
-	float left = getCenterSphere().x- getDiamSphere(); //get the leftmost coordinate
-	return left + (nXRes-x)*(2*getDiamSphere())/nXRes;	//scale to the viewport
+	float left = getCenter().x- getDiam(); //get the leftmost coordinate
+	return left + (nXRes-x)*(2*getDiam())/nXRes;	//scale to the viewport
 }
 
 float convertY(float y){
-	float bottom = getCenterSphere().y- getDiamSphere(); //get the leftmost coordinate
-	return bottom + (nYRes-y)*(2*getDiamSphere())/nYRes;
+	float bottom = getCenter().y- getDiam(); //get the leftmost coordinate
+	return bottom + (nYRes-y)*(2*getDiam())/nYRes;
 }
 //for cursor, do not reverse the side (nYRes)
 float convertYcursor(float y){
-	float bottom = getCenterSphere().y- getDiamSphere(); //get the leftmost coordinate
-	return bottom + y*(2*getDiamSphere())/nYRes;
+	float bottom = getCenter().y- getDiam(); //get the leftmost coordinate
+	return bottom + y*(2*getDiam())/nYRes;
 
 }
 

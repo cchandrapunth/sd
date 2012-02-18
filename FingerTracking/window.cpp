@@ -4,7 +4,6 @@
 #include <GL/glut.h>
 
 #include "window.h"
-#include "model.h"
 #include "undo.h"
 #include "vertex.h"
 #include "vmmodel.h"
@@ -40,7 +39,6 @@ void processMenuEvents(int option) {
 	switch (option) {
 		case RED :
 			printf("Save the model to modeloutput.txt\n"); 
-			ExportModel();
 			export_vm();
 			break;
 		case BLUE :

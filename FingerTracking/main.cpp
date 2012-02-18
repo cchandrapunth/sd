@@ -18,10 +18,8 @@
 #include "gesture.h"
 #include "hand_history.h"
 #include "window.h"
-#include "model.h"
 #include "undo.h"
 #include "ui.h"
-#include "miniball.h"
 #include "vertex.h"
 #include "vmmodel.h"
 #include "drawmodel.h"
@@ -57,10 +55,6 @@ xn::DepthGenerator *ptr_DepthGen;
 xn::Context context;
 bool stateGrab = false; //0- not grab, 1 - already in grab
 
-
-//Model
-model_t sampleModel; 
-point_t samplePoint; 
 
 //ui
 ui *Master_ui =new ui();
@@ -121,9 +115,6 @@ void processNormalKeys(unsigned char key, int x, int y){
 		if(BACK_BUFF) printf("switch buffer to front\n");
 		else 	printf("switch buffer to back\n");
 	}
-	else if(key == 'l'){
-		enable_line();
-	}
 	else
 		printf("key: %d\n", key);
 }
@@ -154,13 +145,13 @@ void checkCursor(int func){
 				if(getSelection() >0 && getSelection() < getFaceListSize()){
 					//translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
 					interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
-					calculateNormal(&samplePoint, &sampleModel);
+					recalNormal();
 				}
 				//select the grey area: rotation 
 				else{
 					//translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					calculateNormal(&samplePoint, &sampleModel);	
+					recalNormal();
 				}
 			}
 			//paint
@@ -172,7 +163,7 @@ void checkCursor(int func){
 				//select the grey area: rotation 
 				else{
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					calculateNormal(&samplePoint, &sampleModel);	
+					recalNormal();	
 				}
 			}
 
@@ -425,14 +416,10 @@ void initRender(){
 
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, model_ambient);
 
-
-	ImportModel();
-	LoadModel(&samplePoint, &sampleModel);
-	copy_vmmodel();
-	calBoundingSphere();
-	
 	//new
 	import_vm();
+	copy_vmmodel();
+	findBoundingSphere();
 
 	handPointList = new XnPoint3D[MAXPOINT];
 
@@ -506,8 +493,8 @@ void push_menu(){
 //all ui in here
 void uiInit(){
 
-	vertex c = getCenterSphere();
-	float diam = getDiamSphere();
+	vertex c = getCenter();
+	float diam = getDiam();
 
 	zNear = 0;
     zFar = 5;
@@ -578,7 +565,6 @@ int main (int argc, char **argv){
 	createGLUTMenus();
 	glutMainLoop();
 
-	FreeModel(&sampleModel);
 	context.Shutdown();
 	return(0);
 }
