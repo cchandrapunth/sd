@@ -12,8 +12,9 @@ int getVertexListSize();
 
 //Normal
 void recalNormal();
-vertex* getNormal(vertex v1, vertex v2, vertex v3);
+vertex* getFaceNormal(vertex v1, vertex v2, vertex v3);
 vertex* normalizeV(vertex* norm);
+void calVertexNormal();
 
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty);
 bool checkSize(int i);
@@ -24,7 +25,7 @@ void paintMesh(int mid, int cid);
 void copy_vmmodel();
 void undo_vmmodel();
 
-void softselection(int id,float relativeTransx,float relativeTransy,float relativeTransz);
+void softselection(int id,float tx,float ty,float tz, float nx, float ny, float nz);
 
 //miniball
 void findBoundingSphere();

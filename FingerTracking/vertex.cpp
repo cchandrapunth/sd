@@ -11,6 +11,10 @@ vertex::vertex(float a, float b, float c)
 
 	faceId = (int *) malloc(sizeof(int)*max);
 	nface = 0;
+
+	vnormx = 0;
+	vnormy = 0;
+	vnormz = 0;
 	
 }
 
@@ -28,9 +32,17 @@ vertex::vertex(vertex* v){
 	for(int i=0; i< v->nface; i++){
 		addFaceId(v->faceId[i]);
 	}
+
+	vnormx = v->vnormx;
+	vnormy = v->vnormy;
+	vnormz = v->vnormz;
 }
 
 vertex::~vertex(){
+}
+
+void vertex::clearFaceId(){
+	nface = 0;
 }
 
 //auto-incremented number of face
@@ -40,14 +52,28 @@ int vertex::addFaceId(int i){
 		return -1;
 	}
 	else{
-		faceId[nface] = i;
-		nface++;
+		bool newface = true;
+		//check repeat 
+		for(int k=0; k< nface; k++){
+			if(faceId[k] == i) {
+				newface = false;
+				break;
+			}
+			
+		}
+
+		if(newface){
+			//add
+			faceId[nface] = i;
+			nface++;
+		}
 	}
 	return 1;
 }
 
 void vertex::printv(){
 	printf(" vx:%.5f, vy:%.5f, vz:%.5f\n", x, y, z);
+	printf("vnorm: %f \t%f \t%f\n", vnormx, vnormy, vnormz);
 }
 
 void vertex::printface(){

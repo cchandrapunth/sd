@@ -59,7 +59,7 @@ void import_vm(){
 
 		mesh *m = new mesh(id1, id2, id3);
 		//normal vector
-		vertex* v = getNormal(vertexList.at(id1), vertexList.at(id2), vertexList.at(id3));	
+		vertex* v = getFaceNormal(vertexList.at(id1), vertexList.at(id2), vertexList.at(id3));	
 		m->normalX = v->x;
 		m->normalY = v->y;
 		m->normalZ = v->z;
@@ -74,12 +74,26 @@ void import_vm(){
 	}
 	
 	
-	//subdivide
+	//subdivide: always assign faceId afterward
 	int size = getFaceListSize();
 	for(int i=0; i< size; i++){
 		subDivide(i);
 	}
-	
+	//assign faceId
+	for(int i=0; i< vertexList.size(); i++){
+		vertexList.at(i).clearFaceId();
+
+		for(int j=0; j< faceList.size(); j++){
+			if(faceList.at(j).ind1 == i || 
+				faceList.at(j).ind2 == i ||
+				faceList.at(j).ind3 == i){
+					vertexList.at(i).addFaceId(j);
+			}
+		}
+	}
+
+	calVertexNormal();
+
 	if(debug){
 		pLog->Write("load model complete");
 		printf("\n=================================================\n");
@@ -144,16 +158,18 @@ void recalNormal(){
 		int ind2 = faceList.at(i).ind2;
 		int ind3 = faceList.at(i).ind3;
 
-		vertex *v = getNormal(vertexList.at(ind1), vertexList.at(ind2), vertexList.at(ind3));
+		vertex *v = getFaceNormal(vertexList.at(ind1), vertexList.at(ind2), vertexList.at(ind3));
 		faceList.at(i).normalX = v->x;
 		faceList.at(i).normalY = v->y;
 		faceList.at(i).normalZ = v->z;
 	}
+
+	calVertexNormal();
 }
 
 //find normal of 3 vertices
 //output pointer to norm vector
-vertex* getNormal(vertex vv1, vertex vv2, vertex vv3){
+vertex* getFaceNormal(vertex vv1, vertex vv2, vertex vv3){
 
 	vertex* v1 = new vertex(0, 0, 0);
 	vertex* v2 = new vertex(0, 0, 0);
@@ -169,9 +185,30 @@ vertex* getNormal(vertex vv1, vertex vv2, vertex vv3){
 	vertex *norm = new vertex(0 ,0 ,0);
 	//find normal using cross product
 	norm->x = (v1->y * v2->z) - (v1->z * v2->y);
-	norm->y = -((v2->z * v1->x) - (v2->x * v1->z));
+	norm->y = (v1->z * v2->x) - (v1->x* v2->z);
 	norm->z = (v1->x * v2->y) - (v1->y * v2->x);	
-	return normalizeV(norm);
+
+	return norm;
+}
+
+void calVertexNormal(){
+	for(int i=0; i< vertexList.size(); i++){
+		int numFace = vertexList.at(i).nface;
+
+		float nx =0, ny =0, nz=0;
+		for(int j=0; j< numFace; j++){
+			int n = vertexList.at(i).faceId[j];
+
+			nx += faceList.at(n).normalX;
+			ny += faceList.at(n).normalY;
+			nz += faceList.at(n).normalZ;
+		}
+		vertex *v = new vertex(nx, ny, nz);
+		v = normalizeV(v);
+		vertexList.at(i).vnormx = v->x;
+		vertexList.at(i).vnormy = v->y;
+		vertexList.at(i).vnormz = v->z;
+	}
 }
 
 //normalize
@@ -193,16 +230,21 @@ void setColorPaint(int id){
 
 void drawMesh(int meshId){
 
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	mesh m = faceList.at(meshId);
 
 	vertex v1 = vertexList.at(m.ind1);
 	vertex v2 = vertexList.at(m.ind2);
 	vertex v3 = vertexList.at(m.ind3);
 
+	glShadeModel(GL_SMOOTH);
 	glBegin(GL_TRIANGLES);
-	 glNormal3f(m.normalX, m.normalY, m.normalZ);
+	 //glNormal3f(m.normalX, m.normalY, m.normalZ);
+	glNormal3f(v1.vnormx, v1.vnormy, v1.vnormz);
 	 glVertex3f(v1.x, v1.y, v1.z);
+	glNormal3f(v2.vnormx, v2.vnormy, v2.vnormz);
 	 glVertex3f(v2.x, v2.y, v2.z);
+	glNormal3f(v3.vnormx, v3.vnormy, v3.vnormz);
 	 glVertex3f(v3.x, v3.y, v3.z);
 	glEnd();
 	 
@@ -334,7 +376,7 @@ void subDivide(int meshId){
 	vertexList.at(indexv31).printv();
 
 	//find normal
-	vertex* v = getNormal(vertexList.at(old1), vertexList.at(indexv12), vertexList.at(indexv31));	
+	vertex* v = getFaceNormal(vertexList.at(old1), vertexList.at(indexv12), vertexList.at(indexv31));	
 	faceList.at(meshId).normalX = v->x;
 	faceList.at(meshId).normalY = v->y;
 	faceList.at(meshId).normalZ = v->z;
@@ -349,7 +391,7 @@ void subDivide(int meshId){
 			m->ind2 = indexv23;		//v23
 			m->ind3 = indexv12;		//v12
 
-		v = getNormal(vertexList.at(old2), vertexList.at(indexv23), vertexList.at(indexv12));	
+		v = getFaceNormal(vertexList.at(old2), vertexList.at(indexv23), vertexList.at(indexv12));	
 		
 
 		}
@@ -358,14 +400,14 @@ void subDivide(int meshId){
 			m->ind2 = indexv31;		//v31
 			m->ind3 = indexv23;		//v23
 
-			v = getNormal(vertexList.at(old3), vertexList.at(indexv31), vertexList.at(indexv23));	
+			v = getFaceNormal(vertexList.at(old3), vertexList.at(indexv31), vertexList.at(indexv23));	
 		}
 		else{
 			m->ind1 = indexv12;		//v12
 			m->ind2 = indexv23;		//v23
 			m->ind3 = indexv31;		//v31
 
-			v = getNormal(vertexList.at(indexv12), vertexList.at(indexv23), vertexList.at(indexv31));	
+			v = getFaceNormal(vertexList.at(indexv12), vertexList.at(indexv23), vertexList.at(indexv31));	
 		}
 
 		m->normalX = v->x;
@@ -378,24 +420,27 @@ void subDivide(int meshId){
 }
 
 
-
+//enforce the traslation in normal direction
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
+	/*
 	//multiply by inverse matrix
-	float radian = rotx*2*3.14159265/360;
-	
+	float radianx = rotx*2*3.14159265/360;
+	float radiany = roty*2*3.14159265/360;
+
 	float relativeTransx = transx;
 	float relativeTransy = transy;
 	float relativeTransz = transz;
 
-	//rotate around x axis
+	//rotate around y axis
 	//x, ycos0, zcos0
-	relativeTransy = relativeTransy*cos(radian);
-	relativeTransz = relativeTransz*cos(radian);
+	relativeTransx = relativeTransx*cos(radianx);
+	relativeTransz = relativeTransz*cos(radianx);
 
-	//rotate around y axis 
+	//rotate around x axis 
 	//xcos0, y, zcos0
-	relativeTransx = relativeTransx*cos(radian);
-	relativeTransz = relativeTransz*cos(radian);
+	relativeTransy = relativeTransy*cos(radiany);
+	relativeTransz = relativeTransz*cos(radiany);
+	*/
 
 	/*
 	//move only the selected mesh
@@ -423,7 +468,12 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	}
 	*/
 
-	softselection(id, relativeTransx, relativeTransy, relativeTransz);
+
+	float normalx = faceList.at(id).normalX;
+	float normaly = faceList.at(id).normalY;
+	float normalz = faceList.at(id).normalZ;
+
+	softselection(id, transx, transy, transz, normalx, normaly, normalz);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){
@@ -528,7 +578,7 @@ void undo_vmmodel(){
 }
 
 //----------------------Softselection zone------------------------------------------
-void softselection(int id,float relativeTransx,float relativeTransy,float relativeTransz){
+void softselection(int id,float tx,float ty,float tz, float nx, float ny, float nz){
 
 	//function
 	//f(x,y) = Ae^ -((x-x0)^2/2sx^2  + (y-y0)^2/2sy^2)
@@ -536,8 +586,7 @@ void softselection(int id,float relativeTransx,float relativeTransy,float relati
 	//x0, y0 = center
 	//sx, sy = x and y spreads
 
-	float s = 0.4;
-
+	float s = 0.5;
 	float denom = 2*pow(s,2);
 
 	//find the center 
@@ -553,16 +602,16 @@ void softselection(int id,float relativeTransx,float relativeTransy,float relati
 	for(int i=0; i< vertexList.size(); i++){
 		vertex v = vertexList.at(i);
 
-		exp = pow(v.x-x0, 2)/denom + pow(v.y-y0, 2)/denom;
+		exp = pow(v.x-x0, 2)/denom + pow(v.y-y0, 2)/denom + pow(v.z-z0, 2)/denom;
 		coef = pow(e, -exp);
 
 		printf("v: %d \t| coef = %f\n", i, coef);
 
 
 		//translate the point
-		vertexList.at(i).x = vertexList.at(i).x + relativeTransx/100*coef;	//x
-		vertexList.at(i).y = vertexList.at(i).y + relativeTransy/100*coef;	//y
-		vertexList.at(i).z = vertexList.at(i).z + relativeTransz/100*coef;	//z
+		vertexList.at(i).x = vertexList.at(i).x + nx*tx/100*coef;	//x
+		vertexList.at(i).y = vertexList.at(i).y + ny*tx/100*coef;	//y
+		vertexList.at(i).z = vertexList.at(i).z + nz*tx/100*coef;	//z
 	}
 
 }

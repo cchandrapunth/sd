@@ -402,15 +402,15 @@ void initRender(){
 
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
-	//GLfloat light_position[] = {0.0, -100.0, 0.0, 0.0};
-	GLfloat light_position[] = {-1.0, -1.0, 5, 10.0};
+	GLfloat light_position[] = {50.0, -50.0, 50, 1.0};
 	GLfloat whitelight[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat model_ambient[] = {1.0, 1.0, 1.0, 1.0};
 
-	glShadeModel(GL_FLAT);
+	glShadeModel(GL_SMOOTH);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
 	glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+	glLightfv(GL_LIGHT0, GL_AMBIENT, whitelight);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, whitelight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, whitelight);
 

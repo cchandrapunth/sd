@@ -16,12 +16,15 @@ public:
 	int *faceId;
 	int nface;
 
+	float vnormx, vnormy, vnormz;
+
 	//functions
 	vertex(float, float, float);
 	vertex(vertex* v);
 
 	~vertex();
 	int addFaceId(int);
+	void clearFaceId();
 
 	//debug
 	void printv();

@@ -23,9 +23,7 @@ int getRotX(){ return rotX; }
 int getRotY(){ return rotY; }
 
 void drawVMModel(){
-	//qraternian
 	
-
 	glLoadIdentity();
 	glEnable(GL_TEXTURE_2D);
 
