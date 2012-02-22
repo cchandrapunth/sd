@@ -3,12 +3,15 @@
 #include <stdlib.h>
 #include <GL/glut.h>
 #include <stdio.h>
+#include <deque>
 
 #include "picking.h";
 #include "undo.h";
 
+using namespace std;
 static GLint model_display_list;
 
+deque<int> sList;
 
 void processPick(float cursorX, float cursorY){
 	GLint viewport[4];
@@ -46,4 +49,50 @@ void setNullSelection(){
 
 void picked(GLuint name, int sw){
 	printf("my name = %d in %d\n", name, sw);
+}
+
+void printsList(){
+	for(int k=0; k< sList.size(); k++){
+			printf("> %d ", sList.at(k));
+	}
+	if(sList.size() > 0)	printf("\n");
+	else printf("empty\n");
+}
+void store_selection(int i){
+	
+	int pos = sListContain(i);
+
+	//remove if repeated
+	if(sList.size() > 0 && pos >= 0){
+		sList.erase(sList.begin() + pos);
+
+	}else{
+		int *x= (int *) malloc(sizeof(int));
+		*x = i;
+		sList.push_back(*x);
+	}
+	printsList();
+}
+
+void clearSelectionList(){
+	sList.clear();
+}
+
+int sListContain(int i){
+	//printsList();
+
+	for(int a= 0; a< sList.size(); a++){
+		if(sList.at(a) == i) {
+			return a;
+		}
+	} 
+	return -1;
+}
+
+int* getsList(){
+	int* list = (int *) malloc(sizeof(int)*sList.size());
+	for(int a= 0; a< sList.size(); a++){
+		list[a] = sList.at(a);
+	}
+	return list;
 }

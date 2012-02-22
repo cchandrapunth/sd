@@ -35,14 +35,19 @@ void drawVMModel(){
 		trackRoll();
 		//glGetFloatv(GL_MODELVIEW_MATRIX, mat);
 
-		if(getSelection() == j){
-			printf("select %d\n", getSelection());
+		if(sListContain(j) >= 0 || getSelection() == j){
 			glBindTexture(GL_TEXTURE_2D, 3);	//green
 		}
 		else{
 			setColorPaint(j);
 		}
+		//polygon
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		drawMesh(j);
 
+		//Contour line
+		glBindTexture(GL_TEXTURE_2D, 1);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		drawMesh(j);
 
 		glPopName();
@@ -69,6 +74,7 @@ void drawPickVMModel(){
 		}
 		else printf("TOO MANY MASH\n");
 
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		drawMesh(i);
 		glPopMatrix();
 	}
@@ -82,17 +88,19 @@ void drawPickVMModel(){
 
 void trackRoll(){
 
-	//the old state+ the new adjustment for this grab+ current roll in this second
-	rotX = restoreMatX()+getMatX()+ (int)rollvX;
-	rotY = restoreMatY()+getMatY()+ (int)rollvY;
-	zoom = restoreMatZ()+getMatZ()+zoomvZ;
+	//the old state+ current roll in this second
+	rotX = getMatX()+(int)rollvX;
+	rotY = getMatY()+(int)rollvY;
+	zoom = getMatZ()+zoomvZ;
+
+	//debug
+	//rotX = 90;
+	//rotY = 90;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);
 	glRotated(-rotX, 0, 1, 0);	//rotate around y axis
-	glTranslated(-c.x, -c.y, -c.z);
 
-	glTranslated(c.x, c.y, c.z);
 	glRotated(-rotY, 1, 0, 0);	//rotate around x axis
 	glTranslated(-c.x, -c.y, -c.z);
 	

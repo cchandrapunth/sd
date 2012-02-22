@@ -65,6 +65,7 @@ void pushMatrix(){
 	zoomSceneZ = 0;
 }
 
+//useless
 int restoreMatX(){
 	if(controlList.empty()) return 0;
 	return controlList.front().rollX;

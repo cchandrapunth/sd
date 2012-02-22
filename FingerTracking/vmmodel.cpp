@@ -4,6 +4,7 @@
 #include <fstream>
 #include "mesh.h"
 #include "vertex.h"
+#include <deque>
 #include "vmmodel.h"
 #include "log.h"
 
@@ -230,7 +231,6 @@ void setColorPaint(int id){
 
 void drawMesh(int meshId){
 
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	mesh m = faceList.at(meshId);
 
 	vertex v1 = vertexList.at(m.ind1);
@@ -422,26 +422,28 @@ void subDivide(int meshId){
 
 //enforce the traslation in normal direction
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
-	/*
+
 	//multiply by inverse matrix
 	float radianx = rotx*2*3.14159265/360;
 	float radiany = roty*2*3.14159265/360;
+	
+	
 
-	float relativeTransx = transx;
-	float relativeTransy = transy;
-	float relativeTransz = transz;
+	float vectorx = transx;
+	float vectory = transy;
+	float vectorz = -transz;
+
 
 	//rotate around y axis
-	//x, ycos0, zcos0
-	relativeTransx = relativeTransx*cos(radianx);
-	relativeTransz = relativeTransz*cos(radianx);
-
-	//rotate around x axis 
-	//xcos0, y, zcos0
-	relativeTransy = relativeTransy*cos(radiany);
-	relativeTransz = relativeTransz*cos(radiany);
-	*/
-
+	vectorx =  transx*cos(radianx) - transz*sin(radianx);	//x' = xcos0- zsin0
+	vectorz =  -transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
+	
+	//Note:: mistake 
+	//make sure the z value changes and it's updated in the second rotation
+	//rotate around x axis
+	vectory = transy*cos(radiany) - vectorz*sin(radiany);	// y' = ycos0 - zsin0
+	vectorz = transy*sin(radiany) + vectorz*cos(radiany);	// z' = ysin0 + zcos0
+	
 	/*
 	//move only the selected mesh
 	for(int i=0; i<3; i++){
@@ -460,26 +462,29 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 		float prevz = vertexList.at(index).z;
 
 
-		vertexList.at(index).x = relativeTransx/120+ prevx;
-		vertexList.at(index).y = relativeTransy/120+ prevy;
-		vertexList.at(index).z = relativeTransz/120+ prevz;
+		vertexList.at(index).x = vectorx/120+ prevx;
+		vertexList.at(index).y = vectory/120+ prevy;
+		vertexList.at(index).z = vectorz/120+ prevz;
 
-		printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, relativeTransx, relativeTransy, relativeTransz);
+		//printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
 	}
 	*/
-
 
 	float normalx = faceList.at(id).normalX;
 	float normaly = faceList.at(id).normalY;
 	float normalz = faceList.at(id).normalZ;
 
-	softselection(id, transx, transy, transz, normalx, normaly, normalz);
+	softselection(id, vectorx/100, vectory/100, vectorz/100, normalx, normaly, normalz);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){
 		once = checkSize(i);
 		if(once) break;	//only one large mesh would subdivide the whole model 
 	}
+}
+
+void interpolate(int* list, float transx, float transy, float transz, int rotx, int roty){
+	printf("GROUP\n");
 }
 
 bool checkSize(int i){
@@ -586,7 +591,7 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 	//x0, y0 = center
 	//sx, sy = x and y spreads
 
-	float s = 0.5;
+	float s = 0.3;
 	float denom = 2*pow(s,2);
 
 	//find the center 
@@ -605,17 +610,57 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 		exp = pow(v.x-x0, 2)/denom + pow(v.y-y0, 2)/denom + pow(v.z-z0, 2)/denom;
 		coef = pow(e, -exp);
 
-		printf("v: %d \t| coef = %f\n", i, coef);
+		//printf("v: %d \t| coef = %f\n", i, coef);
 
 
 		//translate the point
-		vertexList.at(i).x = vertexList.at(i).x + nx*tx/100*coef;	//x
-		vertexList.at(i).y = vertexList.at(i).y + ny*tx/100*coef;	//y
-		vertexList.at(i).z = vertexList.at(i).z + nz*tx/100*coef;	//z
+		vertexList.at(i).x = vertexList.at(i).x + tx*coef;	//x
+		vertexList.at(i).y = vertexList.at(i).y + ty*coef;	//y
+		vertexList.at(i).z = vertexList.at(i).z + tz*coef;	//z
 	}
-
 }
 
+
+//------------------------Extrude---------------------------------------
+void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz){
+	//find the center 
+	int ind1 = faceList.at(id).ind1;
+	int ind2 = faceList.at(id).ind2;
+	int ind3 = faceList.at(id).ind3;
+	//3 vertex that form base of the extrusion
+	vertex v1 = vertexList.at(ind1);
+	vertex v2 = vertexList.at(ind2);
+	vertex v3 = vertexList.at(ind3);
+
+
+	//3 vertex that will be the top 
+	vertex v11 = new vertex(v1.x+ nx*ty, v1.y+ ny*ty, v1.z +nz*ty);
+	vertex v22 = new vertex(v2.x+ nx*ty, v2.y+ ny*ty, v2.z +nz*ty);
+	vertex v33 = new vertex(v3.x+ nx*ty, v3.y+ ny*ty, v3.z +nz*ty);
+
+	//contruct rectangle 
+	glBegin(GL_QUADS);
+	//1 2 22 11
+	glVertex3f(v1.x, v1.y, v1.z);
+	glVertex3f(v2.x, v2.y, v2.z);
+	glVertex3f(v22.x, v22.y, v22.z);
+	glVertex3f(v11.x, v11.y, v11.z);
+
+	//2 3 33 22
+	glVertex3f(v2.x, v2.y, v2.z);
+	glVertex3f(v3.x, v3.y, v3.z);
+	glVertex3f(v33.x, v33.y, v33.z);
+	glVertex3f(v22.x, v22.y, v22.z);
+
+
+	//3 1 11 33
+	glVertex3f(v3.x, v3.y, v3.z);
+	glVertex3f(v1.x, v1.y, v1.z);
+	glVertex3f(v11.x, v11.y, v11.z);
+	glVertex3f(v33.x, v33.y, v33.z);
+	glEnd();
+
+}
 //------------------------Bounding sphere---------------------------------
 #define MIN_F -1000000;
 #define MAX_F 1000000;

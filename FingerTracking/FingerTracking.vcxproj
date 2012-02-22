@@ -67,18 +67,22 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(XN_NITE_INSTALL_PATH)\Include;$(OPEN_NI_INCLUDE);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(XN_NITE_INSTALL_PATH)\Lib;$(OPEN_NI_LIB);</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;OpenNI.lib;XnVNITE_1_4_1.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="drawhand.h" />
     <ClInclude Include="drawmodel.h" />
     <ClInclude Include="gesture.h" />
     <ClInclude Include="hand_history.h" />
@@ -96,6 +100,7 @@
     <ClInclude Include="window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="drawhand.cpp" />
     <ClCompile Include="drawmodel.cpp" />
     <ClCompile Include="gesture.cpp" />
     <ClCompile Include="hand_history.cpp" />

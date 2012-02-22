@@ -9,6 +9,7 @@
 #include "gesture.h"
 #include "window.h"
 #include "vmmodel.h"
+#include "drawhand.h"
 
 using namespace xn;
 
@@ -293,22 +294,11 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints){
 		glEnd();
 	}
 	else{
-		glPointSize(12);
-		if(GRAB) glColor3f(1.0, 0, 0);
-		else glColor3f(0, 1.0, 0);
-				
-		glBegin(GL_POINTS);
-		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y));
-		glEnd();
-
-		//cross hair 
-		float cl = 0.2;
-		glBegin(GL_LINES);
-		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)+cl);
-		glVertex2f((GLfloat) convertX(palmPos.X), (GLfloat) convertY(palmPos.Y)-cl);
-		glVertex2f((GLfloat) convertX(palmPos.X)+cl, (GLfloat) convertY(palmPos.Y));
-		glVertex2f((GLfloat) convertX(palmPos.X)-cl, (GLfloat) convertY(palmPos.Y));
-		glEnd();
+		float x = convertX(palmPos.X);
+		float y = convertY(palmPos.Y);
+		float z = palmPos.Z;
+		drawRHand(GRAB, x, y, z);
+		
 	}
 }
 

@@ -9,3 +9,11 @@ static int pickMe = -1;
 
 int getSelection();
 void setNullSelection();	//show no mesh response when hand release
+
+//selection list
+void clearSelectionList();
+void store_selection(int i);
+int sListContain(int i);
+void printsList();
+
+int* getsList();

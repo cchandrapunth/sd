@@ -63,6 +63,7 @@ ui *Master_ui =new ui();
 bool sculpting = true;
 bool knife = false;
 bool paint = false;
+bool selection = false;
 
 //paint
 #define checkImageWidth 64
@@ -140,24 +141,26 @@ void checkCursor(int func){
 		else{
 			mode = RENDER;
 			//free hand
-			if(func == 1) {
-				//grab mesh
-				if(getSelection() >0 && getSelection() < getFaceListSize()){
-					//translatePoly(&sampleModel, getSelection(), &samplePoint, gettranslateX(), gettranslateY(), gettranslateZ());
-					interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
-					recalNormal();
+			if(func == 1 && !selection) {
+				//grab group of mesh
+				if(sListContain(getSelection()) >= 0 ){
+						interpolate(getsList(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
+						recalNormal();
+				}
+				//grab one mesh
+				else if(getSelection() > 0 && getSelection() < getFaceListSize()){
+						interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
+						recalNormal();
 				}
 				//select the grey area: rotation 
 				else{
-					//translateScene(gettranslateX(), gettranslateY(), gettranslateZ());
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
 					recalNormal();
 				}
 			}
 			//paint
-			else if(func ==2){
+			else if(func ==2 && !selection){
 				if(getSelection() >0 && getSelection() < getFaceListSize()){
-					//setColor(&sampleModel, getSelection(), 3);
 					paintMesh(getSelection(), getBrushColor());
 				}		
 				//select the grey area: rotation 
@@ -176,6 +179,11 @@ void checkCursor(int func){
 	else{
 		//just release
 		if(stateGrab){
+			//selection list
+			if(selection && getSelection() > 0 && getSelection() < getFaceListSize()){
+				store_selection(getSelection());
+			}
+
 			stateGrab = false; 
 			clearHandList();
 			setNullSelection(); //show no mesh response when hand released
@@ -259,7 +267,6 @@ void display(){
 		else {
 			drawHand(handPointList);
 			if(!BACK_BUFF){
-				//drawMe(&sampleModel, &samplePoint);
 				drawVMModel();
 			}
 			else{ 
@@ -473,6 +480,13 @@ void option3(){
 void reload(){
 	import_vm();
 }
+void selectionMode(){
+	selection = !selection;
+
+	if(!selection){
+		//clearSelectionList();
+	}
+}
 
 
 //FIXME: should hide the menu button once it's click
@@ -505,7 +519,8 @@ void uiInit(){
 
 	//main menu button
 	Master_ui->add_button("Menu", left+(right-left)/15, bottom+0.5, 0.5, 0.3, push_menu);
-	Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);
+	Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);	//if remove, fix ui.cpp (count)
+	Master_ui->add_button("select", right-(right-left)/5, bottom+0.8, 0.5, 0.3, selectionMode);
 }
 
 
