@@ -6,6 +6,7 @@
 #include "mesh.h"
 #include "vertex.h"
 #include "vmmodel.h"
+#include <math.h>
 
 #include "undo.h"
 #include "picking.h"
@@ -37,6 +38,9 @@ void drawVMModel(){
 
 		if(sListContain(j) >= 0 || getSelection() == j){
 			glBindTexture(GL_TEXTURE_2D, 3);	//green
+
+			//gizmo
+			setGizmo(j);
 		}
 		else{
 			setColorPaint(j);
@@ -54,6 +58,8 @@ void drawVMModel(){
 		glPopMatrix();
 		//glMultMatrixf(mat);	
 	}
+
+	//drawGizmo();
 }
 
 void drawPickVMModel(){
@@ -67,12 +73,17 @@ void drawPickVMModel(){
 		glPushMatrix();
 
 		trackRoll();
-		if(i < 255){
-			glColor3ub(255,255, i);	
-		}else if(i < 510){
-			glColor3ub(255, (i-255), 255);
+
+		//binary representative
+		//0-255
+		if(i < pow(2.0,8.0)){
+			glColor3ub(0,0, i);	
 		}
-		else printf("TOO MANY MASH\n");
+		//256-65,535
+		else if(i < pow(2.0,16.0)){
+			glColor3ub(0, (int)i/256, (i%256)-1 );
+		}
+		else printf("error: TOO MANY MASH\n");
 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		drawMesh(i);
@@ -95,7 +106,7 @@ void trackRoll(){
 
 	//debug
 	//rotX = 90;
-	//rotY = 90;
+	//rotY = 270;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);
@@ -125,4 +136,5 @@ void commitScene(float transx, float transy, float z){
 	rollvY = transy;
 	zoomvZ = z;
 }
+
 

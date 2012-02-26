@@ -16,6 +16,8 @@ static deque<vertex> vertexList;
 static deque<mesh> exfaceList;
 static deque<vertex> exvertexList;
 
+int selectedMesh;
+
 bool debug = true;
 Log *pLog; 
 
@@ -74,23 +76,9 @@ void import_vm(){
 		vertexList.at(id3).addFaceId(j);
 	}
 	
-	
-	//subdivide: always assign faceId afterward
-	int size = getFaceListSize();
-	for(int i=0; i< size; i++){
-		subDivide(i);
-	}
-	//assign faceId
-	for(int i=0; i< vertexList.size(); i++){
-		vertexList.at(i).clearFaceId();
-
-		for(int j=0; j< faceList.size(); j++){
-			if(faceList.at(j).ind1 == i || 
-				faceList.at(j).ind2 == i ||
-				faceList.at(j).ind3 == i){
-					vertexList.at(i).addFaceId(j);
-			}
-		}
+	//subDivide
+	for(int k=0; k< 3; k++){
+		subDivide();
 	}
 
 	calVertexNormal();
@@ -100,17 +88,17 @@ void import_vm(){
 		printf("\n=================================================\n");
 		printf("\tvertexList :: nVertex = %d\n", vertexList.size());
 		printf("=================================================\n");
-		for(int i=0; i< vertexList.size(); i++){
-			vertexList.at(i).printv();
-			vertexList.at(i).printface();
-		}
+		//for(int i=0; i< vertexList.size(); i++){
+		//	vertexList.at(i).printv();
+		//	vertexList.at(i).printface();
+		//}
 
 		printf("\n=================================================\n");
 		printf("\tfaceList :: nFace = %d\n", faceList.size());
 		printf("=================================================\n");
-		for(int i=0; i< faceList.size(); i++){
-			faceList.at(i).printmesh();
-		}
+		//for(int i=0; i< faceList.size(); i++){
+		//	faceList.at(i).printmesh();
+		//}
 	}
 }
 
@@ -262,9 +250,30 @@ bool sameVertex(vertex v1, vertex v2){
 	return false;
 }
 
+void subDivide(){
+
+	//subdivide: always assign faceId afterward
+	int size = getFaceListSize();
+	for(int i=0; i< size; i++){
+		subDivideMesh(i);
+	}
+	//assign faceId
+	for(int i=0; i< vertexList.size(); i++){
+		vertexList.at(i).clearFaceId();
+
+		for(int j=0; j< faceList.size(); j++){
+			if(faceList.at(j).ind1 == i || 
+				faceList.at(j).ind2 == i ||
+				faceList.at(j).ind3 == i){
+					vertexList.at(i).addFaceId(j);
+			}
+		}
+	}
+}
+
 //divide a mesh into 4 new mesh
 //handle the operation and restoration in the deque
-void subDivide(int meshId){
+void subDivideMesh(int meshId){
 
 	mesh m = faceList.at(meshId);
 
@@ -357,11 +366,11 @@ void subDivide(int meshId){
 
 
 	//store the old index
-	printf("old1 ");
+	//printf("old1 ");
 	int old1 = faceList.at(meshId).ind1;
-	printf("indexv12 ");
+	//printf("indexv12 ");
 	int old2 = faceList.at(meshId).ind2;
-	printf("indexv31 ");
+	//printf("indexv31 ");
 	int old3 = faceList.at(meshId).ind3;
 
 	//add the first triangle (replace the old one)
@@ -371,9 +380,9 @@ void subDivide(int meshId){
 	faceList.at(meshId).ind3 = indexv31;
 	faceList.at(meshId).colorId = 5;
 
-	vertexList.at(old1).printv();
-	vertexList.at(indexv12).printv();
-	vertexList.at(indexv31).printv();
+	//vertexList.at(old1).printv();
+	//vertexList.at(indexv12).printv();
+	//vertexList.at(indexv31).printv();
 
 	//find normal
 	vertex* v = getFaceNormal(vertexList.at(old1), vertexList.at(indexv12), vertexList.at(indexv31));	
@@ -436,7 +445,7 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 
 	//rotate around y axis
 	vectorx =  transx*cos(radianx) - transz*sin(radianx);	//x' = xcos0- zsin0
-	vectorz =  -transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
+	vectorz =  transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
 	
 	//Note:: mistake 
 	//make sure the z value changes and it's updated in the second rotation
@@ -723,4 +732,30 @@ vertex getCenter(){
 
 float getDiam(){
 	return radius*2;
+}
+
+void setGizmo(int k){
+	selectedMesh = k;
+}
+void drawGizmo(){
+	//find the center 
+	int ind1 = faceList.at(selectedMesh).ind1;
+	int ind2 = faceList.at(selectedMesh).ind2;
+	int ind3 = faceList.at(selectedMesh).ind3;
+	//center
+	float x0 = (vertexList.at(ind1).x + vertexList.at(ind2).x + vertexList.at(ind3).x )/3;	
+	float y0 = (vertexList.at(ind1).y + vertexList.at(ind2).y + vertexList.at(ind3).y )/3; 
+	float z0 = (vertexList.at(ind1).z + vertexList.at(ind2).z + vertexList.at(ind3).z )/3; 
+
+	float c = 0.5;
+	glLineWidth(5);
+
+	//draw
+	glBegin(GL_LINES);
+	glVertex3f(x0, y0, z0);
+	glVertex3f(x0, y0+c, z0);
+	glEnd();
+
+	glLineWidth(2);
+	
 }

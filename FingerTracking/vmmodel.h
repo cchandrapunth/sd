@@ -5,7 +5,8 @@ void export_vm();
 
 
 void drawMesh(int i);
-void subDivide(int i);
+void subDivide();
+void subDivideMesh(int i);
 
 int getFaceListSize();
 int getVertexListSize();
@@ -35,3 +36,6 @@ void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz);
 void findBoundingSphere();
 vertex getCenter();
 float getDiam();
+
+void setGizmo(int k);
+void drawGizmo();

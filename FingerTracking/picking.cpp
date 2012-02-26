@@ -25,12 +25,16 @@ void processPick(float cursorX, float cursorY){
 
 	//printf("cursorX= %f, cursorY= %f\n", cursorX, viewport[3]-cursorY);
 	printf("%d %d %d\n", pixel[0], pixel[1], pixel[2]);
-
-	if(pixel[0] == 255 && pixel[1] == 255){
+	
+	//0-255
+	if(pixel[0] == 0 && pixel[1] == 0){
 		pickMe = pixel[2];
-		printf("You pick %d\n", pixel[2]);
-	}else if(pixel[0] == 255 && pixel[2] == 255){
-		pickMe = pixel[1]+ 255; 
+		printf("You pick %d\n", pickMe);
+	}
+	//255- 65,535
+	else if(pixel[0] == 0 && pixel[1] != 0){
+		pickMe = (256*pixel[1] + pixel[2]+1);
+		printf("You pick %d\n", pickMe);
 	}
 	else{
 	   printf("You didn't click any rect!");
