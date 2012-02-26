@@ -217,7 +217,7 @@ void setColorPaint(int id){
 
 }
 
-void drawMesh(int meshId){
+void drawMesh(int meshId, bool shade){
 
 	mesh m = faceList.at(meshId);
 
@@ -226,12 +226,24 @@ void drawMesh(int meshId){
 	vertex v3 = vertexList.at(m.ind3);
 
 	glShadeModel(GL_SMOOTH);
+	
 	glBegin(GL_TRIANGLES);
 	 //glNormal3f(m.normalX, m.normalY, m.normalZ);
+	if(shade){
+		setEffectColor(v1);
+	}
 	glNormal3f(v1.vnormx, v1.vnormy, v1.vnormz);
 	 glVertex3f(v1.x, v1.y, v1.z);
+
+	if(shade){
+		setEffectColor(v2);
+	 }
 	glNormal3f(v2.vnormx, v2.vnormy, v2.vnormz);
 	 glVertex3f(v2.x, v2.y, v2.z);
+
+	if(shade){
+		setEffectColor(v3);
+	}
 	glNormal3f(v3.vnormx, v3.vnormy, v3.vnormz);
 	 glVertex3f(v3.x, v3.y, v3.z);
 	glEnd();
@@ -442,10 +454,11 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	float vectory = transy;
 	float vectorz = -transz;
 
-
 	//rotate around y axis
-	vectorx =  transx*cos(radianx) - transz*sin(radianx);	//x' = xcos0- zsin0
-	vectorz =  transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
+	vectorx =  transx*cos(radianx) - vectorz*sin(radianx);	//x' = xcos0- zsin0
+	vectorz =  -transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
+
+	
 	
 	//Note:: mistake 
 	//make sure the z value changes and it's updated in the second rotation
@@ -453,6 +466,22 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	vectory = transy*cos(radiany) - vectorz*sin(radiany);	// y' = ycos0 - zsin0
 	vectorz = transy*sin(radiany) + vectorz*cos(radiany);	// z' = ysin0 + zcos0
 	
+
+	//smart angle?
+	if (abs(vectorx) > abs(vectory) && abs(vectorx) > abs(vectorz)) {
+		vectory = 0;
+		vectorz = 0;
+	}
+	else if(abs(vectory) > abs(vectorx) && abs(vectory) > abs(vectorz)){
+		vectorx = 0;
+		vectorz = 0;
+	}
+	else {
+		vectorx = 0;
+		vectory = 0;
+	}
+	printf("x= %f, y=%f, z=%f\n", vectorx, vectory, vectorz);
+
 	/*
 	//move only the selected mesh
 	for(int i=0; i<3; i++){
@@ -592,6 +621,10 @@ void undo_vmmodel(){
 }
 
 //----------------------Softselection zone------------------------------------------
+float s = 0.5;
+float denom = 2*pow(s,2);
+float e= 2.71828183;
+
 void softselection(int id,float tx,float ty,float tz, float nx, float ny, float nz){
 
 	//function
@@ -600,23 +633,18 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 	//x0, y0 = center
 	//sx, sy = x and y spreads
 
-	float s = 0.3;
-	float denom = 2*pow(s,2);
+	float *f = getCenterSelection();
 
-	//find the center 
-	int ind1 = faceList.at(id).ind1;
-	int ind2 = faceList.at(id).ind2;
-	int ind3 = faceList.at(id).ind3;
 	//center
-	float x0 = (vertexList.at(ind1).x + vertexList.at(ind2).x + vertexList.at(ind3).x )/3;	
-	float y0 = (vertexList.at(ind1).y + vertexList.at(ind2).y + vertexList.at(ind3).y )/3; 
-	float z0 = (vertexList.at(ind1).z + vertexList.at(ind2).z + vertexList.at(ind3).z )/3; 
+	float x0 = f[0];	
+	float y0 = f[1];
+	float z0 = f[2];
 
-	float exp, coef= 1, e= 2.71828183;
+	float exp, coef= 1;
 	for(int i=0; i< vertexList.size(); i++){
 		vertex v = vertexList.at(i);
 
-		exp = pow(v.x-x0, 2)/denom + pow(v.y-y0, 2)/denom + pow(v.z-z0, 2)/denom;
+		exp = (pow(v.x-x0, 2) + pow(v.y-y0, 2) + pow(v.z-z0, 2))/denom;
 		coef = pow(e, -exp);
 
 		//printf("v: %d \t| coef = %f\n", i, coef);
@@ -629,8 +657,36 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 	}
 }
 
+void setEffectColor(vertex v){
+	//calculate distance 
+	float *f = getCenterSelection();
 
-//------------------------Extrude---------------------------------------
+	//center
+	float x0 = f[0];	
+	float y0 = f[1];
+	float z0 = f[2];
+
+	float exp = (pow(v.x-x0, 2) + pow(v.y-y0, 2) + pow(v.z-z0, 2))/denom;
+	float coef = pow(e, -exp);
+
+	//shade effect 
+	//red->orange->yellow->green->blue->black
+	//1------>0
+
+	float r =1, g=1, b=1; 
+	if(coef > 0.5 && coef <1){
+		r = (coef-0.5)*2;
+	}
+	if(coef <0.8 && coef >0.3){
+		g = (coef-0.3)*2;
+	}
+	if(coef >0 && coef < 0.5){
+		b = (coef*2);
+	}
+	
+	glColor3f(r, g, b);
+}
+/*------------------------Extrude---------------------------------------
 void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz){
 	//find the center 
 	int ind1 = faceList.at(id).ind1;
@@ -670,6 +726,8 @@ void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz){
 	glEnd();
 
 }
+*/
+
 //------------------------Bounding sphere---------------------------------
 #define MIN_F -1000000;
 #define MAX_F 1000000;
@@ -734,28 +792,23 @@ float getDiam(){
 	return radius*2;
 }
 
+
+//-------------------------gizmo/center-----------------------------------
 void setGizmo(int k){
 	selectedMesh = k;
 }
-void drawGizmo(){
+float* getCenterSelection(){
 	//find the center 
 	int ind1 = faceList.at(selectedMesh).ind1;
 	int ind2 = faceList.at(selectedMesh).ind2;
 	int ind3 = faceList.at(selectedMesh).ind3;
 	//center
-	float x0 = (vertexList.at(ind1).x + vertexList.at(ind2).x + vertexList.at(ind3).x )/3;	
-	float y0 = (vertexList.at(ind1).y + vertexList.at(ind2).y + vertexList.at(ind3).y )/3; 
-	float z0 = (vertexList.at(ind1).z + vertexList.at(ind2).z + vertexList.at(ind3).z )/3; 
+	float *f = (float *) malloc(sizeof(float));
+	f[0] = (vertexList.at(ind1).x + vertexList.at(ind2).x + vertexList.at(ind3).x )/3;	
+	f[1] = (vertexList.at(ind1).y + vertexList.at(ind2).y + vertexList.at(ind3).y )/3; 
+	f[2] = (vertexList.at(ind1).z + vertexList.at(ind2).z + vertexList.at(ind3).z )/3; 
 
-	float c = 0.5;
-	glLineWidth(5);
-
-	//draw
-	glBegin(GL_LINES);
-	glVertex3f(x0, y0, z0);
-	glVertex3f(x0, y0+c, z0);
-	glEnd();
-
-	glLineWidth(2);
+	return f; 
 	
 }
+

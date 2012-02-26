@@ -47,12 +47,15 @@ void drawVMModel(){
 		}
 		//polygon
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-		drawMesh(j);
+		drawMesh(j, false);
 
 		//Contour line
-		glBindTexture(GL_TEXTURE_2D, 1);
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);	
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		drawMesh(j);
+		drawMesh(j, true);
+		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_LIGHTING);
 
 		glPopName();
 		glPopMatrix();
@@ -60,6 +63,8 @@ void drawVMModel(){
 	}
 
 	//drawGizmo();
+	
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 void drawPickVMModel(){
@@ -86,7 +91,7 @@ void drawPickVMModel(){
 		else printf("error: TOO MANY MASH\n");
 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-		drawMesh(i);
+		drawMesh(i, false);
 		glPopMatrix();
 	}
 	
@@ -105,8 +110,8 @@ void trackRoll(){
 	zoom = getMatZ()+zoomvZ;
 
 	//debug
-	//rotX = 90;
-	//rotY = 270;
+	//rotX = 270;
+	rotY = 270;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);

@@ -4,7 +4,7 @@ void import_vm();
 void export_vm();
 
 
-void drawMesh(int i);
+void drawMesh(int i, bool shade);
 void subDivide();
 void subDivideMesh(int i);
 
@@ -22,6 +22,7 @@ void interpolate(int* list, float transx, float transy, float transz, int rotx, 
 
 bool checkSize(int i);
 void setColorPaint(int id);
+void setEffectColor(vertex v);
 
 void paintMesh(int mid, int cid);
 
@@ -39,3 +40,4 @@ float getDiam();
 
 void setGizmo(int k);
 void drawGizmo();
+float* getCenterSelection();

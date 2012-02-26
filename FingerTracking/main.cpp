@@ -410,16 +410,23 @@ void initRender(){
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat mat_shininess[] = {50.0};
 	GLfloat light_position[] = {50.0, -50.0, 50, 1.0};
+	GLfloat light_position1[] = {50.0, -50.0, -50, 1.0};
 	GLfloat whitelight[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat model_ambient[] = {1.0, 1.0, 1.0, 1.0};
 
 	glShadeModel(GL_SMOOTH);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
 	glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+	//light0
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, whitelight);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, whitelight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, whitelight);
+	//light1
+	glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
+	glLightfv(GL_LIGHT1, GL_AMBIENT, whitelight);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, whitelight);
+	glLightfv(GL_LIGHT1, GL_SPECULAR, whitelight);
 
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, model_ambient);
 
@@ -432,6 +439,7 @@ void initRender(){
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
+	//glEnable(GL_LIGHT1);
 	glEnable(GL_DEPTH_TEST);		//don't forget to enable depth test
 	glEnable(GL_NORMALIZE);			//automatically rescale normal when transform the surface
 	
