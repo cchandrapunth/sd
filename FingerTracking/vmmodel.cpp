@@ -481,12 +481,13 @@ void subDivideMesh(int meshId){
 		faceList.push_back(*m);	
 	}
 }
+float rx;
+float ry;
 
-float* convertCoordinate(float transx, float transy, float transz, float rotx, float roty){
+float* convertCoordinate(float transx, float transy, float transz){
 	//multiply by inverse matrix
-	float radianx = rotx*2*3.14159265/360;
-	float radiany = roty*2*3.14159265/360;
-	
+	float radianx = rx*2*3.14159265/360;
+	float radiany = ry*2*3.14159265/360;
 	
 
 	float vectorx = transx;
@@ -509,8 +510,9 @@ float* convertCoordinate(float transx, float transy, float transz, float rotx, f
 
 //enforce the traslation in normal direction
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
-
-	float* v = convertCoordinate(transx, transy, transz, rotx, roty);
+	rx = rotx;
+	ry = roty;
+	float* v = convertCoordinate(transx, transy, transz);
 	
 	float vectorx = v[0];
 	float vectory = v[1];
@@ -550,10 +552,12 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 void interpolate(int* list, float transx, float transy, float transz, int rotx, int roty){
 	printf("GROUP\n");
 	
+	rx = rotx;
+	ry = roty;
 	for(int k=0; k< getsListSize(); k++){
 		int id = list[k];
 
-		float* v = convertCoordinate(transx, transy, transz, rotx, roty);
+		float* v = convertCoordinate(transx, transy, transz);
 	
 		float vectorx = v[0];
 		float vectory = v[1];
@@ -863,7 +867,40 @@ float getDiam(){
 //-------------------------gizmo/center-----------------------------------
 void setGizmo(int k){
 	selectedMesh = k;
+	
+	
+	float* f= getCenterSelection();
+	float fx = f[0]+faceList.at(k).normalX*2;
+	float fy = f[1]+faceList.at(k).normalY*2;
+	float fz = f[2]+faceList.at(k).normalZ*2;
+
+	//y axis
+	float* dx = convertCoordinate(1, 0, 0);
+	float* dy = convertCoordinate(0, 1, 0);
+	//float* dz = convertCoordinate(0, 0, 1);
+	glLineWidth(3);
+
+	
+	glBegin(GL_LINES);
+	//draw y axis -> red
+	glColor3f(1,0,0);
+	glVertex3f(fx, fy, fz);
+	glVertex3f(fx+dy[0], fy+dy[1], fz+dy[2]);
+	//draw x axis -> green
+	glColor3f(0,1,0);
+	glVertex3f(fx, fy, fz);
+	glVertex3f(fx+dx[0], fy+dx[1], fz+dx[2]);
+	//draw z axis -> blue
+	glColor3f(0,0,1);
+	glVertex3f(fx, fy, fz);
+	glVertex3f(fx-dx[0]-dy[0], fy-dx[1]-dy[1], fz-dx[2]-dy[2]);
+	glEnd();
+
+
+	glLineWidth(2);
 }
+
+
 float* getCenterSelection(){
 	//find the center 
 	int ind1 = faceList.at(selectedMesh).ind1;

@@ -40,7 +40,11 @@ void drawVMModel(){
 			glBindTexture(GL_TEXTURE_2D, 3);	//green
 
 			//gizmo
+			glDisable(GL_TEXTURE_2D);
+			glDisable(GL_LIGHTING);	
 			setGizmo(j);
+			glEnable(GL_TEXTURE_2D);
+			glEnable(GL_LIGHTING);
 		}
 		else{
 			setColorPaint(j);
@@ -110,8 +114,8 @@ void trackRoll(){
 	zoom = getMatZ()+zoomvZ;
 
 	//debug
-	//rotX = 270;
-	//rotY = 270;
+	//rotX = 150;
+	//rotY = 300;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);

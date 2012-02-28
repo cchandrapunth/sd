@@ -60,9 +60,9 @@ bool stateGrab = false; //0- not grab, 1 - already in grab
 ui *Master_ui =new ui();
 
 // feature
-bool sculpting = false;
+bool sculpting = true;
 bool knife = false;
-bool paint = true;
+bool paint = false;
 bool selection = false;
 
 //paint
@@ -139,10 +139,12 @@ void checkCursor(int func){
 		}
 		//still in grab gesture
 		else{
-			
 			//free hand
 			if(func == 1 && !selection) {
-				mode = RENDER;
+				//select a mesh once
+				//we don't need this for painting
+				mode = RENDER;	
+
 				//grab group of mesh
 				if(sListContain(getSelection()) >= 0 ){
 						interpolate(getsList(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
@@ -153,11 +155,13 @@ void checkCursor(int func){
 						interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
 						recalNormal();
 				}
+				
 				//select the grey area: rotation 
 				else{
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
 					recalNormal();
 				}
+				
 			}
 			//paint
 			else if(func ==2 && !selection){
@@ -285,7 +289,7 @@ void display(){
 	else if(paint) {
 		checkCursor(2); 
 		if(mode == SELECT){
-			printf("select\n");
+			//update cursor
 			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
 			cursorY = getPalm().Y*h/g_nYRes;
 			drawPickVMModel();
@@ -293,12 +297,14 @@ void display(){
 			mode = RENDER;
 		}
 		else {
-			printf("render\n");
 			drawHand(handPointList);
 			if(!BACK_BUFF)
 				drawVMModel();
 			else drawPickVMModel();
+
+			//back to select other mesh
 			mode = SELECT;
+			
 			glutSwapBuffers();
 		}
 	}
@@ -453,8 +459,8 @@ void initRender(){
 	glEnable(GL_DEPTH_TEST);		//don't forget to enable depth test
 	glEnable(GL_NORMALIZE);			//automatically rescale normal when transform the surface
 	
-	glEnable (GL_BLEND);
-	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//glEnable (GL_BLEND);
+	//glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 }
 
