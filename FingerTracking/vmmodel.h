@@ -21,9 +21,14 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 void interpolate(int* list, float transx, float transy, float transz, int rotx, int roty);
 
 bool checkSize(int i);
+
+void upEffect();
+void downEffect();
 void setColorPaint(int id);
 void setEffectColor(vertex v);
 
+void upBrush();
+void downBrush();
 void paintMesh(int mid, int cid);
 
 void copy_vmmodel();

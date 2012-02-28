@@ -17,3 +17,4 @@ int sListContain(int i);
 void printsList();
 
 int* getsList();
+int getsListSize();

@@ -100,3 +100,7 @@ int* getsList(){
 	}
 	return list;
 }
+
+int getsListSize(){
+	return sList.size();
+}

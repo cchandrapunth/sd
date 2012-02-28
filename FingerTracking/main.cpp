@@ -60,9 +60,9 @@ bool stateGrab = false; //0- not grab, 1 - already in grab
 ui *Master_ui =new ui();
 
 // feature
-bool sculpting = true;
+bool sculpting = false;
 bool knife = false;
-bool paint = false;
+bool paint = true;
 bool selection = false;
 
 //paint
@@ -139,9 +139,10 @@ void checkCursor(int func){
 		}
 		//still in grab gesture
 		else{
-			mode = RENDER;
+			
 			//free hand
 			if(func == 1 && !selection) {
+				mode = RENDER;
 				//grab group of mesh
 				if(sListContain(getSelection()) >= 0 ){
 						interpolate(getsList(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
@@ -161,6 +162,7 @@ void checkCursor(int func){
 			//paint
 			else if(func ==2 && !selection){
 				if(getSelection() >0 && getSelection() < getFaceListSize()){
+					//printf("selection ->%d\n", getSelection());
 					paintMesh(getSelection(), getBrushColor());
 				}		
 				//select the grey area: rotation 
@@ -190,7 +192,10 @@ void checkCursor(int func){
 
 			//undo
 			if(func == 1) copy_vmmodel(); 
-			else if(func ==2) pushMatrix(); 
+			else if(func ==2) {
+				//pushMatrix(); //undo rotate
+				copy_vmmodel();
+			}
 		}
 	}
 
@@ -280,15 +285,20 @@ void display(){
 	else if(paint) {
 		checkCursor(2); 
 		if(mode == SELECT){
+			printf("select\n");
+			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
+			cursorY = getPalm().Y*h/g_nYRes;
 			drawPickVMModel();
 			processPick(cursorX, cursorY);
 			mode = RENDER;
 		}
 		else {
+			printf("render\n");
 			drawHand(handPointList);
 			if(!BACK_BUFF)
 				drawVMModel();
 			else drawPickVMModel();
+			mode = SELECT;
 			glutSwapBuffers();
 		}
 	}
@@ -457,7 +467,7 @@ void option1(){
 	paint = false;
 	Master_ui->remove_menu();
 }
-//move camera (move/rotate object)
+//paint brush
 void option2(){
 	printf("paint\n");
 	sculpting = false;
@@ -475,7 +485,7 @@ void option2(){
 	Master_ui->add_button("yellow", left+ width/15, top-height*4/10, width/10, height/10-off, setYellow);	//yellow
 	Master_ui->add_button("white", left+ width/15, top-height*5/10, width/10, height/10-off, setWhite);	//white
 }
-//paint brush
+//knife?
 void option3(){
 	printf("Knife\n");
 	sculpting = false;
@@ -485,6 +495,25 @@ void option3(){
 
 }
 
+void up(){
+	if(sculpting){
+		upEffect();
+	}
+	else{
+		upBrush();
+	}
+}
+
+void down(){
+	if(sculpting){
+		downEffect();
+	}
+	else{
+		downBrush();
+	}
+}
+
+//reload model
 void reload(){
 	import_vm();
 }
@@ -527,8 +556,11 @@ void uiInit(){
 
 	//main menu button
 	Master_ui->add_button("Menu", left+(right-left)/15, bottom+0.5, 0.5, 0.3, push_menu);
+	Master_ui->add_button("-", left+(right-left)/15, bottom+1.0, 0.5, 0.3, down);
+	Master_ui->add_button("+", left+(right-left)/15, bottom+1.5, 0.5, 0.3, up);
 	Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);	//if remove, fix ui.cpp (count)
-	Master_ui->add_button("select", right-(right-left)/5, bottom+0.8, 0.5, 0.3, selectionMode);
+	//Master_ui->add_button("select", right-(right-left)/5, bottom+0.8, 0.5, 0.3, selectionMode);
+	Master_ui->add_button("undo", right-(right-left)/5, bottom+0.8, 0.5, 0.3, undo_vmmodel);
 }
 
 

@@ -111,7 +111,7 @@ void trackRoll(){
 
 	//debug
 	//rotX = 270;
-	rotY = 270;
+	//rotY = 270;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);

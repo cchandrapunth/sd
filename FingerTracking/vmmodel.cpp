@@ -5,8 +5,10 @@
 #include "mesh.h"
 #include "vertex.h"
 #include <deque>
+#include <set>
 #include "vmmodel.h"
 #include "log.h"
+#include "picking.h"
 
 using namespace std;
 
@@ -249,15 +251,55 @@ void drawMesh(int meshId, bool shade){
 	glEnd();
 	 
 }
+//not use
+int bsize =1;
+void upBrush(){
+	bsize+=1;
+	printf("brush size  =%d\n", bsize);
+}
+void downBrush(){
+	if(bsize > 2) bsize-=1;
+	printf("brush size  =%d\n", bsize);
+}
+
 void paintMesh(int mid, int cid){
-	faceList.at(mid).colorId = cid;
+	//radius is up to bsize
+	set<int> mSet;
+	mSet.insert(mid);
+
+
+	int ind = faceList.at(mid).ind1;
+	int* list = vertexList.at(ind).faceId;
+	for(int j=0; j< vertexList.at(ind).nface; j++){
+		mSet.insert(list[j]);
+	}
+
+	ind = faceList.at(mid).ind2;
+	list = vertexList.at(ind).faceId;
+	for(int j=0; j< vertexList.at(ind).nface; j++){
+		mSet.insert(list[j]);
+	}
+
+	ind = faceList.at(mid).ind3;
+	list = vertexList.at(ind).faceId;
+	for(int j=0; j< vertexList.at(ind).nface; j++){
+		mSet.insert(list[j]);
+	}
+
+
+	for (set<int>::iterator it=mSet.begin(); it!=mSet.end(); it++){
+		printf("%d ",*it);
+		faceList.at(*it).colorId = cid;
+	}
+	printf("\n");
+	mSet.clear();
 }
 
 bool sameVertex(vertex v1, vertex v2){
 	if(v1.x - v2.x < 0.001 && v1.x - v2.x > -0.001 &&
-			v1.y - v2.y < 0.001 && v1.y - v2.y > -0.001 &&
-			v1.z - v2.z < 0.001 && v1.z - v2.z > -0.001){
-				return true;
+		v1.y - v2.y < 0.001 && v1.y - v2.y > -0.001 &&
+		v1.z - v2.z < 0.001 && v1.z - v2.z > -0.001){
+			return true;
 	}
 	return false;
 }
@@ -440,10 +482,7 @@ void subDivideMesh(int meshId){
 	}
 }
 
-
-//enforce the traslation in normal direction
-void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
-
+float* convertCoordinate(float transx, float transy, float transz, float rotx, float roty){
 	//multiply by inverse matrix
 	float radianx = rotx*2*3.14159265/360;
 	float radiany = roty*2*3.14159265/360;
@@ -458,15 +497,26 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	vectorx =  transx*cos(radianx) - vectorz*sin(radianx);	//x' = xcos0- zsin0
 	vectorz =  -transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
 
-	
-	
 	//Note:: mistake 
 	//make sure the z value changes and it's updated in the second rotation
 	//rotate around x axis
 	vectory = transy*cos(radiany) - vectorz*sin(radiany);	// y' = ycos0 - zsin0
 	vectorz = transy*sin(radiany) + vectorz*cos(radiany);	// z' = ysin0 + zcos0
 	
+	float v[3] = {vectorx, vectory, vectorz};
+	return v;
+}
 
+//enforce the traslation in normal direction
+void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
+
+	float* v = convertCoordinate(transx, transy, transz, rotx, roty);
+	
+	float vectorx = v[0];
+	float vectory = v[1];
+	float vectorz = v[2];
+
+	
 	//smart angle?
 	if (abs(vectorx) > abs(vectory) && abs(vectorx) > abs(vectorz)) {
 		vectory = 0;
@@ -482,31 +532,7 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	}
 	printf("x= %f, y=%f, z=%f\n", vectorx, vectory, vectorz);
 
-	/*
-	//move only the selected mesh
-	for(int i=0; i<3; i++){
-
-		int index = 0;
-		if(i == 0){	
-			index = faceList.at(id).ind1;
-		}else if(i ==1) {
-			index = faceList.at(id).ind2;
-		}else{
-			index = faceList.at(id).ind3;
-		}
-
-		float prevx = vertexList.at(index).x;
-		float prevy = vertexList.at(index).y;
-		float prevz = vertexList.at(index).z;
-
-
-		vertexList.at(index).x = vectorx/120+ prevx;
-		vertexList.at(index).y = vectory/120+ prevy;
-		vertexList.at(index).z = vectorz/120+ prevz;
-
-		//printf("id: %d, tranx: %f, transy: %f, tranz: %f \n", id, transx, transy, transz);
-	}
-	*/
+	
 
 	float normalx = faceList.at(id).normalX;
 	float normaly = faceList.at(id).normalY;
@@ -523,6 +549,39 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 
 void interpolate(int* list, float transx, float transy, float transz, int rotx, int roty){
 	printf("GROUP\n");
+	
+	for(int k=0; k< getsListSize(); k++){
+		int id = list[k];
+
+		float* v = convertCoordinate(transx, transy, transz, rotx, roty);
+	
+		float vectorx = v[0];
+		float vectory = v[1];
+		float vectorz = v[2];
+
+		//move only the selected mesh
+		for(int i=0; i<3; i++){
+
+			int index = 0;
+			if(i == 0){	
+				index = faceList.at(id).ind1;
+			}else if(i ==1) {
+				index = faceList.at(id).ind2;
+			}else{
+				index = faceList.at(id).ind3;
+			}
+
+			float prevx = vertexList.at(index).x;
+			float prevy = vertexList.at(index).y;
+			float prevz = vertexList.at(index).z;
+
+
+			vertexList.at(index).x = vectorx/150+ prevx;
+			vertexList.at(index).y = vectory/150+ prevy;
+			vertexList.at(index).z = vectorz/150+ prevz;
+		}
+	}
+	
 }
 
 bool checkSize(int i){
@@ -622,9 +681,16 @@ void undo_vmmodel(){
 
 //----------------------Softselection zone------------------------------------------
 float s = 0.5;
-float denom = 2*pow(s,2);
 float e= 2.71828183;
 
+void upEffect(){
+	s +=0.1;
+	printf("s= %f\n", s);
+}
+void downEffect(){
+	s-=0.1;
+	printf("s=%f\n", s);
+}
 void softselection(int id,float tx,float ty,float tz, float nx, float ny, float nz){
 
 	//function
@@ -632,7 +698,7 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 	//A = amplitude
 	//x0, y0 = center
 	//sx, sy = x and y spreads
-
+	float denom = 2*pow(s,2);
 	float *f = getCenterSelection();
 
 	//center
@@ -660,6 +726,7 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 void setEffectColor(vertex v){
 	//calculate distance 
 	float *f = getCenterSelection();
+	float denom = 2*pow(s,2);
 
 	//center
 	float x0 = f[0];	
