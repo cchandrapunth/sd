@@ -19,6 +19,7 @@ static deque<mesh> exfaceList;
 static deque<vertex> exvertexList;
 
 int selectedMesh;
+int initColor = 2;	//initial color = blue
 
 bool debug = true;
 Log *pLog; 
@@ -69,7 +70,7 @@ void import_vm(){
 		m->normalY = v->y;
 		m->normalZ = v->z;
 
-		m->setColor(2);	//default is white-6
+		m->setColor(initColor);	//default is white-6
 		faceList.push_back(*m);
 
 		//fill the lookup table for vertices 
@@ -215,8 +216,28 @@ vertex* normalizeV(vertex* norm){
 void setColorPaint(int id){
 	int cid = faceList.at(id).colorId;
 	//check-1, red-2, blue-3, green-4, yellow-5, white-6 
-	glBindTexture(GL_TEXTURE_2D,cid);
+	//glBindTexture(GL_TEXTURE_2D,cid);
 
+	switch(cid){
+	case 1:
+		glColor3f(0,0,0);
+		break;
+	case 2:
+		glColor3f(1.0, 0, 0);
+		break;
+	case 3:
+		glColor3f(0, 1.0, 0);
+		break;
+	case 4:
+		glColor3f(0, 0, 1.0);
+		break;
+	case 5:
+		glColor3f(1.0, 1.0, 0);
+		break;
+	case 6:
+		glColor3f(1, 1, 1);
+		break;
+	}
 }
 
 void drawMesh(int meshId, bool shade){
@@ -432,7 +453,7 @@ void subDivideMesh(int meshId){
 	faceList.at(meshId).ind1 = old1;
 	faceList.at(meshId).ind2 = indexv12;
 	faceList.at(meshId).ind3 = indexv31;
-	faceList.at(meshId).colorId = 5;
+	faceList.at(meshId).colorId = initColor;
 
 	//vertexList.at(old1).printv();
 	//vertexList.at(indexv12).printv();
@@ -476,7 +497,7 @@ void subDivideMesh(int meshId){
 		m->normalX = v->x;
 		m->normalY = v->y;
 		m->normalZ = v->z;
-		m->colorId = 5;
+		m->colorId = initColor;
 
 		faceList.push_back(*m);	
 	}
@@ -744,7 +765,7 @@ void setEffectColor(vertex v){
 	//red->orange->yellow->green->blue->black
 	//1------>0
 
-	float r =1, g=1, b=1; 
+	float r =0, g=0, b=0; 
 	if(coef > 0.5 && coef <1){
 		r = (coef-0.5)*2;
 	}

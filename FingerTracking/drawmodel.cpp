@@ -25,15 +25,26 @@ int getRotY(){ return rotY; }
 
 void drawVMModel(){
 	
+	glPushMatrix();
+	glLoadIdentity();
+	trackRoll();
+	draw_fill_model();
+	draw_line_effect();
+
+	glPopMatrix();
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+	/*
 	glLoadIdentity();
 	glEnable(GL_TEXTURE_2D);
 
-	for(int j=0; j< getFaceListSize(); j++){
-		glPushMatrix();
-		glPushName(j);
+	glPushMatrix();
+	glLoadIdentity();
+	trackRoll();
 
-		glLoadIdentity();
-		trackRoll();
+	for(int j=0; j< getFaceListSize(); j++){
+		
+		glPushName(j);
 		//glGetFloatv(GL_MODELVIEW_MATRIX, mat);
 
 		if(sListContain(j) >= 0 || getSelection() == j){
@@ -49,39 +60,90 @@ void drawVMModel(){
 		else{
 			setColorPaint(j);
 		}
+		
 		//polygon
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		glPolygonMode(GL_FRONT, GL_FILL);
 		drawMesh(j, false);
+	
 
 		//Contour line
 		glDisable(GL_TEXTURE_2D);
 		glDisable(GL_LIGHTING);	
+		glDisable(GL_CULL_FACE);
+		glDisable(GL_DEPTH_TEST);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		drawMesh(j, true);
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_LIGHTING);
+		glEnable(GL_CULL_FACE);
+		glEnable(GL_DEPTH_TEST);
 
 		glPopName();
-		glPopMatrix();
 		//glMultMatrixf(mat);	
 	}
 
 	//drawGizmo();
-	
+	glPopMatrix();	
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	*/
+}
+
+void draw_fill_model(){
+
+	glPolygonMode(GL_FRONT, GL_FILL);
+
+	for(int j=0; j< getFaceListSize(); j++){
+		
+		glPushName(j);
+
+		if(sListContain(j) >= 0 || getSelection() == j){
+			//glBindTexture(GL_TEXTURE_2D, 3);	//green
+			glColor3f(0, 1, 0);
+			
+			//gizmo
+			//glDisable(GL_TEXTURE_2D);
+			//glDisable(GL_LIGHTING);	
+			setGizmo(j);
+			//glEnable(GL_TEXTURE_2D);
+			//glEnable(GL_LIGHTING);
+		}
+		else{
+			setColorPaint(j);
+		}
+		
+		//polygon
+		drawMesh(j, false);
+		glPopName();
+	}
+}
+
+void draw_line_effect(){
+	//Contour line
+		glDisable(GL_LIGHTING);	
+		glDisable(GL_CULL_FACE);
+		glDisable(GL_DEPTH_TEST);//line shows more
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		glLineWidth(1);
+
+		for(int j=0; j< getFaceListSize(); j++){
+			drawMesh(j, true);
+		}
+		
+		glEnable(GL_LIGHTING);
+		glEnable(GL_CULL_FACE);
+		glEnable(GL_DEPTH_TEST);
 }
 
 void drawPickVMModel(){
 
-	glDisable(GL_DITHER); //disable blending color function
-	glDisable(GL_LIGHT0);
-	glDisable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);
+	//glDisable(GL_DITHER); //disable blending color function
+	//glDisable(GL_LIGHT0);
+	//glDisable(GL_LIGHTING);
+	glPushMatrix();
+	trackRoll();
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	for (int i=0; i< getFaceListSize(); i++){
-		glPushMatrix();
-
-		trackRoll();
 
 		//binary representative
 		//0-255
@@ -94,16 +156,14 @@ void drawPickVMModel(){
 		}
 		else printf("error: TOO MANY MASH\n");
 
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		drawMesh(i, false);
-		glPopMatrix();
+		
 	}
-	
+	glPopMatrix();
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	glEnable(GL_DITHER);
-	glEnable(GL_TEXTURE_2D);
+	//glEnable(GL_DITHER);
 }
 
 void trackRoll(){
