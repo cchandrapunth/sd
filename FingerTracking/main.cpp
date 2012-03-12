@@ -12,7 +12,7 @@
 #include <GL/glut.h>
 #include <XnCppWrapper.h>
 #include <XnVNite.h>
-#include "glui.h"
+#include <time.h>
 
 #include "picking.h"
 #include "gesture.h"
@@ -24,6 +24,8 @@
 #include "vmmodel.h"
 #include "drawmodel.h"
 #include "paint.h"
+#include "svmtrain.h"
+#include "svmpredict.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -592,8 +594,15 @@ void kinectInit(){
 
 }
 
-int main (int argc, char **argv){
+void wait ( int seconds )
+{
+  clock_t endwait;
+  endwait = clock () + seconds * CLOCKS_PER_SEC ;
+  while (clock() < endwait) {}
+}
 
+int main (int argc, char **argv){
+	
 	kinectInit();
 	
 	glutInit(&argc, argv);
@@ -618,4 +627,14 @@ int main (int argc, char **argv){
 
 	context.Shutdown();
 	return(0);
+	
+	/*
+	char raw_training_set []= "a1a_train.txt";
+	char training_model [] = "a1a_train_mod.txt";
+	char predicted_result [] = "a1a_test.txt";
+	svm_train(raw_training_set, training_model);
+	svm_predict(raw_training_set, training_model, predicted_result);
+	
+	wait(100);
+	*/
 }

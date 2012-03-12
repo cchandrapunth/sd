@@ -66,6 +66,12 @@
     <ClInclude Include="drawhand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="svmtrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="svmpredict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -114,6 +120,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="drawhand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="svmtrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="svmpredict.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
