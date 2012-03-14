@@ -610,8 +610,7 @@ void wait ( int seconds )
 
 
 int main (int argc, char **argv){
-	//float s = findAngle(1, 2, 2, 3, 3, 0);
-	//printf("%f", s);
+	
 	
 	kinectInit();
 	

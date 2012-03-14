@@ -246,7 +246,7 @@ void drawHand(XnPoint3D* handPointList){
 		}		
 	}
 	glEnd();
-
+	/*
 	if(printTraining){ 
 		int one_block = HANDRADIUS/2;
 		int count =0;
@@ -266,20 +266,20 @@ void drawHand(XnPoint3D* handPointList){
 					//fprintf(pFile,"\n");
 				}
 				numpoint[m][n] = count;
-				fprintf(pFile, "%d:%d ", (m*nb)+n+1, count);
+				//fprintf(pFile, "%d:%d ", (m*nb)+n+1, count);
 				count =0;
 			}
 		}
-		fprintf(pFile, "\n");
+		//fprintf(pFile, "\n");
 		//done
 		//set_print_training(0);
 	}
-
+	
 	if(printDebug && n > 0){
 			fprintf(pFile, "\nnNumberOfPoint = %u\n",  n);
 		}
-
-	if(n> 0) find_finger(handPointList, n);
+	*/
+	if(n> 0 && printTraining) find_finger(handPointList, n);
 
 	if(n > 0) getEdge(handPointList, n);
 	else GRAB = false;
@@ -302,8 +302,8 @@ float findAngle(float x1, float y1, float x2, float y2, float x3, float y3){
 	return anglebtw;
 }
 
-float dis(XnPoint3D a, XnPoint3D b){
-	return sqrt(pow(a.X-b.X, (float)2.0) +pow(a.Y-b.Y, (float) 2));
+float dis(float x1, float y1, float x2, float y2){
+	return sqrt(pow(x1-x2, (float)2.0) +pow(y1-y2, (float) 2));
 
 }
 
@@ -375,54 +375,32 @@ void find_finger(XnPoint3D* List, int nNumberOfPoints){
 		k++;
 	}
 
-	glLineWidth(3);
+	glPointSize(10);
 	glColor3f(0,0,1);
-	glBegin(GL_LINE_STRIP);
+	glBegin(GL_POINTS);
 	for(int n=0; n< last; n++){
 		glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 0);
-		fprintf(pFile, "%f, %f ", convexList[n].X, convexList[n].Y);
+		//fprintf(pFile, "%d:%d ", (int)convexList[n].X, (int)convexList[n].Y);
 	}
-	fprintf(pFile, "\n");
-	glEnd();
-	/*
-	base = lowest;
-	fprintf(pFile, "%.2f-%.2f\t", base->X, base->Y);
-	convex[convexSize].X = base->X;
-	convex[convexSize].Y = base->Y;
-	convexSize++;
-
-	while(!(smallestAngle->X == lowest->X && smallestAngle->Y == lowest->Y)){	
-		ptr = List; 
-		float angle = 360;
-
-		for(int i = 0; i< nNumberOfPoints; i++){
-			float a = findAngle(List[i].X, List[i].Y, base->X, base->Y);
-			if(a < angle && a > 0){
-				smallestAngle->X = List[i].X;
-				smallestAngle->Y = List[i].Y;
-				angle = a;
-			}
-		}
-		convex[convexSize].X = smallestAngle->X;
-		convex[convexSize].Y = smallestAngle->Y;
-		fprintf(pFile, "%.2f-%.2f\t", smallestAngle->X, smallestAngle->Y);
-		convexSize++;
-
-		base->X = smallestAngle->X;
-		base->Y = smallestAngle->Y;
-	}
-	fprintf(pFile, "\n");
-
-	
-	glLineWidth(3);
-	glColor3f(0, 0, 255);
-	glBegin(GL_LINE_LOOP);
-	for(int i=0; i< convexSize; i++){
-		glVertex3f(convertX(convex[i].X), convertY(convex[i].Y), 0);
-	}
+	//fprintf(pFile, "\n");
 	glEnd();
 
-	*/
+	int len[100];
+	for(int i=0; i< 100; i++){
+		len[i] = 0;
+	}
+
+	//print distance from the center hand
+	for(int n=0; n< last; n++){
+		int d = (int)dis(convexList[n].X, convexList[n].Y, palmPos.X, palmPos.Y);
+		len[d] +=1;
+	}
+
+	for(int i=0; i< 100; i++){
+		if(len[i]) fprintf(pFile, "%d:%d ", i, len[i]);
+	}
+	fprintf(pFile, "\n");
+	//set_print_training(0);
 }
 
 //estimate grab gesture
