@@ -118,6 +118,13 @@ void processNormalKeys(unsigned char key, int x, int y){
 		if(BACK_BUFF) printf("switch buffer to front\n");
 		else 	printf("switch buffer to back\n");
 	}
+	else if(key == 111) {//'o' to train value = open hand
+		set_print_training(2);
+	}
+
+	else if(key == 112) {// 'p' to train value = close hand
+		set_print_training(1);
+	}
 	else
 		printf("key: %d\n", key);
 }
@@ -601,7 +608,10 @@ void wait ( int seconds )
   while (clock() < endwait) {}
 }
 
+
 int main (int argc, char **argv){
+	//float s = findAngle(1, 2, 2, 3, 3, 0);
+	//printf("%f", s);
 	
 	kinectInit();
 	
@@ -628,13 +638,27 @@ int main (int argc, char **argv){
 	context.Shutdown();
 	return(0);
 	
+	
 	/*
-	char raw_training_set []= "a1a_train.txt";
-	char training_model [] = "a1a_train_mod.txt";
-	char predicted_result [] = "a1a_test.txt";
+	char raw_training_set []= "a1a.train.train";
+	char training_model [] = "a1a.mod.txt";
+	char test_set [] = "a1a.test.test";
+	char predicted_result [] = "a1a.result.out";
 	svm_train(raw_training_set, training_model);
-	svm_predict(raw_training_set, training_model, predicted_result);
+	svm_predict(test_set, training_model, predicted_result);
+	*/
+
+	/*
+	char raw_training_set []= "svm_training.txt";
+	char training_model [] = "svm_training.mod.txt";
+	char test_set [] = "svm_testing.txt";
+	char predicted_result [] = "svm_result.out";
+	svm_train(raw_training_set, training_model);
+	svm_predict(test_set, training_model, predicted_result);
+	*/
 	
 	wait(100);
-	*/
+	
+
+
 }

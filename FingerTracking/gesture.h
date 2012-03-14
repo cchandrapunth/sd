@@ -52,8 +52,11 @@ void estimateGrab(
 	XnPoint3D* lowest, 
 	XnPoint3D* leftmost, 
 	XnPoint3D* rightmost);
-
+void find_finger(XnPoint3D* List, int nNumberOfPoints);
+float findAngle(float x1, float y1, float x2, float y2, float x3, float y3);
 
 float convertX(float x);
 float convertY(float y);
 float convertYcursor(float y);
+
+void set_print_training(int i);
