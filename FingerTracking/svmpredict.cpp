@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+
 #include "svm.h"
+#include "Pair.h"
 #include "svmpredict.h"
 
 struct svm_node *x;
@@ -15,25 +17,21 @@ int predict_probability=0;
 
 static char *line = NULL;
 static int max_line_len;
+FILE *input, *output;
+int i;
 
-int svm_predict(char* input_f_name, char *model_f_name, char *output_f_name)
-{
-	FILE *input, *output;
-	int i;
-	
-	input = fopen(input_f_name,"r");
-	if(input == NULL)
-	{
-		fprintf(stderr,"can't open input file %s\n",input_f_name);
-		exit(1);
+//for real time prediction
+int svm_rt_predict(Pair* p, int size){
+	for(int i=0; i< size; i++){
+		x[i].index = p[i].index;
+		x[i].value = p[i].value;
 	}
+	x[size].index = -1; //last one
+	int predict_label = svm_predict(imp_model,x);
+	return predict_label;
+}
 
-	output = fopen(output_f_name,"w");
-	if(output == NULL)
-	{
-		fprintf(stderr,"can't open output file %s\n", output_f_name);
-		exit(1);
-	}
+int init_predict(char *model_f_name){
 
 	if((imp_model=svm_load_model(model_f_name))==0)
 	{
@@ -55,6 +53,26 @@ int svm_predict(char* input_f_name, char *model_f_name, char *output_f_name)
 		if(svm_check_probability_model(imp_model)!=0)
 			printf("Model supports probability estimates, but disabled in prediction.\n");
 	}
+}
+
+//for testing and input to file
+int svm_predict(char* input_f_name, char *model_f_name, char *output_f_name)
+{
+	input = fopen(input_f_name,"r");
+	if(input == NULL)
+	{
+		fprintf(stderr,"can't open input file %s\n",input_f_name);
+		exit(1);
+	}
+
+	output = fopen(output_f_name,"w");
+	if(output == NULL)
+	{
+		fprintf(stderr,"can't open output file %s\n", output_f_name);
+		exit(1);
+	}
+
+	init_predict(model_f_name);
 	predict(input,output);
 	svm_free_and_destroy_model(&imp_model);
 	free(x);
@@ -159,7 +177,6 @@ void predict(FILE *input, FILE *output)
 			x[i].value = strtod(val,&endptr);
 			if(endptr == val || errno != 0 || (*endptr != '\0' && !isspace(*endptr)))
 				exit_input_error(total+1);
-
 			++i;
 		}
 		x[i].index = -1;

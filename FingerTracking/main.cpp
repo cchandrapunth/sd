@@ -25,6 +25,7 @@
 #include "drawmodel.h"
 #include "paint.h"
 #include "svmtrain.h"
+#include "Pair.h"
 #include "svmpredict.h"
 
 //----------------------------------------------------------------
@@ -124,6 +125,15 @@ void processNormalKeys(unsigned char key, int x, int y){
 
 	else if(key == 112) {// 'p' to train value = close hand
 		set_print_training(1);
+	}
+	else if(key == 49){ //'1' for index finger
+		set_print_training(3);
+	}
+	else if(key == 50){ //'2' for two finger 
+		set_print_training(4);
+	}
+	else if(key == 51){ //'3' for three finger
+		set_print_training(5);
 	}
 	else
 		printf("key: %d\n", key);
@@ -601,6 +611,17 @@ void kinectInit(){
 
 }
 
+void initSVM(){
+	
+	char raw_training_set []= "training.txt";
+	char training_model [] = "training_mod.txt";
+	//char test_set [] = "svm_testing.txt";
+	//char predicted_result [] = "svm_result.out";
+	
+	svm_train(raw_training_set, training_model);
+	init_predict(training_model);
+
+}
 void wait ( int seconds )
 {
   clock_t endwait;
@@ -629,6 +650,7 @@ int main (int argc, char **argv){
 	initRender();
 	//initTex();
 	uiInit();
+	initSVM();
 	glutIdleFunc(display);	//enable GLUI window to take advantage of idle event
 
 	createGLUTMenus();
@@ -648,10 +670,10 @@ int main (int argc, char **argv){
 	*/
 
 	/*
-	char raw_training_set []= "svm_training.txt";
-	char training_model [] = "svm_training.mod.txt";
-	char test_set [] = "svm_testing.txt";
-	char predicted_result [] = "svm_result.out";
+	char raw_training_set []= "training.txt";
+	char training_model [] = "training.mod.txt";
+	char test_set [] = "testing.txt";
+	char predicted_result [] = "result.out";
 	svm_train(raw_training_set, training_model);
 	svm_predict(test_set, training_model, predicted_result);
 	*/

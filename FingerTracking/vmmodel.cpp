@@ -553,7 +553,7 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 		vectorx = 0;
 		vectory = 0;
 	}
-	printf("x= %f, y=%f, z=%f\n", vectorx, vectory, vectorz);
+	//printf("x= %f, y=%f, z=%f\n", vectorx, vectory, vectorz);
 
 	
 

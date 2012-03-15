@@ -72,6 +72,9 @@
     <ClInclude Include="svmpredict.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -126,6 +129,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="svmpredict.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pair.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

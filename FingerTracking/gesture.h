@@ -40,19 +40,19 @@ void XN_CALLBACK_TYPE Hand_Destroy(HandsGenerator& generator,XnUserID nId, XnFlo
 //read hand area 
 void drawHand(XnPoint3D* handPointList);
 
-void getEdge(XnPoint3D* List, int nNumberOfPoints);
+bool getEdge(XnPoint3D* List, int nNumberOfPoints);
 
 //helper
 bool isGrab();
 XnPoint3D getPalm();
 void switchShowHand();
-void estimateGrab(
+bool estimateGrab(
 	XnPoint3D* list, 
 	int n, XnPoint3D* highest, 
 	XnPoint3D* lowest, 
 	XnPoint3D* leftmost, 
 	XnPoint3D* rightmost);
-void find_finger(XnPoint3D* List, int nNumberOfPoints);
+bool find_finger(XnPoint3D* List, int nNumberOfPoints);
 float findAngle(float x1, float y1, float x2, float y2, float x3, float y3);
 
 float convertX(float x);

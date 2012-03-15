@@ -10,6 +10,8 @@
 #include "window.h"
 #include "vmmodel.h"
 #include "drawhand.h"
+#include "Pair.h"
+#include "svmpredict.h"
 
 using namespace xn;
 
@@ -34,6 +36,7 @@ static bool SHOWHAND;
 const int nb = 4;
 int svm_grid[2*HANDRADIUS][2*HANDRADIUS]; // size 2HANDRADIUS*2HANDRADIUS
 int numpoint[nb][nb];
+int len[100];	//length
 
 //-----------------------------------------------------
 //					   LOG
@@ -199,6 +202,12 @@ void drawHand(XnPoint3D* handPointList){
 		fprintf(pFile, "-1\t");	//close hand
 	}else if(printTraining == 2){
 		fprintf(pFile, "1\t");	//open hand
+	}else if(printTraining == 3){
+		fprintf(pFile, "2\t");	//1
+	}else if(printTraining == 4){
+		fprintf(pFile, "3\t");	//2
+	}else if(printTraining == 5){
+		fprintf(pFile, "4\t");	//3
 	}
 
 	glBegin(GL_POINTS);
@@ -279,13 +288,18 @@ void drawHand(XnPoint3D* handPointList){
 			fprintf(pFile, "\nnNumberOfPoint = %u\n",  n);
 		}
 	*/
-	if(n> 0 && printTraining) find_finger(handPointList, n);
+	bool result1, result2;
 
-	if(n > 0) getEdge(handPointList, n);
+	if(n> 0) result1 = find_finger(handPointList, n);
+	else result1 = false;
+	
+	if(n> 0) result2 = getEdge(handPointList, n);
+	else  result2 = false;
+
+	if(result1 && result2) GRAB = true;
 	else GRAB = false;
 
-
-
+	
 	glEnable(GL_LIGHTING);
 }
 
@@ -307,7 +321,7 @@ float dis(float x1, float y1, float x2, float y2){
 
 }
 
-void find_finger(XnPoint3D* List, int nNumberOfPoints){
+bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 	//giftwrap technique 
 
 	int count = 0; 
@@ -374,37 +388,59 @@ void find_finger(XnPoint3D* List, int nNumberOfPoints){
 		last++;
 		k++;
 	}
-
-	glPointSize(10);
-	glColor3f(0,0,1);
-	glBegin(GL_POINTS);
-	for(int n=0; n< last; n++){
-		glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 0);
-		//fprintf(pFile, "%d:%d ", (int)convexList[n].X, (int)convexList[n].Y);
-	}
-	//fprintf(pFile, "\n");
-	glEnd();
-
-	int len[100];
+	
 	for(int i=0; i< 100; i++){
 		len[i] = 0;
 	}
 
-	//print distance from the center hand
+	//distance from the center hand
 	for(int n=0; n< last; n++){
 		int d = (int)dis(convexList[n].X, convexList[n].Y, palmPos.X, palmPos.Y);
 		len[d] +=1;
 	}
 
+	/* for training
 	for(int i=0; i< 100; i++){
 		if(len[i]) fprintf(pFile, "%d:%d ", i, len[i]);
 	}
 	fprintf(pFile, "\n");
-	//set_print_training(0);
+	//set_print_training(0);	 
+	*/
+
+	Pair *p = (Pair *)malloc(sizeof(Pair)*100);
+	int size = 0;
+	for(int i=0; i< 100; i++){
+		if(len[i]){
+			p[size].index = i;
+			p[size].value = len[i];
+			size++;
+		}
+	}
+	int predict = svm_rt_predict(p, size);
+	
+	
+	//draw hands
+	if(SHOWHAND){
+		glPointSize(10);
+		glColor3f(0,0,1);
+		glBegin(GL_POINTS);
+		for(int n=0; n< last; n++){
+			glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 0);
+			//fprintf(pFile, "%d:%d ", (int)convexList[n].X, (int)convexList[n].Y);
+		}
+		//fprintf(pFile, "\n");
+		glEnd();
+	}	
+
+	drawRHand(GRAB, convertX(palmPos.X), convertY(palmPos.Y), palmPos.Z);
+
+	if(predict >0) return false;
+	else return true;
 }
 
+
 //estimate grab gesture
-void getEdge(XnPoint3D* List, int nNumberOfPoints){
+bool getEdge(XnPoint3D* List, int nNumberOfPoints){
 
 	int nX, nY;
 	int count = 0; 
@@ -445,43 +481,20 @@ void getEdge(XnPoint3D* List, int nNumberOfPoints){
 	}
 
 	//hand length
-	estimateGrab(List, nNumberOfPoints, highest, lowest, leftmost, rightmost);
+	return estimateGrab(List, nNumberOfPoints, highest, lowest, leftmost, rightmost);
 
-	//old approach
-	float lenght = lowest->Y - highest->Y;
-	//if (lenght > GRAB_THRESHOLD) GRAB  = false; 
-	//else GRAB = true;
 
+	/*
 	if(printDebug){
 		fprintf(pFile, "H:%.1f,%.1f \tL:%.1f,%.1f >> %f\n", (*highest).X, (*highest).Y, (*lowest).X, (*lowest).Y, lenght );
 		fprintf(pFile, "H:%.1f,%.1f \tL:%.1f,%.1f >> %f\n", (*leftmost).X, (*leftmost).Y, (*rightmost).X, (*rightmost).Y);
 	}
-
-	//------draw-------
-
-	if(SHOWHAND){
-		//draw top and bottom
-		glPointSize(8);
-		glColor3f(0, 1.0, 0);
-		glBegin(GL_POINTS);
-		glVertex2f((GLfloat) convertX((*highest).X), (GLfloat) convertY((*highest).Y));
-		glVertex2f((GLfloat) convertX((*lowest).X), (GLfloat) convertY((*lowest).Y));
-		glVertex2f((GLfloat) convertX((*rightmost).X), (GLfloat) convertY((*rightmost).Y));
-		glVertex2f((GLfloat) convertX((*leftmost).X), (GLfloat) convertY((*leftmost).Y));
-		glEnd();
-	}
-	else{
-		float x = convertX(palmPos.X);
-		float y = convertY(palmPos.Y);
-		float z = palmPos.Z;
-		drawRHand(GRAB, x, y, z);
-		
-	}
+	*/
 }
 
 //calculate the area half top of the hand area 
 //greater than 50% => grab 
-void estimateGrab(XnPoint3D* list, int n, XnPoint3D* highest, XnPoint3D* lowest, XnPoint3D* leftmost, XnPoint3D* rightmost){
+bool estimateGrab(XnPoint3D* list, int n, XnPoint3D* highest, XnPoint3D* lowest, XnPoint3D* leftmost, XnPoint3D* rightmost){
 	
 
 
@@ -521,7 +534,7 @@ void estimateGrab(XnPoint3D* list, int n, XnPoint3D* highest, XnPoint3D* lowest,
 	}
 
 	//estimate hand area > 0.5 => grab
-	if (percent > GRAB_THRESHOLD) GRAB  = true; 
-	else GRAB = false;
+	if (percent > GRAB_THRESHOLD) return true; 
+	else return false;
 
 }
