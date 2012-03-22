@@ -443,22 +443,30 @@ void initTex(void){
 
 
 void initRender(){
-
-	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat lmodel_ambient[] = {0.5, 0.5, 0.5, 1.0 };
+	GLfloat mat_specular[] = {0.8, 0.8, 0.8, 1.0};
 	GLfloat diffuseMaterial[4] = {0.4, 0.4, 0.4, 1.0};
-	GLfloat light_position[] = {1.0, 1.0, 2.0, 1.0};
-
+	GLfloat diffuse[] = {1.0,1.0,1.0,1.0};
+	GLfloat light_position[] = {1.0, 0.8, 2.0, 1.0};
+	GLfloat light_position1[] = {1.0, 0.8, 2.0, 1.0};
 
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_DEPTH_TEST);
 	glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuseMaterial);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
-	glMaterialf(GL_FRONT, GL_SHININESS, 25.0);
+	glMaterialf(GL_FRONT, GL_SHININESS, 20.0);
 
-	//light0
-	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+	//light0-1
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
+	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
+	
+
+
+
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
 
 	glColorMaterial(GL_FRONT, GL_DIFFUSE);
 	glEnable(GL_COLOR_MATERIAL);
@@ -564,7 +572,7 @@ void uiInit(){
 	vertex c = getCenter();
 	float diam = getDiam();
 
-	zNear = -2;
+	zNear = -5;
     zFar = 100;
 	left = c.x - diam;
     right = c.x + diam;

@@ -252,27 +252,26 @@ void drawMesh(int meshId, bool shade){
 	vertex v3 = vertexList.at(m.ind3);
 
 	glShadeModel(GL_SMOOTH);
-	
 	glBegin(GL_TRIANGLES);
-	 //glNormal3f(m.normalX, m.normalY, m.normalZ);
-	//if(shade){
-	//	setEffectColor(v1);
-	//}
+	if(shade){
+		setEffectColor(v1);
+	}
 	glNormal3f(-v1.vnormx, -v1.vnormy, -v1.vnormz);
 	 glVertex3f(v1.x, v1.y, v1.z);
 
-	//if(shade){
-	//	setEffectColor(v2);
-	 //}
+	if(shade){
+		setEffectColor(v2);
+	 }
 	glNormal3f(-v2.vnormx, -v2.vnormy, -v2.vnormz);
 	 glVertex3f(v2.x, v2.y,v2.z);
 
-	//if(shade){
-	//	setEffectColor(v3);
-	//}
+	if(shade){
+		setEffectColor(v3);
+	}
 	glNormal3f(-v3.vnormx, -v3.vnormy, -v3.vnormz);
-	 glVertex3f(v3.x, v3.y, v3.z);
+	glVertex3f(v3.x, v3.y, v3.z);
 	glEnd();
+	
 	 
 }
 //not use

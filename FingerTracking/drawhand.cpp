@@ -3,7 +3,7 @@
 #include <gl/glut.h>
 #include <math.h>
 
-int initZ = -1;
+int initZ = 4;
 
 void drawRHand(bool grab, float x, float y, float z){
 
@@ -12,23 +12,16 @@ void drawRHand(bool grab, float x, float y, float z){
 		else glColor3f(0, 1.0, 0);
 						
 		float dis = 0.1;
-		//keep the first depth
-		if(initZ == -1){
-			initZ = z;
-		}
-		else{
-			dis += (z- initZ)/500;
-			if(dis < 0) dis = 0;
-		}	
+
  
 		glBegin(GL_POINTS);
-		glVertex2f(x, y);
+		glVertex3f(x, y, initZ);
 		glEnd();
 
 		glBegin(GL_LINES);
-		glVertex2f((GLfloat) x, (GLfloat) y+dis);
-		glVertex2f((GLfloat) x, (GLfloat) y-dis);
-		glVertex2f((GLfloat) x+dis, (GLfloat) y);
-		glVertex2f((GLfloat) x-dis, (GLfloat) y);
+		glVertex3f((GLfloat) x, (GLfloat) y+dis, initZ);
+		glVertex3f((GLfloat) x, (GLfloat) y-dis, initZ);
+		glVertex3f((GLfloat) x+dis, (GLfloat) y, initZ);
+		glVertex3f((GLfloat) x-dis, (GLfloat) y, initZ);
 		glEnd();
 }

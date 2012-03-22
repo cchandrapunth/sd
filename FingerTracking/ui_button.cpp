@@ -4,7 +4,7 @@
 
 #include <string.h>
 
-static float ui_depth = -0.001;
+static float ui_depth = 4.9;
 
 void *font = GLUT_BITMAP_TIMES_ROMAN_24;
 

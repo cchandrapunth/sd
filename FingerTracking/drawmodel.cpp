@@ -29,7 +29,7 @@ void drawVMModel(){
 	glLoadIdentity();
 	trackRoll();
 	draw_fill_model();
-	//draw_line_effect();
+	draw_line_effect();
 
 	glPopMatrix();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -93,12 +93,13 @@ void draw_fill_model(){
 
 	glPolygonMode(GL_FRONT, GL_FILL);
 
+	
 	for(int j=0; j< getFaceListSize(); j++){
 		
 		glPushName(j);
 
 	glColor3f(0, 1, 0);
-		/* Debug
+
 		if(sListContain(j) >= 0 || getSelection() == j){
 			//glBindTexture(GL_TEXTURE_2D, 3);	//green
 			glColor3f(0, 1, 0);
@@ -113,12 +114,13 @@ void draw_fill_model(){
 		else{
 			setColorPaint(j);
 		}
-		*/
+		
 		
 		//polygon
 		drawMesh(j, false);
 		glPopName();
 	}
+	
 }
 
 void draw_line_effect(){
@@ -129,10 +131,12 @@ void draw_line_effect(){
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glLineWidth(1);
 
+		
 		for(int j=0; j< getFaceListSize(); j++){
 			drawMesh(j, true);
 		}
 		
+
 		glEnable(GL_LIGHTING);
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);
@@ -167,7 +171,7 @@ void drawPickVMModel(){
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	//glEnable(GL_DITHER);
+	glEnable(GL_LIGHT1);
 }
 
 void trackRoll(){
