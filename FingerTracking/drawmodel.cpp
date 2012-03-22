@@ -103,7 +103,7 @@ void draw_fill_model(){
 		if(sListContain(j) >= 0 || getSelection() == j){
 			//glBindTexture(GL_TEXTURE_2D, 3);	//green
 			glColor3f(0, 1, 0);
-			setGizmo(j);
+			setMeshSelection(j);
 		}
 		else{
 			setColorPaint(j);
@@ -176,8 +176,8 @@ void trackRoll(){
 	zoom = getMatZ()+zoomvZ;
 
 	//debug
-	//rotX = 150;
-	//rotY = 300;
+	rotX = 180;
+	rotY = 90;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);

@@ -12,6 +12,7 @@
 #include "drawhand.h"
 #include "Pair.h"
 #include "svmpredict.h"
+#include "smoothing.h"
 
 using namespace xn;
 
@@ -252,21 +253,33 @@ void drawHand(XnPoint3D* handPointList){
 	if(n> 0) result2 = getEdge(handPointList, n);
 	else  result2 = false;
 
-	
-	if(result1 && result2) GRAB = true;
-	else GRAB = false;
+	if(n>0){
+		if(result1)fprintf(pFile, "-1\t");
+		else fprintf(pFile, "1\t");
 
-	
-	if(result1)fprintf(pFile, "-1\t");
-	else fprintf(pFile, "1\t");
+		if(result2)fprintf(pFile, "-1\t");
+		else fprintf(pFile, "1\t");
 
-	if(result2)fprintf(pFile, "-1\t");
-	else fprintf(pFile, "1\t");
+		if(result1 && result2) fprintf(pFile, "-1\t");
+		else fprintf(pFile, "1\t");
 
-	if(result1 && result2) fprintf(pFile, "-1");
-	else fprintf(pFile, "1");
-	fprintf(pFile,"\n");
 
+		//*************smoothing**************************
+		int smooth_result = smoothHand(result1&result2);
+		if(smooth_result == -1) fprintf(pFile, "-1");
+		else fprintf(pFile, "1");
+		fprintf(pFile,"\n");
+		
+		if(smooth_result == -1) {
+			//printf("grab\n");
+			GRAB = true;
+		}
+		else {
+			//printf("-\n");
+			GRAB = false;
+		}
+
+	}
 	glEnable(GL_LIGHTING);
 }
 
@@ -375,12 +388,6 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 		fprintf(pFile, "-1\t");	//close hand
 	}else if(printTraining == 2){
 		fprintf(pFile, "1\t");	//open hand
-	}else if(printTraining == 3){
-		fprintf(pFile, "2\t");	//1
-	}else if(printTraining == 4){
-		fprintf(pFile, "3\t");	//2
-	}else if(printTraining == 5){
-		fprintf(pFile, "4\t");	//3
 	}
 	if(printTraining){
 		for(int i=0; i< 100; i++){

@@ -10,31 +10,35 @@
 #include "log.h"
 #include "picking.h"
 
+#define UNDORANGE 5
 using namespace std;
 
 static deque<mesh> faceList;
 static deque<vertex> vertexList;
 
 static deque<mesh> exfaceList;
-static deque<vertex> exvertexList;
+static deque<vertex> exvertexList[UNDORANGE];
+int numMod = 0; 
 
 int selectedMesh;
 int initColor = 2;	//initial color = blue
 
 bool debug = true;
 Log *pLog; 
+FILE *mFile;
 
 int getFaceListSize(){	return faceList.size();};
 int getVertexListSize(){	return vertexList.size();};
 
 void import_vm(){
 
-	pLog = new Log("vmmodel.log");
+	//pLog = new Log("vmmodel.log");
+	mFile = fopen("vmmodel.txt", "w");	
 
 	ifstream indata;
 	indata.open("modelinput.txt");
 	if(!indata) {
-		pLog->Write("Error: input file couldn't be opened");
+		//pLog->Write("Error: input file couldn't be opened");
 		exit(1);
 	}
 
@@ -87,7 +91,7 @@ void import_vm(){
 	calVertexNormal();
 
 	if(debug){
-		pLog->Write("load model complete");
+		//pLog->Write("load model complete");
 		printf("\n=================================================\n");
 		printf("\tvertexList :: nVertex = %d\n", vertexList.size());
 		printf("=================================================\n");
@@ -110,7 +114,7 @@ void export_vm(){
 	ofstream outdata;
 	outdata.open("vmmodeloutput.txt");
 	if(!outdata) {
-		pLog->Write("Error: output file couldn't be opened\n");
+		//pLog->Write("Error: output file couldn't be opened\n");
 		exit(1);
 	}
 
@@ -132,7 +136,7 @@ void export_vm(){
 	
 	outdata.close();
 	if(debug){
-		pLog->Write("export model complete");
+		//pLog->Write("export model complete");
 		for(int i=0; i< nVertex; i++){
 			vertexList.at(i).printv();
 		}
@@ -512,15 +516,20 @@ float* convertCoordinate(float transx, float transy, float transz){
 	float radianx = rx*2*3.14159265/360;
 	float radiany = ry*2*3.14159265/360;
 	
+	//transx = 0;
+	//transy = 0;
+	//transz = 0;
 
 	float vectorx = transx;
 	float vectory = transy;
 	float vectorz = -transz;
 
+	
 	//rotate around y axis
 	vectorx =  transx*cos(radianx) - vectorz*sin(radianx);	//x' = xcos0- zsin0
-	vectorz =  -transx*sin(radianx) + transz*cos(radianx);	//z' = xsin0+ zcos0
-
+	vectorz =  -transx*sin(radianx) + vectorz*cos(radianx);	//z' = xsin0+ zcos0
+	
+	
 	//Note:: mistake 
 	//make sure the z value changes and it's updated in the second rotation
 	//rotate around x axis
@@ -531,7 +540,6 @@ float* convertCoordinate(float transx, float transy, float transz){
 	return v;
 }
 
-//enforce the traslation in normal direction
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
 	rx = rotx;
 	ry = roty;
@@ -555,15 +563,9 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 		vectorx = 0;
 		vectory = 0;
 	}
-	//printf("x= %f, y=%f, z=%f\n", vectorx, vectory, vectorz);
+	//printf("x= %f, y=%f, z=%f\n", vectorx/10, vectory/10, vectorz/10);
 
-	
-
-	float normalx = faceList.at(id).normalX;
-	float normaly = faceList.at(id).normalY;
-	float normalz = faceList.at(id).normalZ;
-
-	softselection(id, vectorx/100, vectory/100, vectorz/100, normalx, normaly, normalz);
+	softselection(id, vectorx/1000, vectory/1000, vectorz/1000);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){
@@ -668,41 +670,41 @@ bool checkSize(int i){
 
 //copy to ex-data
 void copy_vmmodel(){
+	
+	//clear the old copy
+	//exvertexList.clear();
 
 	int nv = vertexList.size();
-	int nf = faceList.size();
-	
 	for(int i=0 ; i< nv; i++){
-		vertex* v = new vertex(&(vertexList.at(i)));
-		exvertexList.push_back(*v);
-	}
+		vertex temp = vertexList.at(i);
+		vertex* v = new vertex(temp.x, temp.y, temp.z);
+		v->vnormx = temp.vnormx;
+		v->vnormy = temp.vnormy;
+		v->vnormz = temp.vnormz;
 
-	for(int i=0; i< nf; i++){
-		mesh* m = new mesh(&(faceList.at(i)));
-		exfaceList.push_back(*m);
+		for(int f=0; f<temp.nface; f++){
+			v->addFaceId(temp.faceId[f]);
+		}
+		fprintf(mFile,"%d\t %f\t %f\t %f\n", i, v->x, v->y, v->z);
+		exvertexList[numMod].push_back(*v);
 	}
+	printf("copy model: %d\n", numMod);
+	
+	//next index 
+	if(numMod == UNDORANGE-1){
+		numMod = 0;
+	}else numMod++;
+
+	fprintf(mFile,"---------------------------------------------------\n");
 }
 
 //restore ex-data to the data structure
-void undo_vmmodel(){
+void undo_vmmodel(int i){
 	
-	if(exvertexList.size() >0 && exfaceList.size() > 0 ){
-	vertexList.clear();
-	faceList.clear();
+	if(exvertexList[i].size() >i){
+		vertexList = exvertexList[i];
 
-	int nv = exvertexList.size();
-	int nf = exfaceList.size();
-
-	for(int i=0 ; i< nv; i++){
-		vertexList.push_back(exvertexList.at(i));
-	}
-
-	for(int i=0; i< nf; i++){
-		faceList.push_back(exfaceList.at(i));
-	}
-
-	exvertexList.clear();
-	exfaceList.clear();
+		printf("undo\n");
 	}
 }
 
@@ -718,7 +720,7 @@ void downEffect(){
 	s-=0.1;
 	printf("s=%f\n", s);
 }
-void softselection(int id,float tx,float ty,float tz, float nx, float ny, float nz){
+void softselection(int id,float tx,float ty,float tz){
 
 	//function
 	//f(x,y) = Ae^ -((x-x0)^2/2sx^2  + (y-y0)^2/2sy^2)
@@ -741,7 +743,6 @@ void softselection(int id,float tx,float ty,float tz, float nx, float ny, float 
 		coef = pow(e, -exp);
 
 		//printf("v: %d \t| coef = %f\n", i, coef);
-
 
 		//translate the point
 		vertexList.at(i).x = vertexList.at(i).x + tx*coef;	//x
@@ -888,7 +889,7 @@ float getDiam(){
 
 
 //-------------------------gizmo/center-----------------------------------
-void setGizmo(int k){
+void setMeshSelection(int k){
 	selectedMesh = k;
 	
 	/*
