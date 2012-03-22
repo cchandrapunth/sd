@@ -29,10 +29,11 @@ void drawVMModel(){
 	glLoadIdentity();
 	trackRoll();
 	draw_fill_model();
-	draw_line_effect();
+	//draw_line_effect();
 
 	glPopMatrix();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	
 
 	/*
 	glLoadIdentity();
@@ -96,6 +97,8 @@ void draw_fill_model(){
 		
 		glPushName(j);
 
+	glColor3f(0, 1, 0);
+		/* Debug
 		if(sListContain(j) >= 0 || getSelection() == j){
 			//glBindTexture(GL_TEXTURE_2D, 3);	//green
 			glColor3f(0, 1, 0);
@@ -110,6 +113,7 @@ void draw_fill_model(){
 		else{
 			setColorPaint(j);
 		}
+		*/
 		
 		//polygon
 		drawMesh(j, false);

@@ -127,10 +127,12 @@ void processNormalKeys(unsigned char key, int x, int y){
 		set_print_training(1);
 	}
 	else if(key == 49){ //'1' for index finger
-		set_print_training(3);
+			commitScene(1, 0, 0);
+			recalNormal();
 	}
 	else if(key == 50){ //'2' for two finger 
-		set_print_training(4);
+			commitScene(0,1,0);
+			recalNormal();
 	}
 	else if(key == 51){ //'3' for three finger
 		set_print_training(5);
@@ -177,8 +179,8 @@ void checkCursor(int func){
 				
 				//select the grey area: rotation 
 				else{
-					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					recalNormal();
+					//commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					//recalNormal();
 				}
 				
 			}
@@ -190,8 +192,8 @@ void checkCursor(int func){
 				}		
 				//select the grey area: rotation 
 				else{
-					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					recalNormal();	
+					//commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					//recalNormal();	
 				}
 			}
 
@@ -444,7 +446,7 @@ void initRender(){
 
 	GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat diffuseMaterial[4] = {0.4, 0.4, 0.4, 1.0};
-	GLfloat light_position[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat light_position[] = {1.0, 1.0, 2.0, 1.0};
 
 
 	glShadeModel(GL_SMOOTH);
@@ -562,7 +564,7 @@ void uiInit(){
 	vertex c = getCenter();
 	float diam = getDiam();
 
-	zNear = 0;
+	zNear = -2;
     zFar = 100;
 	left = c.x - diam;
     right = c.x + diam;

@@ -196,19 +196,7 @@ void drawHand(XnPoint3D* handPointList){
 	if(!GRAB)	glColor3f(0, 1, 0);
 	else glColor3f(1, 0.0, 0.0);
 	XnPoint3D *p = new XnPoint3D;
-	
-	//svm label 
-	if(printTraining == 1){
-		fprintf(pFile, "-1\t");	//close hand
-	}else if(printTraining == 2){
-		fprintf(pFile, "1\t");	//open hand
-	}else if(printTraining == 3){
-		fprintf(pFile, "2\t");	//1
-	}else if(printTraining == 4){
-		fprintf(pFile, "3\t");	//2
-	}else if(printTraining == 5){
-		fprintf(pFile, "4\t");	//3
-	}
+
 
 	glBegin(GL_POINTS);
 		//Iterate through the pixel from top to bottom/ right to left
@@ -255,39 +243,7 @@ void drawHand(XnPoint3D* handPointList){
 		}		
 	}
 	glEnd();
-	/*
-	if(printTraining){ 
-		int one_block = HANDRADIUS/2;
-		int count =0;
 
-		
-		for(int m=0; m < nb; m++){
-			for(int n=0; n< nb; n++){
-				for(int j = one_block*m; j< one_block*(m+1); j++){
-					for(int i= one_block*n; i< one_block*(n+1) ; i++){
-						if(svm_grid[i][j]) {
-							count++;
-							//fprintf(pFile,"*");
-						}
-						//fprintf(pFile, " ");
-						svm_grid[i][j] = 0;
-					}
-					//fprintf(pFile,"\n");
-				}
-				numpoint[m][n] = count;
-				//fprintf(pFile, "%d:%d ", (m*nb)+n+1, count);
-				count =0;
-			}
-		}
-		//fprintf(pFile, "\n");
-		//done
-		//set_print_training(0);
-	}
-	
-	if(printDebug && n > 0){
-			fprintf(pFile, "\nnNumberOfPoint = %u\n",  n);
-		}
-	*/
 	bool result1, result2;
 
 	if(n> 0) result1 = find_finger(handPointList, n);
@@ -296,10 +252,21 @@ void drawHand(XnPoint3D* handPointList){
 	if(n> 0) result2 = getEdge(handPointList, n);
 	else  result2 = false;
 
+	
 	if(result1 && result2) GRAB = true;
 	else GRAB = false;
 
 	
+	if(result1)fprintf(pFile, "-1\t");
+	else fprintf(pFile, "1\t");
+
+	if(result2)fprintf(pFile, "-1\t");
+	else fprintf(pFile, "1\t");
+
+	if(result1 && result2) fprintf(pFile, "-1");
+	else fprintf(pFile, "1");
+	fprintf(pFile,"\n");
+
 	glEnable(GL_LIGHTING);
 }
 
@@ -344,7 +311,7 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 	}
 
 	
-	//find the smallest angle (2D)
+	//find convex hull
 	XnPoint3D* base = new XnPoint3D;
 	base = lowest;
 
@@ -395,17 +362,33 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 
 	//distance from the center hand
 	for(int n=0; n< last; n++){
-		int d = (int)dis(convexList[n].X, convexList[n].Y, palmPos.X, palmPos.Y);
-		len[d] +=1;
+		//only consider point above the central hand
+		//if(convexList[n].Y < palmPos.Y){
+			int d = (int)dis(convexList[n].X, convexList[n].Y, palmPos.X, palmPos.Y);
+			len[d] +=1;
+		//}
 	}
 
-	/* for training
-	for(int i=0; i< 100; i++){
-		if(len[i]) fprintf(pFile, "%d:%d ", i, len[i]);
+	//for training
+	//svm label 
+	if(printTraining == 1){
+		fprintf(pFile, "-1\t");	//close hand
+	}else if(printTraining == 2){
+		fprintf(pFile, "1\t");	//open hand
+	}else if(printTraining == 3){
+		fprintf(pFile, "2\t");	//1
+	}else if(printTraining == 4){
+		fprintf(pFile, "3\t");	//2
+	}else if(printTraining == 5){
+		fprintf(pFile, "4\t");	//3
 	}
-	fprintf(pFile, "\n");
-	//set_print_training(0);	 
-	*/
+	if(printTraining){
+		for(int i=0; i< 100; i++){
+			if(len[i]) fprintf(pFile, "%d:%d ", i, len[i]);
+		}
+		fprintf(pFile, "\n");
+		//set_print_training(0);	 
+	}
 
 	Pair *p = (Pair *)malloc(sizeof(Pair)*100);
 	int size = 0;
@@ -425,10 +408,11 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 		glColor3f(0,0,1);
 		glBegin(GL_POINTS);
 		for(int n=0; n< last; n++){
-			glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 0);
-			//fprintf(pFile, "%d:%d ", (int)convexList[n].X, (int)convexList[n].Y);
+			//if(convexList[n].Y < palmPos.Y){
+				glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 0);
+			//}	
 		}
-		//fprintf(pFile, "\n");
+
 		glEnd();
 	}	
 

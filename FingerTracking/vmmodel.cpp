@@ -180,6 +180,9 @@ vertex* getFaceNormal(vertex vv1, vertex vv2, vertex vv3){
 	norm->y = (v1->z * v2->x) - (v1->x* v2->z);
 	norm->z = (v1->x * v2->y) - (v1->y * v2->x);	
 
+	//declare on the stack
+	delete(v1);
+	delete(v2);
 	return norm;
 }
 
@@ -252,22 +255,22 @@ void drawMesh(int meshId, bool shade){
 	
 	glBegin(GL_TRIANGLES);
 	 //glNormal3f(m.normalX, m.normalY, m.normalZ);
-	if(shade){
-		setEffectColor(v1);
-	}
-	glNormal3f(v1.vnormx, v1.vnormy, v1.vnormz);
+	//if(shade){
+	//	setEffectColor(v1);
+	//}
+	glNormal3f(-v1.vnormx, -v1.vnormy, -v1.vnormz);
 	 glVertex3f(v1.x, v1.y, v1.z);
 
-	if(shade){
-		setEffectColor(v2);
-	 }
-	glNormal3f(v2.vnormx, v2.vnormy, v2.vnormz);
-	 glVertex3f(v2.x, v2.y, v2.z);
+	//if(shade){
+	//	setEffectColor(v2);
+	 //}
+	glNormal3f(-v2.vnormx, -v2.vnormy, -v2.vnormz);
+	 glVertex3f(v2.x, v2.y,v2.z);
 
-	if(shade){
-		setEffectColor(v3);
-	}
-	glNormal3f(v3.vnormx, v3.vnormy, v3.vnormz);
+	//if(shade){
+	//	setEffectColor(v3);
+	//}
+	glNormal3f(-v3.vnormx, -v3.vnormy, -v3.vnormz);
 	 glVertex3f(v3.x, v3.y, v3.z);
 	glEnd();
 	 
