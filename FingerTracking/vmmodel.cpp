@@ -565,7 +565,7 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	}
 	//printf("x= %f, y=%f, z=%f\n", vectorx/10, vectory/10, vectorz/10);
 
-	softselection(id, vectorx/1000, vectory/1000, vectorz/1000);
+	softselection(id, vectorx/800, vectory/800, vectorz/1000);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){

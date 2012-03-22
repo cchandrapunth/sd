@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "smoothing.h"
 
-#define SMOOTHSIZE 12
+#define SMOOTHSIZE 10
 #define GRABTHRES 0.6
 int grabList[SMOOTHSIZE];
 int index =0;

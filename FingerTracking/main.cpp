@@ -178,8 +178,8 @@ void checkCursor(int func){
 				
 				//select the grey area: rotation 
 				else{
-					//commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					//recalNormal();
+					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					recalNormal();
 				}
 				
 			}
@@ -191,8 +191,8 @@ void checkCursor(int func){
 				}		
 				//select the grey area: rotation 
 				else{
-					//commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					//recalNormal();	
+					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
+					recalNormal();	
 				}
 			}
 

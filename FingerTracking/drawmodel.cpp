@@ -176,8 +176,8 @@ void trackRoll(){
 	zoom = getMatZ()+zoomvZ;
 
 	//debug
-	rotX = 180;
-	rotY = 90;
+	//rotX = 0;
+	//rotY = 90;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);
@@ -203,9 +203,9 @@ void trackRoll(){
 
 void commitScene(float transx, float transy, float z){
 	//set variable for rotate/zoom
-	rollvX = transx;
-	rollvY = transy;
-	zoomvZ = z;
+	rollvX = -transx/5;
+	rollvY = transy/5;
+	zoomvZ = z/5;
 }
 
 
