@@ -466,14 +466,6 @@ bool getEdge(XnPoint3D* List, int nNumberOfPoints){
 
 	//hand length
 	return estimateGrab(List, nNumberOfPoints, highest, lowest, leftmost, rightmost);
-
-
-	/*
-	if(printDebug){
-		fprintf(pFile, "H:%.1f,%.1f \tL:%.1f,%.1f >> %f\n", (*highest).X, (*highest).Y, (*lowest).X, (*lowest).Y, lenght );
-		fprintf(pFile, "H:%.1f,%.1f \tL:%.1f,%.1f >> %f\n", (*leftmost).X, (*leftmost).Y, (*rightmost).X, (*rightmost).Y);
-	}
-	*/
 }
 
 //calculate the area half top of the hand area 

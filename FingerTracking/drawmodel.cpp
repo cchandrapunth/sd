@@ -103,13 +103,7 @@ void draw_fill_model(){
 		if(sListContain(j) >= 0 || getSelection() == j){
 			//glBindTexture(GL_TEXTURE_2D, 3);	//green
 			glColor3f(0, 1, 0);
-			
-			//gizmo
-			//glDisable(GL_TEXTURE_2D);
-			//glDisable(GL_LIGHTING);	
 			setGizmo(j);
-			//glEnable(GL_TEXTURE_2D);
-			//glEnable(GL_LIGHTING);
 		}
 		else{
 			setColorPaint(j);
@@ -145,8 +139,8 @@ void draw_line_effect(){
 void drawPickVMModel(){
 
 	//glDisable(GL_DITHER); //disable blending color function
-	//glDisable(GL_LIGHT0);
-	//glDisable(GL_LIGHTING);
+	glDisable(GL_LIGHT0);
+	glDisable(GL_LIGHTING);
 	glPushMatrix();
 	trackRoll();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

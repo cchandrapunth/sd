@@ -891,7 +891,7 @@ float getDiam(){
 void setGizmo(int k){
 	selectedMesh = k;
 	
-	
+	/*
 	float* f= getCenterSelection();
 	float fx = f[0]+faceList.at(k).normalX*2;
 	float fy = f[1]+faceList.at(k).normalY*2;
@@ -921,6 +921,7 @@ void setGizmo(int k){
 
 
 	glLineWidth(2);
+	*/
 }
 
 

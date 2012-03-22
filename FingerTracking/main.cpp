@@ -459,14 +459,14 @@ void initRender(){
 	//light0-1
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
+	//glEnable(GL_LIGHT1);
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-    glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
+    //glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
 	
 
 
 
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
+	//glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
 
 	glColorMaterial(GL_FRONT, GL_DIFFUSE);
 	glEnable(GL_COLOR_MATERIAL);
