@@ -40,6 +40,9 @@
 #define RENDER	1	
 #define SELECT	2	
 
+//mode
+bool rotateMode = false;
+
 // static //
 static int mainWindow;
 static int border =6, h=480, w= 800; 
@@ -61,6 +64,7 @@ bool stateGrab = false; //0- not grab, 1 - already in grab
 
 //ui
 ui *Master_ui =new ui();
+
 
 // feature
 bool sculpting = true;
@@ -134,7 +138,8 @@ void processNormalKeys(unsigned char key, int x, int y){
 			commitScene(0,1,0);
 			recalNormal();
 	}
-	else if(key == 51){ //'3' for three finger
+	else if(key == 51){ //'3' for line effect
+			switchLine();
 	}
 	else
 		printf("key: %d\n", key);
@@ -165,34 +170,37 @@ void checkCursor(int func){
 				//we don't need this for painting
 				mode = RENDER;	
 
-				//grab group of mesh
-				if(sListContain(getSelection()) >= 0 ){
-						interpolate(getsList(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
-						recalNormal();
-				}
-				//grab one mesh
-				else if(getSelection() > 0 && getSelection() < getFaceListSize()){
-						interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
-						recalNormal();
-				}
-				
-				//select the grey area: rotation 
-				else{
+				if(rotateMode){
+					disableLine(); //disable line effect
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
 					recalNormal();
+				}else{
+
+					//grab group of mesh
+					if(sListContain(getSelection()) >= 0 ){
+						interpolate(getsList(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
+						recalNormal();
+					}
+					//grab one mesh
+					else if(getSelection() > 0 && getSelection() < getFaceListSize()){
+						interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
+						recalNormal();
+					}
 				}
-				
+
 			}
 			//paint
 			else if(func ==2 && !selection){
-				if(getSelection() >0 && getSelection() < getFaceListSize()){
-					//printf("selection ->%d\n", getSelection());
-					paintMesh(getSelection(), getBrushColor());
-				}		
-				//select the grey area: rotation 
-				else{
+				if(rotateMode){
+					disableLine(); 
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					recalNormal();	
+					recalNormal();
+				}else{
+
+					if(getSelection() >0 && getSelection() < getFaceListSize()){
+						//printf("selection ->%d\n", getSelection());
+						paintMesh(getSelection(), getBrushColor());
+					}		
 				}
 			}
 
@@ -365,14 +373,20 @@ void reshape(int w1, int h1){
 	if(h1 ==0) h=1; 
 	glViewport(0, 0, w, h); 
 
+	float adjbottom = bottom;
+	float adjtop = top;
+	float adjright = right;
+	float adjleft = left;
+
 	/*
 	float aspect= (float)w/h;
+	printf("asp: %f\n", aspect);
 	if ( aspect < 1.0 ) { // window taller than wide
-     bottom /= aspect;
-     top /= aspect;
+     adjbottom /= aspect;
+     adjtop /= aspect;
    } else {
-     left *= aspect;
-     right *= aspect;
+     adjleft *= aspect;
+     adjright *= aspect;
    }
    */
 
@@ -388,10 +402,12 @@ void reshape(int w1, int h1){
 
 	//set the clipping volume corresponding to the viewport
 	//left, right, buttom, top
-	glOrtho(left, right, bottom, top, zNear, zFar);
+	glOrtho(adjleft, adjright, adjbottom, adjtop, zNear, zFar);
 
+	//eyex, eyey, eyez, centerx, centery, centerz, upx, upy, upz
+	gluLookAt(0, 0, 1, 0, 0, 0, 0, 1, 0);
 
-	printf("l: %f, r:%f, bot: %f, top: %f, zN: %f, zF: %f\n", left, right, bottom, top, zNear, zFar);
+	printf("l: %f, r:%f, bot: %f, top: %f, zN: %f, zF: %f\n", adjleft, adjright, adjbottom, adjtop, zNear, zFar);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -402,7 +418,7 @@ void reshape(int w1, int h1){
 //								INIT
 //----------------------------------------------------------------
 void initTex(void){
-	glClearColor(0.1, 0.1, 0.1, 1.0);
+	glClearColor(0.5, 0.5, 0.5, 1.0);
 	glEnable(GL_DEPTH_TEST);
 	makeTexImage();
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -446,8 +462,9 @@ void initRender(){
 	GLfloat mat_specular[] = {0.8, 0.8, 0.8, 1.0};
 	GLfloat diffuseMaterial[4] = {0.4, 0.4, 0.4, 1.0};
 	GLfloat diffuse[] = {1.0,1.0,1.0,1.0};
-	GLfloat light_position[] = {1.0, 0.8, 2.0, 1.0};
-	GLfloat light_position1[] = {1.0, 0.8, 2.0, 1.0};
+	GLfloat light_position[] = {1.0, 2.0, 1, 1.0};
+	GLfloat light_position1[] = {-1.0, 2.0, 1, 1.0};
+	GLfloat light_position2[] = {0.0, -0.8, 8, 1.0};
 
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_DEPTH_TEST);
@@ -458,9 +475,13 @@ void initRender(){
 	//light0-1
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	//glEnable(GL_LIGHT1);
+	glEnable(GL_LIGHT1);
+	glEnable(GL_LIGHT2);
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-    //glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
+    glLightfv(GL_LIGHT1, GL_POSITION, light_position1);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse);
+    glLightfv(GL_LIGHT2, GL_POSITION, light_position2);
+	glLightfv(GL_LIGHT2, GL_DIFFUSE, diffuse);	
 	
 
 
@@ -549,6 +570,9 @@ void selectionMode(){
 	}
 }
 
+void rotate(){
+	rotateMode = !rotateMode;
+}
 
 //FIXME: should hide the menu button once it's click
 void push_menu(){
@@ -584,7 +608,7 @@ void uiInit(){
 	Master_ui->add_button("+", left+(right-left)/15, bottom+1.5, 0.5, 0.3, up);
 	Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);	//if remove, fix ui.cpp (count)
 	//Master_ui->add_button("select", right-(right-left)/5, bottom+0.8, 0.5, 0.3, selectionMode);
-	Master_ui->add_button("undo", right-(right-left)/5, bottom+0.8, 0.5, 0.3, reload);
+	Master_ui->add_button("rotate", right-(right-left)/5, bottom+0.8, 0.5, 0.3, rotate);
 }
 
 

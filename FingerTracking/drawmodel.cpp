@@ -23,14 +23,21 @@ float zoom, rate = 500;
 int getRotX(){ return rotX; }
 int getRotY(){ return rotY; }
 
+int selectedID =0;
+bool _LINE = false;
+
 void drawVMModel(){
-	
+	if(getSelection()){
+		selectedID = getSelection();
+	} 
+
 	glPushMatrix();
 	glLoadIdentity();
 	trackRoll();
 	draw_fill_model();
-	draw_line_effect();
-
+	if(_LINE)
+		draw_line_effect();
+	
 	glPopMatrix();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	
@@ -100,7 +107,7 @@ void draw_fill_model(){
 
 	glColor3f(0, 1, 0);
 
-		if(sListContain(j) >= 0 || getSelection() == j){
+		if(sListContain(j) >= 0 || selectedID == j){
 			//glBindTexture(GL_TEXTURE_2D, 3);	//green
 			glColor3f(0, 1, 0);
 			setMeshSelection(j);
@@ -177,7 +184,7 @@ void trackRoll(){
 
 	//debug
 	//rotX = 0;
-	//rotY = 90;
+	//rotY = 0;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);
@@ -208,4 +215,11 @@ void commitScene(float transx, float transy, float z){
 	zoomvZ = z/5;
 }
 
+
+void switchLine(){
+	_LINE = !_LINE;
+}
+void disableLine(){
+	_LINE = false;
+}
 

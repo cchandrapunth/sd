@@ -10,3 +10,6 @@ void commitScene(float transx, float transy, float z);
 int getRotX();
 int getRotY();
 
+void draw_torus();
+void switchLine();
+void disableLine();

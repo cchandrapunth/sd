@@ -265,7 +265,7 @@ void drawHand(XnPoint3D* handPointList){
 
 
 		//*************smoothing**************************
-		int smooth_result = smoothHand(result1&result2);
+		int smooth_result = smoothHand(result1&&result2);
 		if(smooth_result == -1) fprintf(pFile, "-1");
 		else fprintf(pFile, "1");
 		fprintf(pFile,"\n");

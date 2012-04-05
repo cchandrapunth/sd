@@ -73,6 +73,7 @@ void import_vm(){
 		m->normalX = v->x;
 		m->normalY = v->y;
 		m->normalZ = v->z;
+		delete(v);
 
 		m->setColor(initColor);	//default is white-6
 		faceList.push_back(*m);
@@ -207,6 +208,8 @@ void calVertexNormal(){
 		vertexList.at(i).vnormx = v->x;
 		vertexList.at(i).vnormy = v->y;
 		vertexList.at(i).vnormz = v->z;
+		
+		delete(v);
 	}
 }
 
@@ -536,6 +539,7 @@ float* convertCoordinate(float transx, float transy, float transz){
 	vectory = transy*cos(radiany) - vectorz*sin(radiany);	// y' = ycos0 - zsin0
 	vectorz = transy*sin(radiany) + vectorz*cos(radiany);	// z' = ysin0 + zcos0
 	
+
 	float v[3] = {vectorx, vectory, vectorz};
 	return v;
 }
@@ -565,7 +569,7 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	}
 	//printf("x= %f, y=%f, z=%f\n", vectorx/10, vectory/10, vectorz/10);
 
-	softselection(id, vectorx/800, vectory/800, vectorz/1000);
+	softselection(id, vectorx/500, vectory/500, vectorz/500);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){
@@ -729,6 +733,7 @@ void softselection(int id,float tx,float ty,float tz){
 	//sx, sy = x and y spreads
 	float denom = 2*pow(s,2);
 	float *f = getCenterSelection();
+	float A = 1;
 
 	//center
 	float x0 = f[0];	
@@ -740,7 +745,11 @@ void softselection(int id,float tx,float ty,float tz){
 		vertex v = vertexList.at(i);
 
 		exp = (pow(v.x-x0, 2) + pow(v.y-y0, 2) + pow(v.z-z0, 2))/denom;
-		coef = pow(e, -exp);
+		if(exp < 0.5){
+			printf("in\n");
+			coef = A;
+		}
+			coef = A*pow(e, -exp);
 
 		//printf("v: %d \t| coef = %f\n", i, coef);
 
