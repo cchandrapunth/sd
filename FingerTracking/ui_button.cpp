@@ -119,7 +119,7 @@ void ui_button::draw_text(int sunken){
 	  else if(strcmp ("white", butt_name) == 0)
 		  glColor3f(1, 1, 1);
 	  else
-		  glColor3f(0.5,0.5,0.5);
+		  glColor3f(0.3,0.3,0.3);
   }
 
   glBegin( GL_QUADS );

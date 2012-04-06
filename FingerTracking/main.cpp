@@ -27,6 +27,7 @@
 #include "svmtrain.h"
 #include "Pair.h"
 #include "svmpredict.h"
+#include "drawbackground.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -274,6 +275,7 @@ void UIhandler(){
 //------------------------------------------------------------------
 //								display
 //------------------------------------------------------------------
+
 void display(){
 
 	if(glutGetWindow()!=mainWindow)  
@@ -285,6 +287,7 @@ void display(){
 	glutSetWindow(mainWindow);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+	draw_background();
 
 	glLoadIdentity();
 
@@ -418,7 +421,7 @@ void reshape(int w1, int h1){
 //								INIT
 //----------------------------------------------------------------
 void initTex(void){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
+	glClearColor(0.1, 0.1, 0.1, 1.0);
 	glEnable(GL_DEPTH_TEST);
 	makeTexImage();
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -464,7 +467,7 @@ void initRender(){
 	GLfloat diffuse[] = {1.0,1.0,1.0,1.0};
 	GLfloat light_position[] = {1.0, 2.0, 1, 1.0};
 	GLfloat light_position1[] = {-1.0, 2.0, 1, 1.0};
-	GLfloat light_position2[] = {0.0, -0.8, 8, 1.0};
+	GLfloat light_position2[] = {0.0, -0.2, 8, 1.0};
 
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_DEPTH_TEST);

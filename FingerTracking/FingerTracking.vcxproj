@@ -82,6 +82,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="drawbackground.h" />
     <ClInclude Include="drawhand.h" />
     <ClInclude Include="drawmodel.h" />
     <ClInclude Include="gesture.h" />
@@ -104,6 +105,7 @@
     <ClInclude Include="window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="drawbackground.cpp" />
     <ClCompile Include="drawhand.cpp" />
     <ClCompile Include="drawmodel.cpp" />
     <ClCompile Include="gesture.cpp" />
