@@ -17,8 +17,9 @@
 #define maxAct 30
 #define maxControl 10
 
-std::deque<model_state> actionList;
-std::deque<matrix_state> controlList;
+using namespace std;
+deque<model_state> actionList;
+deque<matrix_state> controlList;
 
 static int rotateSceneX =0;
 static int rotateSceneY =0;
@@ -80,3 +81,4 @@ float restoreMatZ(){
 	if(controlList.empty()) return 0;
 	return controlList.front().zoomZ;
 }
+

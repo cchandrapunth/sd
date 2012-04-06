@@ -76,7 +76,7 @@ void ui::check_click(float hand_x, float hand_y){
 
 //----------------remove menu-----------------
 void ui::remove_menu(){
-	count = 5;	//menu, +, -, reset, rotate
+	count = 6;	//menu, +, -, reset, rotate
 	activate_menu = false;
 	button_list[0]->reactivate();
 }

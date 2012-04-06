@@ -18,7 +18,8 @@ static deque<vertex> vertexList;
 
 static deque<mesh> exfaceList;
 static deque<vertex> exvertexList[UNDORANGE];
-int numMod = 0; 
+int numMod = -1; 
+int countMod = 0;
 
 int selectedMesh;
 int initColor = 2;	//initial color = blue
@@ -246,6 +247,9 @@ void setColorPaint(int id){
 		break;
 	case 6:
 		glColor3f(1, 1, 1);
+		break;
+	case 7:
+		glColor3f(0.3, 0.3, 0.3);
 		break;
 	}
 }
@@ -672,45 +676,7 @@ bool checkSize(int i){
 
 }
 
-//copy to ex-data
-void copy_vmmodel(){
-	
-	//clear the old copy
-	//exvertexList.clear();
 
-	int nv = vertexList.size();
-	for(int i=0 ; i< nv; i++){
-		vertex temp = vertexList.at(i);
-		vertex* v = new vertex(temp.x, temp.y, temp.z);
-		v->vnormx = temp.vnormx;
-		v->vnormy = temp.vnormy;
-		v->vnormz = temp.vnormz;
-
-		for(int f=0; f<temp.nface; f++){
-			v->addFaceId(temp.faceId[f]);
-		}
-		fprintf(mFile,"%d\t %f\t %f\t %f\n", i, v->x, v->y, v->z);
-		exvertexList[numMod].push_back(*v);
-	}
-	printf("copy model: %d\n", numMod);
-	
-	//next index 
-	if(numMod == UNDORANGE-1){
-		numMod = 0;
-	}else numMod++;
-
-	fprintf(mFile,"---------------------------------------------------\n");
-}
-
-//restore ex-data to the data structure
-void undo_vmmodel(int i){
-	
-	if(exvertexList[i].size() >i){
-		vertexList = exvertexList[i];
-
-		printf("undo\n");
-	}
-}
 
 //----------------------Softselection zone------------------------------------------
 float s = 0.5;
@@ -950,3 +916,55 @@ float* getCenterSelection(){
 	
 }
 
+/*******************************************************************
+								UNDO
+********************************************************************/
+//copy to ex-data
+void copy_vmmodel(){
+	
+	//clear the old copy
+	//exvertexList.clear();
+
+	//next index 
+	if(numMod == UNDORANGE-1){
+		numMod = 0;
+	}else{
+		numMod++;
+	}
+	countMod = min(countMod+1, UNDORANGE); 
+
+	exvertexList[numMod].clear();
+	int nv = vertexList.size();
+	for(int i=0 ; i< nv; i++){
+		vertex temp = vertexList.at(i);
+		vertex* v = new vertex(temp.x, temp.y, temp.z);
+		v->vnormx = temp.vnormx;
+		v->vnormy = temp.vnormy;
+		v->vnormz = temp.vnormz;
+
+		for(int f=0; f<temp.nface; f++){
+			v->addFaceId(temp.faceId[f]);
+		}
+		fprintf(mFile,"%d\t %f\t %f\t %f\n", i, v->x, v->y, v->z);
+		exvertexList[numMod].push_back(*v);
+	}
+	printf("copy model: %d\n", numMod);
+
+	fprintf(mFile,"---------------------------------------------------\n");
+}
+
+//restore ex-data to the data structure
+void undo_vmmodel(){
+	
+	if(countMod >1) {
+
+		int id = numMod-1;
+		if(id < 0) id = UNDORANGE-1;
+
+		vertexList = exvertexList[id];
+		printf("undo to model %d: count model = %d\n", id, countMod);
+
+		countMod-=1;
+		numMod = id;
+	}
+}

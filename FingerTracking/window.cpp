@@ -42,16 +42,12 @@ void processMenuEvents(int option) {
 			export_vm();
 			break;
 		case BLUE :
-			printf("Undo action1"); 
-			undo_vmmodel(0);
+			printf("Undo action"); 
+			undo_vmmodel();
 			break;
 		case GREEN :
-			printf("Undo action2"); 
-			undo_vmmodel(1);
 			break;
 		case ORANGE :
-			printf("undo action3"); 
-			undo_vmmodel(2);
 			break;
 	}
 }

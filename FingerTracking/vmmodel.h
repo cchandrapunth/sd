@@ -32,7 +32,7 @@ void downBrush();
 void paintMesh(int mid, int cid);
 
 void copy_vmmodel();
-void undo_vmmodel(int i);
+void undo_vmmodel();
 
 void softselection(int id,float tx,float ty,float tz);
 void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz);
@@ -46,3 +46,4 @@ float getDiam();
 void setMeshSelection(int k);
 void drawGizmo();
 float* getCenterSelection();
+
