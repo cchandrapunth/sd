@@ -8,6 +8,9 @@ float bd = 1.9;
 void draw_background(){
 	glDisable(GL_LIGHTING);
 	glEnable(GL_BLEND); 
+	glDisable(GL_CULL_FACE);
+	glDisable(GL_DEPTH_TEST);
+
 	glColor3f(0.5f, 0.5f, 0.5f);
     draw_rect(-(bd+0.1), bd+0.1, bd+0.1, -(bd+0.1));
 
@@ -24,6 +27,8 @@ void draw_background(){
 	}
 	glDisable(GL_BLEND);
 	glEnable(GL_LIGHTING);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST);//line shows more
 }
 
 void draw_rect(float x1, float y1, float x2, float y2){

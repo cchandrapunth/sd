@@ -172,7 +172,7 @@ void checkCursor(int func){
 				mode = RENDER;	
 
 				if(rotateMode){
-					disableLine(); //disable line effect
+					//disableLine(); //disable line effect
 					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
 					recalNormal();
 				}else{
@@ -225,10 +225,6 @@ void checkCursor(int func){
 
 			//undo
 			if(func == 1) copy_vmmodel(); 
-			else if(func ==2) {
-				//pushMatrix(); //undo rotate
-				copy_vmmodel();
-			}
 		}
 	}
 

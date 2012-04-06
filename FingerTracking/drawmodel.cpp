@@ -137,7 +137,6 @@ void draw_line_effect(){
 			drawMesh(j, true);
 		}
 		
-
 		glEnable(GL_LIGHTING);
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);
@@ -210,9 +209,9 @@ void trackRoll(){
 
 void commitScene(float transx, float transy, float z){
 	//set variable for rotate/zoom
-	rollvX = -transx/5;
-	rollvY = transy/5;
-	zoomvZ = z/5;
+	rollvX = -transx/2;
+	rollvY = transy/2;
+	zoomvZ = z/2;
 }
 
 

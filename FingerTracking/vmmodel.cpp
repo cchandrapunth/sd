@@ -10,7 +10,7 @@
 #include "log.h"
 #include "picking.h"
 
-#define UNDORANGE 5
+#define UNDORANGE 15
 using namespace std;
 
 static deque<mesh> faceList;
@@ -573,7 +573,7 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	}
 	//printf("x= %f, y=%f, z=%f\n", vectorx/10, vectory/10, vectorz/10);
 
-	softselection(id, vectorx/500, vectory/500, vectorz/500);
+	softselection(id, vectorx/100, vectory/100, vectorz/100);
 
 	bool once = false;
 	for(int i=0; i< faceList.size(); i++){

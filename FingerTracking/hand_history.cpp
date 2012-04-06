@@ -29,9 +29,9 @@ void clearHandList(){
 }
 
 vertex normalize(){
-	float vx = handList.at(handList.size()-1).X -handList.front().X;
-	float vy = handList.at(handList.size()-1).Y -handList.front().Y;
-	float vz = handList.at(handList.size()-1).Z -handList.front().Z;
+	float vx = handList.at(1).X -handList.front().X;
+	float vy = handList.at(1).Y -handList.front().Y;
+	float vz = handList.at(1).Z -handList.front().Z;
 	/*
 	int unit = sqrt(pow(vx, 2)+ pow(vy, 2)+ pow(vz, 2));
 	vertex uv = new vertex(vx/unit, vy/unit, vy/unit);
@@ -43,16 +43,16 @@ vertex normalize(){
 
 //movement in x-axis
 float gettranslateX(){
-	return (handList.size() > MAX_HANDLIST-1) ? normalize().x : 0;
+	return (handList.size() > 1) ? normalize().x : 0;
 }
 
 //movement in y-axis
 float gettranslateY(){
-	return (handList.size() > MAX_HANDLIST-1) ? normalize().y : 0;
+	return (handList.size() > 1) ? normalize().y : 0;
 }
 
 float gettranslateZ(){
-	return (handList.size() > MAX_HANDLIST-1) ? normalize().z : 0;
+	return (handList.size() > 1) ? normalize().z : 0;
 	
 }
 
