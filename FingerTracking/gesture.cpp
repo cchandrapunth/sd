@@ -30,7 +30,8 @@ static xn::HandsGenerator g_HandsGenerator;
 static xn::GestureGenerator g_GestureGenerator;
 
 static XnPoint3D palmPos;
-static bool GRAB  = false;
+static bool RGRAB  = false;
+static bool LGRAB  = false;
 
 int printDebug = 0; 
 int printTraining = 0; //0 - don't output 1 - close hand, 2 - open hand 
@@ -45,6 +46,9 @@ int numpoint[nb][nb];
 int len[100];	//length
 
 static std::map<XnUInt32, std::list<XnPoint3D> > m_History;	//point history
+static std::list<int> handId;
+int prime_id = 0;
+
 //-----------------------------------------------------
 //					   LOG
 //-----------------------------------------------------
@@ -66,7 +70,7 @@ void set_print_training(int i){
 	printTraining = i;
 }
 bool isGrab(){
-	return GRAB;
+	return RGRAB;
 }
 
 XnPoint3D getPalm(){
@@ -93,6 +97,31 @@ float convertYcursor(float y){
 	float bottom = getCenter().y- getDiam(); //get the leftmost coordinate
 	return bottom + y*(2*getDiam())/nYRes;
 
+}
+
+void set_primary(){
+	if(handId.size() ==0) 
+		prime_id = 0;
+	if(handId.size() ==1) 
+		prime_id = handId.front();
+	else{
+	
+		int rh = 0;
+		float xcoor = 100000;
+
+		//find id of a right hand 
+		std::map<XnUInt32, std::list<XnPoint3D> >::const_iterator Iter;
+		for(Iter = m_History.begin(); Iter != m_History.end(); ++Iter){
+			XnUInt32 id = Iter->first;
+			XnPoint3D point = Iter->second.front();
+
+			if(point.X < xcoor){
+				rh = id;
+				xcoor = point.X;
+			}
+		}
+		prime_id = rh;
+	}
 }
 
 // Colors for the points
@@ -160,6 +189,10 @@ void XN_CALLBACK_TYPE Hand_Create(HandsGenerator& generator,XnUserID nId,const X
 
 		//reset map
 		m_History[nId].clear();
+		handId.push_front(nId);
+	
+		//reset primary hand
+		set_primary();
 }
 	
 //Callback to be called when an existing hand has a new position
@@ -187,7 +220,7 @@ void XN_CALLBACK_TYPE Hand_Update(HandsGenerator& generator,XnUserID nId, const 
 			m_History[nId].pop_back();
 
 		//printf("id: %d: %f %f %f \n", (int)nId, m_History[nId].front().X, m_History[nId].front().Y, m_History[nId].front().Z  );
-
+				
 }
 
 //Lost hand
@@ -197,7 +230,11 @@ void XN_CALLBACK_TYPE Hand_Destroy(HandsGenerator& generator,XnUserID nId, XnFlo
 		g_GestureGenerator.AddGesture(GESTURE_TO_USE, NULL);
 
 		m_History.erase(nId);
+		handId.remove(nId);
 		deleteSmHand(nId);
+
+		//reset primary hand
+		set_primary();
 }
 
 /**********************************************************
@@ -210,13 +247,11 @@ void draw_hand(XnPoint3D* handPointList)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glDisable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);
-
-
+	glDisable(GL_TEXTURE_2D);	
+		
 	std::map<XnUInt32, std::list<XnPoint3D> >::const_iterator PointIterator;
 	XnFloat* m_pfPositionBuffer;
 	
-
 	// Go over each existing hand
 	for (PointIterator = m_History.begin();PointIterator != m_History.end();++PointIterator) {
 		// Clear buffer
@@ -224,14 +259,13 @@ void draw_hand(XnPoint3D* handPointList)
 		XnUInt32 i = 0;
 		XnUInt32 Id = PointIterator->first;
 		XnPoint3D pt(*PointIterator->second.begin());
-		//printf("%d-- %f %f %f\n", Id, pt.X, pt.Y, pt.Z);
 		
 		//draw histogram		
 		int hpoint = draw_map(handPointList, pt);
 
 		//predict
 		if(hpoint > 0){
-			bool grabg = predict_gesture(handPointList, pt, hpoint, Id);
+			predict_gesture(handPointList, pt, hpoint, Id);
 
 			//set color for each person
 			XnUInt32 nColor = Id % nColors;
@@ -240,9 +274,18 @@ void draw_hand(XnPoint3D* handPointList)
 				Colors[nColor][1],
 				Colors[nColor][2],
 				1.0f);
+			if(prime_id == Id) {
+				glColor4f(Colors[nColors][0],
+				Colors[nColors][1],
+				Colors[nColors][2],
+				1.0f);
+			}
 
-			//draw palm
-			drawRHand(grabg, convertX(pt.X),convertY(pt.Y), pt.Z);
+			//draw palm 
+			if(Id == prime_id) 
+				drawRHand(RGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
+			else 
+				drawLHand(LGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
 		}
 	}
 
@@ -276,7 +319,7 @@ int draw_map(XnPoint3D* handPointList, XnPoint3D palm){
 
 	//set color
 	glPointSize(2);
-	if(!GRAB)	glColor3f(0, 1, 0);
+	if(!LGRAB)	glColor3f(0, 1, 0);
 	else glColor3f(1, 0.0, 0.0);
 	XnPoint3D *p = new XnPoint3D;
 
@@ -332,7 +375,7 @@ int draw_map(XnPoint3D* handPointList, XnPoint3D palm){
 }
 
 //use svm prediction for gesture prediction
-bool predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id){
+void predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id){
 
 	bool result1, result2;
 
@@ -360,17 +403,17 @@ bool predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id){
 	//print
 	if(smooth_result) {
 		fprintf(pFile, "-1");
-		GRAB = true;
+		if(id == prime_id) RGRAB = true;
+		else LGRAB = false;
 		//printf("grab\n");
 	}
 	else {
 		fprintf(pFile, "1");
-		GRAB = false;
+		if(id == prime_id) RGRAB = false;
+		else LGRAB = false;
 		//printf("-\n");
 	}
 	fprintf(pFile,"\n");
-	return GRAB;
-	
 
 }
 
