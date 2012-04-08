@@ -28,7 +28,7 @@ using namespace xn;
 static xn::DepthGenerator g_DepthGenerator;
 static xn::HandsGenerator g_HandsGenerator;
 static xn::GestureGenerator g_GestureGenerator;
-static std::map<XnUInt32, std::list<XnPoint3D> > m_History;	//hands history
+
 static XnPoint3D palmPos;
 static bool GRAB  = false;
 
@@ -44,6 +44,7 @@ int svm_grid[2*HANDRADIUS][2*HANDRADIUS]; // size 2HANDRADIUS*2HANDRADIUS
 int numpoint[nb][nb];
 int len[100];	//length
 
+static std::map<XnUInt32, std::list<XnPoint3D> > m_History;	//point history
 //-----------------------------------------------------
 //					   LOG
 //-----------------------------------------------------
@@ -186,6 +187,7 @@ void XN_CALLBACK_TYPE Hand_Update(HandsGenerator& generator,XnUserID nId, const 
 			m_History[nId].pop_back();
 
 		//printf("id: %d: %f %f %f \n", (int)nId, m_History[nId].front().X, m_History[nId].front().Y, m_History[nId].front().Z  );
+
 }
 
 //Lost hand
@@ -195,11 +197,22 @@ void XN_CALLBACK_TYPE Hand_Destroy(HandsGenerator& generator,XnUserID nId, XnFlo
 		g_GestureGenerator.AddGesture(GESTURE_TO_USE, NULL);
 
 		m_History.erase(nId);
+		deleteSmHand(nId);
 }
 
+/**********************************************************
+						Draw hands 
+***********************************************************/
 
-void draw()
+void draw_hand(XnPoint3D* handPointList)
 {
+	//disable all lighting effect
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glDisable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
+
 	std::map<XnUInt32, std::list<XnPoint3D> >::const_iterator PointIterator;
 	XnFloat* m_pfPositionBuffer;
 	
@@ -210,96 +223,58 @@ void draw()
 		XnUInt32 nPoints = 0;
 		XnUInt32 i = 0;
 		XnUInt32 Id = PointIterator->first;
-
 		XnPoint3D pt(*PointIterator->second.begin());
-		printf("%d-- %f %f %f\n", Id, pt.X, pt.Y, pt.Z);
+		//printf("%d-- %f %f %f\n", Id, pt.X, pt.Y, pt.Z);
 		
-		XnUInt32 nColor = Id % nColors;
-		glPointSize(8);
-		glColor4f(Colors[nColor][0],
+		//draw histogram		
+		int hpoint = draw_map(handPointList, pt);
+
+		//predict
+		if(hpoint > 0){
+			bool grabg = predict_gesture(handPointList, pt, hpoint, Id);
+
+			//set color for each person
+			XnUInt32 nColor = Id % nColors;
+			glPointSize(8);
+			glColor4f(Colors[nColor][0],
 				Colors[nColor][1],
 				Colors[nColor][2],
 				1.0f);
-		//glBegin(GL_POINTS);
-		//glVertex3f(convertX(pt.X), convertY(pt.Y), 4.3f);
-		//glEnd();
 
-		drawRHand(GRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
-
-		/*
-		// Go over all previous positions of current hand
-		std::list<XnPoint3D>::const_iterator PositionIterator;
-		if(PositionIterator == null) return;
-		for (PositionIterator = PointIterator->second.begin();
-			PositionIterator != PointIterator->second.end();
-			++PositionIterator, ++i)
-		{
-			// Add position to buffer
-			XnPoint3D pt(*PositionIterator);
-			m_pfPositionBuffer[3*i] = convertX(pt.X);
-			m_pfPositionBuffer[3*i + 1] = convertY(pt.Y);
-			m_pfPositionBuffer[3*i + 2] = 4.3;//pt.Z();
+			//draw palm
+			drawRHand(grabg, convertX(pt.X),convertY(pt.Y), pt.Z);
 		}
-		
-		// Set color
-		XnUInt32 nColor = Id % nColors;
-		//XnUInt32 nSingle = GetPrimaryID();
-		//if (Id == GetPrimaryID())
-			//nColor = 6;
-		// Draw buffer:
-		glColor4f(Colors[nColor][0],
-				Colors[nColor][1],
-				Colors[nColor][2],
-				1.0f);
-		glPointSize(2);
-		glVertexPointer(3, GL_FLOAT, 0, m_pfPositionBuffer);
-		glDrawArrays(GL_LINE_STRIP, 0, i);
-
-		
-		if (IsTouching(Id))
-		{
-			glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		}
-		
-		glPointSize(8);
-		glDrawArrays(GL_POINTS, 0, 1);
-		*/
-		
-		//glFlush();
 	}
+
+	glEnable(GL_LIGHTING);
+	glEnable(GL_TEXTURE_2D);
 }
 
 //hand histogram
-void drawHand(XnPoint3D* handPointList){
-	//additional 
-	draw();
+int draw_map(XnPoint3D* handPointList, XnPoint3D palm){
 	
+	if(palm.Z == 0) return 0;
+
 	int nX, nY;
-	int minZ = palmPos.Z- HANDDEPTH;
-	int maxZ = palmPos.Z+ HANDDEPTH;
 	int n = 0; //number of points
+
+	//depth threshold
+	int minZ = palm.Z- HANDDEPTH;
+	int maxZ = palm.Z+ HANDDEPTH;
 
 	//svm
 	int svm_index = 0;
 
-
+	//depth data from kinect
 	xn::DepthMetaData depthMD;
 	g_DepthGenerator.GetMetaData(depthMD);
-	
 	nXRes = depthMD.XRes();
 	nYRes = depthMD.YRes();
-
 	//Pointer to depthmap
 	const XnUInt16* pDepth = depthMD.Data();
 	XnUInt16 nValue;
 
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	glDisable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);
-
-	//draw hand from depth map
-	if(palmPos.Z != 0){
+	//set color
 	glPointSize(2);
 	if(!GRAB)	glColor3f(0, 1, 0);
 	else glColor3f(1, 0.0, 0.0);
@@ -307,109 +282,102 @@ void drawHand(XnPoint3D* handPointList){
 
 
 	glBegin(GL_POINTS);
-		//Iterate through the pixel from top to bottom/ right to left
-		for (nY= 0; nY<nYRes; nY++)
+	//draw histogram from depthmap
+	//Iterate through the pixel from top to bottom/ right to left
+	for (nY= 0; nY<nYRes; nY++)
+	{
+		for (nX=0; nX<nXRes; nX++)
 		{
-			for (nX=0; nX<nXRes; nX++)
-			{
-				
-				nValue = *pDepth;
+			nValue = *pDepth;
 
-				//in the bounding box only
-				if((nX < palmPos.X+HANDRADIUS && nX > palmPos.X-HANDRADIUS) && 
-					(nY < palmPos.Y+HANDRADIUS && nY > palmPos.Y-HANDRADIUS)){
-						
+			//in the bounding box only
+			if((nX < palm.X+HANDRADIUS && nX > palm.X-HANDRADIUS) && 
+				(nY < palm.Y+HANDRADIUS && nY > palm.Y-HANDRADIUS)){
+
 					svm_index++;
-					
+
 					//the point falls inside the threshold
 					if(nValue > minZ && nValue <maxZ){
-						
-							//the depth map is mirroring. As glOrtho is scaled to 0,nXRes and 0,nYRes
-							//we flip the coordinate using nXRes and nYRes
-							//convert in relative to viewport 
-							if(SHOWHAND)
-								glVertex3f(convertX(nX), convertY(nY), 4.0f);
 
-								(*p).X = nX;
-								(*p).Y = nY;
-								(*p).Z = nValue;
-								//store the point that could be in hand region
-								handPointList[n] = *p;
-								n++;	
+						//the depth map is mirroring. As glOrtho is scaled to 0,nXRes and 0,nYRes
+						//flip the coordinate using nXRes and nYRes
+						//convert in relative to viewport 
+						if(SHOWHAND)
+							glVertex3f(convertX(nX), convertY(nY), 4.0f);
 
-								if(printTraining){
-									//add to svm_grid
-									int px = nX - (int)palmPos.X + HANDRADIUS;
-									int py = nY - (int)palmPos.Y + HANDRADIUS;
+						(*p).X = nX;
+						(*p).Y = nY;
+						(*p).Z = nValue;
+						//store the point that could be in hand region
+						handPointList[n] = *p;
+						n++;	
 
-									svm_grid[px][py] = 1;
-								}
-							}
-				}
-				pDepth++;
+						//training data for svm
+						if(printTraining){
+							//add to svm_grid
+							int px = nX - (int)palm.X + HANDRADIUS;
+							int py = nY - (int)palm.Y + HANDRADIUS;
+
+							svm_grid[px][py] = 1;
+						}
+					}
 			}
-		}		
-	}
+			pDepth++;
+		}
+	}		
+	delete(p);
 	glEnd();
+
+	return n;
+}
+
+//use svm prediction for gesture prediction
+bool predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id){
 
 	bool result1, result2;
 
-	if(n> 0) result1 = find_finger(handPointList, n);
-	else result1 = false;
+	//SVM predict
+	result1 = find_finger(handPointList, n, palm);
+
+	//Edge predict
+	result2 = getEdge(handPointList, n, palm);
+
+
+	if(result1)fprintf(pFile, "-1\t");
+	else fprintf(pFile, "1\t");
+
+	if(result2)fprintf(pFile, "-1\t");
+	else fprintf(pFile, "1\t");
+
+	if(result1 && result2) fprintf(pFile, "-1\t");
+	else fprintf(pFile, "1\t");
+
 	
-	if(n> 0) result2 = getEdge(handPointList, n);
-	else  result2 = false;
+	//smoothing algorithm
+	smoothHand(result2, id);
+	bool smooth_result = isGrab(id);
 
-	if(n>0){
-		if(result1)fprintf(pFile, "-1\t");
-		else fprintf(pFile, "1\t");
-
-		if(result2)fprintf(pFile, "-1\t");
-		else fprintf(pFile, "1\t");
-
-		if(result1 && result2) fprintf(pFile, "-1\t");
-		else fprintf(pFile, "1\t");
-
-
-		//*************smoothing**************************
-		int smooth_result = smoothHand(result1);
-		if(smooth_result == -1) fprintf(pFile, "-1");
-		else fprintf(pFile, "1");
-		fprintf(pFile,"\n");
-		
-		if(smooth_result == -1) {
-			//printf("grab\n");
-			GRAB = true;
-		}
-		else {
-			//printf("-\n");
-			GRAB = false;
-		}
-
+	//print
+	if(smooth_result) {
+		fprintf(pFile, "-1");
+		GRAB = true;
+		//printf("grab\n");
 	}
-	glEnable(GL_LIGHTING);
-	draw();
-}
-
-//angle from x-axis to vector x2,y2 -> x1,y1
-float findAngle(float x1, float y1, float x2, float y2, float x3, float y3){
-	float PI = 3.14159265;
-	float angle1= atan2((y2-y1),(x2-x1));	//vector 2->1
-	float angle2= atan2((y2-y3),(x2-x3));	//vector 2->3
-
-	float anglebtw= (angle1-angle2)*(180/PI);
-	if(anglebtw < 0){
-		anglebtw+=360;
+	else {
+		fprintf(pFile, "1");
+		GRAB = false;
+		//printf("-\n");
 	}
-	return anglebtw;
-}
-
-float dis(float x1, float y1, float x2, float y2){
-	return sqrt(pow(x1-x2, (float)2.0) +pow(y1-y2, (float) 2));
+	fprintf(pFile,"\n");
+	return GRAB;
+	
 
 }
 
-bool find_finger(XnPoint3D* List, int nNumberOfPoints){
+/**********************************************************
+					Machine Learning
+**********************************************************/
+bool find_finger(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 	//giftwrap technique 
 
 	int count = 0; 
@@ -485,7 +453,7 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 	for(int n=0; n< last; n++){
 		//only consider point above the central hand
 		//if(convexList[n].Y < palmPos.Y){
-			int d = (int)dis(convexList[n].X, convexList[n].Y, palmPos.X, palmPos.Y);
+			int d = (int)dis(convexList[n].X, convexList[n].Y, palm.X, palm.Y);
 			len[d] +=1;
 		//}
 	}
@@ -530,16 +498,16 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints){
 
 		glEnd();
 	}	
-	
-	//drawRHand(GRAB, convertX(palmPos.X), convertY(palmPos.Y), palmPos.Z);
 
 	if(predict >0) return false;
 	else return true;
 }
 
 
-//estimate grab gesture
-bool getEdge(XnPoint3D* List, int nNumberOfPoints){
+/**********************************************************
+					filter method
+**********************************************************/
+bool getEdge(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 
 	int nX, nY;
 	int count = 0; 
@@ -593,17 +561,19 @@ bool getEdge(XnPoint3D* List, int nNumberOfPoints){
 	*/
 
 	//hand length
-	return estimateGrab(List, nNumberOfPoints, highest, lowest, leftmost, rightmost);
+	return estimateGrab(List, nNumberOfPoints, highest, lowest, leftmost, rightmost, palm);
 }
 
 //calculate the area half top of the hand area 
 //greater than 50% => grab 
-bool estimateGrab(XnPoint3D* list, int n, XnPoint3D* highest, XnPoint3D* lowest, XnPoint3D* leftmost, XnPoint3D* rightmost){
+bool estimateGrab(XnPoint3D* list, int n, 
+	XnPoint3D* highest, XnPoint3D* lowest, 
+	XnPoint3D* leftmost, XnPoint3D* rightmost, XnPoint3D palm){
 	
 
 
 	int nX, nY, nom=0, denom=0; 
-	int y = (int)palmPos.Y;
+	int y = (int)palm.Y;
 	int xr = (int)(*rightmost).X; 
 	int xl = (int)(*leftmost).X; 
 	int yh = (int)(*highest).Y;
@@ -641,4 +611,25 @@ bool estimateGrab(XnPoint3D* list, int n, XnPoint3D* highest, XnPoint3D* lowest,
 	if (percent > GRAB_THRESHOLD) return true; 
 	else return false;
 
+}
+
+/*******************************************************
+				Helper Function
+********************************************************/
+
+//angle from x-axis to vector x2,y2 -> x1,y1
+float findAngle(float x1, float y1, float x2, float y2, float x3, float y3){
+	float PI = 3.14159265;
+	float angle1= atan2((y2-y1),(x2-x1));	//vector 2->1
+	float angle2= atan2((y2-y3),(x2-x3));	//vector 2->3
+
+	float anglebtw= (angle1-angle2)*(180/PI);
+	if(anglebtw < 0){
+		anglebtw+=360;
+	}
+	return anglebtw;
+}
+
+float dis(float x1, float y1, float x2, float y2){
+	return sqrt(pow(x1-x2, (float)2.0) +pow(y1-y2, (float) 2));
 }

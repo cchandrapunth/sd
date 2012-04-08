@@ -7,9 +7,8 @@ int initZ = 4;
 
 void drawRHand(bool grab, float x, float y, float z){
 
-	glPointSize(12);
+		glPointSize(12);
 		if(grab) glColor3f(1.0, 0, 0);
-		else glColor3f(0, 1.0, 0);
 						
 		float dis = 0.1;
 

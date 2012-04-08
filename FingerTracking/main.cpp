@@ -301,7 +301,7 @@ void display(){
 			mode = RENDER;
 		}
 		else {
-			drawHand(handPointList);
+			draw_hand(handPointList);
 			if(!BACK_BUFF){
 				drawVMModel();
 			}
@@ -324,7 +324,7 @@ void display(){
 			mode = RENDER;
 		}
 		else {
-			drawHand(handPointList);
+			draw_hand(handPointList);
 			if(!BACK_BUFF)
 				drawVMModel();
 			else drawPickVMModel();
@@ -344,7 +344,7 @@ void display(){
 			mode = RENDER;
 		}
 		else {
-			drawHand(handPointList);
+			draw_hand(handPointList);
 			if(!BACK_BUFF)
 				drawVMModel();
 			else drawPickVMModel();

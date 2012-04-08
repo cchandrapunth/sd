@@ -38,9 +38,11 @@ void XN_CALLBACK_TYPE Hand_Destroy(HandsGenerator& generator,XnUserID nId, XnFlo
 
 
 //read hand area 
-void drawHand(XnPoint3D* handPointList);
+void draw_hand(XnPoint3D* handPointList);
+int draw_map(XnPoint3D* handPointList, XnPoint3D m_palm);
+bool predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id);
 
-bool getEdge(XnPoint3D* List, int nNumberOfPoints);
+bool getEdge(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm);
 
 //helper
 bool isGrab();
@@ -51,8 +53,10 @@ bool estimateGrab(
 	int n, XnPoint3D* highest, 
 	XnPoint3D* lowest, 
 	XnPoint3D* leftmost, 
-	XnPoint3D* rightmost);
-bool find_finger(XnPoint3D* List, int nNumberOfPoints);
+	XnPoint3D* rightmost, 
+	XnPoint3D palm);
+
+bool find_finger(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm);
 float findAngle(float x1, float y1, float x2, float y2, float x3, float y3);
 
 float convertX(float x);
@@ -61,6 +65,7 @@ float convertYcursor(float y);
 
 void set_print_training(int i);
 
-//draw all hands
-void draw();
 
+
+///helper
+float dis(float x1, float y1, float x2, float y2);

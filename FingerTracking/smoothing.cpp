@@ -1,52 +1,49 @@
 #include "stdafx.h"
 #include "smoothing.h"
+#include <map>
+#include <list>
 
 #define SMOOTHSIZE 10
 #define GRABTHRES 0.6
 int grabList[SMOOTHSIZE];
 int index =0;
 int sum;
-bool first_time = true;
 
-/********************************************
-				Hand smoothing
-********************************************/
-void init(){
-	for(int i=0;i<SMOOTHSIZE; i++){
-		grabList[i] = 1;
+static std::map<int, std::list<int>> smoothlist;
+
+/********************************************************
+					Hand smoothing
+********************************************************/
+void smoothHand(int i, int id){
+
+	smoothlist[id].push_front(i);
+	// Keep size of history buffer
+	if (smoothlist[id].size() > SMOOTHSIZE)
+		smoothlist[id].pop_back();
+}
+
+bool isGrab(int id){
+	//find everage 
+	std::map<int, std::list<int> >::const_iterator HandIterator;
+	int sum =0, count = 0;
+
+	for (HandIterator = smoothlist.begin();HandIterator != smoothlist.end();++HandIterator) {		
+		if(HandIterator->first == id){
+			std::list<int>::const_iterator grabIterator;
+			for (grabIterator = HandIterator->second.begin();
+				grabIterator != HandIterator->second.end();
+				++grabIterator){
+
+					sum += *grabIterator;
+					count++;
+			}
+			break;
+		}
 	}
-	sum = 30;
+	if(sum/count > GRABTHRES) return true;
+	else return false;
 }
 
-void setNext(){
-	if(index == SMOOTHSIZE-1) index-=(SMOOTHSIZE-1);
-	else index ++;
+void deleteSmHand(int id){
+
 }
-
-//average number from list
-float findAverage(){
-	sum = 0;
-	for(int i=0; i< SMOOTHSIZE; i++){
-		sum= sum+ grabList[i];
-	}
-	return (float)sum/SMOOTHSIZE;
-}
-
-
-//maintain the list of 30 recent hand gesture
-int smoothHand(int i){
-	if(first_time){
-		init();
-		first_time = false;
-	}
-	grabList[index] = i;
-	setNext();
-	float avg = findAverage();
-	
-	if(avg > 0.6) return -1;
-	else return 1;
-}
-
-/********************************************
-				Track smoothing
-********************************************/
