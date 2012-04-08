@@ -712,7 +712,6 @@ void softselection(int id,float tx,float ty,float tz){
 
 		exp = (pow(v.x-x0, 2) + pow(v.y-y0, 2) + pow(v.z-z0, 2))/denom;
 		if(exp < 0.5){
-			printf("in\n");
 			coef = A;
 		}
 			coef = A*pow(e, -exp);

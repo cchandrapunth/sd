@@ -60,3 +60,7 @@ float convertY(float y);
 float convertYcursor(float y);
 
 void set_print_training(int i);
+
+//draw all hands
+void draw();
+
