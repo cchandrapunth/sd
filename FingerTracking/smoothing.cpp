@@ -3,7 +3,7 @@
 #include <map>
 #include <list>
 
-#define SMOOTHSIZE 10
+#define SMOOTHSIZE 8
 #define GRABTHRES 0.6
 int grabList[SMOOTHSIZE];
 int index =0;

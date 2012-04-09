@@ -29,7 +29,8 @@ static xn::DepthGenerator g_DepthGenerator;
 static xn::HandsGenerator g_HandsGenerator;
 static xn::GestureGenerator g_GestureGenerator;
 
-static XnPoint3D palmPos;
+static XnPoint3D RpalmPos;
+static XnPoint3D LpalmPos;
 static bool RGRAB  = false;
 static bool LGRAB  = false;
 
@@ -48,6 +49,7 @@ int len[100];	//length
 static std::map<XnUInt32, std::list<XnPoint3D> > m_History;	//point history
 static std::list<int> handId;
 int prime_id = 0;
+
 
 //-----------------------------------------------------
 //					   LOG
@@ -69,13 +71,14 @@ void enableDebugGesture(){
 void set_print_training(int i){
 	printTraining = i;
 }
-bool isGrab(){
-	return RGRAB;
-}
 
-XnPoint3D getPalm(){
-	return palmPos;
-}
+//RIGHT HAND
+bool isGrab(){ return RGRAB; }
+XnPoint3D getPalm(){ return RpalmPos; }
+
+//LEFT HAND
+bool isLGrab(){ return LGRAB; }
+XnPoint3D getLPalm(){ return LpalmPos; }
 
 void switchShowHand(){
 	SHOWHAND = !SHOWHAND;
@@ -182,10 +185,8 @@ void XN_CALLBACK_TYPE Hand_Create(HandsGenerator& generator,XnUserID nId,const X
 		XnPoint3D projPosition;
 		g_DepthGenerator.ConvertRealWorldToProjective(1, pPosition, &projPosition);
 		
-		palmPos.X = projPosition.X;
-		palmPos.Y = projPosition.Y;
-		palmPos.Z = projPosition.Z;
-		printf("New Hand: %d @ (%f, %f, %f)\n", nId, palmPos.X, palmPos.Y, palmPos.Z);
+
+		printf("New Hand: %d @ (%f, %f, %f)\n", nId, projPosition.X, projPosition.Y, projPosition.Z);
 
 		//reset map
 		m_History[nId].clear();
@@ -193,6 +194,13 @@ void XN_CALLBACK_TYPE Hand_Create(HandsGenerator& generator,XnUserID nId,const X
 	
 		//reset primary hand
 		set_primary();
+
+		if(nId == prime_id)
+			RpalmPos = projPosition;
+		else 
+			LpalmPos = projPosition;
+
+		
 }
 	
 //Callback to be called when an existing hand has a new position
@@ -202,11 +210,6 @@ void XN_CALLBACK_TYPE Hand_Update(HandsGenerator& generator,XnUserID nId, const 
 		//printf("New Position: %d @ (%f, %f, %f)\n", nId, pPosition->X, pPosition->Y, pPosition->Z);
 		XnPoint3D projPosition;
 		g_DepthGenerator.ConvertRealWorldToProjective(1, pPosition, &projPosition);
-
-		palmPos.X = projPosition.X;
-		palmPos.Y = projPosition.Y;
-		palmPos.Z = projPosition.Z;
-		//printf("New Position: %d @ (%f, %f, %f)\n", nId, palmPos.X, palmPos.Y, palmPos.Z);
 
 		//store in history
 		XnPoint3D* ptProjective = new XnPoint3D();
@@ -220,7 +223,14 @@ void XN_CALLBACK_TYPE Hand_Update(HandsGenerator& generator,XnUserID nId, const 
 			m_History[nId].pop_back();
 
 		//printf("id: %d: %f %f %f \n", (int)nId, m_History[nId].front().X, m_History[nId].front().Y, m_History[nId].front().Z  );
-				
+		//reset primary hand
+		set_primary();	
+
+		if(nId == prime_id)
+			RpalmPos = projPosition;
+		else 
+			LpalmPos = projPosition;
+
 }
 
 //Lost hand
@@ -258,10 +268,10 @@ void draw_hand(XnPoint3D* handPointList)
 		XnUInt32 nPoints = 0;
 		XnUInt32 i = 0;
 		XnUInt32 Id = PointIterator->first;
-		XnPoint3D pt(*PointIterator->second.begin());
-		
+		XnPoint3D pt(*PointIterator->second.begin());	
+
 		//draw histogram		
-		int hpoint = draw_map(handPointList, pt);
+		int hpoint = draw_map(handPointList, pt, Id);
 
 		//predict
 		if(hpoint > 0){
@@ -286,6 +296,7 @@ void draw_hand(XnPoint3D* handPointList)
 				drawRHand(RGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
 			else 
 				drawLHand(LGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
+
 		}
 	}
 
@@ -294,7 +305,7 @@ void draw_hand(XnPoint3D* handPointList)
 }
 
 //hand histogram
-int draw_map(XnPoint3D* handPointList, XnPoint3D palm){
+int draw_map(XnPoint3D* handPointList, XnPoint3D palm, int id){
 	
 	if(palm.Z == 0) return 0;
 
@@ -319,8 +330,14 @@ int draw_map(XnPoint3D* handPointList, XnPoint3D palm){
 
 	//set color
 	glPointSize(2);
-	if(!LGRAB)	glColor3f(0, 1, 0);
-	else glColor3f(1, 0.0, 0.0);
+	if(id == prime_id)	{
+		if(!RGRAB) glColor3f(0, 1, 0);
+		else glColor3f(1, 0.0, 0.0);
+	}
+	else {
+		if(!LGRAB) glColor3f(0, 1, 0);
+		else glColor3f(1, 0.0, 0.0);
+	}
 	XnPoint3D *p = new XnPoint3D;
 
 
@@ -346,7 +363,7 @@ int draw_map(XnPoint3D* handPointList, XnPoint3D palm){
 						//flip the coordinate using nXRes and nYRes
 						//convert in relative to viewport 
 						if(SHOWHAND)
-							glVertex3f(convertX(nX), convertY(nY), 4.0f);
+							glVertex3f(convertX(nX), convertY(nY), 3.0f);
 
 						(*p).X = nX;
 						(*p).Y = nY;
@@ -404,7 +421,7 @@ void predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id){
 	if(smooth_result) {
 		fprintf(pFile, "-1");
 		if(id == prime_id) RGRAB = true;
-		else LGRAB = false;
+		else LGRAB = true;
 		//printf("grab\n");
 	}
 	else {
@@ -495,10 +512,8 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 	//distance from the center hand
 	for(int n=0; n< last; n++){
 		//only consider point above the central hand
-		//if(convexList[n].Y < palmPos.Y){
 			int d = (int)dis(convexList[n].X, convexList[n].Y, palm.X, palm.Y);
 			len[d] +=1;
-		//}
 	}
 
 	//for training
@@ -528,15 +543,14 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 	int predict = svm_rt_predict(p, size);
 	
 	
-	//draw hands
+	//draw finnger tips
 	if(SHOWHAND){
 		glPointSize(10);
 		glColor3f(0,0,1);
 		glBegin(GL_POINTS);
 		for(int n=0; n< last; n++){
-			//if(convexList[n].Y < palmPos.Y){
-				glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 0);
-			//}	
+				glVertex3f(convertX(convexList[n].X), convertY(convexList[n].Y), 3.0);
+			
 		}
 
 		glEnd();
@@ -565,9 +579,7 @@ bool getEdge(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 	(*leftmost).X = MAXH; (*leftmost).Y = MAXH;
 	XnPoint3D *rightmost = new XnPoint3D;
 	(*rightmost).X = 0; (*rightmost).Y = 0;
-
 	XnPoint3D* ptr = List; 
-
 
 	//Find top and bottom of the hand area. 
 	while(count < nNumberOfPoints){	
@@ -589,17 +601,13 @@ bool getEdge(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 		count++;
 		ptr++;
 	}
+	
 	/*
 	glColor3f(0, 0, 0);
 	glBegin(GL_POINTS);
-	glVertex3f(highest->X, highest->Y, 4.1f);
-	glVertex3f(lowest->X, lowest->Y, 4.1f);
-	glVertex3f((highest->X+lowest->X)/2, (highest->Y+lowest->Y)/2, 4.1f);
-	glEnd();
-
-	glColor3f(1,1,1);
-	glBegin(GL_POINTS);
-	glVertex3f(palmPos.X, palmPos.Y, 4.1f);
+	glVertex3f(convertX(highest->X), convertY(highest->Y), 4.1f);
+	glVertex3f(convertX(lowest->X), convertY(lowest->Y), 4.1f);
+	glVertex3f(convertX((highest->X+lowest->X)/2), convertY((highest->Y+lowest->Y)/2), 4.1f);
 	glEnd();
 	*/
 

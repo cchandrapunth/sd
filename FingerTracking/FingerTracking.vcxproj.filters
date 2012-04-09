@@ -81,6 +81,12 @@
     <ClInclude Include="drawbackground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -144,6 +150,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="drawbackground.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

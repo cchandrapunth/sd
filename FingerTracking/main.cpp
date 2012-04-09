@@ -28,6 +28,8 @@
 #include "Pair.h"
 #include "svmpredict.h"
 #include "drawbackground.h"
+#include "mode.h" 
+#include "display.h"
 
 //----------------------------------------------------------------
 //							Variable
@@ -41,16 +43,12 @@
 #define RENDER	1	
 #define SELECT	2	
 
-//mode
-bool rotateMode = false;
 
 // static //
 static int mainWindow;
 static int border =6, h=480, w= 800; 
-static float cursorX, cursorY; 
 static int mode = RENDER; 	
-static XnUInt16 g_nXRes, g_nYRes;
-static bool BACK_BUFF;	//show back buffer
+
 static XnPoint3D *handPointList;
 
 GLuint selectBuf[BUFSIZE];
@@ -60,17 +58,12 @@ GLuint selectBuf[BUFSIZE];
 #define MAXPOINT 30000
 xn::DepthGenerator *ptr_DepthGen;
 xn::Context context;
-bool stateGrab = false; //0- not grab, 1 - already in grab
+
 
 
 //ui
 ui *Master_ui =new ui();
 
-
-// feature
-bool sculpting = true;
-bool knife = false;
-bool paint = false;
 bool selection = false;
 
 //paint
@@ -82,7 +75,7 @@ static GLubyte checkImage[checkImageWidth][checkImageHeight][4]; //colorId 1
 static GLubyte redTex[4];	//2
 static GLubyte blueTex[4];	//3
 static GLubyte greenTex[4];	//4
-static GLubyte yellowTex[4];	//5
+static GLubyte yellowTex[4]; //5
 static GLubyte whiteTex[4];	//6
 
 
@@ -96,6 +89,10 @@ GLdouble right;
 GLdouble bottom; 
 GLdouble top; 
 
+//hands
+hand_h* rhand;
+hand_h* lhand;
+
 //---------------------------------------------------------------
 //				Keyboard and mouse
 //----------------------------------------------------------------
@@ -106,9 +103,8 @@ void mouse(int button, int state, int x, int y){
 	if (button != GLUT_LEFT_BUTTON || state != GLUT_DOWN) return;
 
 	//only when the left button is clicked 
-	cursorX = x;
-	cursorY = y;
-	mode = SELECT;
+	set_cursor(x, y);
+	set_state(1);
 }
 
 void processNormalKeys(unsigned char key, int x, int y){
@@ -120,8 +116,8 @@ void processNormalKeys(unsigned char key, int x, int y){
 		switchShowHand();
 	}
 	else if(key == 100){	//'d' to show front buffer or back bufferr
-		BACK_BUFF = !BACK_BUFF;
-		if(BACK_BUFF) printf("switch buffer to front\n");
+		switch_buffer();
+		if(get_buffer()) printf("switch buffer to front\n");
 		else 	printf("switch buffer to back\n");
 	}
 	else if(key == 111) {//'o' to train value = open hand
@@ -146,89 +142,7 @@ void processNormalKeys(unsigned char key, int x, int y){
 		printf("key: %d\n", key);
 }
 
-//treat grab as a mouse click. 
-void checkCursor(int func){
-	
-	if(isGrab()) {
-		//keep the movement history
-		storeHand(getPalm());
 
-		//first time grab gesture occurs
-		if(!stateGrab) {	
-			//adjust with width and height of the screen
-			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
-			cursorY = getPalm().Y*h/g_nYRes;
-			mode = SELECT; 
-			stateGrab = true;
-			//Beep(750,50);				//play sound
-
-		}
-		//still in grab gesture
-		else{
-			//free hand
-			if(func == 1 && !selection) {
-				//select a mesh once
-				//we don't need this for painting
-				mode = RENDER;	
-
-				if(rotateMode){
-					//disableLine(); //disable line effect
-					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					recalNormal();
-				}else{
-
-					//grab group of mesh
-					if(sListContain(getSelection()) >= 0 ){
-						interpolate(getsList(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
-						recalNormal();
-					}
-					//grab one mesh
-					else if(getSelection() > 0 && getSelection() < getFaceListSize()){
-						interpolate(getSelection(), gettranslateX(), gettranslateY(), gettranslateZ(), getRotX(), getRotY());
-						recalNormal();
-					}
-				}
-
-			}
-			//paint
-			else if(func ==2 && !selection){
-				if(rotateMode){
-					disableLine(); 
-					commitScene(gettranslateX(), gettranslateY(), gettranslateZ());
-					recalNormal();
-				}else{
-
-					if(getSelection() >0 && getSelection() < getFaceListSize()){
-						//printf("selection ->%d\n", getSelection());
-						paintMesh(getSelection(), getBrushColor());
-					}		
-				}
-			}
-
-			//knife
-			else if(func ==3){
-				
-			}
-		}
-	}
-	else{
-		//just release
-		if(stateGrab){
-			//selection list
-			if(selection && getSelection() > 0 && getSelection() < getFaceListSize()){
-				store_selection(getSelection());
-			}
-
-			stateGrab = false; 
-			clearHandList();
-			setNullSelection(); //show no mesh response when hand released
-
-			//undo
-			if(func == 1) copy_vmmodel(); 
-		}
-	}
-
-}
 //------------------------------------------------------------------
 //								Texture & UI
 //------------------------------------------------------------------
@@ -264,7 +178,6 @@ void makeTexImage(){
 
 }
 void UIhandler(){
-	
 	Master_ui->check_click(convertX(getPalm().X), convertY(getPalm().Y));
 }
 
@@ -274,8 +187,6 @@ void UIhandler(){
 
 void display(){
 
-	if(glutGetWindow()!=mainWindow)  
-		glutSetWindow(mainWindow);
 	if(handPointList == NULL){
 		printf("error. can't allocate memory for handPointList");
 	}
@@ -286,72 +197,10 @@ void display(){
 	draw_background();
 
 	glLoadIdentity();
-
 	UIhandler(); //check ui touch
 
-	//-------------------sculpting--------------------------
-	
-	if(sculpting){
-		//check grabing, store palm
-		checkCursor(1); 
-		
-		if(mode == SELECT){
-			drawPickVMModel();
-			processPick(cursorX, cursorY);
-			mode = RENDER;
-		}
-		else {
-			draw_hand(handPointList);
-			if(!BACK_BUFF){
-				drawVMModel();
-			}
-			else{ 
-				drawPickVMModel();
-			}
-			glutSwapBuffers();
-		}
-
-	}
-	//-------------------paint----------------------------
-	else if(paint) {
-		checkCursor(2); 
-		if(mode == SELECT){
-			//update cursor
-			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
-			cursorY = getPalm().Y*h/g_nYRes;
-			drawPickVMModel();
-			processPick(cursorX, cursorY);
-			mode = RENDER;
-		}
-		else {
-			draw_hand(handPointList);
-			if(!BACK_BUFF)
-				drawVMModel();
-			else drawPickVMModel();
-
-			//back to select other mesh
-			mode = SELECT;
-			
-			glutSwapBuffers();
-		}
-	}
-	else if(knife) {
-		checkCursor(3);
- 
-		if(mode == SELECT){
-			drawPickVMModel();
-
-			mode = RENDER;
-		}
-		else {
-			draw_hand(handPointList);
-			if(!BACK_BUFF)
-				drawVMModel();
-			else drawPickVMModel();
-			glutSwapBuffers();
-		}
-		
-	}
+	//display
+	mode_selection(handPointList, rhand, lhand);
 
 	context.WaitAndUpdateAll();
 	
@@ -396,8 +245,7 @@ void reshape(int w1, int h1){
 	XnMapOutputMode mode;
 	(*ptr_DepthGen).GetMapOutputMode(mode);
 
-	g_nXRes = mode.nXRes;
-	g_nYRes = mode.nYRes;
+	set_nRes(mode.nXRes, mode.nYRes);
 
 	//set the clipping volume corresponding to the viewport
 	//left, right, buttom, top
@@ -495,7 +343,9 @@ void initRender(){
 	findBoundingSphere();
 
 	handPointList = new XnPoint3D[MAXPOINT];
-	
+	rhand = new hand_h();
+	lhand = new hand_h();
+
 	glEnable(GL_NORMALIZE);			//automatically rescale normal when transform the surface
 
 }
@@ -503,18 +353,20 @@ void initRender(){
 //-----------------push menu-------------------
 //sculpting
 void option1(){
-	printf("Ready to sculpt?\n");
-	sculpting = true;
-	knife = false;
-	paint = false;
+	//printf("Ready to sculpt?\n");
+	//sculpting = true;
+	//knife = false;
+	//paint = false;
+	set_mode(1);
 	Master_ui->remove_menu();
 }
 //paint brush
 void option2(){
-	printf("paint\n");
-	sculpting = false;
-	knife = false;
-	paint = true;
+	//printf("paint\n");
+	//sculpting = false;
+	//knife = false;
+	//paint = true;
+	set_mode(2);
 	Master_ui->remove_menu();
 
 	float width = right -left;
@@ -529,16 +381,17 @@ void option2(){
 }
 //knife?
 void option3(){
-	printf("Knife\n");
-	sculpting = false;
-	knife = true;
-	paint = false;
+	//printf("Knife\n");
+	//sculpting = false;
+	//knife = true;
+	//paint = false;
+	set_mode(3);
 	Master_ui->remove_menu();
 
 }
 
 void up(){
-	if(sculpting){
+	if(is_mode(1)){
 		upEffect();
 	}
 	else{
@@ -547,7 +400,7 @@ void up(){
 }
 
 void down(){
-	if(sculpting){
+	if(is_mode(1)){
 		downEffect();
 	}
 	else{
@@ -561,15 +414,12 @@ void reload(){
 }
 void selectionMode(){
 	selection = !selection;
-
 	if(!selection){
 		//clearSelectionList();
 	}
 }
 
-void rotate(){
-	rotateMode = !rotateMode;
-}
+
 
 //FIXME: should hide the menu button once it's click
 void push_menu(){
@@ -709,9 +559,6 @@ int main (int argc, char **argv){
 	svm_train(raw_training_set, training_model);
 	svm_predict(test_set, training_model, predicted_result);
 	*/
-	
-	wait(100);
-	
 
-
+	
 }

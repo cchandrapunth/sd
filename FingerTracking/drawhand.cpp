@@ -3,7 +3,7 @@
 #include <gl/glut.h>
 #include <math.h>
 
-int initZ = 4;
+int initZ = 4.5;
 
 void drawRHand(bool grab, float x, float y, float z){
 

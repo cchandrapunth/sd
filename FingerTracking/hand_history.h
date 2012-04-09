@@ -3,11 +3,23 @@
 
 using namespace xn;
 
-//storing
-void storeHand(XnPoint3D p);
-void clearHandList();
+#pragma once
+class hand_h
+{
+public:
+	int MAX_HANDLIST;
+	XnPoint3D current;
+	XnPoint3D prev;
 
-//get info
-float gettranslateX();
-float gettranslateY();
-float gettranslateZ();
+	hand_h();
+	~hand_h();
+
+	//storing
+	void storeHand(XnPoint3D p);
+	void clearHandList();
+
+	//get info
+	float gettranslateX();
+	float gettranslateY();
+	float gettranslateZ();
+};

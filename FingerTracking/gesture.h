@@ -39,7 +39,7 @@ void XN_CALLBACK_TYPE Hand_Destroy(HandsGenerator& generator,XnUserID nId, XnFlo
 
 //read hand area 
 void draw_hand(XnPoint3D* handPointList);
-int draw_map(XnPoint3D* handPointList, XnPoint3D m_palm);
+int draw_map(XnPoint3D* handPointList, XnPoint3D m_palm, int id);
 void predict_gesture(XnPoint3D* handPointList, XnPoint3D palm, int n, int id);
 
 bool getEdge(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm);

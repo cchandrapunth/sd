@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <deque>
 
-#include "picking.h";
-#include "undo.h";
+#include "picking.h"
+#include "undo.h"
 
 using namespace std;
 static GLint model_display_list;
