@@ -20,7 +20,9 @@ static int h=480, w= 800;
 static float cursorX, cursorY; 
 
 bool rotateMode = false;
-bool stateGrab = false;		//0- not grab, 1 - already in grab
+bool stateGrabR = false;		//0- not grab, 1 - already in grab
+bool stateGrabL = false;		//0- not grab, 1 - already in grab
+
 bool static BACK_BUFF;		//display back buffer
 
 
@@ -30,8 +32,9 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 	//-------------------sculpting--------------------------
 	if(is_mode(1)){
 		//right hand
-		checkCursor(1, rhand, lhand); 
-		
+		checkRCursor(1, rhand); 
+		if(hasTwoHands()) checkLCursor(lhand); 
+
 		//SELECTION
 		if(is_state(1)){
 			drawPickVMModel();
@@ -55,7 +58,8 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 	
 	//-------------------paint----------------------------
 	else if(is_mode(2)) {
-		checkCursor(2, rhand, lhand); 
+		checkRCursor(2, rhand); 
+		if(hasTwoHands()) checkLCursor(lhand); 
 
 		//SELECTION
 		if(is_state(1)){
@@ -81,9 +85,10 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 
 	//------------------ Selection ------------------------
 	else if(is_mode(3)) {
-		checkCursor(3, rhand, lhand);
- 
-		if(is_state(1)){
+		checkRCursor(3, rhand);
+		if(hasTwoHands()) checkLCursor(lhand); 
+		
+		 if(is_state(1)){
 			drawPickVMModel();
 
 			set_state(2);
@@ -102,26 +107,24 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 }
 
 
-//treat grab as a mouse click. 
-void checkCursor(int func, hand_h* rhand, hand_h* lhand){
+//RIGHT HAND:: treat grab as a mouse click. 
+void checkRCursor(int func, hand_h* rhand){
 	
-	//right hand
 	if(isGrab()) {
 		rhand->storeHand(getPalm());		//keep the hand movement history
 
-		//first time grab gesture occurs
-		if(!stateGrab) {	
+		//first time grab gesture occurs for right hand
+		if(!stateGrabR) {	
 			//adjust with width and height of the screen
 			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
 			cursorY = getPalm().Y*h/g_nYRes;
 			set_state(1); 
-			stateGrab = true;
-			//Beep(750,50);				//play sound
+			stateGrabR = true;
 
 		}
 		//still in grab gesture
 		else{
-			//free hand
+			//sculpt
 			if(func == 1) {
 				//select a mesh once
 				//we don't need this for painting
@@ -163,7 +166,7 @@ void checkCursor(int func, hand_h* rhand, hand_h* lhand){
 				}
 			}
 
-			//knife
+			//selection?
 			else if(func ==3){
 				
 			}
@@ -171,13 +174,13 @@ void checkCursor(int func, hand_h* rhand, hand_h* lhand){
 	}
 	else{
 		//just release
-		if(stateGrab){
+		if(stateGrabR){
 			//selection list
 			//if(selection && getSelection() > 0 && getSelection() < getFaceListSize()){
 			//	store_selection(getSelection());
 			//}
 
-			stateGrab = false; 
+			stateGrabR = false; 
 			rhand->clearHandList();
 			setNullSelection(); //show no mesh response when hand released
 
@@ -186,6 +189,31 @@ void checkCursor(int func, hand_h* rhand, hand_h* lhand){
 		}
 	}
 
+}
+
+//LEFT HAND:: handle rotation
+void checkLCursor(hand_h* lhand){
+	if(isLGrab()) {
+		lhand->storeHand(getLPalm());		//keep the hand movement history
+				
+		//first time grab gesture occurs for left hand
+		if(!stateGrabL) {
+			set_state(1); 
+			stateGrabL = true;
+		}
+		//still in grab gesture
+		else{
+			commitScene(lhand->gettranslateX(), lhand->gettranslateY(), lhand->gettranslateZ());
+			recalNormal();
+		}
+	}
+	else{
+		//just release
+		if(stateGrabL){
+			stateGrabL = false; 
+			lhand->clearHandList();
+		}
+	}
 }
 
 //helper

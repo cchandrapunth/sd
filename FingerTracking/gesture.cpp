@@ -72,6 +72,10 @@ void set_print_training(int i){
 	printTraining = i;
 }
 
+bool hasTwoHands(){
+	return handId.size() > 1 ? true: false;
+}
+
 //RIGHT HAND
 bool isGrab(){ return RGRAB; }
 XnPoint3D getPalm(){ return RpalmPos; }

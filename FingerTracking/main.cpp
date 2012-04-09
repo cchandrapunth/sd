@@ -37,28 +37,18 @@
 
 #define SelBuffSize 512		//selection buffer 
 #define BUFSIZE 1024 
+GLuint selectBuf[BUFSIZE];
 
-
-//rendering mode
-#define RENDER	1	
-#define SELECT	2	
-
-
-// static //
 static int mainWindow;
 static int border =6, h=480, w= 800; 
-static int mode = RENDER; 	
-
 static XnPoint3D *handPointList;
 
-GLuint selectBuf[BUFSIZE];
 
 //gesture 
 #define GESTURE_TO_USE "Click" 
 #define MAXPOINT 30000
 xn::DepthGenerator *ptr_DepthGen;
 xn::Context context;
-
 
 
 //ui
@@ -79,9 +69,7 @@ static GLubyte yellowTex[4]; //5
 static GLubyte whiteTex[4];	//6
 
 
-
 //viewport
-
 float zNear;
 float zFar; 
 GLdouble left; 
@@ -353,19 +341,11 @@ void initRender(){
 //-----------------push menu-------------------
 //sculpting
 void option1(){
-	//printf("Ready to sculpt?\n");
-	//sculpting = true;
-	//knife = false;
-	//paint = false;
 	set_mode(1);
 	Master_ui->remove_menu();
 }
 //paint brush
 void option2(){
-	//printf("paint\n");
-	//sculpting = false;
-	//knife = false;
-	//paint = true;
 	set_mode(2);
 	Master_ui->remove_menu();
 
@@ -379,39 +359,28 @@ void option2(){
 	Master_ui->add_button("yellow", left+ width/15, top-height*4/10, width/10, height/10-off, setYellow);	//yellow
 	Master_ui->add_button("white", left+ width/15, top-height*5/10, width/10, height/10-off, setWhite);	//white
 }
-//knife?
+//selection?
 void option3(){
-	//printf("Knife\n");
-	//sculpting = false;
-	//knife = true;
-	//paint = false;
 	set_mode(3);
 	Master_ui->remove_menu();
 
 }
 
 void up(){
-	if(is_mode(1)){
-		upEffect();
-	}
-	else{
-		upBrush();
-	}
+	if(is_mode(1)) upEffect();
+	else upBrush();
 }
 
 void down(){
-	if(is_mode(1)){
-		downEffect();
-	}
-	else{
-		downBrush();
-	}
+	if(is_mode(1)) downEffect();
+	else downBrush();
 }
 
 //reload model
 void reload(){
 	import_vm();
 }
+
 void selectionMode(){
 	selection = !selection;
 	if(!selection){
@@ -419,9 +388,6 @@ void selectionMode(){
 	}
 }
 
-
-
-//FIXME: should hide the menu button once it's click
 void push_menu(){
 	//draw panel 
 	Master_ui->activate_menu = true; //addpanel
@@ -542,7 +508,7 @@ int main (int argc, char **argv){
 	return(0);
 	
 	
-	/*
+	/* svm train
 	char raw_training_set []= "a1a.train.train";
 	char training_model [] = "a1a.mod.txt";
 	char test_set [] = "a1a.test.test";

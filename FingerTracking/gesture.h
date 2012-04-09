@@ -47,6 +47,9 @@ bool getEdge(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm);
 //helper
 bool isGrab();
 XnPoint3D getPalm();
+bool isLGrab();
+XnPoint3D getLPalm();
+
 void switchShowHand();
 bool estimateGrab(
 	XnPoint3D* list, 
@@ -68,4 +71,5 @@ void set_print_training(int i);
 
 
 ///helper
+bool hasTwoHands();
 float dis(float x1, float y1, float x2, float y2);
