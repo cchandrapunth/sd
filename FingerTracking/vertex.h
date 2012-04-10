@@ -27,7 +27,7 @@ public:
 	void clearFaceId();
 
 	//debug
-	void printv();
-	void printface();
+	void printv(int i, FILE* a);
+	void printface(FILE* a);
 };
 

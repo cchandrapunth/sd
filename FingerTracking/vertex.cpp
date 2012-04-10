@@ -71,17 +71,17 @@ int vertex::addFaceId(int i){
 	return 1;
 }
 
-void vertex::printv(){
-	printf(" vx:%.5f, vy:%.5f, vz:%.5f\n", x, y, z);
-	printf("vnorm: %f \t%f \t%f\n", vnormx, vnormy, vnormz);
+void vertex::printv(int i, FILE* a){
+	fprintf(a, " %d vx:%.5f, vy:%.5f, vz:%.5f\n",i, x, y, z);
+	fprintf(a, "vnorm: %f \t%f \t%f\n", vnormx, vnormy, vnormz);
 }
 
-void vertex::printface(){
-	printf("nface= %d \t| faceId ", nface);
+void vertex::printface(FILE* a){
+	fprintf(a, "nface= %d \t| faceId ", nface);
 	for(int i=0; i< nface; i++){
-		printf("%d ", faceId[i]);
+		fprintf(a, "%d ", faceId[i]);
 	}
-	printf("\n");
+	fprintf(a, "\n");
 }
 
 

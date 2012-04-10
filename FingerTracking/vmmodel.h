@@ -3,13 +3,14 @@
 void import_vm();
 void export_vm();
 
-
 void drawMesh(int i, bool shade);
-void subDivide();
-void subDivideMesh(int i);
 
-int getFaceListSize();
-int getVertexListSize();
+//subdivision
+void subDivide(bool do_norm);
+void subDivideMesh(int i, bool do_norm);
+void indiv_subdivide(int vbegin);
+
+
 
 //Normal
 void recalNormal();
@@ -42,8 +43,12 @@ void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz);
 void findBoundingSphere();
 vertex getCenter();
 float getDiam();
-
 void setMeshSelection(int k);
 void drawGizmo();
 float* getCenterSelection();
 
+
+//helper
+int getFaceListSize();
+int getVertexListSize();
+void print_debug();

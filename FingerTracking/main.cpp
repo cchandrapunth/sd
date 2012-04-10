@@ -40,7 +40,7 @@
 GLuint selectBuf[BUFSIZE];
 
 static int mainWindow;
-static int border =6, h=480, w= 800; 
+static int border =6, h=800, w= 800; 
 static XnPoint3D *handPointList;
 
 
@@ -116,14 +116,22 @@ void processNormalKeys(unsigned char key, int x, int y){
 		set_print_training(1);
 	}
 	else if(key == 49){ //'1' for rotate X
-			commitScene(1, 0, 0);
+			commitScene(-2, 0, 0);
 			recalNormal();
 	}
 	else if(key == 50){ //'2' for rotate y
-			commitScene(0,1,0);
+			commitScene(2, 0, 0);
 			recalNormal();
 	}
 	else if(key == 51){ //'3' for line effect
+			commitScene(0, -2, 0);
+			recalNormal();
+	}
+	else if(key == 52){ //'4' for line effect
+			commitScene(0, 2, 0);
+			recalNormal();
+	}
+	else if(key == 53){ //'5' for line effect
 			switchLine();
 	}
 	else
@@ -422,7 +430,7 @@ void uiInit(){
 
 	Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);	//if remove, fix ui.cpp (count)
 	//Master_ui->add_button("select", right-(right-left)/5, bottom+0.8, 0.5, 0.3, selectionMode);
-	Master_ui->add_button("rotate", right-(right-left)/5, bottom+0.8, 0.5, 0.3, rotate);
+	Master_ui->add_button("rotate", right-(right-left)/5, bottom+0.8, 0.5, 0.3, activate_rotate);
 	Master_ui->add_button("undo", right-(right-left)/5, bottom+1.1, 0.5, 0.3, undo_vmmodel);
 }
 
@@ -485,7 +493,7 @@ int main (int argc, char **argv){
 	
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(300, 100);
+	glutInitWindowPosition(400, 0);
 	glutInitWindowSize(w,h);
 	mainWindow = glutCreateWindow("picking back buffer");
 

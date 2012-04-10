@@ -13,6 +13,8 @@
 #define UNDORANGE 15
 using namespace std;
 
+/**color: check-1, red-2, blue-3, green-4, yellow-5, white-6 **/
+
 static deque<mesh> faceList;
 static deque<vertex> vertexList;
 
@@ -22,7 +24,7 @@ int numMod = -1;
 int countMod = 0;
 
 int selectedMesh;
-int initColor = 2;	//initial color = blue
+int initColor = 2;	//initial color = red
 
 bool debug = true;
 Log *pLog; 
@@ -30,6 +32,8 @@ FILE *mFile;
 
 int getFaceListSize(){	return faceList.size();};
 int getVertexListSize(){	return vertexList.size();};
+float maxArea = 0.3;
+
 
 void import_vm(){
 
@@ -85,30 +89,35 @@ void import_vm(){
 		vertexList.at(id3).addFaceId(j);
 	}
 	
+	
 	//subDivide
 	for(int k=0; k< 3; k++){
-		subDivide();
+		subDivide(true);
 	}
+	
 
 	calVertexNormal();
+	print_debug();
 
-	if(debug){
+}
+
+///DEbug
+void print_debug(){
 		//pLog->Write("load model complete");
-		printf("\n=================================================\n");
-		printf("\tvertexList :: nVertex = %d\n", vertexList.size());
-		printf("=================================================\n");
-		//for(int i=0; i< vertexList.size(); i++){
-		//	vertexList.at(i).printv();
-		//	vertexList.at(i).printface();
-		//}
+		fprintf(mFile, "\n=================================================\n");
+		fprintf(mFile, "\tvertexList :: nVertex = %d\n", vertexList.size());
+		fprintf(mFile,"=================================================\n");
+		for(int i=0; i< vertexList.size(); i++){
+			vertexList.at(i).printv(i, mFile);
+			vertexList.at(i).printface(mFile);
+		}
 
-		printf("\n=================================================\n");
-		printf("\tfaceList :: nFace = %d\n", faceList.size());
-		printf("=================================================\n");
-		//for(int i=0; i< faceList.size(); i++){
-		//	faceList.at(i).printmesh();
-		//}
-	}
+		fprintf(mFile, "\n=================================================\n");
+		fprintf(mFile, "\tfaceList :: nFace = %d\n", faceList.size());
+		fprintf(mFile, "=================================================\n");
+		for(int i=0; i< faceList.size(); i++){
+			faceList.at(i).printmesh(i, mFile);
+		}
 }
 
 void export_vm(){
@@ -137,16 +146,7 @@ void export_vm(){
 	}
 	
 	outdata.close();
-	if(debug){
-		//pLog->Write("export model complete");
-		for(int i=0; i< nVertex; i++){
-			vertexList.at(i).printv();
-		}
-
-		for(int i=0; i< nMesh; i++){
-			faceList.at(i).printmesh();
-		}
-	}
+	print_debug();
 }
 
 //recalculate nornal in all 
@@ -223,6 +223,7 @@ vertex* normalizeV(vertex* norm){
 		 norm->z = norm->z / NormalisationFactor;
 	return norm;
 }
+
 
 void setColorPaint(int id){
 	int cid = faceList.at(id).colorId;
@@ -322,13 +323,16 @@ void paintMesh(int mid, int cid){
 
 
 	for (set<int>::iterator it=mSet.begin(); it!=mSet.end(); it++){
-		printf("%d ",*it);
+		//printf("%d ",*it);
 		faceList.at(*it).colorId = cid;
 	}
-	printf("\n");
+	//printf("\n");
 	mSet.clear();
 }
 
+/***************************************************
+				subdivision
+***************************************************/
 bool sameVertex(vertex v1, vertex v2){
 	if(v1.x - v2.x < 0.001 && v1.x - v2.x > -0.001 &&
 		v1.y - v2.y < 0.001 && v1.y - v2.y > -0.001 &&
@@ -338,12 +342,12 @@ bool sameVertex(vertex v1, vertex v2){
 	return false;
 }
 
-void subDivide(){
+void subDivide(bool do_normalize){
 
 	//subdivide: always assign faceId afterward
 	int size = getFaceListSize();
 	for(int i=0; i< size; i++){
-		subDivideMesh(i);
+		subDivideMesh(i, do_normalize);
 	}
 	//assign faceId
 	for(int i=0; i< vertexList.size(); i++){
@@ -359,9 +363,49 @@ void subDivide(){
 	}
 }
 
+vertex* findCenter(mesh m){
+	vertex v1 = vertexList.at(m.ind1);
+	vertex v2 = vertexList.at(m.ind2);
+	vertex v3 = vertexList.at(m.ind3);
+
+	vertex* v4 = new vertex((v1.x+v2.x+v3.x)/3, (v1.y+v2.y+v3.y)/3, (v1.z+v2.z+v3.z)/3);
+	return v4;
+}
+
+void internalSubDivide(int meshId){
+	mesh m = faceList.at(meshId);
+	vertex* center = findCenter(m);
+
+	int ind4 = vertexList.size();
+	
+	//new mesh
+	mesh m2= new mesh(m.ind2, m.ind3, ind4);
+	mesh m3= new mesh(m.ind3, m.ind1, ind4);
+	//old mesh
+	faceList.at(meshId).ind3 = ind4;
+
+	//center = normalizeV(center);
+	//assign faceID for new vertex 
+	center->addFaceId(meshId);
+	center->addFaceId(faceList.size());
+	center->addFaceId(faceList.size()+1);
+	vertexList.push_back(center);
+
+	fprintf(mFile, "NEW VERTEX\n");
+	fprintf(mFile, "%d: %f %f %f\n", meshId, center->x, center->y, center->z);
+
+	//same color
+	m2.colorId = m.colorId;
+	m3.colorId = m.colorId;
+
+	faceList.push_back(m2);
+	faceList.push_back(m3);
+
+}
+
 //divide a mesh into 4 new mesh
 //handle the operation and restoration in the deque
-void subDivideMesh(int meshId){
+void subDivideMesh(int meshId, bool do_normalize){
 
 	mesh m = faceList.at(meshId);
 
@@ -386,10 +430,13 @@ void subDivideMesh(int meshId){
 	v31->y = (v3.y+v1.y)/2.0;
 	v31->z = (v3.z+v1.z)/2.0;
 
-	v12 = normalizeV(v12);
-	v23 = normalizeV(v23);
-	v31 = normalizeV(v31);
-
+	//only normlize to  generate sphare
+	//do not normalize when regeneration 
+	if(do_normalize){
+		v12 = normalizeV(v12);
+		v23 = normalizeV(v23);
+		v31 = normalizeV(v31);
+	}
 
 
 	//only check the vector once 
@@ -515,6 +562,14 @@ void subDivideMesh(int meshId){
 		faceList.push_back(*m);	
 	}
 }
+
+void indiv_subdivide(int vbegin){
+
+}
+
+/****************************************************
+				Interpolation
+*****************************************************/
 float rx;
 float ry;
 
@@ -575,11 +630,32 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 
 	softselection(id, vectorx/100, vectory/100, vectorz/100);
 
-	bool once = false;
-	for(int i=0; i< faceList.size(); i++){
-		once = checkSize(i);
-		if(once) break;	//only one large mesh would subdivide the whole model 
+	//check size to subdivide
+	int fsize = faceList.size();
+	bool do_divide = false;
+	int vsize = vertexList.size();
+
+	for(int i=0; i< fsize; i++){
+		if(checkSize(i)) {
+			do_divide = true;
+			//internalSubDivide(i);
+			subDivideMesh(i, false);
+		}
 	}
+	indiv_subdivide(vsize);
+
+	if(do_divide){
+		fprintf(mFile, "\n<<<<<-------------BEFORE SUBDIVIDE------------->>>>\n");
+		print_debug();
+		//subDivide(false);
+		fprintf(mFile, "\n<<<<<-------------AFTER SUBDIVIDE------------->>>>\n");
+		print_debug();
+		printf("subdivide\n");
+	}
+
+	//recalculate face normal and vertex normal
+	recalNormal();
+	
 }
 
 void interpolate(int* list, float transx, float transy, float transz, int rotx, int roty){
@@ -623,57 +699,50 @@ void interpolate(int* list, float transx, float transy, float transz, int rotx, 
 
 bool checkSize(int i){
 
-	float maxArea = 1.5;
-
 	//consider every mesh
+
+	mesh m= faceList.at(i);
+	float *length = new float[3];
+
+	for(int j=0; j< 3; j++){
+
+		int id1, id2;
+
+		if(j ==0) {
+			id1 = m.ind1;
+			id2 = m.ind2;
+		}
+		if(j ==1){
+			id1 = m.ind2;
+			id2 = m.ind3;
+		}
+		if(j ==2){
+			id1 = m.ind3;
+			id2 = m.ind1;
+		}
+
+		float x1 = vertexList.at(id1).x;
+		float y1 = vertexList.at(id1).y;
+		float z1 = vertexList.at(id1).z;
+
+		float x2 = vertexList.at(id2).x;
+		float y2 = vertexList.at(id2).y;
+		float z2 = vertexList.at(id2).z;
+
+		length[j] = sqrt(pow(x1-x2, 2)+ pow(y1-y2, 2)+ pow(z1-z2, 2)); 
+	}
+	//printf("id: %d, l1: %f, l2: %f, l3: %f\n", i, length[0], length[1], length[2]);
+
+	//find the area of triangles
+	float p = (length[0]+ length[1]+ length[2])/2;
+	float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
 	
-		mesh m= faceList.at(i);
-		float *length = new float[3];
-
-		for(int j=0; j< 3; j++){
-			
-			int id1, id2;
-
-			if(j ==0) {
-				id1 = m.ind1;
-				id2 = m.ind2;
-			}
-			if(j ==1){
-				id1 = m.ind2;
-				id2 = m.ind3;
-			}
-			if(j ==2){
-				id1 = m.ind3;
-				id2 = m.ind1;
-			}
-
-			float x1 = vertexList.at(id1).x;
-			float y1 = vertexList.at(id1).y;
-			float z1 = vertexList.at(id1).z;
-			
-			float x2 = vertexList.at(id2).x;
-			float y2 = vertexList.at(id2).y;
-			float z2 = vertexList.at(id2).z;
-
-			length[j] = sqrt(pow(x1-x2, 2)+ pow(y1-y2, 2)+ pow(z1-z2, 2)); 
-		}
-		//printf("id: %d, l1: %f, l2: %f, l3: %f\n", i, length[0], length[1], length[2]);
-		
-		//find the area of triangles
-		float p = (length[0]+ length[1]+ length[2])/2;
-		float area = sqrt(p*(p-length[0])*(p-length[1])*(p-length[2]));
-		//printf("id: %d, area: %f\n", i,area);
-
-		
-		if(area > maxArea) {
-			int nmesh = faceList.size();
-			//for(int k=0; k< nmesh; k++){
-			//	subDivide(k);	//sudivide this mesh
-			//}
-			return true;
-		}
-		return false;
-
+	if(area > maxArea) {
+		printf("id: %d, area: %f\n", i,area);
+		int nmesh = faceList.size();
+		return true;
+	}
+	return false;
 }
 
 
@@ -944,12 +1013,12 @@ void copy_vmmodel(){
 		for(int f=0; f<temp.nface; f++){
 			v->addFaceId(temp.faceId[f]);
 		}
-		fprintf(mFile,"%d\t %f\t %f\t %f\n", i, v->x, v->y, v->z);
+		//fprintf(mFile,"%d\t %f\t %f\t %f\n", i, v->x, v->y, v->z);
 		exvertexList[numMod].push_back(*v);
 	}
 	printf("copy model: %d\n", numMod);
 
-	fprintf(mFile,"---------------------------------------------------\n");
+	//fprintf(mFile,"---------------------------------------------------\n");
 }
 
 //restore ex-data to the data structure

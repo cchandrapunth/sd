@@ -13,3 +13,4 @@ void set_cursor(float x, float y);
 void rotate();
 void switch_buffer();
 bool get_buffer();
+void activate_rotate();

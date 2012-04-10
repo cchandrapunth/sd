@@ -16,24 +16,31 @@
 
 //resolution
 static XnUInt16 g_nXRes, g_nYRes;
-static int h=480, w= 800;
+static int h=800, w= 800;
 static float cursorX, cursorY; 
 
-bool rotateMode = false;
 bool stateGrabR = false;		//0- not grab, 1 - already in grab
 bool stateGrabL = false;		//0- not grab, 1 - already in grab
+bool switchHand = false;		//right hand perform rotation
 
 bool static BACK_BUFF;		//display back buffer
 
+void activate_rotate(){
+	switchHand = !switchHand;
+}
 
 /* Select from 3 available modes and process accordingly */
 void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 
 	//-------------------sculpting--------------------------
 	if(is_mode(1)){
-		//right hand
-		checkRCursor(1, rhand); 
-		if(hasTwoHands()) checkLCursor(lhand); 
+		if(switchHand){
+			checkLCursor(rhand);
+		}
+		else{
+			checkRCursor(1, rhand);					//right
+			if(hasTwoHands()) checkLCursor(lhand);	//left
+		}
 
 		//SELECTION
 		if(is_state(1)){
@@ -129,13 +136,7 @@ void checkRCursor(int func, hand_h* rhand){
 				//select a mesh once
 				//we don't need this for painting
 				set_state(2);
-
-				if(rotateMode){
-					//disableLine(); //disable line effect
-					commitScene(rhand->gettranslateX(), rhand->gettranslateY(), rhand->gettranslateZ());
-					recalNormal();
-				}else{
-
+				
 					//grab group of mesh
 					if(sListContain(getSelection()) >= 0 ){
 						interpolate(getsList(), rhand->gettranslateX(), 
@@ -148,22 +149,15 @@ void checkRCursor(int func, hand_h* rhand){
 							rhand->gettranslateY(), rhand->gettranslateZ(), getRotX(), getRotY());
 						recalNormal();
 					}
-				}
 
 			}
 			//paint
 			else if(func ==2){
-				if(rotateMode){
-					disableLine(); 
-					commitScene(rhand->gettranslateX(), rhand->gettranslateY(), rhand->gettranslateZ());
-					recalNormal();
-				}else{
 
 					if(getSelection() >0 && getSelection() < getFaceListSize()){
 						//printf("selection ->%d\n", getSelection());
 						paintMesh(getSelection(), getBrushColor());
 					}		
-				}
 			}
 
 			//selection?
@@ -193,8 +187,11 @@ void checkRCursor(int func, hand_h* rhand){
 
 //LEFT HAND:: handle rotation
 void checkLCursor(hand_h* lhand){
-	if(isLGrab()) {
-		lhand->storeHand(getLPalm());		//keep the hand movement history
+	if((isLGrab() && !switchHand) || (switchHand && isGrab())) {
+		XnPoint3D point;
+		if(switchHand)  point = getPalm();
+		else	 point = getLPalm();
+		lhand->storeHand(point);		//keep the hand movement history
 				
 		//first time grab gesture occurs for left hand
 		if(!stateGrabL) {
@@ -216,11 +213,6 @@ void checkLCursor(hand_h* lhand){
 	}
 }
 
-//helper
-void rotate(){
-	rotateMode = !rotateMode;
-}
-
 void set_nRes(XnUInt16 XRes, XnUInt16 YRes){
 	g_nXRes = XRes;
 	g_nYRes = YRes;
@@ -236,3 +228,4 @@ void switch_buffer(){
 bool get_buffer(){
 	return BACK_BUFF;
 }
+

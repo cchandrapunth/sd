@@ -15,7 +15,7 @@ public:
 	mesh(mesh* m);
 	~mesh(void);
 	void setColor(int);
-	void printmesh();
+	void printmesh(int i, FILE* a);
 
 	int ind1, ind2, ind3;
 	float normalX, normalY, normalZ;
