@@ -24,6 +24,7 @@ public:
 
 	~vertex();
 	int addFaceId(int);
+	void removeFaceId(int i);
 	void clearFaceId();
 
 	//debug

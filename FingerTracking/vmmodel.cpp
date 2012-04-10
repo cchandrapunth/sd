@@ -32,7 +32,7 @@ FILE *mFile;
 
 int getFaceListSize(){	return faceList.size();};
 int getVertexListSize(){	return vertexList.size();};
-float maxArea = 0.3;
+float maxArea = 0.4;
 
 
 void import_vm(){
@@ -342,13 +342,14 @@ bool sameVertex(vertex v1, vertex v2){
 	return false;
 }
 
+//sub divide the whole model
 void subDivide(bool do_normalize){
 
-	//subdivide: always assign faceId afterward
 	int size = getFaceListSize();
 	for(int i=0; i< size; i++){
 		subDivideMesh(i, do_normalize);
 	}
+	/*
 	//assign faceId
 	for(int i=0; i< vertexList.size(); i++){
 		vertexList.at(i).clearFaceId();
@@ -361,6 +362,7 @@ void subDivide(bool do_normalize){
 			}
 		}
 	}
+	*/
 }
 
 vertex* findCenter(mesh m){
@@ -403,16 +405,30 @@ void internalSubDivide(int meshId){
 
 }
 
+//assign share faceId of v1, v2 to v12 
+int findNeighbor(vertex v1, vertex v2){
+	int shareface =-1;
+	for(int i=0; i< v1.nface; i++){
+		for(int j=0; j< v2.nface; j++){
+			if(v1.faceId[i] == v2.faceId[j]) shareface = v1.faceId[i];
+		}
+	}
+	return shareface;
+}
+
 //divide a mesh into 4 new mesh
 //handle the operation and restoration in the deque
-void subDivideMesh(int meshId, bool do_normalize){
+//return list of new point 12, 23, 31 respectively
+int* subDivideMesh(int meshId, bool do_normalize){
 
 	mesh m = faceList.at(meshId);
 
 	vertex v1 = vertexList.at(m.ind1);
 	vertex v2 = vertexList.at(m.ind2);
 	vertex v3 = vertexList.at(m.ind3);
-
+	vertexList.at(m.ind1).removeFaceId(meshId);
+	vertexList.at(m.ind2).removeFaceId(meshId);
+	vertexList.at(m.ind3).removeFaceId(meshId);
 
 	vertex *v12 = new vertex(0, 0, 0);
 	vertex *v23 = new vertex(0, 0, 0);  
@@ -430,13 +446,17 @@ void subDivideMesh(int meshId, bool do_normalize){
 	v31->y = (v3.y+v1.y)/2.0;
 	v31->z = (v3.z+v1.z)/2.0;
 
-	//only normlize to  generate sphare
+	//only normalize to  generate sphare
 	//do not normalize when regeneration 
 	if(do_normalize){
 		v12 = normalizeV(v12);
 		v23 = normalizeV(v23);
 		v31 = normalizeV(v31);
 	}
+	//add faceId of v12, v23, v31
+	v12->addFaceId(findNeighbor(v1, v2));
+	v23->addFaceId(findNeighbor(v2, v3));
+	v31->addFaceId(findNeighbor(v3, v1));
 
 
 	//only check the vector once 
@@ -514,10 +534,11 @@ void subDivideMesh(int meshId, bool do_normalize){
 	faceList.at(meshId).ind2 = indexv12;
 	faceList.at(meshId).ind3 = indexv31;
 	faceList.at(meshId).colorId = initColor;
+	//add faceId for first tri 
+	vertexList.at(old1).addFaceId(meshId);
+	vertexList.at(indexv12).addFaceId(meshId);
+	vertexList.at(indexv31).addFaceId(meshId);
 
-	//vertexList.at(old1).printv();
-	//vertexList.at(indexv12).printv();
-	//vertexList.at(indexv31).printv();
 
 	//find normal
 	vertex* v = getFaceNormal(vertexList.at(old1), vertexList.at(indexv12), vertexList.at(indexv31));	
@@ -530,13 +551,16 @@ void subDivideMesh(int meshId, bool do_normalize){
 		mesh *m = new mesh(0, 0, 0);
 		vertex* v;
 
+		int triId = faceList.size();
 		if(i == 0){
 			m->ind1 = old2;			//v2
 			m->ind2 = indexv23;		//v23
 			m->ind3 = indexv12;		//v12
 
-		v = getFaceNormal(vertexList.at(old2), vertexList.at(indexv23), vertexList.at(indexv12));	
-		
+			v = getFaceNormal(vertexList.at(old2), vertexList.at(indexv23), vertexList.at(indexv12));	
+			vertexList.at(old2).addFaceId(triId);
+			vertexList.at(indexv23).addFaceId(triId);
+			vertexList.at(indexv12).addFaceId(triId);
 
 		}
 		else if(i==1){
@@ -545,6 +569,9 @@ void subDivideMesh(int meshId, bool do_normalize){
 			m->ind3 = indexv23;		//v23
 
 			v = getFaceNormal(vertexList.at(old3), vertexList.at(indexv31), vertexList.at(indexv23));	
+			vertexList.at(old3).addFaceId(triId);
+			vertexList.at(indexv31).addFaceId(triId);
+			vertexList.at(indexv23).addFaceId(triId);
 		}
 		else{
 			m->ind1 = indexv12;		//v12
@@ -552,6 +579,9 @@ void subDivideMesh(int meshId, bool do_normalize){
 			m->ind3 = indexv31;		//v31
 
 			v = getFaceNormal(vertexList.at(indexv12), vertexList.at(indexv23), vertexList.at(indexv31));	
+			vertexList.at(indexv12).addFaceId(triId);
+			vertexList.at(indexv23).addFaceId(triId);
+			vertexList.at(indexv31).addFaceId(triId);
 		}
 
 		m->normalX = v->x;
@@ -559,11 +589,62 @@ void subDivideMesh(int meshId, bool do_normalize){
 		m->normalZ = v->z;
 		m->colorId = initColor;
 
-		faceList.push_back(*m);	
+		faceList.push_back(m);
 	}
+	int newv[3];
+	newv[0]= indexv12;
+	newv[1]= indexv23;
+	newv[2]= indexv31;
+	return newv;
 }
 
-void indiv_subdivide(int vbegin){
+void divideHalf(int ind1, int ind2, int newind){
+
+	int friendid = findNeighbor(vertexList.at(ind1), vertexList.at(ind2));
+	if(friendid <0) printf("error: no neighbor @divideHalf\n");
+	mesh tri = faceList.at(friendid); 
+	
+	//find another vertex of the tri
+	int ind3;
+	if(tri.ind1 != ind1 && tri.ind1 != ind2) ind3 = tri.ind1;
+	else if(tri.ind2 != ind1 && tri.ind2 != ind2) ind3 = tri.ind2;
+	else ind3 = tri.ind3;
+
+	//divide by half 
+	//tri1 ind3, newind, ind2 (old)
+	faceList.at(friendid).ind1 = ind3;
+	faceList.at(friendid).ind2 = newind;
+	faceList.at(friendid).ind3 = ind2;
+	//faceId already done
+	//calculate face normal
+	vertex fn = getFaceNormal(vertexList.at(ind3), vertexList.at(newind), vertexList.at(ind2));	
+	faceList.at(friendid).normalX = fn.x;
+	faceList.at(friendid).normalY = fn.y;
+	faceList.at(friendid).normalZ = fn.z;
+
+	//tri2 ind3, ind1, newind
+	tri = new mesh(ind3, ind1, newind);
+	int triId= faceList.size();
+	vertexList.at(ind3).addFaceId(triId);
+	vertexList.at(ind1).addFaceId(triId);
+	vertexList.at(newind).addFaceId(triId);
+	//face normal
+	fn = getFaceNormal(vertexList.at(ind3), vertexList.at(ind1), vertexList.at(newind));	
+	tri.normalX = fn.x;
+	tri.normalY = fn.y;
+	tri.normalZ = fn.z;	
+
+	faceList.push_back(tri);
+}
+
+void indiv_subdivide(int id){
+	mesh m = faceList.at(id);
+	int* newv = subDivideMesh(id, false);
+	printf("%d %d %d", newv[0], newv[1], newv[2]);
+
+	//divideHalf(m.ind1, m.ind2, newv[0]);
+	//divideHalf(m.ind2, m.ind3, newv[1]);
+	//divideHalf(m.ind3, m.ind1, newv[2]);
 
 }
 
@@ -633,21 +714,21 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	//check size to subdivide
 	int fsize = faceList.size();
 	bool do_divide = false;
-	int vsize = vertexList.size();
 
 	for(int i=0; i< fsize; i++){
 		if(checkSize(i)) {
 			do_divide = true;
 			//internalSubDivide(i);
-			subDivideMesh(i, false);
+			//indiv_subdivide(i);
+			//subDivideMesh(i, false);
 		}
 	}
-	indiv_subdivide(vsize);
+	
 
 	if(do_divide){
 		fprintf(mFile, "\n<<<<<-------------BEFORE SUBDIVIDE------------->>>>\n");
 		print_debug();
-		//subDivide(false);
+		subDivide(false);
 		fprintf(mFile, "\n<<<<<-------------AFTER SUBDIVIDE------------->>>>\n");
 		print_debug();
 		printf("subdivide\n");

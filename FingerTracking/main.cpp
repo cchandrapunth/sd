@@ -53,8 +53,8 @@ xn::Context context;
 
 //ui
 ui *Master_ui =new ui();
-
 bool selection = false;
+bool preview = false;
 
 //paint
 #define checkImageWidth 64
@@ -134,6 +134,9 @@ void processNormalKeys(unsigned char key, int x, int y){
 	else if(key == 53){ //'5' for line effect
 			switchLine();
 	}
+	else if(key == 54){
+		preview = !preview;
+	}
 	else
 		printf("key: %d\n", key);
 }
@@ -190,16 +193,22 @@ void display(){
 	glutSetWindow(mainWindow);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-	draw_background();
 
-	glLoadIdentity();
-	UIhandler(); //check ui touch
+	if(!preview){
+		draw_background();
 
-	//display
-	mode_selection(handPointList, rhand, lhand);
+		glLoadIdentity();
+		UIhandler(); //check ui touch
+
+		//display
+		mode_selection(handPointList, rhand, lhand);
+
+		
+	}else{
+		preview_scene();
+	}
 
 	context.WaitAndUpdateAll();
-	
 	glutSetWindow(mainWindow); //set current GLUT window before rendering
 	glFlush();
 	

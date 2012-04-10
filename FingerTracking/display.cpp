@@ -213,6 +213,13 @@ void checkLCursor(hand_h* lhand){
 	}
 }
 
+void preview_scene(){
+	commitScene(2, 0, 0);
+	drawVMModel();
+	glutSwapBuffers();
+}
+
+
 void set_nRes(XnUInt16 XRes, XnUInt16 YRes){
 	g_nXRes = XRes;
 	g_nYRes = YRes;

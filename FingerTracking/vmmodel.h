@@ -7,7 +7,7 @@ void drawMesh(int i, bool shade);
 
 //subdivision
 void subDivide(bool do_norm);
-void subDivideMesh(int i, bool do_norm);
+int* subDivideMesh(int i, bool do_norm);
 void indiv_subdivide(int vbegin);
 
 

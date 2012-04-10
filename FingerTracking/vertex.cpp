@@ -71,6 +71,29 @@ int vertex::addFaceId(int i){
 	return 1;
 }
 
+void vertex::removeFaceId(int id){
+		if(nface <1) {
+			printf("unable to remove face from empty list\n");
+		}else{
+		
+			//search for id
+			int find = -1;
+			for(int i=0; i< nface; i++){
+				if(faceId[i] == id) find = i;
+			}
+
+			//find the faceid to be removed
+			if(find >0){
+				for(int i=find; i < nface-1; i++){
+					faceId[i] = faceId[i+1];
+				}
+				nface--;
+			}
+		}
+
+}
+
+
 void vertex::printv(int i, FILE* a){
 	fprintf(a, " %d vx:%.5f, vy:%.5f, vz:%.5f\n",i, x, y, z);
 	fprintf(a, "vnorm: %f \t%f \t%f\n", vnormx, vnormy, vnormz);

@@ -14,3 +14,6 @@ void rotate();
 void switch_buffer();
 bool get_buffer();
 void activate_rotate();
+
+//preview 
+void preview_scene();
