@@ -43,7 +43,11 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 		}
 
 		//SELECTION
-		if(is_state(1)){
+		if(is_state(1)){	
+			float* cursor = getCursor();
+			cursorX = cursor[0];
+			cursorY = cursor[1];
+
 			drawPickVMModel();
 			processPick(cursorX, cursorY);
 			set_state(2);	
@@ -58,9 +62,9 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 			else{ 
 				drawPickVMModel();
 			}
+			set_state(1);
 			glutSwapBuffers();
 		}
-
 	}
 	
 	//-------------------paint----------------------------
@@ -71,8 +75,10 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 		//SELECTION
 		if(is_state(1)){
 			//update cursor for paint effect
-			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
-			cursorY = getPalm().Y*h/g_nYRes;
+			float* cursor = getCursor();
+			cursorX = cursor[0];
+			cursorY = cursor[1];
+
 			drawPickVMModel();
 			processPick(cursorX, cursorY);
 			set_state(2);
@@ -123,8 +129,9 @@ void checkRCursor(int func, hand_h* rhand){
 		//first time grab gesture occurs for right hand
 		if(!stateGrabR) {	
 			//adjust with width and height of the screen
-			cursorX = (g_nXRes-getPalm().X)*w/g_nXRes;
-			cursorY = getPalm().Y*h/g_nYRes;
+			float* cursor = getCursor();
+			cursorX = cursor[0];
+			cursorY = cursor[1];
 			set_state(1); 
 			stateGrabR = true;
 
@@ -144,7 +151,7 @@ void checkRCursor(int func, hand_h* rhand){
 						recalNormal();
 					}
 					//grab one mesh
-					else if(getSelection() > 0 && getSelection() < getFaceListSize()){
+					else if(getSelection() >= 0 && getSelection() < getFaceListSize()){
 						interpolate(getSelection(), rhand->gettranslateX(), 
 							rhand->gettranslateY(), rhand->gettranslateZ(), getRotX(), getRotY());
 						recalNormal();
@@ -154,7 +161,7 @@ void checkRCursor(int func, hand_h* rhand){
 			//paint
 			else if(func ==2){
 
-					if(getSelection() >0 && getSelection() < getFaceListSize()){
+					if(getSelection() >=0 && getSelection() < getFaceListSize()){
 						//printf("selection ->%d\n", getSelection());
 						paintMesh(getSelection(), getBrushColor());
 					}		
@@ -235,4 +242,12 @@ void switch_buffer(){
 bool get_buffer(){
 	return BACK_BUFF;
 }
+
+float* getCursor(){
+	float* c = (float*) malloc(sizeof(float)*2);
+	c[0] = (g_nXRes-getPalm().X)*w/g_nXRes;
+	c[1] = getPalm().Y*h/g_nYRes;
+	return c;
+}
+
 

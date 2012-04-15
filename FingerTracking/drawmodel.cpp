@@ -37,78 +37,22 @@ void drawVMModel(){
 	draw_fill_model();
 	if(_LINE)
 		draw_line_effect();
-	
+	drawSelection();
 	glPopMatrix();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	
-
-	/*
-	glLoadIdentity();
-	glEnable(GL_TEXTURE_2D);
-
-	glPushMatrix();
-	glLoadIdentity();
-	trackRoll();
-
-	for(int j=0; j< getFaceListSize(); j++){
-		
-		glPushName(j);
-		//glGetFloatv(GL_MODELVIEW_MATRIX, mat);
-
-		if(sListContain(j) >= 0 || getSelection() == j){
-			glBindTexture(GL_TEXTURE_2D, 3);	//green
-
-			//gizmo
-			glDisable(GL_TEXTURE_2D);
-			glDisable(GL_LIGHTING);	
-			setGizmo(j);
-			glEnable(GL_TEXTURE_2D);
-			glEnable(GL_LIGHTING);
-		}
-		else{
-			setColorPaint(j);
-		}
-		
-		//polygon
-		glPolygonMode(GL_FRONT, GL_FILL);
-		drawMesh(j, false);
-	
-
-		//Contour line
-		glDisable(GL_TEXTURE_2D);
-		glDisable(GL_LIGHTING);	
-		glDisable(GL_CULL_FACE);
-		glDisable(GL_DEPTH_TEST);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		drawMesh(j, true);
-		glEnable(GL_TEXTURE_2D);
-		glEnable(GL_LIGHTING);
-		glEnable(GL_CULL_FACE);
-		glEnable(GL_DEPTH_TEST);
-
-		glPopName();
-		//glMultMatrixf(mat);	
-	}
-
-	//drawGizmo();
-	glPopMatrix();	
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	*/
 }
 
 void draw_fill_model(){
 
 	glPolygonMode(GL_FRONT, GL_FILL);
 
-	
+	glBegin(GL_TRIANGLES);
 	for(int j=0; j< getFaceListSize(); j++){
 		
 		glPushName(j);
 
-	glColor3f(0, 1, 0);
-
 		if(sListContain(j) >= 0 || selectedID == j){
-			//glBindTexture(GL_TEXTURE_2D, 3);	//green
 			glColor3f(0, 1, 0);
 			setMeshSelection(j);
 		}
@@ -122,20 +66,34 @@ void draw_fill_model(){
 		glPopName();
 	}
 	
+	glEnd();
+}
+
+//input selected mesh 
+//draw sphere 
+void drawSelection(){
+
+	float *center = getCenterSelection();
+	glPushMatrix();
+	glColor3f(0, 1, 0);
+	glTranslatef(center[0], center[1], center[2]);
+	glutSolidSphere	(0.1, 16, 16);
+	glPopMatrix();
 }
 
 void draw_line_effect(){
-	//Contour line
+		//Contour line
 		glDisable(GL_LIGHTING);	
 		glDisable(GL_CULL_FACE);
 		glDisable(GL_DEPTH_TEST);//line shows more
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glLineWidth(1);
 
-		
+		glBegin(GL_TRIANGLES);
 		for(int j=0; j< getFaceListSize(); j++){
 			drawMesh(j, true);
 		}
+		glEnd();
 		
 		glEnable(GL_LIGHTING);
 		glEnable(GL_CULL_FACE);
@@ -147,10 +105,12 @@ void drawPickVMModel(){
 	//glDisable(GL_DITHER); //disable blending color function
 	glDisable(GL_LIGHT0);
 	glDisable(GL_LIGHTING);
+	
 	glPushMatrix();
 	trackRoll();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
+	glBegin(GL_TRIANGLES);
 	for (int i=0; i< getFaceListSize(); i++){
 
 		//binary representative
@@ -164,9 +124,10 @@ void drawPickVMModel(){
 		}
 		else printf("error: TOO MANY MASH\n");
 
-		drawMesh(i, false);
+		drawMesh(i);
 		
 	}
+	glEnd();
 	glPopMatrix();
 
 	glEnable(GL_LIGHTING);
@@ -221,4 +182,3 @@ void switchLine(){
 void disableLine(){
 	_LINE = false;
 }
-

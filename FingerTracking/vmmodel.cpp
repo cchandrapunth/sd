@@ -6,6 +6,7 @@
 #include "vertex.h"
 #include <deque>
 #include <set>
+#include <map>
 #include "vmmodel.h"
 #include "log.h"
 #include "picking.h"
@@ -20,6 +21,8 @@ static deque<vertex> vertexList;
 
 static deque<mesh> exfaceList;
 static deque<vertex> exvertexList[UNDORANGE];
+static map <int, int> twohalf;
+
 int numMod = -1; 
 int countMod = 0;
 
@@ -32,8 +35,10 @@ FILE *mFile;
 
 int getFaceListSize(){	return faceList.size();};
 int getVertexListSize(){	return vertexList.size();};
-float maxArea = 0.4;
-
+float maxArea = 0.3;
+float maxLen = 1.0;
+int maxSubdivide = 4;
+int countDivide = 0; 
 
 void import_vm(){
 
@@ -89,7 +94,7 @@ void import_vm(){
 		vertexList.at(id3).addFaceId(j);
 	}
 	
-	
+
 	//subDivide
 	for(int k=0; k< 3; k++){
 		subDivide(true);
@@ -264,7 +269,6 @@ void drawMesh(int meshId, bool shade){
 	vertex v3 = vertexList.at(m.ind3);
 
 	glShadeModel(GL_SMOOTH);
-	glBegin(GL_TRIANGLES);
 	if(shade){
 		setEffectColor(v1);
 	}
@@ -282,10 +286,30 @@ void drawMesh(int meshId, bool shade){
 	}
 	glNormal3f(-v3.vnormx, -v3.vnormy, -v3.vnormz);
 	glVertex3f(v3.x, v3.y, v3.z);
-	glEnd();
 	
-	 
 }
+
+void drawMesh(int meshId){
+
+	mesh m = faceList.at(meshId);
+	vertex v1 = vertexList.at(m.ind1);
+	vertex v2 = vertexList.at(m.ind2);
+	vertex v3 = vertexList.at(m.ind3);
+
+	glShadeModel(GL_SMOOTH);
+
+	glNormal3f(-v1.vnormx, -v1.vnormy, -v1.vnormz);
+	glVertex3f(v1.x, v1.y, v1.z);
+
+
+	glNormal3f(-v2.vnormx, -v2.vnormy, -v2.vnormz);
+	glVertex3f(v2.x, v2.y,v2.z);
+
+	glNormal3f(-v3.vnormx, -v3.vnormy, -v3.vnormz);
+	glVertex3f(v3.x, v3.y, v3.z);
+	
+}
+
 //not use
 int bsize =1;
 void upBrush(){
@@ -342,14 +366,7 @@ bool sameVertex(vertex v1, vertex v2){
 	return false;
 }
 
-//sub divide the whole model
-void subDivide(bool do_normalize){
-
-	int size = getFaceListSize();
-	for(int i=0; i< size; i++){
-		subDivideMesh(i, do_normalize);
-	}
-	/*
+void reassignFaceId(){
 	//assign faceId
 	for(int i=0; i< vertexList.size(); i++){
 		vertexList.at(i).clearFaceId();
@@ -362,7 +379,21 @@ void subDivide(bool do_normalize){
 			}
 		}
 	}
-	*/
+
+}
+
+//sub divide the whole model
+void subDivide(bool do_normalize){
+	
+	if(countDivide < maxSubdivide){
+		int size = getFaceListSize();
+		for(int i=0; i< size; i++){
+			subDivideMesh(i, do_normalize);
+		}
+
+		reassignFaceId();
+		countDivide ++;
+	}
 }
 
 vertex* findCenter(mesh m){
@@ -406,11 +437,16 @@ void internalSubDivide(int meshId){
 }
 
 //assign share faceId of v1, v2 to v12 
-int findNeighbor(vertex v1, vertex v2){
+int findNeighbor(vertex v1, vertex v2, int itself){
 	int shareface =-1;
 	for(int i=0; i< v1.nface; i++){
 		for(int j=0; j< v2.nface; j++){
-			if(v1.faceId[i] == v2.faceId[j]) shareface = v1.faceId[i];
+			if(v1.faceId[i] == v2.faceId[j] ){
+				if(v1.faceId[i] != itself)
+					shareface = v1.faceId[i];
+				//else 
+					//printf("find it self %d", itself);
+			}
 		}
 	}
 	return shareface;
@@ -423,28 +459,21 @@ int* subDivideMesh(int meshId, bool do_normalize){
 
 	mesh m = faceList.at(meshId);
 
-	vertex v1 = vertexList.at(m.ind1);
-	vertex v2 = vertexList.at(m.ind2);
-	vertex v3 = vertexList.at(m.ind3);
-	vertexList.at(m.ind1).removeFaceId(meshId);
+	//store the old index
+	int old1 = m.ind1;
+	int old2 = m.ind2;
+	int old3 = m.ind3;
+
+	vertex v1 = vertexList.at(old1);
+	vertex v2 = vertexList.at(old2);
+	vertex v3 = vertexList.at(old3);
+	//vertexList.at(m.ind1).removeFaceId(meshId);
 	vertexList.at(m.ind2).removeFaceId(meshId);
 	vertexList.at(m.ind3).removeFaceId(meshId);
 
-	vertex *v12 = new vertex(0, 0, 0);
-	vertex *v23 = new vertex(0, 0, 0);  
-	vertex *v31 = new vertex(0, 0, 0);
-
-	v12->x = (v1.x+v2.x)/2.0;
-	v12->y = (v1.y+v2.y)/2.0;
-	v12->z = (v1.z+v2.z)/2.0;
-
-	v23->x = (v2.x+v3.x)/2.0;
-	v23->y = (v2.y+v3.y)/2.0;
-	v23->z = (v2.z+v3.z)/2.0;
-
-	v31->x = (v3.x+v1.x)/2.0;
-	v31->y = (v3.y+v1.y)/2.0;
-	v31->z = (v3.z+v1.z)/2.0;
+	vertex *v12 = new vertex((v1.x+v2.x)/2.0, (v1.y+v2.y)/2.0, (v1.z+v2.z)/2.0);
+	vertex *v23 = new vertex((v2.x+v3.x)/2.0, (v2.y+v3.y)/2.0, (v2.z+v3.z)/2.0);  
+	vertex *v31 = new vertex((v3.x+v1.x)/2.0, (v3.y+v1.y)/2.0, (v3.z+v1.z)/2.0);
 
 	//only normalize to  generate sphare
 	//do not normalize when regeneration 
@@ -453,10 +482,14 @@ int* subDivideMesh(int meshId, bool do_normalize){
 		v23 = normalizeV(v23);
 		v31 = normalizeV(v31);
 	}
+
 	//add faceId of v12, v23, v31
-	v12->addFaceId(findNeighbor(v1, v2));
-	v23->addFaceId(findNeighbor(v2, v3));
-	v31->addFaceId(findNeighbor(v3, v1));
+	int fn12 = findNeighbor(v1, v2, meshId);
+	int fn23 = findNeighbor(v2, v3, meshId);
+	int fn31 = findNeighbor(v3, v1, meshId);
+	v12->addFaceId(fn12);
+	v23->addFaceId(fn23);
+	v31->addFaceId(fn31);
 
 
 	//only check the vector once 
@@ -520,22 +553,15 @@ int* subDivideMesh(int meshId, bool do_normalize){
 	}
 
 
-	//store the old index
-	//printf("old1 ");
-	int old1 = faceList.at(meshId).ind1;
-	//printf("indexv12 ");
-	int old2 = faceList.at(meshId).ind2;
-	//printf("indexv31 ");
-	int old3 = faceList.at(meshId).ind3;
+
 
 	//add the first triangle (replace the old one)
 	//v1, v12, v31
 	faceList.at(meshId).ind1 = old1;
 	faceList.at(meshId).ind2 = indexv12;
 	faceList.at(meshId).ind3 = indexv31;
-	faceList.at(meshId).colorId = initColor;
 	//add faceId for first tri 
-	vertexList.at(old1).addFaceId(meshId);
+	//vertexList.at(old1).addFaceId(meshId);
 	vertexList.at(indexv12).addFaceId(meshId);
 	vertexList.at(indexv31).addFaceId(meshId);
 
@@ -591,61 +617,124 @@ int* subDivideMesh(int meshId, bool do_normalize){
 
 		faceList.push_back(m);
 	}
-	int newv[3];
+
+	//allocate memory for return vertex
+	int* newv = (int*) malloc(sizeof(int)*3);
 	newv[0]= indexv12;
 	newv[1]= indexv23;
 	newv[2]= indexv31;
 	return newv;
 }
 
-void divideHalf(int ind1, int ind2, int newind){
+void divideHalf(int ind1, int ind2, int newind, int meshid){
 
-	int friendid = findNeighbor(vertexList.at(ind1), vertexList.at(ind2));
-	if(friendid <0) printf("error: no neighbor @divideHalf\n");
+	int friendid = findNeighbor(vertexList.at(ind1), vertexList.at(ind2), meshid);
+	if(friendid <0){
+		printf("error: no neighbor @divideHalf\n");
+		return;
+	}
 	mesh tri = faceList.at(friendid); 
+
+
+	//check if the reference had changed
+	if(twohalf[friendid] != NULL){
+		//triangle has been modified
+		for(int i=0 ; i< 3; i++){
+			int check1, check2;
+			if(i==0){
+				check1 = tri.ind1;
+				check2 = tri.ind2;
+			}
+			else if(i==1){
+				check1 = tri.ind2;
+				check2 = tri.ind3;
+			}
+			else{
+				check1 = tri.ind3;
+				check2 = tri.ind1;
+			}
+
+			if((check1 == ind1 && check2 ==ind2) || (check1 == ind2 && check2 == ind1)){
+				//still the same triangle	
+				friendid = friendid;
+			} else{
+				//otherwise, triangle is another half
+				friendid = twohalf[friendid];
+			}
+		}
+	}
 	
+	//remove friendid
+	vertexList.at(ind2).removeFaceId(friendid);
+
 	//find another vertex of the tri
 	int ind3;
 	if(tri.ind1 != ind1 && tri.ind1 != ind2) ind3 = tri.ind1;
 	else if(tri.ind2 != ind1 && tri.ind2 != ind2) ind3 = tri.ind2;
 	else ind3 = tri.ind3;
+	fprintf(mFile, "orginal %d |\t", meshid);
 
 	//divide by half 
-	//tri1 ind3, newind, ind2 (old)
+	//tri1: ind3, newind, ind2 (old)
 	faceList.at(friendid).ind1 = ind3;
 	faceList.at(friendid).ind2 = newind;
-	faceList.at(friendid).ind3 = ind2;
-	//faceId already done
+	faceList.at(friendid).ind3 = ind1;
 	//calculate face normal
-	vertex fn = getFaceNormal(vertexList.at(ind3), vertexList.at(newind), vertexList.at(ind2));	
+	vertex fn = getFaceNormal(vertexList.at(ind3), vertexList.at(newind), vertexList.at(ind1));	
 	faceList.at(friendid).normalX = fn.x;
 	faceList.at(friendid).normalY = fn.y;
 	faceList.at(friendid).normalZ = fn.z;
+	//colorid 
+	faceList.at(friendid).colorId = 4;
+
+
+	fprintf(mFile,"modify tri %d |\t", friendid);
 
 	//tri2 ind3, ind1, newind
-	tri = new mesh(ind3, ind1, newind);
+	tri = new mesh(ind3, ind2, newind);
+	//add faceId
 	int triId= faceList.size();
 	vertexList.at(ind3).addFaceId(triId);
-	vertexList.at(ind1).addFaceId(triId);
+	vertexList.at(ind2).addFaceId(triId);
 	vertexList.at(newind).addFaceId(triId);
-	//face normal
-	fn = getFaceNormal(vertexList.at(ind3), vertexList.at(ind1), vertexList.at(newind));	
+	//assign same face normal
+	fn = getFaceNormal(vertexList.at(ind3), vertexList.at(ind2), vertexList.at(newind));	
 	tri.normalX = fn.x;
 	tri.normalY = fn.y;
-	tri.normalZ = fn.z;	
+	tri.normalZ = fn.z;
+	//color
+	tri.colorId = 3;
 
+	fprintf(mFile, "new tri %d\n", triId);
 	faceList.push_back(tri);
+
+	//newpoint add faceId
+	vertexList.at(newind).addFaceId(friendid);
+	vertexList.at(newind).addFaceId(triId);
+	//update map
+	twohalf[friendid] = triId;
 }
 
-void indiv_subdivide(int id){
-	mesh m = faceList.at(id);
-	int* newv = subDivideMesh(id, false);
-	printf("%d %d %d", newv[0], newv[1], newv[2]);
+void indiv_subdivide(){
+	int fsize = faceList.size();
+	//map consists of two tri id (resulted from spliting)
+	for(int id=0; id< fsize; id++){
+		if(checkSize(id)) {
 
-	//divideHalf(m.ind1, m.ind2, newv[0]);
-	//divideHalf(m.ind2, m.ind3, newv[1]);
-	//divideHalf(m.ind3, m.ind1, newv[2]);
+			mesh m = faceList.at(id);
+			int* newv = subDivideMesh(id, false); //return three new vertices
+			
+			divideHalf(m.ind1, m.ind2, newv[0], id);
+			
+			divideHalf(m.ind2, m.ind3, newv[1], id);
+			
+			divideHalf(m.ind3, m.ind1, newv[2], id);
+		}
+	}
+	fprintf(mFile, "\n<<<<<-------------AFTER SUBDIVIDE------------->>>>\n");
+	print_debug();
 
+	reassignFaceId();
 }
 
 /****************************************************
@@ -712,20 +801,20 @@ void interpolate(int id, float transx, float transy, float transz, int rotx, int
 	softselection(id, vectorx/100, vectory/100, vectorz/100);
 
 	//check size to subdivide
+	int do_divide = 0;
+			
+	//internalSubDivide(i);
+	//indiv_subdivide();
+	//subDivideMesh(i, false);
 	int fsize = faceList.size();
-	bool do_divide = false;
-
-	for(int i=0; i< fsize; i++){
-		if(checkSize(i)) {
-			do_divide = true;
-			//internalSubDivide(i);
-			//indiv_subdivide(i);
-			//subDivideMesh(i, false);
+	//map consists of two tri id (resulted from spliting)
+	for(int id=0; id< fsize; id++){
+		if(checkSize(id)) {
+			do_divide++;
 		}
 	}
-	
 
-	if(do_divide){
+	if(do_divide > 5){
 		fprintf(mFile, "\n<<<<<-------------BEFORE SUBDIVIDE------------->>>>\n");
 		print_debug();
 		subDivide(false);
@@ -811,6 +900,8 @@ bool checkSize(int i){
 		float z2 = vertexList.at(id2).z;
 
 		length[j] = sqrt(pow(x1-x2, 2)+ pow(y1-y2, 2)+ pow(z1-z2, 2)); 
+		if(length[j] > maxLen) return true;
+
 	}
 	//printf("id: %d, l1: %f, l2: %f, l3: %f\n", i, length[0], length[1], length[2]);
 
@@ -1015,38 +1106,6 @@ float getDiam(){
 //-------------------------gizmo/center-----------------------------------
 void setMeshSelection(int k){
 	selectedMesh = k;
-	
-	/*
-	float* f= getCenterSelection();
-	float fx = f[0]+faceList.at(k).normalX*2;
-	float fy = f[1]+faceList.at(k).normalY*2;
-	float fz = f[2]+faceList.at(k).normalZ*2;
-
-	//y axis
-	float* dx = convertCoordinate(1, 0, 0);
-	float* dy = convertCoordinate(0, 1, 0);
-	//float* dz = convertCoordinate(0, 0, 1);
-	glLineWidth(3);
-
-	
-	glBegin(GL_LINES);
-	//draw y axis -> red
-	glColor3f(1,0,0);
-	glVertex3f(fx, fy, fz);
-	glVertex3f(fx+dy[0], fy+dy[1], fz+dy[2]);
-	//draw x axis -> green
-	glColor3f(0,1,0);
-	glVertex3f(fx, fy, fz);
-	glVertex3f(fx+dx[0], fy+dx[1], fz+dx[2]);
-	//draw z axis -> blue
-	glColor3f(0,0,1);
-	glVertex3f(fx, fy, fz);
-	glVertex3f(fx-dx[0]-dy[0], fy-dx[1]-dy[1], fz-dx[2]-dy[2]);
-	glEnd();
-
-
-	glLineWidth(2);
-	*/
 }
 
 

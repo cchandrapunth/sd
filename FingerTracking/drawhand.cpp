@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <gl/glut.h>
 #include <math.h>
+#include "drawhand.h"
 
 int initZ = 4.5;
 
@@ -23,6 +24,7 @@ void drawRHand(bool grab, float x, float y, float z){
 		glVertex3f((GLfloat) x+dis, (GLfloat) y, initZ);
 		glVertex3f((GLfloat) x-dis, (GLfloat) y, initZ);
 		glEnd();
+
 }
 
 void drawLHand(bool grab, float x, float y, float z){
@@ -45,3 +47,4 @@ void drawLHand(bool grab, float x, float y, float z){
 		glEnd();
 		*/
 }
+

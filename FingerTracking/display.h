@@ -14,6 +14,8 @@ void rotate();
 void switch_buffer();
 bool get_buffer();
 void activate_rotate();
+float* getCursor();
+void drawSelection();
 
 //preview 
 void preview_scene();

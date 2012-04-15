@@ -3,6 +3,7 @@ void drawVMModel();
 void draw_fill_model();
 void draw_line_effect();
 void drawPickVMModel();
+void drawSelection();
 
 void trackRoll();
 void commitScene(float transx, float transy, float z);

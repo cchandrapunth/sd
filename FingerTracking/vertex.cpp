@@ -83,7 +83,7 @@ void vertex::removeFaceId(int id){
 			}
 
 			//find the faceid to be removed
-			if(find >0){
+			if(find >=0){
 				for(int i=find; i < nface-1; i++){
 					faceId[i] = faceId[i+1];
 				}
