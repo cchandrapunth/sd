@@ -29,6 +29,10 @@ void activate_rotate(){
 	switchHand = !switchHand;
 }
 
+bool isRotate(){
+	return switchHand;
+}
+
 /* Select from 3 available modes and process accordingly */
 void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 

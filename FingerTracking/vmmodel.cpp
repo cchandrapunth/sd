@@ -268,28 +268,28 @@ void drawMesh(int meshId, bool shade){
 	vertex v2 = vertexList.at(m.ind2);
 	vertex v3 = vertexList.at(m.ind3);
 
-	float offsetx = -v1.vnormx/100;
-	float offsety = -v1.vnormy/100;
-	float offsetz = -v1.vnormz/100;
+	//float offsetx = -v1.vnormx/200;
+	//float offsety = -v1.vnormy/200;
+	//float offsetz = -v1.vnormz/200;
 	
 	glShadeModel(GL_SMOOTH);
 	if(shade){
 		setEffectColor(v1);
 	}
 	glNormal3f(-v1.vnormx, -v1.vnormy, -v1.vnormz);
-	 glVertex3f(v1.x+offsetx, v1.y+offsety, v1.z+offsetz);
+	 glVertex3f(v1.x, v1.y, v1.z);
 
 	if(shade){
 		setEffectColor(v2);
 	 }
 	glNormal3f(-v2.vnormx, -v2.vnormy, -v2.vnormz);
-	 glVertex3f(v2.x+offsetx, v2.y+offsety,v2.z+offsetz);
+	 glVertex3f(v2.x, v2.y,v2.z);
 
 	if(shade){
 		setEffectColor(v3);
 	}
 	glNormal3f(-v3.vnormx, -v3.vnormy, -v3.vnormz);
-	glVertex3f(v3.x+offsetx, v3.y+offsety, v3.z+offsetz);
+	glVertex3f(v3.x, v3.y, v3.z);
 	
 }
 

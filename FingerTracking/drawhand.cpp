@@ -1,19 +1,28 @@
 #include "stdafx.h"
 #include <stdlib.h>
 #include <gl/glut.h>
+#include <XnCppWrapper.h>
+#include <XnVNite.h>
 #include <math.h>
+#include "gesture.h"
+#include "hand_history.h"
 #include "drawhand.h"
 #include "vertex.h"
 #include "vmmodel.h"
 #include "picking.h"
+#include "display.h"
 
 int initZ = 4.5;
 
 void drawRHand(bool grab, float x, float y, float z){
-		if(getSelection() >= 0){
+		if(isRotate()){
+			drawArrow(grab);
+		}
+		else if(getSelection() >= 0){
 			drawSelection(grab);
 			return;
 		}
+
 
 		glPointSize(12);
 		if(grab) glColor3f(1.0, 0, 0);
@@ -65,4 +74,12 @@ void drawSelection(bool grab){
 
 	glDisable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
+}
+
+void drawArrow(bool grab){
+
+}
+
+unsigned int loadTexture(const char* filename){
+
 }

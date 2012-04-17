@@ -4,6 +4,7 @@
 void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand);
 void checkRCursor(int func, hand_h* rhand);
 void checkLCursor(hand_h* lhand);
+bool isRotate();
 
 //screen resolution
 void set_nRes(XnUInt16 XRes, XnUInt16 nYRes);

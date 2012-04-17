@@ -73,8 +73,12 @@ void draw_line_effect(){
 		//Contour line
 		glDisable(GL_LIGHTING);	
 		glDisable(GL_CULL_FACE);
+		glPolygonOffset(-1.0, -1.0);
+		
 		//glDisable(GL_DEPTH_TEST);//line shows more
 		glPolygonMode(GL_FRONT, GL_LINE);
+		glEnable(GL_POLYGON_OFFSET_LINE);
+		
 		glLineWidth(1);
 
 		glBegin(GL_TRIANGLES);
