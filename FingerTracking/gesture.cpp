@@ -296,10 +296,10 @@ void draw_hand(XnPoint3D* handPointList)
 			}
 
 			//draw palm 
-			if(Id == prime_id) 
+			//if(Id == prime_id) 
 				drawRHand(RGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
-			else 
-				drawLHand(LGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
+			//else 
+				//drawLHand(LGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
 
 		}
 	}

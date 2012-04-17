@@ -26,6 +26,7 @@ bool checkSize(int i);
 
 void upEffect();
 void downEffect();
+float getEffect();
 void setColorPaint(int id);
 void setEffectColor(vertex v);
 

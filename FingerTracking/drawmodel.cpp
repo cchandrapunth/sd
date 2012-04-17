@@ -29,7 +29,7 @@ bool _LINE = false;
 void drawVMModel(){
 	if(getSelection()){
 		selectedID = getSelection();
-	} 
+	}
 
 	glPushMatrix();
 	glLoadIdentity();
@@ -37,7 +37,7 @@ void drawVMModel(){
 	draw_fill_model();
 	if(_LINE)
 		draw_line_effect();
-	drawSelection();
+	
 	glPopMatrix();
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	
@@ -53,7 +53,7 @@ void draw_fill_model(){
 		glPushName(j);
 
 		if(sListContain(j) >= 0 || selectedID == j){
-			glColor3f(0, 1, 0);
+			//glColor3f(0, 1, 0);
 			setMeshSelection(j);
 		}
 		else{
@@ -62,31 +62,19 @@ void draw_fill_model(){
 		
 		
 		//polygon
-		drawMesh(j, false);
+		drawMesh(j);
 		glPopName();
 	}
 	
 	glEnd();
 }
 
-//input selected mesh 
-//draw sphere 
-void drawSelection(){
-
-	float *center = getCenterSelection();
-	glPushMatrix();
-	glColor3f(0, 1, 0);
-	glTranslatef(center[0], center[1], center[2]);
-	glutSolidSphere	(0.1, 16, 16);
-	glPopMatrix();
-}
-
 void draw_line_effect(){
 		//Contour line
 		glDisable(GL_LIGHTING);	
 		glDisable(GL_CULL_FACE);
-		glDisable(GL_DEPTH_TEST);//line shows more
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		//glDisable(GL_DEPTH_TEST);//line shows more
+		glPolygonMode(GL_FRONT, GL_LINE);
 		glLineWidth(1);
 
 		glBegin(GL_TRIANGLES);

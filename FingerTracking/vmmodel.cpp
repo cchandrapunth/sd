@@ -27,7 +27,7 @@ int numMod = -1;
 int countMod = 0;
 
 int selectedMesh;
-int initColor = 2;	//initial color = red
+int initColor = 3;	//initial color = green
 
 bool debug = true;
 Log *pLog; 
@@ -268,24 +268,28 @@ void drawMesh(int meshId, bool shade){
 	vertex v2 = vertexList.at(m.ind2);
 	vertex v3 = vertexList.at(m.ind3);
 
+	float offsetx = -v1.vnormx/100;
+	float offsety = -v1.vnormy/100;
+	float offsetz = -v1.vnormz/100;
+	
 	glShadeModel(GL_SMOOTH);
 	if(shade){
 		setEffectColor(v1);
 	}
 	glNormal3f(-v1.vnormx, -v1.vnormy, -v1.vnormz);
-	 glVertex3f(v1.x, v1.y, v1.z);
+	 glVertex3f(v1.x+offsetx, v1.y+offsety, v1.z+offsetz);
 
 	if(shade){
 		setEffectColor(v2);
 	 }
 	glNormal3f(-v2.vnormx, -v2.vnormy, -v2.vnormz);
-	 glVertex3f(v2.x, v2.y,v2.z);
+	 glVertex3f(v2.x+offsetx, v2.y+offsety,v2.z+offsetz);
 
 	if(shade){
 		setEffectColor(v3);
 	}
 	glNormal3f(-v3.vnormx, -v3.vnormy, -v3.vnormz);
-	glVertex3f(v3.x, v3.y, v3.z);
+	glVertex3f(v3.x+offsetx, v3.y+offsety, v3.z+offsetz);
 	
 }
 
@@ -309,6 +313,7 @@ void drawMesh(int meshId){
 	glVertex3f(v3.x, v3.y, v3.z);
 	
 }
+
 
 //not use
 int bsize =1;
@@ -920,7 +925,7 @@ bool checkSize(int i){
 
 
 //----------------------Softselection zone------------------------------------------
-float s = 0.5;
+float s = 0.4;
 float e= 2.71828183;
 
 void upEffect(){
@@ -930,6 +935,9 @@ void upEffect(){
 void downEffect(){
 	s-=0.1;
 	printf("s=%f\n", s);
+}
+float getEffect(){
+	return s;
 }
 void softselection(int id,float tx,float ty,float tz){
 
