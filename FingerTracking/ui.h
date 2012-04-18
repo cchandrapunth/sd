@@ -22,6 +22,7 @@ public:
 	void check_click(float hand_x, float hand_y);
 
 	void remove_menu();
+	void disable_menu();
 
 	void add_panel();
 

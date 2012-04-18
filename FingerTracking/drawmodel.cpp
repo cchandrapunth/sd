@@ -22,6 +22,7 @@ float zoom, rate = 500;
 
 int getRotX(){ return rotX; }
 int getRotY(){ return rotY; }
+float getZoom(){ return 1+(float)zoom/600; }
 
 int selectedID =0;
 bool _LINE = false;
@@ -53,7 +54,7 @@ void draw_fill_model(){
 		glPushName(j);
 
 		if(sListContain(j) >= 0 || selectedID == j){
-			//glColor3f(0, 1, 0);
+			glColor3f(1, 0, 0);
 			setMeshSelection(j);
 		}
 		else{
@@ -135,8 +136,8 @@ void trackRoll(){
 	zoom = getMatZ()+zoomvZ;
 
 	//debug
-	//rotX = 0;
-	//rotY = 0;
+	//rotX = 90;
+	rotY = 0;
 
 	vertex c = getCenter();
 	glTranslated(c.x, c.y, c.z);

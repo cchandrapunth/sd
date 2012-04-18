@@ -9,6 +9,7 @@ void commitScene(float transx, float transy, float z);
 
 int getRotX();
 int getRotY();
+float getZoom();
 
 void draw_torus();
 void switchLine();

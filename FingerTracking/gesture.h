@@ -67,8 +67,8 @@ float convertY(float y);
 float convertYcursor(float y);
 
 void set_print_training(int i);
-
-
+void setAspect(float asp);
+float getAspect();
 
 ///helper
 bool hasTwoHands();

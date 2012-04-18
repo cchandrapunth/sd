@@ -4,7 +4,7 @@
 
 #include <string.h>
 
-static float ui_depth = 4.9;
+static float ui_depth = 3.0;
 
 void *font = GLUT_BITMAP_TIMES_ROMAN_24;
 
@@ -47,6 +47,10 @@ void ui_button::reactivate(){
 	activate = true;
 }
 
+void ui_button::deactivate(){
+	activate = false;
+}
+
 int  ui_button::hand_up_handler( int local_x, int local_y, bool inside ){
 	currently_inside = false; 
 	draw();
@@ -55,7 +59,10 @@ int  ui_button::hand_up_handler( int local_x, int local_y, bool inside ){
 		if(!execute){
 			//make the button disappear after click
 			if (strcmp ("Menu", butt_name) == 0){
+				//don't show any buttons
+				Master_ui->disable_menu();
 				activate = false;
+
 			}
 			execute = true;
 			

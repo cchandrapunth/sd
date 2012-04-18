@@ -21,6 +21,7 @@ public:
 	void output(float x, float y, char *string);
 
 	void reactivate();
+	void deactivate();
 	/**
 	Create a new button.
 	 @param parent The panel our object is inside; or the main GLUI object.

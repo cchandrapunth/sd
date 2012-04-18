@@ -31,6 +31,7 @@
 #include "mode.h" 
 #include "display.h"
 
+
 //----------------------------------------------------------------
 //							Variable
 //----------------------------------------------------------------
@@ -73,7 +74,7 @@ static GLubyte whiteTex[4];	//6
 float zNear;
 float zFar; 
 GLdouble left; 
-GLdouble right; 
+GLdouble right;
 GLdouble bottom; 
 GLdouble top; 
 
@@ -231,7 +232,7 @@ void reshape(int w1, int h1){
 	float adjright = right;
 	float adjleft = left;
 
-	/*
+	
 	float aspect= (float)w/h;
 	printf("asp: %f\n", aspect);
 	if ( aspect < 1.0 ) { // window taller than wide
@@ -241,7 +242,9 @@ void reshape(int w1, int h1){
      adjleft *= aspect;
      adjright *= aspect;
    }
-   */
+	
+	setAspect(aspect);
+   
 
 	//PROJECTION: set window coordinate
 	glMatrixMode(GL_PROJECTION);
@@ -380,7 +383,6 @@ void option2(){
 void option3(){
 	set_mode(3);
 	Master_ui->remove_menu();
-
 }
 
 void up(){
@@ -414,9 +416,9 @@ void push_menu(){
 	float height = top -bottom; 
 	float off = width/20;
 
-	Master_ui->add_button("Sculpt", left+ width/5, bottom+height/3, width/5-off, height/3, option1);
-	Master_ui->add_button("Paint", left+ width*2/5, bottom+height/3, width/5-off, height/3, option2);
-	Master_ui->add_button("Slice", left+ width*3/5, bottom+height/3, width/5-off, height/3, option3);
+	Master_ui->add_button("Sculpt", left+ width*1/4, bottom+height/3, width/4-off, height/3, option1);
+	Master_ui->add_button("Paint", left+ width*2/4, bottom+height/3, width/4-off, height/3, option2);
+	//Master_ui->add_button("Slice", left+ width*3/5, bottom+height/3, width/5-off, height/3, option3);
 }
 
 //all ui in here
@@ -434,8 +436,8 @@ void uiInit(){
 
 	//main menu button
 	Master_ui->add_button("Menu", left+(right-left)/15, bottom+0.5, 0.5, 0.3, push_menu);
-	Master_ui->add_button("-", left+(right-left)/15, bottom+0.8, 0.5, 0.3, down);
-	Master_ui->add_button("+", left+(right-left)/15, bottom+1.1, 0.5, 0.3, up);
+	Master_ui->add_button("-", left+(right-left)/15, bottom+0.8, 0.3, 0.3, down);
+	Master_ui->add_button("+", left+(right-left)/15, bottom+1.1, 0.3, 0.3, up);
 
 	//Master_ui->add_button("reset", right-(right-left)/5, bottom+0.5, 0.5, 0.3, reload);	//if remove, fix ui.cpp (count)
 	//Master_ui->add_button("select", right-(right-left)/5, bottom+0.8, 0.5, 0.3, selectionMode);

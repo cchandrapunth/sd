@@ -39,7 +39,8 @@ void undo_vmmodel();
 
 void softselection(int id,float tx,float ty,float tz);
 void extrude(int id,float tx,float ty,float tz, float nx, float ny, float nz);
-
+float* convertCoordinate(float transx, float transy, float transz);
+float* convertCoordinate2(float transx, float transy, float transz);
 
 //miniball
 void findBoundingSphere();

@@ -49,7 +49,7 @@ int len[100];	//length
 static std::map<XnUInt32, std::list<XnPoint3D> > m_History;	//point history
 static std::list<int> handId;
 int prime_id = 0;
-
+float aspect = 1; 
 
 //-----------------------------------------------------
 //					   LOG
@@ -68,6 +68,13 @@ void enableDebugGesture(){
 //------------------------------------------------------
 //                    HELPER
 //------------------------------------------------------
+void setAspect(float asp){
+	aspect = asp; 
+}
+float getAspect(){
+	return aspect;
+}
+
 void set_print_training(int i){
 	printTraining = i;
 }
@@ -91,7 +98,7 @@ void switchShowHand(){
 }
 
 float convertX(float x){
-	float left = getCenter().x- getDiam(); //get the leftmost coordinate
+	float left = (getCenter().x- getDiam()); //get the leftmost coordinate
 	return left + (nXRes-x)*(2*getDiam())/nXRes;	//scale to the viewport
 }
 
@@ -296,11 +303,12 @@ void draw_hand(XnPoint3D* handPointList)
 			}
 
 			//draw palm 
-			//if(Id == prime_id) 
+			if(Id == prime_id) 
 				drawRHand(RGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
-			//else 
+			else {
 				//drawLHand(LGRAB, convertX(pt.X),convertY(pt.Y), pt.Z);
-
+			}
+			
 		}
 	}
 

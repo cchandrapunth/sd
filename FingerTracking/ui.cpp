@@ -4,7 +4,7 @@
 #include <gl/glut.h>
 
 #include "ui.h"
-static float ui_depth= -0.001;
+static float ui_depth= 2.5;
 using namespace std;
 
 ui::ui(void)
@@ -19,7 +19,7 @@ ui::ui(void)
 void ui::add_button(const char* name, float x, float y, float ww, float hh, cb_function cb){
 
 	//initialize button 
-	ui_button *b = new ui_button(name, count, x, y,ww, hh, cb);
+	ui_button *b = new ui_button(name, count, x, y, ww, hh, cb);
 	button_list[count] = b;
 	count++;
 }
@@ -58,6 +58,7 @@ void ui::check_click(float hand_x, float hand_y){
 			if(b->wait >24 && b-> wait < 35){
 				b->wait = b->wait+1;
 				if(b->currently_inside) {
+					//show panel
 					b->hand_up_handler(hand_x, hand_y, true);	
 					
 				}
@@ -75,10 +76,19 @@ void ui::check_click(float hand_x, float hand_y){
 }
 
 //----------------remove menu-----------------
+
+void ui::disable_menu(){
+	for(int i= 0 ;i< count;i++){
+		button_list[i]->deactivate(); 
+	}
+}
+
 void ui::remove_menu(){
 	count = 5;	//menu, +, -, reset, rotate
+	for(int i= 0 ;i< count;i++){
+		button_list[i]->reactivate();
+	}
 	activate_menu = false;
-	button_list[0]->reactivate();
 }
 
 //---------------------add panel----------------

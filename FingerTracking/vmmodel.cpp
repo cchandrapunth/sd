@@ -778,6 +778,35 @@ float* convertCoordinate(float transx, float transy, float transz){
 	return v;
 }
 
+float* convertCoordinate2(float transx, float transy, float transz){
+	//multiply by inverse matrix
+	float radianx = rx*2*3.14159265/360;
+	float radiany = 0;
+	
+	//transx = 0;
+	//transy = 0;
+	//transz = 0;
+
+	float vectorx = transx;
+	float vectory = transy;
+	float vectorz = transz;
+
+	
+	//rotate around y axis
+	vectorx =  transx*cos(radianx) - vectorz*sin(radianx);	//x' = xcos0- zsin0
+	vectorz =  -transx*sin(radianx) + vectorz*cos(radianx);	//z' = xsin0+ zcos0
+	
+	
+	//Note:: mistake 
+	//make sure the z value changes and it's updated in the second rotation
+	//rotate around x axis
+	//vectory = transy*cos(radiany) - vectorz*sin(radiany);	// y' = ycos0 - zsin0
+	//vectorz = transy*sin(radiany) + vectorz*cos(radiany);	// z' = ysin0 + zcos0
+	
+
+	float v[3] = {vectorx, vectory, vectorz};
+	return v;
+}
 void interpolate(int id, float transx, float transy, float transz, int rotx, int roty){
 	rx = rotx;
 	ry = roty;

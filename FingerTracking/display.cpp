@@ -43,7 +43,7 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 		}
 		else{
 			checkRCursor(1, rhand);					//right
-			if(hasTwoHands()) checkLCursor(lhand);	//left
+			//if(hasTwoHands()) checkLCursor(lhand);	//left
 		}
 
 		//SELECTION
@@ -253,5 +253,6 @@ float* getCursor(){
 	c[1] = getPalm().Y*h/g_nYRes;
 	return c;
 }
+
 
 
