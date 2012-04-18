@@ -10,6 +10,7 @@
 #include "vmmodel.h"
 #include "log.h"
 #include "picking.h"
+#include "paint.h"
 
 #define UNDORANGE 15
 using namespace std;
@@ -235,29 +236,7 @@ void setColorPaint(int id){
 	//check-1, red-2, blue-3, green-4, yellow-5, white-6 
 	//glBindTexture(GL_TEXTURE_2D,cid);
 
-	switch(cid){
-	case 1:
-		glColor3f(0,0,0);
-		break;
-	case 2:
-		glColor3f(1.0, 0, 0);
-		break;
-	case 3:
-		glColor3f(0, 1.0, 0);
-		break;
-	case 4:
-		glColor3f(0, 0, 1.0);
-		break;
-	case 5:
-		glColor3f(1.0, 1.0, 0);
-		break;
-	case 6:
-		glColor3f(1, 1, 1);
-		break;
-	case 7:
-		glColor3f(0.3, 0.3, 0.3);
-		break;
-	}
+	setGLbrushColor(cid);
 }
 
 void drawMesh(int meshId, bool shade){
@@ -618,7 +597,7 @@ int* subDivideMesh(int meshId, bool do_normalize){
 		m->normalX = v->x;
 		m->normalY = v->y;
 		m->normalZ = v->z;
-		m->colorId = initColor;
+		m->colorId = faceList.at(meshId).colorId;
 
 		faceList.push_back(m);
 	}

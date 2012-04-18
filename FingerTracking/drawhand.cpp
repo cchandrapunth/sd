@@ -12,6 +12,9 @@
 #include "picking.h"
 #include "display.h"
 #include "drawmodel.h"
+#include "paint.h"
+#include "mode.h"
+#include "paint.h"
 
 int initZ = 4.5;
 
@@ -68,9 +71,14 @@ void drawSelection(bool grab){
 	float *center = getCenterSelection();
 	glPushMatrix();
 	
-	if(grab) glColor3f(1,0,0);  //action 
-	else glColor3f(0, 0, 1);	//no action 
-
+	if(grab){//action
+		if(is_mode(1)) glColor3f(1,0,0);  //sculpting
+		else glColor3f(1,1,1);
+	}
+	else{//no action
+		if(is_mode(1)) glColor3f(0, 0, 1);	//painting
+		else setGLbrushColor(getBrushColor());
+	}
 	float rotx = getRotX();
 	glRotated(-rotx, 0, 1, 0);	//rotate around y axis
 

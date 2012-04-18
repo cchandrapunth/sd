@@ -371,13 +371,14 @@ void option2(){
 
 	float width = right -left;
 	float height = top -bottom; 
-	float off = height/30;
+	float off = height/80;
 
-	Master_ui->add_button("red", left+ width/15, top-height/10, width/10, height/10-off, setRed);	//red
-	Master_ui->add_button("green", left+ width/15, top-height*2/10, width/10, height/10-off, setGreen);	//green
-	Master_ui->add_button("blue", left+ width/15, top-height*3/10, width/10, height/10-off, setBlue);	//blue
-	Master_ui->add_button("yellow", left+ width/15, top-height*4/10, width/10, height/10-off, setYellow);	//yellow
-	Master_ui->add_button("white", left+ width/15, top-height*5/10, width/10, height/10-off, setWhite);	//white
+	Master_ui->add_button("red", left+ width/15, top-height/12, width/12, height/12-off, setRed);	//red
+	Master_ui->add_button("green", left+ width/15, top-height*2/12, width/12, height/12-off, setGreen);	//green
+	Master_ui->add_button("blue", left+ width/15, top-height*3/12, width/12, height/12-off, setBlue);	//blue
+	Master_ui->add_button("yellow", left+ width/15, top-height*4/12, width/12, height/12-off, setYellow);	//yellow
+	Master_ui->add_button("white", left+ width/15, top-height*5/12, width/12, height/12-off, setWhite);	//white
+	Master_ui->add_button("black", left+ width/15, top-height*6/12, width/12, height/12-off, setBlack);	//black
 }
 //selection?
 void option3(){

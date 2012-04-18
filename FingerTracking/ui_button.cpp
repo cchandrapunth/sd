@@ -107,26 +107,34 @@ void ui_button::draw_text(int sunken){
 
   glDisable(GL_CULL_FACE);
   glDisable(GL_LIGHTING);
-
-  glColor3f(0.0, 0.0, 0.0);
-  output(x+w/5, y+h/4, (char*) butt_name);
+  
 
   if(sunken == 1) {
+	glColor3f(0.0, 0.0, 0.0);
+	output(x+w/5, y+h/4, (char*) butt_name);
 	glColor3f(1.0,1.0,1.0);
   }
-  else{
+  else{ //dont' wrtie name for color button
 	  if (strcmp ("red", butt_name) == 0)
-		  glColor3f(1, 0, 0);
+		  glColor3f(1.0, 0.1, 0.1);
 	  else if(strcmp ("green", butt_name) == 0)
-		  glColor3f(0, 1, 0);
+		  glColor3f(0.1, 1, 0.1);
 	  else if(strcmp ("blue", butt_name) == 0)
-		  glColor3f(0, 0, 1);
+		  glColor3f(0.1, 0.1, 1);
 	  else if(strcmp ("yellow", butt_name) == 0)
-		  glColor3f(1, 1, 0);
+		  glColor3f(1, 1, 0.2);
 	  else if(strcmp ("white", butt_name) == 0)
 		  glColor3f(1, 1, 1);
-	  else
+	  else if(strcmp ( "black", butt_name) ==0)
+		  glColor3f(0.1, 0.1, 0.1);
+
+	  else{
+		  //write name for general button
+		 
+		  glColor3f(0.0, 0.0, 0.0);
+		  output(x+w/5, y+h/4, (char*) butt_name);
 		  glColor3f(0.3,0.3,0.3);
+	  }
   }
 
   glBegin( GL_QUADS );

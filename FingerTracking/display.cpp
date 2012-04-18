@@ -74,7 +74,7 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 	//-------------------paint----------------------------
 	else if(is_mode(2)) {
 		checkRCursor(2, rhand); 
-		if(hasTwoHands()) checkLCursor(lhand); 
+		//if(hasTwoHands()) checkLCursor(lhand); 
 
 		//SELECTION
 		if(is_state(1)){
@@ -103,7 +103,7 @@ void mode_selection(XnPoint3D* handPointList, hand_h* rhand, hand_h* lhand){
 	//------------------ Selection ------------------------
 	else if(is_mode(3)) {
 		checkRCursor(3, rhand);
-		if(hasTwoHands()) checkLCursor(lhand); 
+		//if(hasTwoHands()) checkLCursor(lhand); 
 		
 		 if(is_state(1)){
 			drawPickVMModel();

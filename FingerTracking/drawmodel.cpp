@@ -54,7 +54,7 @@ void draw_fill_model(){
 		glPushName(j);
 
 		if(sListContain(j) >= 0 || selectedID == j){
-			glColor3f(1, 0, 0);
+			//glColor3f(1, 0, 0);
 			setMeshSelection(j);
 		}
 		else{
