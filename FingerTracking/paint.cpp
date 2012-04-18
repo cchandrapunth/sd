@@ -22,7 +22,7 @@ void setGLbrushColor(int cid){
 		glColor3f(1.0, 0, 0);
 		break;
 	case 3://green
-		glColor3f(0, 1.0, 0);
+		glColor3f(1.0, 105.0/255, 180.0/255);
 		break;
 	case 4://blue
 		glColor3f(0, 0, 1.0);

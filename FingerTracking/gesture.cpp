@@ -553,7 +553,7 @@ bool find_finger(XnPoint3D* List, int nNumberOfPoints, XnPoint3D palm){
 		}
 	}
 	int predict = svm_rt_predict(p, size);
-	
+	delete(p);
 	
 	//draw finnger tips
 	if(SHOWHAND){

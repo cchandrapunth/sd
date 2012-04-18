@@ -31,6 +31,7 @@ int selectedMesh;
 int initColor = 3;	//initial color = green
 
 bool debug = true;
+bool LOAD_FROM_ORIGIN = false;
 Log *pLog; 
 FILE *mFile;
 
@@ -41,13 +42,17 @@ float maxLen = 1.0;
 int maxSubdivide = 4;
 int countDivide = 0; 
 
+
 void import_vm(){
 
 	//pLog = new Log("vmmodel.log");
 	mFile = fopen("vmmodel.txt", "w");	
 
 	ifstream indata;
-	indata.open("modelinput.txt");
+	if(LOAD_FROM_ORIGIN)
+		indata.open("modelinput.txt");
+	else 
+		indata.open("vmmodeloutput.txt");
 	if(!indata) {
 		//pLog->Write("Error: input file couldn't be opened");
 		exit(1);
@@ -73,10 +78,11 @@ void import_vm(){
 
 	//read in mesh data
 	for(int j=0; j< nmesh; j++){
-		int id1, id2, id3;
+		int id1, id2, id3, cid;
 		indata >> id1;
 		indata >> id2;
 		indata >> id3;
+		indata >> cid;
 
 		mesh *m = new mesh(id1, id2, id3);
 		//normal vector
@@ -86,7 +92,8 @@ void import_vm(){
 		m->normalZ = v->z;
 		delete(v);
 
-		m->setColor(initColor);	//default is white-6
+	
+		m->setColor(cid);
 		faceList.push_back(*m);
 
 		//fill the lookup table for vertices 
@@ -95,10 +102,11 @@ void import_vm(){
 		vertexList.at(id3).addFaceId(j);
 	}
 	
-
-	//subDivide
-	for(int k=0; k< 3; k++){
-		subDivide(true);
+	if(LOAD_FROM_ORIGIN){
+		//subDivide
+		for(int k=0; k< 3; k++){
+			subDivide(true);
+		}
 	}
 	
 
@@ -148,7 +156,7 @@ void export_vm(){
 	//export mesh
 	for(int i=0; i< nMesh; i++){
 		mesh m = faceList.at(i);
-		outdata << m.ind1 << "\t" << m.ind2 << "\t" << m.ind3 << endl;
+		outdata << m.ind1 << "\t" << m.ind2 << "\t" << m.ind3 << "\t" << m.colorId << endl;
 	}
 	
 	outdata.close();
@@ -166,6 +174,7 @@ void recalNormal(){
 		faceList.at(i).normalX = v->x;
 		faceList.at(i).normalY = v->y;
 		faceList.at(i).normalZ = v->z;
+		delete(v);
 	}
 
 	calVertexNormal();
@@ -555,6 +564,7 @@ int* subDivideMesh(int meshId, bool do_normalize){
 	faceList.at(meshId).normalX = v->x;
 	faceList.at(meshId).normalY = v->y;
 	faceList.at(meshId).normalZ = v->z;
+	delete(v);
 
 	//the rest 
 	for(int i=0; i< 3; i++){	
@@ -600,6 +610,7 @@ int* subDivideMesh(int meshId, bool do_normalize){
 		m->colorId = faceList.at(meshId).colorId;
 
 		faceList.push_back(m);
+		delete(v);
 	}
 
 	//allocate memory for return vertex
